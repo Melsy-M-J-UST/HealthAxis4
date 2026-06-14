@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "7QoQeA2UFMg=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\310054\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.8\\microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "C:\\Users\\310054\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
