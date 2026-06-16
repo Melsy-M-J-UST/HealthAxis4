@@ -1,6 +1,12 @@
-﻿namespace HealthAxis3.API.Repository.Implementation
+﻿using HealthAxis3.API.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace HealthAxis3.API.Repository.Implementation
 {
-    public class AppointmentRepository
+    public class AppointmentRepository : Repository<Appointment>, IAppointmentRepository
     {
+        public AppointmentRepository(DbContext context) : base(context)
+        {
+        }
     }
 }
