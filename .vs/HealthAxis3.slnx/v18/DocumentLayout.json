@@ -3,88 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\healthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\healthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\ipatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\ipatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\doctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\doctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\doctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\healthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\healthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\ihealthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\ihealthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\idoctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\idoctorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\ihealthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\ihealthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\ihealthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\ihealthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\iappointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\patientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\ipatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\ipatientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\idoctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\idoctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\doctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\doctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\ipatientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\ipatientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\mappings\\mappingprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\appointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\models\\dtos\\doctordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,6 +61,46 @@
     {
       "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\models\\doctor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\iappointmentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\idoctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\idoctorrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\ihealthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\ihealthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\ipatientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\ipatientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\patientrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\healthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\healthrecordservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\service\\implementation\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\service\\implementation\\appointmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\implementation\\healthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\implementation\\healthrecordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|c:\\users\\310054\\source\\repos\\healthaxis3\\healthaxis3.api\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D48CD-00F4-3CA7-BE98-E81B3506C779}|HealthAxis3.API\\HealthAxis3.API.csproj|solutionrelative:healthaxis3.api\\repository\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -125,27 +113,57 @@
           "SelectedChildIndex": 4,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DoctorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "IDoctorService.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IDoctorService.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IDoctorService.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IDoctorService.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Service\\IDoctorService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAgAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:26:04.422Z",
+              "WhenOpened": "2026-06-16T03:27:04.691Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "IAppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IAppointmentService.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IAppointmentService.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IAppointmentService.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Service\\IAppointmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:27:37.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PatientService.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAwAoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:29:48.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "DoctorService.cs",
               "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\DoctorService.cs",
               "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\DoctorService.cs",
               "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\DoctorService.cs",
               "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\DoctorService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAA/AAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBAAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-16T03:30:00.832Z",
               "EditorCaption": ""
@@ -153,183 +171,171 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PatientService.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\PatientService.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAAAowA0AAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:29:48.022Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IPatientService.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IPatientService.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IPatientService.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IPatientService.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Service\\IPatientService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAQwAoAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T12:28:23.534Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HealthRecordService.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:30:49.591Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AppointmentService.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAewAwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:30:35.02Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "HealthRecordRepository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:26:42.482Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAwAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T00:31:04.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "IHealthRecordService.cs",
               "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IHealthRecordService.cs",
               "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IHealthRecordService.cs",
               "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IHealthRecordService.cs",
               "RelativeToolTip": "HealthAxis3.API\\Service\\IHealthRecordService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-16T03:29:27.121Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IDoctorService.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IDoctorService.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IDoctorService.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IDoctorService.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Service\\IDoctorService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "IPatientService.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IPatientService.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IPatientService.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IPatientService.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Service\\IPatientService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:27:04.691Z",
+              "WhenOpened": "2026-06-15T12:28:23.534Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IHealthRecordRepository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "DoctorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\DoctorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:25:19.946Z",
+              "WhenOpened": "2026-06-16T03:26:04.422Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IRepository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IRepository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IRepository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IRepository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\IRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-15T12:26:10.504Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "PatientRepository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:25:50.865Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 7,
               "Title": "AppointmentRepository.cs",
               "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\AppointmentRepository.cs",
               "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\AppointmentRepository.cs",
               "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\AppointmentRepository.cs",
               "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\AppointmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-16T03:26:20.753Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\appsettings.json",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\appsettings.json",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\appsettings.json",
-              "RelativeToolTip": "HealthAxis3.API\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-16T09:50:32.867Z",
+              "DocumentIndex": 8,
+              "Title": "DoctorDto.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:37:26.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "IAppointmentService.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IAppointmentService.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\IAppointmentService.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\IAppointmentService.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Service\\IAppointmentService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "HealthRecordDto.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAwDIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:27:37.959Z"
+              "WhenOpened": "2026-06-16T03:37:38.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "HealthRecord.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\HealthRecord.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\HealthRecord.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\HealthRecord.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\HealthRecord.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:39:56.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppointmentDto.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwDMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:37:06.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Patient.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Patient.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Patient.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Patient.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\Patient.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAuwEgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:38:46.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Doctor.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Doctor.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Doctor.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Doctor.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\Doctor.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAB8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:38:28.286Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PatientDto.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAAwEUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:36:53.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IHealthRecordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\IHealthRecordRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:25:19.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IDoctorRepository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IDoctorRepository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IDoctorRepository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IDoctorRepository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\IDoctorRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-16T03:24:34.831Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -339,33 +345,23 @@
               "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IAppointmentRepository.cs",
               "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IAppointmentRepository.cs",
               "RelativeToolTip": "HealthAxis3.API\\Repository\\IAppointmentRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:24:51.097Z"
+              "WhenOpened": "2026-06-16T03:24:51.097Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Program.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Program.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Program.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Program.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAjwBcAAABOAAAAAAAAAA==",
+              "DocumentIndex": 15,
+              "Title": "Repository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\Repository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwDQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T04:06:38.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "IDoctorRepository.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IDoctorRepository.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IDoctorRepository.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IDoctorRepository.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Repository\\IDoctorRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:24:34.831Z"
+              "WhenOpened": "2026-06-16T00:31:04.326Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -377,103 +373,73 @@
               "RelativeToolTip": "HealthAxis3.API\\Repository\\IPatientRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:24:08.051Z"
+              "WhenOpened": "2026-06-16T03:24:08.051Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "MappingProfile.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Mappings\\MappingProfile.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Mappings\\MappingProfile.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Mappings\\MappingProfile.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Mappings\\MappingProfile.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Title": "PatientRepository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\PatientRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T04:02:03.283Z"
+              "WhenOpened": "2026-06-16T03:25:50.865Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 21,
-              "Title": "DoctorDto.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\DoctorDto.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAAyAAAAAAAAAA==",
+              "Title": "HealthRecordService.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\HealthRecordService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:37:26.869Z"
+              "WhenOpened": "2026-06-16T03:30:49.591Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "HealthRecordDto.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\HealthRecordDto.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAAwDIAAAAJAAAAAAAAAA==",
+              "Title": "AppointmentService.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Service\\Implementation\\AppointmentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:37:38.082Z"
+              "WhenOpened": "2026-06-16T03:30:35.02Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "HealthRecord.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\HealthRecord.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\HealthRecord.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\HealthRecord.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\HealthRecord.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
+              "Title": "HealthRecordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\Implementation\\HealthRecordRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:39:56.527Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "AppointmentDto.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\AppointmentDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAIwDMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:37:06.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Patient.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Patient.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Patient.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Patient.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\Patient.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAuwEgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:38:46.434Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "Doctor.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Doctor.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Doctor.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Doctor.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\Doctor.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAAAB8AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:38:28.286Z"
+              "WhenOpened": "2026-06-16T03:26:42.482Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "PatientDto.cs",
-              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
-              "RelativeDocumentMoniker": "HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
-              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
-              "RelativeToolTip": "HealthAxis3.API\\Models\\Dtos\\PatientDto.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAwEUAAAAJAAAAAAAAAA==",
+              "Title": "IRepository.cs",
+              "DocumentMoniker": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IRepository.cs",
+              "RelativeDocumentMoniker": "HealthAxis3.API\\Repository\\IRepository.cs",
+              "ToolTip": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\Repository\\IRepository.cs",
+              "RelativeToolTip": "HealthAxis3.API\\Repository\\IRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-16T03:36:53.762Z"
+              "WhenOpened": "2026-06-15T12:26:10.504Z",
+              "EditorCaption": ""
             }
           ]
         }
