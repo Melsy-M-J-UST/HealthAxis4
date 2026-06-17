@@ -8,6 +8,6 @@ namespace HealthAxis3.API.Service
         Task<PatientDto> GetByIdAsync(int id);
         Task<PatientDto> AddAsync(PatientDto entity);
         Task<PatientDto> UpdateAsync(int id, PatientDto entity);
-        Task<PatientDto> DeleteAsync(int id);
+        //Task<PatientDto> DeleteAsync(int id);
     }
 }

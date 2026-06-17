@@ -17,17 +17,17 @@ namespace HealthAxis3.API.Repository.Implementation
             return entity;
         }
 
-        public async Task<T?> DeleteAsync(int id, CancellationToken ct = default)
-        {
-            var existing = await _context.Set<T>().FindAsync([id], ct);
-            if (existing == null)
-            {
-                return null;
-            }
-            _context.Set<T>().Remove(existing);
-            await _context.SaveChangesAsync(ct);
-            return existing;
-        }
+        //public async Task<T?> DeleteAsync(int id, CancellationToken ct = default)
+        //{
+        //    var existing = await _context.Set<T>().FindAsync([id], ct);
+        //    if (existing == null)
+        //    {
+        //        return null;
+        //    }
+        //    _context.Set<T>().Remove(existing);
+        //    await _context.SaveChangesAsync(ct);
+        //    return existing;
+        //}
 
         public async Task<List<T>> GetAllAsync(CancellationToken ct = default)
         {

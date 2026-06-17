@@ -32,7 +32,7 @@ namespace HealthAxis3.API.Models
             ErrorMessage = "Invalid status")]
         public string Status { get; set; } = "Pending";
         [StringLength(200, ErrorMessage = "Cancellation reason cannot exceed 200 characters")]
-        public string CancellationReason { get; set; }
+        public string CancellationReason { get; set; } = string.Empty;
 
         [ForeignKey("PatientId")]
         public virtual Patient Patient { get; set; }

@@ -158,3 +158,8 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\refin
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.pdb
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.genruntimeconfig.cache
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\ref\HealthAxis3.API.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
