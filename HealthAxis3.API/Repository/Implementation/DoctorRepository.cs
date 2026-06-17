@@ -3,10 +3,8 @@ using HealthAxis3.API.Models;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
-    public class DoctorRepository : Repository<Doctor>, IDoctorRepository
+    public class DoctorRepository(AppDbContext context) : Repository<Doctor>(context), IDoctorRepository
     {
-        public DoctorRepository(AppDbContext context) : base(context)
-        {
-        }
+        //getavailable doctors
     }
 }

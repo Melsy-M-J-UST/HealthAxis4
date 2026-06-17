@@ -1,14 +1,17 @@
 ﻿using AutoMapper;
-using HealthAxis3.API.Models.Dtos;
+using HealthAxis3.API.Models;
+using HealthAxis3.API.Models.Dtos.AppointmentDto;
 using HealthAxis3.API.Repository;
 
 namespace HealthAxis3.API.Service.Implementation
 {
     public class AppointmentService(IAppointmentRepository repository, IMapper mapper) : IAppointmentService
     {
-        public Task<AppointmentDto> AddAsync(AppointmentDto entity)
+        public async Task<AppointmentDto> AddAsync(AppointmentDto entity)
         {
-            throw new NotImplementedException();
+            var appointment = mapper.Map<Appointment>(entity);
+            var savedEntity = repository.CreateAsync(appointment);
+            return mapper.Map<AppointmentDto>(savedEntity);
         }
 
         public Task<List<AppointmentDto>> GetAllAsync()

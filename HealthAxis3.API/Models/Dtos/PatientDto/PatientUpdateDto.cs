@@ -2,15 +2,10 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace HealthAxis3.API.Models
+namespace HealthAxis3.API.Models.Dtos.PatientDto
 {
-    public class Patient
+    public class PatientUpdateDto
     {
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int PatientId { get; set; }
-
         [Required]
         [StringLength(30)]
         [RegularExpression(@"^[A-Za-z\s]+$", ErrorMessage = "Only alphabets and space is allowed")]
@@ -71,6 +66,5 @@ namespace HealthAxis3.API.Models
 
             return ValidationResult.Success;
         }
-
     }
 }

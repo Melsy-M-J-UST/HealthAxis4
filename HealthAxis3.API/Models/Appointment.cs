@@ -25,7 +25,7 @@ namespace HealthAxis3.API.Models
         [RegularExpression(
             @"^(09:00 AM|10:00 AM|11:00 AM|12:00 PM|02:00 PM|03:00 PM|04:00 PM|05:00 PM)$",
             ErrorMessage = "Select a valid time slot")]
-        public string Slot { get; set; }
+        public required string Slot { get; set; }
 
         [Required(ErrorMessage = "Status is required")]
         [RegularExpression(@"^(Pending|Cancelled|Confirmed|Completed)$",
@@ -35,12 +35,12 @@ namespace HealthAxis3.API.Models
         public string CancellationReason { get; set; } = string.Empty;
 
         [ForeignKey("PatientId")]
-        public virtual Patient Patient { get; set; }
+        public required virtual Patient Patient { get; set; }
 
         [ForeignKey("DoctorId")]
-        public virtual Doctor Doctor { get; set; }
+        public required virtual Doctor Doctor { get; set; }
 
-        public static ValidationResult ValidateAppointmentDate(DateTime date, ValidationContext context)
+        public static ValidationResult? ValidateAppointmentDate(DateTime date)
         {
             DateTime today = DateTime.Today;
             DateTime maxDate = today.AddMonths(6);

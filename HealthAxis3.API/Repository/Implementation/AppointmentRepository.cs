@@ -3,10 +3,11 @@ using HealthAxis3.API.Models;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
-    public class AppointmentRepository : Repository<Appointment>, IAppointmentRepository
+    public class AppointmentRepository(AppDbContext context) : Repository<Appointment>(context), IAppointmentRepository
     {
-        public AppointmentRepository(AppDbContext context) : base(context)
-        {
-        }
+
+        // get by id pat, doc
+        //delete
+        //update
     }
 }

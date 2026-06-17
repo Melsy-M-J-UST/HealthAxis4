@@ -1,4 +1,4 @@
-﻿using HealthAxis3.API.Models.Dtos;
+﻿using HealthAxis3.API.Models.Dtos.AppointmentDto;
 
 namespace HealthAxis3.API.Service
 {

@@ -63,17 +63,23 @@ namespace HealthAxis3.API.Service.Implementation
             var roles = await userManager.GetRolesAsync(user);
 
             var claims = new List<Claim> {
-                    new Claim(JwtRegisteredClaimNames.Sub, user.Id),
-                    new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id)
+                    new(JwtRegisteredClaimNames.Sub, user.Id),
+                    //new(JwtRegisteredClaimNames.Email, user.Email),
+                    new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new(ClaimTypes.NameIdentifier, user.Id)
                 };
+
+            if (!string.IsNullOrWhiteSpace(user.Email))
+            {
+                claims.Add(new Claim(JwtRegisteredClaimNames.Email, user.Email));
+            }
+
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
 
             }
-            var expirationMinutes = int.Parse(jwtSettings["AccessTokenExpirationMinutes"]);
+            bool isParsed = int.TryParse(jwtSettings["AccessTokenExpirationMinutes"], out int expirationMinutes);
             var token = new JwtSecurityToken(
                 issuer: jwtSettings["Issuer"],
                 audience: jwtSettings["Audience"],

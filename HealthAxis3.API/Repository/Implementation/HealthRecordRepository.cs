@@ -3,10 +3,8 @@ using HealthAxis3.API.Models;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
-    public class HealthRecordRepository : Repository<HealthRecord>, IHealthRecordRepository
+    public class HealthRecordRepository(AppDbContext context) : Repository<HealthRecord>(context), IHealthRecordRepository
     {
-        public HealthRecordRepository(AppDbContext context) : base(context)
-        {
-        }
+        //GetByIdAsync id
     }
 }

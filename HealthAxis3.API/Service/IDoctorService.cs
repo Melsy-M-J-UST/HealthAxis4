@@ -1,4 +1,4 @@
-﻿using HealthAxis3.API.Models.Dtos;
+﻿using HealthAxis3.API.Models.Dtos.DoctorDto;
 
 namespace HealthAxis3.API.Service
 {
@@ -6,8 +6,5 @@ namespace HealthAxis3.API.Service
     {
         Task<List<DoctorDto>> GetAllAsync();
         Task<DoctorDto> GetByIdAsync(int id);
-        Task<DoctorDto> AddAsync(DoctorDto entity);
-        Task<DoctorDto> UpdateAsync(int id, DoctorDto entity);
-        //Task<DoctorDto> DeactivateAsync(int id);
     }
 }

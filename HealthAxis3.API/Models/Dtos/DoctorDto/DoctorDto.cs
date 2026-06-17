@@ -1,13 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
-namespace HealthAxis3.API.Models
+namespace HealthAxis3.API.Models.Dtos.DoctorDto
 {
-    public class Doctor
+    public class DoctorDto
     {
-
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int DoctorId { get; set; }
 
         [Required(ErrorMessage = "Doctor Name is required")]
@@ -16,7 +12,7 @@ namespace HealthAxis3.API.Models
         public required string DoctorName { get; set; }
 
         [Required(ErrorMessage = "Specialisation is required")]
-        [RegularExpression(@"^(Cardiologist|Dermatologist|Neurologist|Pediatrician|GeneralPractitioner|Endocrinologist|Gynecologist|Oncologist|OrthopedicSurgeon|Psychiatrist )$",ErrorMessage = "Invalid Specialisation")]
+        [RegularExpression(@"^(Cardiologist|Dermatologist|Neurologist|Pediatrician|GeneralPractitioner|Endocrinologist|Gynecologist|Oncologist|OrthopedicSurgeon|Psychiatrist )$", ErrorMessage = "Invalid Specialisation")]
         public required string Specialisation { get; set; }
 
         [Required(ErrorMessage = "Experience is required")]

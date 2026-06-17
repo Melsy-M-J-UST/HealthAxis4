@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
-using HealthAxis3.API.Models.Dtos;
+using HealthAxis3.API.Models.Dtos.DoctorDto;
 using HealthAxis3.API.Repository;
 
 namespace HealthAxis3.API.Service.Implementation

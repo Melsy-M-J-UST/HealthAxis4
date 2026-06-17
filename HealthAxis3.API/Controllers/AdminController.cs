@@ -1,0 +1,41 @@
+﻿using AutoMapper;
+using HealthAxis3.API.Models.Dtos.DoctorDto;
+using HealthAxis3.API.Service;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+
+namespace HealthAxis3.API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class AdminController(IAdminService service,IMapper mapper) : ControllerBase
+    {
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> Create([FromBody] DoctorDto entity)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                var result = await service.AddAsync(entity);
+                if (result == null) return NotFound();
+                else return CreatedAtAction("GetById", new { result.DoctorId }, result);
+            }
+        }
+        [HttpPut("{id:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> Update(int id, [FromBody] DoctorDto entity)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            var savedEntity = mapper.Map<DoctorUpdateDto>(entity);
+            var result = await service.UpdateAsync(id, savedEntity);
+            if (result == null) return NotFound();
+            else return Ok(result);
+        }
+    }
+}

@@ -1,6 +1,7 @@
 ﻿using HealthAxis3.API.Models;
 using HealthAxis3.API.Models.Dtos;
 using HealthAxis3.API.Service;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,6 +12,7 @@ namespace HealthAxis3.API.Controllers
     public class AuthController(IAuthService service) : ControllerBase
     {
         [HttpPost("register")]
+        [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterDto request)
         {
             var (success, message, userId) = await service.Register(request);
@@ -21,6 +23,7 @@ namespace HealthAxis3.API.Controllers
             return Ok(new { message, userId });
         }
         [HttpPost("login")]
+        [AllowAnonymous]
         public async Task<IActionResult> Login(LoginDto request)
         {
             var (Success, message, token, ExpiresIn) = await service.Login(request);
@@ -28,7 +31,7 @@ namespace HealthAxis3.API.Controllers
             {
                 return Unauthorized(new { message });
             }
-            AuthResponse response = new AuthResponse
+            AuthResponse response = new()
             {
                 Accesstoken = token,
                 Message = message,
