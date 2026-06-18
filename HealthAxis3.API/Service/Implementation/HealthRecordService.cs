@@ -24,5 +24,13 @@ namespace HealthAxis3.API.Service.Implementation
         {
             return mapper.Map<HealthRecordDto>(await repository.GetByIdAsync(id));
         }
+        public async Task<HealthRecordDto> GetByDoctorIdAsync(int id)
+        {
+            return mapper.Map<HealthRecordDto>(await repository.GetByDoctorIdAsync(id));
+        }
+        public async Task<HealthRecordDto> GetByPatientIdAsync(int id)
+        {
+            return mapper.Map<HealthRecordDto>(await repository.GetByPatientIdAsync(id));
+        }
     }
 }
