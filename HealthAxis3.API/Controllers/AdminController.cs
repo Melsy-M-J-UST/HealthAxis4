@@ -10,7 +10,7 @@ namespace HealthAxis3.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminController(IAdminService service,IMapper mapper) : ControllerBase
+    public class AdminController(IPatientService patientService, IDoctorService doctorService,IMapper mapper) : ControllerBase
     {
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
@@ -22,7 +22,7 @@ namespace HealthAxis3.API.Controllers
             }
             else
             {
-                var result = await service.AddAsync(entity);
+                var result = await doctorService.AddAsync(entity);
                 if (result == null) return NotFound();
                 else return CreatedAtAction("GetById", new { result.DoctorId }, result);
             }
@@ -33,7 +33,25 @@ namespace HealthAxis3.API.Controllers
         {
             if (!ModelState.IsValid) return BadRequest();
             var savedEntity = mapper.Map<DoctorUpdateDto>(entity);
-            var result = await service.UpdateAsync(id, savedEntity);
+            var result = await doctorService.UpdateAsync(id, savedEntity);
+            if (result == null) return NotFound();
+            else return Ok(result);
+        }
+        [HttpPut("PatientDeactivate/{id:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> DeactivatePatient(int id)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            var result = await patientService.DeactivatePatientAsync(id);
+            if (result == null) return NotFound();
+            else return Ok(result);
+        }
+        [HttpPut("DoctorDeactivate/{id:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> DeactivateDoctor(int id)
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            var result = await doctorService.DeactivateDoctorAsync(id);
             if (result == null) return NotFound();
             else return Ok(result);
         }

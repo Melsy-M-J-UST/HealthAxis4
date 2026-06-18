@@ -32,5 +32,40 @@ namespace HealthAxis3.API.Controllers
                 return Ok(result);
             }
         }
+        [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> GetByName([FromRoute] string name)
+        {
+            var result = await service.GetByNameAsync(name);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(result);
+            }
+        }
+        [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> GetBySpecialisation([FromRoute] string specialisation)
+        {
+            var result = await service.GetBySpecialisationAsync(specialisation);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(result);
+            }
+        }
+        [HttpGet("doctors/{doctorId}/availability")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]
+        public async Task<IActionResult> GetDoctorAvailability(int doctorId, DateTime date)
+        {
+            var slots = await service.GetAvailableSlots(doctorId, date);
+            return Ok(slots);
+        }
     }
 }

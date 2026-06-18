@@ -19,7 +19,7 @@ namespace HealthAxis3.API.Controllers
             return Ok(result);
         }
         [HttpGet("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Doctor")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await service.GetByIdAsync(id);
@@ -33,7 +33,7 @@ namespace HealthAxis3.API.Controllers
             }
         }
         [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [AllowAnonymous]
         public async Task<IActionResult> Create([FromBody] PatientDto entity)
         {
             if (!ModelState.IsValid)
@@ -48,7 +48,7 @@ namespace HealthAxis3.API.Controllers
             }
         }
         [HttpPut("{id:int}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]
         public async Task<IActionResult> Update(int id, [FromBody] PatientDto entity)
         {
             if (!ModelState.IsValid) return BadRequest();
