@@ -40,7 +40,7 @@ namespace HealthAxis3.API.Models
         [ForeignKey("DoctorId")]
         public required virtual Doctor Doctor { get; set; }
 
-        public static ValidationResult? ValidateAppointmentDate(DateTime date)
+        public static ValidationResult? ValidateAppointmentDate(DateTime date, ValidationContext context)
         {
             DateTime today = DateTime.Today;
             DateTime maxDate = today.AddMonths(6);
@@ -53,5 +53,16 @@ namespace HealthAxis3.API.Models
 
             return ValidationResult.Success;
         }
+        public static readonly List<string> AllSlots = new()
+        {
+        "09:00 AM",
+        "10:00 AM",
+        "11:00 AM",
+        "12:00 PM",
+        "02:00 PM",
+        "03:00 PM",
+        "04:00 PM",
+        "05:00 PM"
+        };
     }
 }
