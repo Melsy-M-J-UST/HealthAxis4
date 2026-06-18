@@ -11,6 +11,6 @@ namespace HealthAxis3.API.Service
         Task<PatientDto> UpdateAsync(int id, PatientDto entity);
         Task<List<PatientDto>> GetByNameAsync(string name);
         Task<List<PatientDto>> GetByPhoneAsync(string phone);
-        Task<PatientDto?> DeactivateAsync(int id);
+        Task<PatientDto?> DeactivatePatientAsync(int id);
     }
 }

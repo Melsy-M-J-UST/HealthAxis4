@@ -15,16 +15,11 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<PatientDto>(savedEntity);
         }
 
-        public Task<PatientDto?> DeactivateAsync(int id)
+        public async Task<PatientDto?> DeactivatePatientAsync(int id)
         {
-            throw new NotImplementedException();
+            var deactivated = await repository.DeactivateAsync(id);
+                return mapper.Map<PatientDto>(deactivated);
         }
-
-        //public async Task<PatientDto> DeleteAsync(int id)
-        //{
-        //    var deleted = await repository.DeleteAsync(id);
-        //    return mapper.Map<PatientDto>(deleted);
-        //}
 
         public async Task<List<PatientDto>> GetAllAsync()
         {
