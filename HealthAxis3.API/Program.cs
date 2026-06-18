@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi;
+using Swashbuckle.Swagger;
 using System.Text;
 using System.Text.Json;
 
@@ -54,7 +56,37 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 builder.Services.AddAuthorization();
 
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc(
+        "v1",
+        new OpenApiInfo
+        {
+            Title = "HealthAxis API",
+            Version = "v1",
+            Description = "Healthcare Appointment Management API"
+        });
+
+    options.AddSecurityDefinition(
+        "bearer",
+        new OpenApiSecurityScheme
+        {
+            Name = "Authorization",
+            In = ParameterLocation.Header,
+            Type = SecuritySchemeType.Http,
+            Scheme = "bearer",
+            BearerFormat = "JWT",
+            Description = "Enter JWT token.\n\nExample: Bearer eyJhbGciOiJIUzI1NiIs..."
+        });
+
+    options.AddSecurityRequirement(document =>
+        new OpenApiSecurityRequirement
+        {
+            [new OpenApiSecuritySchemeReference(
+                "bearer",
+                document)] = []
+        });
+});
 builder.Services.AddScoped<IPatientRepository, PatientRepository>();
 builder.Services.AddScoped<IPatientService, PatientService>();
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
