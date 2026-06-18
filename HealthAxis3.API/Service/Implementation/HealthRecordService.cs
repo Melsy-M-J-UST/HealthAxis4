@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Models.Dtos.HealthrecordDto;
+using HealthAxis3.API.Models.Dtos.PatientDto;
 using HealthAxis3.API.Repository;
 
 namespace HealthAxis3.API.Service.Implementation
@@ -16,12 +17,12 @@ namespace HealthAxis3.API.Service.Implementation
 
         public async Task<List<HealthRecordDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return mapper.Map<List<HealthRecordDto>>(await repository.GetAllAsync());
         }
 
         public async Task<HealthRecordDto> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return mapper.Map<HealthRecordDto>(await repository.GetByIdAsync(id));
         }
     }
 }
