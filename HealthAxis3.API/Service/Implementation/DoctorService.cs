@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Models.Dtos.DoctorDto;
+using HealthAxis3.API.Models.Dtos.PatientDto;
 using HealthAxis3.API.Repository;
 
 namespace HealthAxis3.API.Service.Implementation
@@ -14,12 +15,6 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<DoctorDto>(savedEntity);
         }
 
-        //public async Task<DoctorDto> DeactivateAsync(int id)
-        //{
-        //    var deleted = await repository.DeleteAsync(id);
-        //    return mapper.Map<DoctorDto>(deleted);
-        //}
-
         public async Task<List<DoctorDto>> GetAllAsync()
         {
             return mapper.Map<List<DoctorDto>>(await repository.GetAllAsync());
@@ -30,13 +25,23 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<DoctorDto>(await repository.GetByIdAsync(id));
         }
 
-        public async Task<DoctorDto> UpdateAsync(int id, DoctorDto entity)
+        public async Task<DoctorUpdateDto> UpdateAsync(int id, DoctorUpdateDto entity)
         {
             var doctor = mapper.Map<Doctor>(entity);
             doctor.DoctorId = id;
             var updated = await repository.UpdateAsync(id, doctor);
-            return mapper.Map<DoctorDto>(updated);
+            return mapper.Map<DoctorUpdateDto>(updated);
 
+        }
+        public async Task<List<string>> GetAvailableSlots(int doctorId, DateTime date)
+        {
+            return await repository.GetDoctorAvailability(doctorId, date);
+        }
+
+        public async Task<DoctorUpdateDto?> DeactivateDoctorAsync(int id)
+        {
+            var deactivated = await repository.DeactivateAsync(id);
+            return mapper.Map<DoctorUpdateDto>(deactivated);
         }
     }
 }
