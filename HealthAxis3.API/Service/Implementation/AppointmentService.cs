@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Models.Dtos.AppointmentDto;
+using HealthAxis3.API.Models.Dtos.PatientDto;
 using HealthAxis3.API.Repository;
 
 namespace HealthAxis3.API.Service.Implementation
@@ -14,14 +15,14 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<AppointmentDto>(savedEntity);
         }
 
-        public Task<List<AppointmentDto>> GetAllAsync()
+        public async Task<List<AppointmentDto>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return mapper.Map<List<AppointmentDto>>(await repository.GetAllAsync());
         }
 
-        public Task<AppointmentDto> GetByIdAsync(int id)
+        public async Task<AppointmentDto> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return mapper.Map<AppointmentDto>(await repository.GetByIdAsync(id));
         }
     }
 }
