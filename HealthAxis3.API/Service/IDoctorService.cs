@@ -9,8 +9,8 @@ namespace HealthAxis3.API.Service
     {
         Task<List<DoctorDto>> GetAllAsync();
         Task<DoctorDto> GetByIdAsync(int id);
-        Task<DoctorDto> GetByNameAsync(string name);
-        Task<DoctorDto> GetBySpecialisationAsync(string specialisation);
+        Task<List<DoctorDto>> GetByNameAsync(string name);
+        Task<List<DoctorDto>> GetBySpecialisationAsync(string specialisation);
         Task<DoctorDto> AddAsync(DoctorDto entity);
         Task<DoctorUpdateDto> UpdateAsync(int id, DoctorUpdateDto entity);
         Task<List<string>> GetAvailableSlots(int doctorId, DateTime date);
