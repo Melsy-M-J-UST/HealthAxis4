@@ -1,5 +1,4 @@
-﻿using HealthAxis3.API.Models;
-using HealthAxis3.API.Models.Dtos;
+﻿using HealthAxis3.API.Models.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -8,7 +7,7 @@ using System.Text;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class AuthService(UserManager<ApplicationUser> userManager, IConfiguration config) : IAuthService
+    public class AuthService(UserManager<IdentityUser> userManager, IConfiguration config) : IAuthService
     {
         public async Task<(bool Success, string Message, string token, int ExpiresIn)> Login(LoginDto request)
         {
@@ -41,7 +40,7 @@ namespace HealthAxis3.API.Service.Implementation
                 return (false, "Invalid Role", string.Empty);
             }
 
-            var user = new ApplicationUser
+            var user = new IdentityUser
             {
                 UserName = request.Email,
                 Email = request.Email
@@ -56,7 +55,7 @@ namespace HealthAxis3.API.Service.Implementation
             return (true, "user Registered Succesfully", user.Id);
 
         }
-        private async Task<string> GenerateToken(ApplicationUser user)
+        private async Task<string> GenerateToken(IdentityUser user)
         {
             var jwtSettings = config.GetSection("Jwt");
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]!));
