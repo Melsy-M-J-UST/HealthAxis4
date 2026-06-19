@@ -1,4 +1,5 @@
-﻿using HealthAxis3.API.Models.Dtos.AppointmentDto;
+﻿using HealthAxis3.API.Models;
+using HealthAxis3.API.Models.Dtos.AppointmentDto;
 
 namespace HealthAxis3.API.Service
 {
@@ -7,5 +8,7 @@ namespace HealthAxis3.API.Service
         Task<List<AppointmentDto>> GetAllAsync();
         Task<AppointmentDto> GetByIdAsync(int id);
         Task<AppointmentDto> AddAsync(AppointmentDto entity);
+        Task<List<AppointmentDto>> GetByDoctorIdAsync(int id, CancellationToken ct = default);
+        Task<List<AppointmentDto>> GetByPatientIdAsync(int id, CancellationToken ct = default);
     }
 }

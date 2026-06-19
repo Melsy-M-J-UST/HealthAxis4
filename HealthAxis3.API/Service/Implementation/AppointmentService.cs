@@ -11,7 +11,7 @@ namespace HealthAxis3.API.Service.Implementation
         public async Task<AppointmentDto> AddAsync(AppointmentDto entity)
         {
             var appointment = mapper.Map<Appointment>(entity);
-            var savedEntity = repository.CreateAsync(appointment);
+            var savedEntity = await repository.CreateAsync(appointment);
             return mapper.Map<AppointmentDto>(savedEntity);
         }
 
@@ -20,9 +20,19 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<List<AppointmentDto>>(await repository.GetAllAsync());
         }
 
+        public async Task<List<AppointmentDto>> GetByDoctorIdAsync(int id, CancellationToken ct = default)
+        {
+            return mapper.Map<List<AppointmentDto>>(await repository.GetByDoctorIdAsync(id));
+        }
+
         public async Task<AppointmentDto> GetByIdAsync(int id)
         {
             return mapper.Map<AppointmentDto>(await repository.GetByIdAsync(id));
+        }
+
+        public async Task<List<AppointmentDto>> GetByPatientIdAsync(int id, CancellationToken ct = default)
+        {
+            return mapper.Map<List<AppointmentDto>>(await repository.GetByPatientIdAsync(id));
         }
     }
 }
