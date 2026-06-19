@@ -11,7 +11,7 @@ namespace HealthAxis3.API.Service.Implementation
         public async Task<PatientDto> AddAsync(PatientDto entity)
         {
             var patient = mapper.Map<Patient>(entity);
-            var savedEntity = repository.CreateAsync(patient);
+            var savedEntity = await repository.CreateAsync(patient);
             return mapper.Map<PatientDto>(savedEntity);
         }
 
