@@ -32,7 +32,7 @@ namespace HealthAxis3.API.Controllers
                 return Ok(result);
             }
         }
-        [HttpGet("{id}")]
+        [HttpGet("{name}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> GetByName([FromRoute] string name)
         {
@@ -46,7 +46,7 @@ namespace HealthAxis3.API.Controllers
                 return Ok(result);
             }
         }
-        [HttpGet("{id}")]
+        [HttpGet("{specialisation}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> GetBySpecialisation([FromRoute] string specialisation)
         {
