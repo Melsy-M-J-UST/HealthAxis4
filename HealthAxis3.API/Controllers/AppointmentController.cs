@@ -47,14 +47,33 @@ namespace HealthAxis3.API.Controllers
                 else return CreatedAtAction("GetById", new { result.AppointmentId }, result);
             }
         }
-        //[HttpPut("{id:int}")]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        //public async Task<IActionResult> Update(int id, [FromBody] AppointmentDto entity)
-        //{
-        //    if (!ModelState.IsValid) return BadRequest();
-        //    var result = await service.UpdateAsync(id, entity);
-        //    if (result == null) return NotFound();
-        //    else return Ok(result);
-        //}
+        [HttpPut("{id}/status")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient, Doctor")]
+        public async Task<IActionResult> UpdateStatus(int id, [FromQuery] string status, [FromQuery] string? reason)
+        {
+            var result = await service.UpdateAppointmentStatus(id, status, reason);
+
+            if (result == "REDIRECT_TO_HEALTH_RECORD")
+            {
+                return Ok(new
+                {
+                    message = "Completed successfully",
+                    redirectUrl = $"/HealthRecord/Create?appointmentId={id}"
+                });
+            }
+
+            return Ok(new { message = result });
+        }
+
+        // ✅ Delete
+        [HttpDelete("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var result = await service.DeleteAppointment(id);
+            return Ok(new { message = result });
+        }
     }
+
 }
+
