@@ -1,5 +1,6 @@
 using HealthAxis3.API.Data;
 using HealthAxis3.API.Mappings;
+using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Repository.Implementation;
 using HealthAxis3.API.Service;
@@ -9,7 +10,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
-using Swashbuckle.Swagger;
 using System.Text;
 using System.Text.Json;
 
@@ -29,7 +29,7 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DbCon"));
 });
 
-builder.Services.AddIdentity<IdentityUser, IdentityRole>(options => {
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     options.User.RequireUniqueEmail = true;
     options.Password.RequireDigit = true;
     options.Password.RequireUppercase = true;

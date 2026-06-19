@@ -3,13 +3,14 @@ using HealthAxis3.API.Models.Dtos;
 using HealthAxis3.API.Service;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HealthAxis3.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController(IAuthService service) : ControllerBase
+    public class AuthController(IAuthService service, UserManager<ApplicationUser> userManager) : ControllerBase
     {
         [HttpPost("register")]
         [AllowAnonymous]
@@ -39,5 +40,40 @@ namespace HealthAxis3.API.Controllers
             };
             return Ok(response);
         }
+
+    [HttpPost("change-password")]
+    public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
+    {
+        // 1. Validate confirm password
+        if (request.NewPassword != request.ConfirmPassword)
+        {
+            return BadRequest("New password and confirm password do not match.");
+        }
+
+        // 2. Get logged-in user
+        var user = await userManager.GetUserAsync(User);
+        if (user == null)
+        {
+            return Unauthorized();
+        }
+
+            // 3. Check old password + update password
+            if (request.OldPassword == request.NewPassword)
+            {
+                return BadRequest("New password cannot be same as old password.");
+            }
+            var result = await userManager.ChangePasswordAsync(
+            user,
+            request.OldPassword,
+            request.NewPassword
+        );
+
+        if (!result.Succeeded)
+        {
+            return BadRequest(result.Errors);
+        }
+
+        return Ok("Password changed successfully.");
+    }
     }
 }
