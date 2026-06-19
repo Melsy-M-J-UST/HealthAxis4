@@ -2,10 +2,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 using System.Numerics;
 
 namespace HealthAxis3.API.Data
 {
+    [ExcludeFromCodeCoverage]
     public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<IdentityUser>(options)
     {
         public DbSet<Patient> Patients { get; set; }

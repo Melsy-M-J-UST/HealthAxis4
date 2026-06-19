@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Data
 {
     public static class RoleSeeder
     {
+        [ExcludeFromCodeCoverage]
         public static async Task SeedRoleAsync(RoleManager<IdentityRole> roleManager)
         {
             string[] roles = ["Admin", "Patient", "Doctor"];
