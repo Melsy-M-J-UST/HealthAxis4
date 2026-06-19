@@ -1,5 +1,8 @@
-﻿namespace HealthAxis3.API.Models
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace HealthAxis3.API.Models
 {
+    [ExcludeFromCodeCoverage]
     public class AuthResponse
     {
         public string Accesstoken { get; set; } = string.Empty;

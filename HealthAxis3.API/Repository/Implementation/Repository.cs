@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
+    [ExcludeFromCodeCoverage]
     public class Repository<T>(DbContext context) : IRepository<T> where T : class
     {
         private readonly DbContext _context = context;

@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Models
 {
     public class HealthRecord
     {
+        [ExcludeFromCodeCoverage]
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

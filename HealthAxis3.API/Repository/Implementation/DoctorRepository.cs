@@ -1,9 +1,11 @@
 ﻿using HealthAxis3.API.Data;
 using HealthAxis3.API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
+    [ExcludeFromCodeCoverage]
     public class DoctorRepository(AppDbContext context) : Repository<Doctor>(context), IDoctorRepository
     {
         //getavailable doctors

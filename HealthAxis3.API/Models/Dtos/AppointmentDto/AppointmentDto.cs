@@ -1,8 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Models.Dtos.AppointmentDto
 {
+    [ExcludeFromCodeCoverage]
     public class AppointmentDto
     {
         public int AppointmentId { get; set; }

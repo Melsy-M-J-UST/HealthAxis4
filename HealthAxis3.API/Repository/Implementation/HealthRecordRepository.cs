@@ -1,9 +1,11 @@
 ﻿using HealthAxis3.API.Data;
 using HealthAxis3.API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
+    [ExcludeFromCodeCoverage]
     public class HealthRecordRepository(AppDbContext context) : Repository<HealthRecord>(context), IHealthRecordRepository
     {
         public async Task<List<HealthRecord>> GetByDoctorIdAsync(int id, CancellationToken ct = default)

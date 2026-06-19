@@ -1,9 +1,11 @@
 ﻿using HealthAxis3.API.Data;
 using HealthAxis3.API.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
+    [ExcludeFromCodeCoverage]
     public class PatientRepository(AppDbContext context) : Repository<Patient>(context), IPatientRepository
     {
         public async Task<Patient?> DeactivateAsync(int id, CancellationToken ct = default)

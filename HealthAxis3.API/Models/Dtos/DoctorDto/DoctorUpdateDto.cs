@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Models.Dtos.DoctorDto
 {
+    [ExcludeFromCodeCoverage]
     public class DoctorUpdateDto
     {
         public int DoctorId { get; set; }

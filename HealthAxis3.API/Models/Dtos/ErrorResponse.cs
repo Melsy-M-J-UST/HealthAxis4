@@ -1,5 +1,8 @@
-﻿namespace HealthAxis3.API.Models.Dtos
+﻿using System.Diagnostics.CodeAnalysis;
+
+namespace HealthAxis3.API.Models.Dtos
 {
+    [ExcludeFromCodeCoverage]
     public class ErrorResponse
     {
         public int StatusCode { get; set; }
