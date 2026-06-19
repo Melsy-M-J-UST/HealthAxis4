@@ -7,7 +7,7 @@ namespace HealthAxis3.API.Service
         Task<List<HealthRecordDto>> GetAllAsync();
         Task<HealthRecordDto> GetByIdAsync(int id);
         Task<HealthRecordDto> AddAsync(HealthRecordDto entity);
-        Task<HealthRecordDto> GetByDoctorIdAsync(int id);
-        Task<HealthRecordDto> GetByPatientIdAsync(int id);
+        Task<List<HealthRecordDto>> GetByDoctorIdAsync(int id);
+        Task<List<HealthRecordDto>> GetByPatientIdAsync(int id);
     }
 }

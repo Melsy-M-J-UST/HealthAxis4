@@ -11,7 +11,7 @@ namespace HealthAxis3.API.Service.Implementation
         public async Task<HealthRecordDto> AddAsync(HealthRecordDto entity)
         {
             var healthRecord = mapper.Map<HealthRecord>(entity);
-            var savedEntity = repository.CreateAsync(healthRecord);
+            var savedEntity = await repository.CreateAsync(healthRecord);
             return mapper.Map<HealthRecordDto>(savedEntity);
         }
 
@@ -24,13 +24,13 @@ namespace HealthAxis3.API.Service.Implementation
         {
             return mapper.Map<HealthRecordDto>(await repository.GetByIdAsync(id));
         }
-        public async Task<HealthRecordDto> GetByDoctorIdAsync(int id)
+        public async Task<List<HealthRecordDto>> GetByDoctorIdAsync(int id)
         {
-            return mapper.Map<HealthRecordDto>(await repository.GetByDoctorIdAsync(id));
+            return mapper.Map<List<HealthRecordDto>>(await repository.GetByDoctorIdAsync(id));
         }
-        public async Task<HealthRecordDto> GetByPatientIdAsync(int id)
+        public async Task<List<HealthRecordDto>> GetByPatientIdAsync(int id)
         {
-            return mapper.Map<HealthRecordDto>(await repository.GetByPatientIdAsync(id));
+            return mapper.Map<List<HealthRecordDto>>(await repository.GetByPatientIdAsync(id));
         }
     }
 }
