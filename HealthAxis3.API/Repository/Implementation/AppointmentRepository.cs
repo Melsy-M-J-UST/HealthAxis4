@@ -20,5 +20,37 @@ namespace HealthAxis3.API.Repository.Implementation
             var existing = await context.Set<Appointment>().Where(e => e.PatientId == id).ToListAsync(ct);
             return existing;
         }
+
+
+        public async Task<Appointment?> GetWithDetailsAsync(int id, CancellationToken ct = default)
+        {
+            return await context.Appointments
+            .Include(a => a.Patient)
+            .Include(a => a.Doctor)
+            .FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
+    }
+
+    public async Task<List<Appointment>> GetExpiredCancelledAsync(CancellationToken ct = default)
+        {
+            return await context.Appointments
+                .Where(a => a.Status == "Cancelled" &&
+                            a.ScheduledDate < DateTime.Now)
+                .ToListAsync(ct);
+        }
+
+        public async Task<bool> DeleteAsync(int id, CancellationToken ct = default)
+        {
+            var appointment = await context.Appointments
+                .FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
+
+            if (appointment == null)
+                return false;
+
+            context.Appointments.Remove(appointment);
+            await context.SaveChangesAsync(ct);
+
+            return true;
+        }
+
     }
 }
