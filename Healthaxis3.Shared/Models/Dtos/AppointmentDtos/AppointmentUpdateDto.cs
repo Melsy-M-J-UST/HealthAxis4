@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 
-namespace HealthAxis3.API.Models.Dtos.AppointmentDto
+namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
 {
     [ExcludeFromCodeCoverage]
     public class AppointmentUpdateDto

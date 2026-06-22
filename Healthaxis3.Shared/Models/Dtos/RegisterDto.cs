@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace HealthAxis3.API.Models.Dtos
+namespace HealthAxis3.Shared.Models.Dtos
 {
     [ExcludeFromCodeCoverage]
     public class RegisterDto

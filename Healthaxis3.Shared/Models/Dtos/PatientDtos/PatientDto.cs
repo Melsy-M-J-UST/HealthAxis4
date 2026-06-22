@@ -1,20 +1,23 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
-namespace HealthAxis3.API.Models.Dtos.PatientDto
+namespace HealthAxis3.Shared.Models.Dtos.PatientDtos
 {
-    public class PatientUpdateDto
+    public class PatientDto
     {
+        [Required(ErrorMessage = "PatientId is required")]
+        public int PatientId { get; set; }
+
         [Required]
         [StringLength(30)]
         [RegularExpression(@"^[A-Za-z\s]+$", ErrorMessage = "Only alphabets and space is allowed")]
-        public required string PatientName { get; set; }
+        public string PatientName { get; set; }
 
         [Required]
         [DataType(DataType.Date)]
-        [CustomValidation(typeof(Patient), nameof(ValidateDOB))]
-
+        //[CustomValidation(typeof(Patient), nameof(ValidateDOB))]
         [JsonIgnore]
         public DateTime DateOfBirth { get; set; }
 
@@ -38,25 +41,25 @@ namespace HealthAxis3.API.Models.Dtos.PatientDto
         [Required]
         [RegularExpression(@"^(Male|Female|Transgender|Others)$",
                     ErrorMessage = "Gender must be Male, Female, Transgender or Others")]
-        public required string Gender { get; set; }
+        public string Gender { get; set; }
 
         [Required]
         [RegularExpression(@"^[6-9][0-9]{9}$",
             ErrorMessage = "Enter valid 10 digit phone number")]
-        public required string PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         [EmailAddress]
-        public required string Email { get; set; }
+        public string Email { get; set; }
 
         [RegularExpression(@"^INS[0-9]{4}$",
                     ErrorMessage = "InsuranceId must be in format INS1234")]
-        public string? InsuranceId { get; set; }
+        public string InsuranceId { get; set; }
 
         public DateTime RegisteredDate { get; set; } = DateTime.Now;
 
         public bool IsActive { get; set; } = true;
 
-        public static ValidationResult? ValidateDOB(DateTime dob)
+        public static ValidationResult ValidateDOB(DateTime dob)
         {
             if (dob > DateTime.Today)
             {

@@ -1,4 +1,4 @@
-﻿using HealthAxis3.API.Models.Dtos.HealthrecordDto;
+﻿using HealthAxis3.Shared.Models.Dtos.HealthrecordDtos;
 using HealthAxis3.API.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;

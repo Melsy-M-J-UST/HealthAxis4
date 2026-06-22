@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xunit;
-using Moq;
+﻿using Moq;
 using AutoMapper;
 using HealthAxis3.API.Service.Implementation;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Models;
-using HealthAxis3.API.Models.Dtos.HealthrecordDto;
+using HealthAxis3.Shared.Models.Dtos.HealthrecordDtos;
+using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
+using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
 
 
-namespace Healthaxis3.Tests.ServiceTests
+namespace HealthAxis3.Tests.ServiceTests
 {
     public class HealthRecordServiceTests
     {
@@ -28,7 +27,7 @@ namespace Healthaxis3.Tests.ServiceTests
             _mapperMock = new Mock<IMapper>();
             _service = new HealthRecordService(_repoMock.Object, _mapperMock.Object);
 
-            dto = new HealthRecordDto { Appointment = new Appointment{ AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" }, Doctor= new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Diagnosis="Fever", Prescription="Paracetamol" };
+            dto = new HealthRecordDto { Appointment = new AppointmentDto { AppointmentId = 1, Doctor = new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" }, Doctor= new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Diagnosis="Fever", Prescription="Paracetamol" };
             entity = new HealthRecord { Appointment = new Appointment { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" }, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Diagnosis = "Fever", Prescription = "Paracetamol" };
             list = new List<HealthRecord> { entity };
             dtoList = new List<HealthRecordDto> { dto };

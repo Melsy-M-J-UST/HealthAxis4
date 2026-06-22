@@ -1,4 +1,4 @@
-﻿using HealthAxis3.API.Models.Dtos.HealthrecordDto;
+﻿using HealthAxis3.Shared.Models.Dtos.HealthrecordDtos;
 
 namespace HealthAxis3.API.Service
 {

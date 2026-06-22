@@ -1,12 +1,17 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
+using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
+using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
 
-namespace HealthAxis3.API.Models.Dtos.HealthrecordDto
+namespace HealthAxis3.Shared.Models.Dtos.HealthrecordDtos
 {
     [ExcludeFromCodeCoverage]
     public class HealthRecordDto
     {
+        [Required]
         public int HealthRecordId { get; set; }
 
         [Required(ErrorMessage = "AppointmentId is required")]
@@ -20,30 +25,33 @@ namespace HealthAxis3.API.Models.Dtos.HealthrecordDto
 
         [Required(ErrorMessage = "Visit date is required")]
         [DataType(DataType.Date)]
-        [CustomValidation(typeof(HealthRecord), nameof(ValidateVisitDate))]
+        //[CustomValidation(typeof(HealthRecord), nameof(ValidateVisitDate))]
         public DateTime VisitDate { get; set; }
 
         [Required(ErrorMessage = "Diagnosis is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Diagnosis must be between 3 and 50 characters")]
-        public required string Diagnosis { get; set; }
+        public string Diagnosis { get; set; }
 
         [Required(ErrorMessage = "Prescription is required")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Prescription must be between 3 and 100 characters")]
-        public required string Prescription { get; set; }
+        public string Prescription { get; set; }
 
         [StringLength(100, ErrorMessage = "Notes cannot exceed 100 characters")]
-        public string? Notes { get; set; }
+        public string Notes { get; set; }
+        public DoctorDto Doctor { get; set; }
+        public PatientDto Patient { get; set; } = new PatientDto();
+        public AppointmentDto Appointment { get; set; } = new AppointmentDto();
 
-        [ForeignKey("AppointmentId")]
-        public virtual required Appointment Appointment { get; set; }
+        //[ForeignKey("AppointmentId")]
+        //public virtual Appointment Appointment { get; set; }
 
-        [ForeignKey("PatientId")]
-        public virtual required Patient Patient { get; set; }
+        //[ForeignKey("PatientId")]
+        //public virtual Patient Patient { get; set; }
 
-        [ForeignKey("DoctorId")]
-        public virtual required Doctor Doctor { get; set; }
+        //[ForeignKey("DoctorId")]
+        //public virtual Doctor Doctor { get; set; }
 
-        public static ValidationResult? ValidateVisitDate(DateTime date)
+        public static ValidationResult ValidateVisitDate(DateTime date)
         {
             if (date > DateTime.Today)
             {

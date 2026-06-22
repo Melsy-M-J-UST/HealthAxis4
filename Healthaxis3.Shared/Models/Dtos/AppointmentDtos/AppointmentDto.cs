@@ -1,12 +1,16 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
+using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
 
-namespace HealthAxis3.API.Models.Dtos.AppointmentDto
+namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
 {
     [ExcludeFromCodeCoverage]
     public class AppointmentDto
     {
+        [Required(ErrorMessage = "AppointmentId is required")]
         public int AppointmentId { get; set; }
 
         [Required(ErrorMessage = "PatientId is required")]
@@ -17,14 +21,14 @@ namespace HealthAxis3.API.Models.Dtos.AppointmentDto
 
         [Required(ErrorMessage = "Scheduled date is required")]
         [DataType(DataType.Date)]
-        [CustomValidation(typeof(Appointment), nameof(ValidateAppointmentDate))]
+        //[CustomValidation(typeof(Appointment), nameof(ValidateAppointmentDate))]
         public DateTime ScheduledDate { get; set; }
 
         [Required(ErrorMessage = "Slot is required")]
         [RegularExpression(
             @"^(09:00 AM|10:00 AM|11:00 AM|12:00 PM|02:00 PM|03:00 PM|04:00 PM|05:00 PM)$",
             ErrorMessage = "Select a valid time slot")]
-        public required string Slot { get; set; }
+        public string Slot { get; set; }
 
         [Required(ErrorMessage = "Status is required")]
         [RegularExpression(@"^(Pending|Cancelled|Confirmed|Completed)$",
@@ -33,13 +37,20 @@ namespace HealthAxis3.API.Models.Dtos.AppointmentDto
         [StringLength(200, ErrorMessage = "Cancellation reason cannot exceed 200 characters")]
         public string CancellationReason { get; set; } = string.Empty;
 
-        [ForeignKey("PatientId")]
-        public required virtual Patient Patient { get; set; }
 
-        [ForeignKey("DoctorId")]
-        public required virtual Doctor Doctor { get; set; }
+        public PatientDto Patient { get; set; } = new PatientDto();
+        public DoctorDto Doctor
+        {
+            get; set;
+        }= new DoctorDto();
 
-        public static ValidationResult? ValidateAppointmentDate(DateTime date)
+        //[ForeignKey("PatientId")]
+        //public virtual Patient Patient { get; set; }
+
+            //[ForeignKey("DoctorId")]
+            //public virtual Doctor Doctor { get; set; }
+
+        public static ValidationResult ValidateAppointmentDate(DateTime date)
         {
             DateTime today = DateTime.Today;
             DateTime maxDate = today.AddMonths(6);
