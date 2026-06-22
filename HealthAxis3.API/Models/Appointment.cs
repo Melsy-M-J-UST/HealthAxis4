@@ -55,7 +55,8 @@ namespace HealthAxis3.API.Models
 
             return ValidationResult.Success;
         }
-        public static readonly List<string> AllSlots = new()
+
+        private static readonly List<string> list = new()
         {
         "09:00 AM",
         "10:00 AM",
@@ -66,5 +67,6 @@ namespace HealthAxis3.API.Models
         "04:00 PM",
         "05:00 PM"
         };
+        public static readonly List<string> AllSlots = list;
     }
 }

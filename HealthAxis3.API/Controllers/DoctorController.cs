@@ -1,4 +1,4 @@
-﻿using HealthAxis3.API.Models.Dtos.DoctorDto;
+﻿using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using HealthAxis3.API.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -18,47 +18,43 @@ namespace HealthAxis3.API.Controllers
             var result = await service.GetAllAsync();
             return Ok(result);
         }
-        [HttpGet("{id}")]
+        [HttpGet("search")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        public async Task<IActionResult> GetById([FromRoute] int id)
+        public async Task<IActionResult> Search(
+    [FromQuery] int? id,
+    [FromQuery] string? name,
+    [FromQuery] string? specialisation)
         {
-            var result = await service.GetByIdAsync(id);
-            if (result == null)
+            List<DoctorDto> result = [];
+
+            if (id.HasValue)
             {
-                return NotFound();
+                var data = await service.GetByIdAsync(id.Value);
+
+                if (data != null)
+                {
+                    result.Add(data); // wrap single item into list
+                }
+            }
+            else if (!string.IsNullOrWhiteSpace(name))
+            {
+                result = await service.GetByNameAsync(name);
+            }
+            else if (!string.IsNullOrWhiteSpace(specialisation))
+            {
+                result = await service.GetBySpecialisationAsync(specialisation);
             }
             else
             {
-                return Ok(result);
+                return BadRequest("Please provide at least one search parameter.");
             }
-        }
-        [HttpGet("{name}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        public async Task<IActionResult> GetByName([FromRoute] string name)
-        {
-            var result = await service.GetByNameAsync(name);
-            if (result == null)
+
+            if (result == null || result.Count == 0)
             {
                 return NotFound();
             }
-            else
-            {
-                return Ok(result);
-            }
-        }
-        [HttpGet("{specialisation}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        public async Task<IActionResult> GetBySpecialisation([FromRoute] string specialisation)
-        {
-            var result = await service.GetBySpecialisationAsync(specialisation);
-            if (result == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                return Ok(result);
-            }
+
+            return Ok(result);
         }
         [HttpGet("doctors/{doctorId}/availability")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]

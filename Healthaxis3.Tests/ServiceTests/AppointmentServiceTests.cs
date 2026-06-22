@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
-using HealthAxis3.API.Models.Dtos.AppointmentDto;
+using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Service.Implementation;
 using Moq;
@@ -9,8 +9,10 @@ using System.Collections.Generic;
 using System.Net.NetworkInformation;
 using System.Text;
 using Xunit;
+using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
 
-namespace Healthaxis3.Tests.ServiceTests
+namespace HealthAxis3.Tests.ServiceTests
 {
     public class AppointmentServiceTests
     {
@@ -28,10 +30,10 @@ namespace Healthaxis3.Tests.ServiceTests
             _mapperMock = new Mock<IMapper>();
             _service = new AppointmentService(_repoMock.Object, _mapperMock.Object);
 
-            dto = new AppointmentDto { AppointmentId = 1, Doctor= new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient= new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot="09:00 AM" };
+            dto = new AppointmentDto { AppointmentId = 1, Doctor= new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient= new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot="09:00 AM" };
             entity = new Appointment { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" };
-            list = new List<Appointment> { new Appointment { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" } };
-            dtoList = new List<AppointmentDto> { new AppointmentDto { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" } };
+            list = [new Appointment { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" }];
+            dtoList = [new AppointmentDto { AppointmentId = 1, Doctor = new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" }];
         }
         [Fact]
         public async Task AddAsync_Should_Map_And_ReturnDto()
@@ -91,7 +93,7 @@ namespace Healthaxis3.Tests.ServiceTests
         [Fact]
         public async Task UpdateStatus_Should_Return_NotFound()
         {
-            _repoMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((Appointment)null);
+            _repoMock.Setup(r => r.GetByIdAsync(1, It.IsAny<CancellationToken>())).ReturnsAsync((Appointment)null);
 
             var result = await _service.UpdateAppointmentStatus(1, "Confirmed");
 

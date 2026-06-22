@@ -1,6 +1,7 @@
 ﻿using HealthAxis3.API.Models;
-using HealthAxis3.API.Models.Dtos;
+using HealthAxis3.Shared.Models.Dtos;
 using HealthAxis3.API.Service;
+using HealthAxis3.API.Service.Implementation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -10,11 +11,11 @@ namespace HealthAxis3.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AuthController(IAuthService service, UserManager<ApplicationUser> userManager) : ControllerBase
+    public class AuthController(IAuthService service) : ControllerBase
     {
         [HttpPost("register")]
         [AllowAnonymous]
-        public async Task<IActionResult> Register(RegisterDto request)
+        public async Task<IActionResult> Register([FromBody] RegisterDto request)
         {
             var (success, message, userId) = await service.Register(request);
             if (!success)
@@ -25,16 +26,20 @@ namespace HealthAxis3.API.Controllers
         }
         [HttpPost("login")]
         [AllowAnonymous]
-        public async Task<IActionResult> Login(LoginDto request)
+        public async Task<IActionResult> Login([FromBody] LoginDto request)
         {
             var (Success, message, token, ExpiresIn) = await service.Login(request);
             if (!Success)
             {
                 return Unauthorized(new { message });
             }
+            if (token == null)
+            {
+                return Unauthorized(new { message = "Token generation failed" });
+            }
             AuthResponse response = new()
             {
-                Accesstoken = token,
+                Accesstoken = token.ToString()!,
                 Message = message,
                 ExpiresIn = ExpiresIn
             };
@@ -44,36 +49,41 @@ namespace HealthAxis3.API.Controllers
         [HttpPost("change-password")]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequest request)
         {
-            // 1. Validate confirm password
-            if (request.NewPassword != request.ConfirmPassword)
-            {
-                return BadRequest("New password and confirm password do not match.");
-            }
+            if (request == null)
+                return BadRequest(new { Message = "Invalid request" });
 
-            // 2. Get logged-in user
-            var user = await userManager.GetUserAsync(User);
-            if (user == null)
-            {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            // Get user email from token/claims
+            var email = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(email))
                 return Unauthorized();
-            }
 
-            // 3. Check old password + update password
             if (request.OldPassword == request.NewPassword)
             {
-                return BadRequest("New password cannot be same as old password.");
+                return BadRequest(new
+                {
+                    Message = "New password cannot be same as old password"
+                });
             }
-            var result = await userManager.ChangePasswordAsync(
-                user,
-                request.OldPassword,
-                request.NewPassword
-            );
 
-            if (!result.Succeeded)
+            var (Success, Message, Errors) = await service.ChangePassword(email, request.OldPassword, request.NewPassword);
+
+            if (!Success)
             {
-                return BadRequest(result.Errors);
+                return BadRequest(new
+                {
+                    Message,
+                    Errors
+                });
             }
 
-            return Ok("Password changed successfully.");
+            return Ok(new
+            {
+                Message
+            });
         }
     }
 }

@@ -4,8 +4,8 @@ using AutoMapper;
 using HealthAxis3.API.Service.Implementation;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Models;
-using HealthAxis3.API.Models.Dtos.PatientDto;
-namespace Healthaxis3.Tests.ServiceTests
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
+namespace HealthAxis3.Tests.ServiceTests
 {
     public class PatientServiceTests
     {

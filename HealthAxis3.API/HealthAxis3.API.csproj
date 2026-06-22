@@ -20,6 +20,10 @@
     <PackageReference Include="system.identitymodel.tokens.jwt" Version="8.19.1" />
 	  <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Healthaxis3.Shared\HealthAxis3.Shared.csproj" />
+  </ItemGroup>
 	<ItemGroup>
 		<Compile Update="Migrations\**\*.cs">
 			<SonarQubeExclude>true</SonarQubeExclude>

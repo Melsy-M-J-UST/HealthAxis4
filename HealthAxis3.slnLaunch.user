@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "HealthAxis3.Admin\\HealthAxis3.Admin.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "HealthAxis3.API\\HealthAxis3.API.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

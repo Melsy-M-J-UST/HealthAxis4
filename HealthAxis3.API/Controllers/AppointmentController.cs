@@ -1,4 +1,4 @@
-﻿using HealthAxis3.API.Models.Dtos.AppointmentDto;
+﻿using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.API.Service;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;

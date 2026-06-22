@@ -8,5 +8,9 @@ namespace HealthAxis3.API.Models
         public string Accesstoken { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
         public int ExpiresIn { get; set; }
+        public string Role { get; set; } = string.Empty;
+        public string UserId { get; set; } = string.Empty;
+
+
     }
 }

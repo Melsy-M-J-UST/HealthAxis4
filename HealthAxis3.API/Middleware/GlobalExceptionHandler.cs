@@ -1,17 +1,12 @@
 ﻿using HealthAxis3.API.Exceptions;
-using HealthAxis3.API.Models.Dtos;
+using HealthAxis3.Shared.Models.Dtos;
 using Microsoft.AspNetCore.Diagnostics;
 
 namespace HealthAxis3.API.Middleware
 {
-    public class GlobalExceptionHandler : IExceptionHandler
+    public class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger) : IExceptionHandler
     {
-        private readonly ILogger<GlobalExceptionHandler> _logger;
-
-        public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
-        {
-            _logger = logger;
-        }
+        private readonly ILogger<GlobalExceptionHandler> _logger = logger;
 
         public async ValueTask<bool> TryHandleAsync(HttpContext httpContext, System.Exception exception, CancellationToken cancellationToken)
         {
@@ -30,7 +25,7 @@ namespace HealthAxis3.API.Middleware
                 Path = httpContext.Request.Path
             };
             httpContext.Response.StatusCode = Statuscode;
-            await httpContext.Response.WriteAsJsonAsync(response);
+            await httpContext.Response.WriteAsJsonAsync(response, httpContext.RequestAborted);
             return true;
         }
     }
