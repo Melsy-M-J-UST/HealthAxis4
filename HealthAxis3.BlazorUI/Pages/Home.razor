@@ -1,0 +1,50 @@
+﻿@page "/dashboard"
+
+<h3 class="mb-4">HealthAxis Admin Dashboard</h3>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card dashboard-card bg-primary text-white">
+            <div class="card-body">
+                <h5>Patients</h5>
+                <h2>@PatientTotalCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card dashboard-card bg-success text-white">
+            <div class="card-body">
+                <h5>Doctors</h5>
+                <h2>@DoctorTotalCount</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card dashboard-card bg-warning text-dark">
+            <div class="card-body">
+                <h5>Appointments</h5>
+                <h2>@AppointmentTotalCount</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card dashboard-card bg-warning text-dark">
+            <div class="card-body">
+                <h5>Todays Appointments</h5>
+                <h2>@AppointmentTodayCount</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    int PatientTotalCount = 0;
+
+    int DoctorTotalCount = 0;
+
+    int AppointmentTotalCount = 0;
+    int AppointmentTodayCount = 0;
+}
