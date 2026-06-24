@@ -1,4 +1,5 @@
-﻿using HealthAxis3.API.Models;
+﻿using HealthAxis3.Shared.Models;
+using HealthAxis3.API.Models;
 using HealthAxis3.Shared.Models.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -26,7 +27,19 @@ namespace HealthAxis3.API.Service.Implementation
 
             if (user.IsFirstLogin && roles.Any(r => r == "Patient" || r == "Doctor"))
             {
-                return (false, "FirstLogin", null, 0);
+
+                var tokens = await GenerateToken(user);
+
+                var responses = new AuthResponse
+                {
+                    Accesstoken = tokens,
+                    Role = roles.FirstOrDefault() ?? "",
+                    UserId = user.Id,
+                    Message = "FirstLogin"
+                };
+
+                return (true, "FirstLogin", responses, 0);
+
             }
 
             var token = await GenerateToken(user);

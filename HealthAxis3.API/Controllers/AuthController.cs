@@ -1,4 +1,5 @@
 ﻿using HealthAxis3.API.Models;
+using HealthAxis3.Shared.Models;
 using HealthAxis3.Shared.Models.Dtos;
 using HealthAxis3.API.Service;
 using HealthAxis3.API.Service.Implementation;
@@ -43,7 +44,7 @@ namespace HealthAxis3.API.Controllers
                 Message = message,
                 ExpiresIn = ExpiresIn
             };
-            return Ok(response);
+            return Ok(response.Accesstoken);
         }
 
         [HttpPost("change-password")]

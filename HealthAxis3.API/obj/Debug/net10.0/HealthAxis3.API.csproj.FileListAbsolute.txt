@@ -1,14 +1,18 @@
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\appsettings.Development.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\appsettings.json
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\global.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.API.staticwebassets.endpoints.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.API.exe
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.API.deps.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.API.runtimeconfig.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.API.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.API.pdb
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\AutoMapper.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Azure.Core.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Azure.Identity.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Humanizer.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
@@ -39,6 +43,9 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Micro
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Mono.TextTemplating.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Newtonsoft.Json.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\System.ClientModel.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\System.CodeDom.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\System.Composition.AttributedModel.dll
@@ -133,6 +140,8 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runti
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Healthaxis3.Shared.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Healthaxis3.Shared.pdb
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.csproj.AssemblyReference.cache
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\rpswa.dswa.cache.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.GeneratedMSBuildEditorConfig.editorconfig
@@ -158,8 +167,3 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\refin
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.pdb
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.genruntimeconfig.cache
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\ref\HealthAxis3.API.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\AutoMapper.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
