@@ -3,11 +3,11 @@
     "Name": "New Profile",
     "Projects": [
       {
-        "Path": "HealthAxis3.Admin\\HealthAxis3.Admin.csproj",
+        "Path": "HealthAxis3.API\\HealthAxis3.API.csproj",
         "Action": "Start"
       },
       {
-        "Path": "HealthAxis3.API\\HealthAxis3.API.csproj",
+        "Path": "HealthAxis3.BlazorUI\\HealthAxis3.BlazorUI.csproj",
         "Action": "Start"
       }
     ]

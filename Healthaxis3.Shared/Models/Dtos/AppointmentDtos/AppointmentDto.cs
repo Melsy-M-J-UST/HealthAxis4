@@ -1,9 +1,10 @@
-﻿using System;
+﻿using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Diagnostics.CodeAnalysis;
-using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
-using HealthAxis3.Shared.Models.Dtos.PatientDtos;
+using System.Text.Json.Serialization;
 
 namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
 {
@@ -37,8 +38,9 @@ namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
         [StringLength(200, ErrorMessage = "Cancellation reason cannot exceed 200 characters")]
         public string CancellationReason { get; set; } = string.Empty;
 
-
+        [JsonIgnore]
         public PatientDto Patient { get; set; } = new PatientDto();
+        [JsonIgnore]
         public DoctorDto Doctor
         {
             get; set;
@@ -47,8 +49,8 @@ namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
         //[ForeignKey("PatientId")]
         //public virtual Patient Patient { get; set; }
 
-            //[ForeignKey("DoctorId")]
-            //public virtual Doctor Doctor { get; set; }
+        //[ForeignKey("DoctorId")]
+        //public virtual Doctor Doctor { get; set; }
 
         public static ValidationResult ValidateAppointmentDate(DateTime date)
         {

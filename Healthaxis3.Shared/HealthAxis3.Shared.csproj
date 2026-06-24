@@ -76,6 +76,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\AuthResponse.cs" />
     <Compile Include="Models\Dtos\AppointmentDtos\AppointmentDto.cs" />
     <Compile Include="Models\Dtos\AppointmentDtos\AppointmentUpdateDto.cs" />
     <Compile Include="Models\Dtos\DoctorDtos\DoctorDto.cs" />

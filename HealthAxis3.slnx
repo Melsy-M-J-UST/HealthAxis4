@@ -1,8 +1,6 @@
 <Solution>
-  <Project Path="HealthAxis3.Admin/HealthAxis3.Admin.csproj" Id="64656591-2001-4e21-a730-3830a469bebd" />
   <Project Path="HealthAxis3.API/HealthAxis3.API.csproj" />
-  <Project Path="HealthAxis3.Blazor/HealthAxis3.Blazor.csproj" Id="542d0b5e-00de-49f6-ac90-e6f730adf27c" />
+  <Project Path="HealthAxis3.BlazorUI/HealthAxis3.BlazorUI.csproj" Id="7bc128d8-46cb-48a1-9939-c680a445dcc9" />
   <Project Path="Healthaxis3.Shared/HealthAxis3.Shared.csproj" Id="23518fc8-a39b-45cd-bc99-f608da32220b" />
-  <Project Path="Healthaxis3.Tests/Healthaxis3.Tests.csproj" DisplayName="HealthAxis3.Tests" Id="63f09d27-da79-4a38-b2bb-0ffca1f97ec6" />
-  <Project Path="HealthAxis3.UI/HealthAxis3.UI.csproj" Id="d825f50b-9b6d-48d8-9c23-ca721834e838" />
+  <Project Path="Healthaxis3.Tests/Healthaxis3.Tests.csproj" Id="63f09d27-da79-4a38-b2bb-0ffca1f97ec6" />
 </Solution>
