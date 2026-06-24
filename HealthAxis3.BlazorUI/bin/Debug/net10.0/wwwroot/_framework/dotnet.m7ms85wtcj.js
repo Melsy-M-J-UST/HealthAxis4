@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "HealthAxis3.BlazorUI",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-0yfSpX8Lw4dUh5VnTuKgGgt1qmVvAIFDhRMpJ71bai4=",
+    "hash": "sha256-I3yDFQ/YD+0XP1DX5xXv5n11A0PpH0VlW4pIE2yZS2A=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.ikrs475e5v.js"
@@ -1254,8 +1254,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "HealthAxis3.BlazorUI.wasm",
-        "name": "HealthAxis3.BlazorUI.xagiidqge0.wasm",
-        "hash": "sha256-95bRlBUXmDfiPIMrc62jz/rrvUFSXuvhxNXFWslLw4o=",
+        "name": "HealthAxis3.BlazorUI.9jilnjzmql.wasm",
+        "hash": "sha256-FaR9Q3A2eQ4Ym6tji7z/RcZIpx9KQ+LHAIU+/qQnuoo=",
         "cache": "force-cache"
       }
     ],
@@ -1268,8 +1268,8 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "HealthAxis3.BlazorUI.pdb",
-        "name": "HealthAxis3.BlazorUI.cqt588iac5.pdb",
-        "hash": "sha256-xO3DmGAPuuN2QNEfZpdpcSTAdvIhn7h7OXkGR8CiJ/E=",
+        "name": "HealthAxis3.BlazorUI.2m16op1zwr.pdb",
+        "hash": "sha256-VsbMKkyDR6+6gkbothCMwRZSEdMDjo9bHc4g0V7kTB0=",
         "cache": "force-cache"
       }
     ],

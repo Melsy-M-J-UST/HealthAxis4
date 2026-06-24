@@ -1214,6 +1214,7 @@
       },
       "HealthAxis3.Shared/1.0.0": {
         "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
         "compile": {
           "bin/placeholder/HealthAxis3.Shared.dll": {}
         },
@@ -3806,8 +3807,8 @@
     },
     "HealthAxis3.Shared/1.0.0": {
       "type": "project",
-      "path": "../Healthaxis3.Shared/HealthAxis3.Shared.csproj",
-      "msbuildProject": "../Healthaxis3.Shared/HealthAxis3.Shared.csproj"
+      "path": "../HealthAxis3.Shared/HealthAxis3.Shared.csproj",
+      "msbuildProject": "../HealthAxis3.Shared/HealthAxis3.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
