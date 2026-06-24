@@ -1,0 +1,107 @@
+﻿@page "/patient"
+
+<h3 class="mb-4">Patient Management</h3>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var patient in Patients)
+        {
+            <tr>
+                <td>@patient.Id</td>
+                <td>@patient.Name</td>
+                <td>@patient.Age</td>
+                <td>
+                    <span class="badge @(patient.IsActive ? "bg-success" : "bg-danger")">
+                        @(patient.IsActive ? "Active" : "Inactive")
+                    </span>
+                </td>
+                <td>
+                    <button class="btn btn-sm @(patient.IsActive ? "btn-danger" : "btn-success")"
+                            @onclick="() => OpenConfirmModal(patient)">
+                        @(patient.IsActive ? "Deactivate" : "Activate")
+                    </button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@if (ShowModal)
+{
+    <div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5)">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm Action</h5>
+                    <button class="btn-close" @onclick="CloseModal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Are you sure you want to
+                        <strong>@(SelectedPatient?.IsActive == true ? "deactivate" : "activate")</strong>
+                        this patient?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" @onclick="CloseModal">Cancel</button>
+                    <button class="btn btn-primary" @onclick="ConfirmToggle">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    List<Patient> Patients = new();
+    bool ShowModal = false;
+    Patient? SelectedPatient;
+
+    protected override void OnInitialized()
+    {
+        Patients = new List<Patient>
+            {
+                new Patient { Id = 1, Name = "John Doe", Age = 30, IsActive = true },
+                new Patient { Id = 2, Name = "Alice Smith", Age = 25, IsActive = false },
+                new Patient { Id = 3, Name = "David Johnson", Age = 40, IsActive = true }
+            };
+    }
+
+    void OpenConfirmModal(Patient patient)
+    {
+        SelectedPatient = patient;
+        ShowModal = true;
+    }
+
+    void CloseModal()
+    {
+        ShowModal = false;
+    }
+
+    void ConfirmToggle()
+    {
+        if (SelectedPatient != null)
+        {
+            SelectedPatient.IsActive = !SelectedPatient.IsActive;
+        }
+
+        ShowModal = false;
+    }
+
+    public class Patient
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = "";
+    public int Age { get; set; }
+    public bool IsActive { get; set; }
+}
+}

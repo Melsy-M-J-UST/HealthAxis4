@@ -1,12 +1,13 @@
 ﻿@page "/login"
+@attribute [AllowAnonymous]
 @inject HttpClient Http
 @inject IJSRuntime JS
 @inject CustomAuthenticationStateProvider AuthStateProvider
 @inject NavigationManager Nav
 <h3 class="text-primary">Login</h3>
 
-<div class=" = " col-4">
-    <EditForm Model="LoginRequest" OnInvalidSubmit="HandleLogin">
+<div class="col-4">
+    <EditForm Model="LoginRequest" OnValidSubmit="HandleLogin">
         <div class="mb-2">
             <label class="fw-bold">Email</label>
             <InputText class="form-control" @bind-Value="LoginRequest.Email"></InputText>
@@ -14,7 +15,7 @@
         </div>
         <div class="mb-2">
             <label class="fw-bold">Password</label>
-            <InputText typeof="Password" class="form-control" @bind-Value="LoginRequest.Password"></InputText>
+            <InputText type="password" class="form-control" @bind-Value="LoginRequest.Password"></InputText>
             <ValidationMessage For="() => LoginRequest.Password" />
         </div>
         <div>
@@ -27,12 +28,25 @@
     private async Task HandleLogin()
     {
         var response = await Http.PostAsJsonAsync("api/auth/login", LoginRequest);
+        var content = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(content);
         if (response.IsSuccessStatusCode)
         {
             var authResponse = await response.Content.ReadFromJsonAsync<AuthResponse>();
-            await JS.InvokeVoidAsync("localStorage.setItem", "token", authResponse!.Accesstoken);
+            if (authResponse == null)
+            {
+                Console.WriteLine("Empty response");
+                return;
+            }
+            await JS.InvokeVoidAsync("localStorage.setItem", "token", authResponse.Accesstoken);
             AuthStateProvider.NotifyUserLoggedIn(authResponse.Accesstoken);
-            Nav.NavigateTo("/");
+            if (authResponse.Message == "FirstLogin")
+            {
+                Console.WriteLine("First login - redirecting to change password");
+                Nav.NavigateTo("/change-password");
+                return;
+            }
+            Nav.NavigateTo("/dashboard");
             Console.WriteLine("User Logged in Successfully");
         }
         else

@@ -4,9 +4,9 @@
 @inject CustomAuthenticationStateProvider AuthStateProvider
 @inherits LayoutComponentBase
 <div>
-    <div class="sidebar">
+    @* <div class="sidebar">
         <NavMenu />
-    </div>
+    </div> *@
     <nav class=" navbar navbar-expand navbar-dark bg-dark">
         <a class="navbar-brand" href="">HealthAxis</a>
         <ul class="navbar-nav">
@@ -26,7 +26,7 @@
 
                 <NotAuthorized>
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Login">Login</NavLink>
+                        <NavLink class="nav-link" href="login">Login</NavLink>
                     </li>
                 </NotAuthorized>
             </AuthorizeView>

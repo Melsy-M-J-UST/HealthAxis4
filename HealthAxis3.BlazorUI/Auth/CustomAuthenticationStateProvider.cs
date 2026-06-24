@@ -36,9 +36,12 @@ namespace HealthAxis3.BlazorUI.Auth
         private IEnumerable<Claim> ParseClaimsFromJwt(string jwt)
         {
             var claims = new List<Claim>();
-            var payload = jwt.Split(".")[1];
-            //var header = jwt.Split(".")[0];
-            //var signature = jwt.Split(".")[2];
+            var parts = jwt.Split(".");
+            if (parts.Length < 2)
+            {
+                return claims;
+            }
+            var payload = parts[1];
             switch (payload.Length % 4)
             {
                 case 2: payload += "=="; break;
