@@ -29,22 +29,17 @@ namespace HealthAxis3.API.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login([FromBody] LoginDto request)
         {
-            var (Success, message, token, ExpiresIn) = await service.Login(request);
+            var (Success, message, response, ExpiresIn) = await service.Login(request);
             if (!Success)
             {
                 return Unauthorized(new { message });
             }
-            if (token == null)
+            if (response == null)
             {
                 return Unauthorized(new { message = "Token generation failed" });
             }
-            AuthResponse response = new()
-            {
-                Accesstoken = token.ToString()!,
-                Message = message,
-                ExpiresIn = ExpiresIn
-            };
-            return Ok(response.Accesstoken);
+            
+            return Ok(response);
         }
 
         [HttpPost("change-password")]

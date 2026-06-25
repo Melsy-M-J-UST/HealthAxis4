@@ -48,5 +48,18 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<PatientDto>(updated);
 
         }
+        public async Task<PatientUpdateDto?> UpdateStatusAsync(int id, bool isActive)
+        {
+            var patient = await repository.GetByIdAsync(id);
+
+            if (patient == null)
+                return null;
+
+            patient.IsActive = isActive;
+
+            var updated = await repository.UpdateAsync(id, patient);
+
+            return mapper.Map<PatientUpdateDto>(updated);
+        }
     }
 }

@@ -7,6 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\ApplicationDb\**" />
+    <Content Remove="Migrations\ApplicationDb\**" />
+    <EmbeddedResource Remove="Migrations\ApplicationDb\**" />
+    <None Remove="Migrations\ApplicationDb\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\ApplicationDbContext.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.1.1" />
     <PackageReference Include="Microsoft.aspnetcore.authentication.jwtbearer" Version="10.0.9" />
     <PackageReference Include="Microsoft.aspnetcore.identity.entityframeworkcore" Version="10.0.9" />

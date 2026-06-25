@@ -74,8 +74,8 @@
   },
   {
     "ContainingType": "HealthAxis3.API.Controllers.AdminPatientController",
-    "Method": "DeactivatePatient",
-    "RelativePath": "api/Admin/Patients/Deactivate/{id}",
+    "Method": "UpdatePatientStatus",
+    "RelativePath": "api/Admin/Patients/{id}/status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -83,6 +83,11 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "HealthAxis3.Shared.Models.Dtos.PatientDtos.PatientUpdateDto",
         "IsRequired": true
       }
     ],

@@ -29,9 +29,6 @@ builder.Services.AddDbContext<AppDbContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DbCon"));
 });
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DbCon")));
-
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     options.User.RequireUniqueEmail = true;
     options.Password.RequireDigit = true;
@@ -40,7 +37,7 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options => {
     options.Password.RequiredUniqueChars = 4;
     options.Password.RequireNonAlphanumeric = true;
     options.Password.RequiredLength = 8;
-}).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+}).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(option =>
 {
     var jwt = builder.Configuration.GetSection("Jwt");
@@ -106,7 +103,13 @@ builder.Services.AddCors(p =>
         cfg.WithOrigins("https://localhost:7113").AllowAnyHeader().AllowAnyMethod();
     });
 });
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowBlazor",
+        policy => policy.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+});
 
 builder.Services.AddAutoMapper(cfg =>
 {
@@ -133,6 +136,7 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+app.UseCors("AllowBlazor");
 app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();

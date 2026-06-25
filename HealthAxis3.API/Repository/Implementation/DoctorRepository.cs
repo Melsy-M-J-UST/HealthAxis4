@@ -30,12 +30,12 @@ namespace HealthAxis3.API.Repository.Implementation
             var existing = await context.Set<Doctor>().Where(e => e.Specialisation == specialisation).ToListAsync(ct);
             return existing;
         }
-        public async Task<List<string>> GetDoctorAvailability(int doctorId, DateTime date)
+        public async Task<List<string>> GetDoctorAvailability(int doctorId, DateTime date, CancellationToken ct)
         {
             var bookedSlots = await context.Appointments
                 .Where(a => a.DoctorId == doctorId && a.ScheduledDate.Date == date.Date)
                 .Select(a => a.Slot)
-                .ToListAsync();
+                .ToListAsync(ct);
 
             var availableSlots = Appointment.AllSlots
                 .Where(slot => !bookedSlots.Contains(slot))

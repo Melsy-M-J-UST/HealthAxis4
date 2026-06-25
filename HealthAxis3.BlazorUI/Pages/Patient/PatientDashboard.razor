@@ -1,6 +1,10 @@
-﻿@page "/patient"
+﻿@inject PatientService PatientService
+@page "/patient"
+@inject HttpClient Http
 
-<h3 class="mb-4">Patient Management</h3>
+@using HealthAxis3.Shared.Models.Dtos.PatientDtos
+
+<h3 class="mb-3">Patient Dashboard</h3>
 
 <table class="table table-striped">
     <thead>
@@ -8,52 +12,52 @@
             <th>Id</th>
             <th>Name</th>
             <th>Age</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
             <th>Status</th>
-            <th>Action</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var patient in Patients)
         {
             <tr>
-                <td>@patient.Id</td>
-                <td>@patient.Name</td>
+                <td>@patient.PatientId</td>
+                <td>@patient.PatientName</td>
                 <td>@patient.Age</td>
+                <td>@patient.Gender</td>
+                <td>@patient.Email</td>
+                <td>@patient.PhoneNumber</td>
                 <td>
-                    <span class="badge @(patient.IsActive ? "bg-success" : "bg-danger")">
-                        @(patient.IsActive ? "Active" : "Inactive")
-                    </span>
-                </td>
-                <td>
-                    <button class="btn btn-sm @(patient.IsActive ? "btn-danger" : "btn-success")"
-                            @onclick="() => OpenConfirmModal(patient)">
-                        @(patient.IsActive ? "Deactivate" : "Activate")
-                    </button>
+                    <input class="form-check-input"
+                           type="checkbox"
+                           role="switch"
+                           checked="@patient.IsActive"
+                           @onchange="@(() => OnToggleClicked(patient))" />
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-
-@if (ShowModal)
+<!-- Confirmation Dialog -->
+@if (ShowDialog)
 {
-    <div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5)">
+    <div class="modal fade show d-block" tabindex="-1" style="background-color:rgba(0,0,0,0.5)">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Confirm Action</h5>
-                    <button class="btn-close" @onclick="CloseModal"></button>
                 </div>
                 <div class="modal-body">
                     <p>
                         Are you sure you want to
-                        <strong>@(SelectedPatient?.IsActive == true ? "deactivate" : "activate")</strong>
+                        <b>@(SelectedPatient?.IsActive == true ? "Deactivate" : "Activate")</b>
                         this patient?
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" @onclick="CloseModal">Cancel</button>
+                    <button class="btn btn-secondary" @onclick="CloseDialog">Cancel</button>
                     <button class="btn btn-primary" @onclick="ConfirmToggle">Yes</button>
                 </div>
             </div>
@@ -62,46 +66,39 @@
 }
 
 @code {
-    List<Patient> Patients = new();
-    bool ShowModal = false;
-    Patient? SelectedPatient;
+    private List<PatientDto> Patients = new();
+    private bool ShowDialog = false;
+    private PatientDto? SelectedPatient;
 
-    protected override void OnInitialized()
+    protected override async Task OnInitializedAsync()
     {
-        Patients = new List<Patient>
-            {
-                new Patient { Id = 1, Name = "John Doe", Age = 30, IsActive = true },
-                new Patient { Id = 2, Name = "Alice Smith", Age = 25, IsActive = false },
-                new Patient { Id = 3, Name = "David Johnson", Age = 40, IsActive = true }
-            };
+        Patients = await PatientService.GetPatientsAsync();
     }
-
-    void OpenConfirmModal(Patient patient)
+    private void OnToggleClicked(PatientDto patient)
     {
         SelectedPatient = patient;
-        ShowModal = true;
+        ShowDialog = true;
     }
-
-    void CloseModal()
+    private void CloseDialog()
     {
-        ShowModal = false;
+        ShowDialog = false;
+        SelectedPatient = null;
     }
-
-    void ConfirmToggle()
+    private async Task ConfirmToggle()
     {
         if (SelectedPatient != null)
         {
-            SelectedPatient.IsActive = !SelectedPatient.IsActive;
+            bool newStatus = !SelectedPatient.IsActive;
+            bool success = await PatientService.UpdatePatientStatusAsync(SelectedPatient.PatientId, newStatus);
+            if (success)
+            {
+                SelectedPatient.IsActive = newStatus;
+            }
+            else
+            {
+                Console.WriteLine("Update failed");
+            }
         }
-
-        ShowModal = false;
+        CloseDialog();
     }
-
-    public class Patient
-{
-    public int Id { get; set; }
-    public string Name { get; set; } = "";
-    public int Age { get; set; }
-    public bool IsActive { get; set; }
-}
 }

@@ -24,7 +24,7 @@ namespace HealthAxis3.API.Service.Implementation
             return mapper.Map<List<AppointmentDto>>(await repository.GetByDoctorIdAsync(id));
         }
 
-        public async Task<AppointmentDto> GetByIdAsync(int id)
+        public async Task<AppointmentDto> GetByIdAsync(int id, CancellationToken ct= default)
         {
             return mapper.Map<AppointmentDto>(await repository.GetByIdAsync(id));
         }

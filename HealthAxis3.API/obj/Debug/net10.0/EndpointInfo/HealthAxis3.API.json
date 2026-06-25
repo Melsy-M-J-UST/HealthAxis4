@@ -112,7 +112,7 @@
         }
       }
     },
-    "/api/Admin/Patients/Deactivate/{id}": {
+    "/api/Admin/Patients/{id}/status": {
       "put": {
         "tags": [
           "AdminPatient"
@@ -128,6 +128,25 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientUpdateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientUpdateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PatientUpdateDto"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -612,59 +631,6 @@
   },
   "components": {
     "schemas": {
-      "Appointment": {
-        "required": [
-          "doctor",
-          "doctorId",
-          "patient",
-          "patientId",
-          "scheduledDate",
-          "slot",
-          "status"
-        ],
-        "type": "object",
-        "properties": {
-          "appointmentId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "patientId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "doctorId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "scheduledDate": {
-            "type": "string",
-            "format": "date"
-          },
-          "slot": {
-            "minLength": 1,
-            "pattern": "^(09:00 AM|10:00 AM|11:00 AM|12:00 PM|02:00 PM|03:00 PM|04:00 PM|05:00 PM)$",
-            "type": "string"
-          },
-          "status": {
-            "minLength": 1,
-            "pattern": "^(Pending|Cancelled|Confirmed|Completed)$",
-            "type": "string"
-          },
-          "cancellationReason": {
-            "maxLength": 200,
-            "minLength": 0,
-            "type": "string",
-            "nullable": true
-          },
-          "patient": {
-            "$ref": "#/components/schemas/Patient"
-          },
-          "doctor": {
-            "$ref": "#/components/schemas/Doctor"
-          }
-        },
-        "additionalProperties": false
-      },
       "AppointmentDto": {
         "required": [
           "appointmentId",
@@ -711,10 +677,10 @@
             "nullable": true
           },
           "patient": {
-            "$ref": "#/components/schemas/Patient"
+            "$ref": "#/components/schemas/PatientDto"
           },
           "doctor": {
-            "$ref": "#/components/schemas/Doctor"
+            "$ref": "#/components/schemas/DoctorDto"
           }
         },
         "additionalProperties": false
@@ -738,49 +704,6 @@
           "confirmPassword": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Doctor": {
-        "required": [
-          "doctorName",
-          "experience",
-          "fees",
-          "isActive",
-          "specialisation"
-        ],
-        "type": "object",
-        "properties": {
-          "doctorId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "doctorName": {
-            "maxLength": 30,
-            "minLength": 3,
-            "pattern": "^[A-Za-z\\s\\.]+$",
-            "type": "string"
-          },
-          "specialisation": {
-            "minLength": 1,
-            "pattern": "^(Cardiologist|Dermatologist|Neurologist|Pediatrician|GeneralPractitioner|Endocrinologist|Gynecologist|Oncologist|OrthopedicSurgeon|Psychiatrist )$",
-            "type": "string"
-          },
-          "experience": {
-            "maximum": 50,
-            "minimum": 0,
-            "type": "integer",
-            "format": "int32"
-          },
-          "fees": {
-            "maximum": 5000,
-            "minimum": 0,
-            "type": "integer",
-            "format": "int32"
-          },
-          "isActive": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -881,13 +804,13 @@
             "nullable": true
           },
           "appointment": {
-            "$ref": "#/components/schemas/Appointment"
+            "$ref": "#/components/schemas/AppointmentDto"
           },
           "patient": {
-            "$ref": "#/components/schemas/Patient"
+            "$ref": "#/components/schemas/PatientDto"
           },
           "doctor": {
-            "$ref": "#/components/schemas/Doctor"
+            "$ref": "#/components/schemas/DoctorDto"
           }
         },
         "additionalProperties": false
@@ -902,60 +825,6 @@
           "password": {
             "type": "string",
             "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "Patient": {
-        "required": [
-          "email",
-          "gender",
-          "patientName",
-          "phoneNumber"
-        ],
-        "type": "object",
-        "properties": {
-          "patientId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "patientName": {
-            "maxLength": 30,
-            "minLength": 0,
-            "pattern": "^[A-Za-z\\s]+$",
-            "type": "string"
-          },
-          "age": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "gender": {
-            "minLength": 1,
-            "pattern": "^(Male|Female|Transgender|Others)$",
-            "type": "string"
-          },
-          "phoneNumber": {
-            "minLength": 1,
-            "pattern": "^[6-9][0-9]{9}$",
-            "type": "string"
-          },
-          "email": {
-            "type": "string",
-            "format": "email",
-            "nullable": true
-          },
-          "insuranceId": {
-            "pattern": "^INS[0-9]{4}$",
-            "type": "string",
-            "nullable": true
-          },
-          "registeredDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "isActive": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -996,9 +865,59 @@
             "type": "string"
           },
           "email": {
+            "minLength": 1,
             "type": "string",
-            "format": "email",
+            "format": "email"
+          },
+          "insuranceId": {
+            "pattern": "^INS[0-9]{4}$",
+            "type": "string",
             "nullable": true
+          },
+          "registeredDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientUpdateDto": {
+        "required": [
+          "email",
+          "gender",
+          "patientName",
+          "phoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "patientName": {
+            "maxLength": 30,
+            "minLength": 0,
+            "pattern": "^[A-Za-z\\s]+$",
+            "type": "string"
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "gender": {
+            "minLength": 1,
+            "pattern": "^(Male|Female|Transgender|Others)$",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "minLength": 1,
+            "pattern": "^[6-9][0-9]{9}$",
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
           },
           "insuranceId": {
             "pattern": "^INS[0-9]{4}$",

@@ -17,7 +17,8 @@
       "applicationUrl": "https://localhost:7120;http://localhost:5042",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ConnectionStrings__DbCon": "Server=5CD2452FZP;Database=HealthAxis3;User Id=Melsy;Password=Password@123;TrustServerCertificate=True"
+        "ConnectionStrings__DbCon": "Server=localhost;Database=HealthAxis3;Trusted_Connection=True;TrustServerCertificate=True;"
+        //"ConnectionStrings__DbCon": "Server=5CD2452FZP;Database=HealthAxis3;User Id=Melsy;Password=Password@123;TrustServerCertificate=True"
       }
     }
   }

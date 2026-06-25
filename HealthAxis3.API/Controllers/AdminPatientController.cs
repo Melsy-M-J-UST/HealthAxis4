@@ -1,7 +1,9 @@
 ﻿using HealthAxis3.API.Service;
+using HealthAxis3.Shared.Models.Dtos.PatientDtos;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HealthAxis3.API.Controllers
 {
@@ -9,17 +11,17 @@ namespace HealthAxis3.API.Controllers
     [ApiController]
     public class AdminPatientController(IPatientService patientService) : ControllerBase
     {
-        [HttpPut("Deactivate/{id:int}")]
+        [HttpPut("{id}/status")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        public async Task<IActionResult> DeactivatePatient(int id)
+        public async Task<IActionResult> UpdatePatientStatus(int id, [FromBody] PatientUpdateDto dto)
         {
             if (!ModelState.IsValid) return BadRequest();
-            var result = await patientService.DeactivatePatientAsync(id);
+            var result = await patientService.UpdateStatusAsync(id, dto.IsActive);
             if (result == null) return NotFound();
             else return Ok(result);
         }
         [HttpGet]
-        [Authorize(AuthenticationSchemes =JwtBearerDefaults.AuthenticationScheme, Roles ="Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> GetAllPatients()
         {
             var result = await patientService.GetAllAsync();

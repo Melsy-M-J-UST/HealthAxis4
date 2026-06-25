@@ -140,8 +140,8 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runti
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Healthaxis3.Shared.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\Healthaxis3.Shared.pdb
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.Shared.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\bin\Debug\net10.0\HealthAxis3.Shared.pdb
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.csproj.AssemblyReference.cache
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\rpswa.dswa.cache.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.API\obj\Debug\net10.0\HealthAxis3.API.GeneratedMSBuildEditorConfig.editorconfig

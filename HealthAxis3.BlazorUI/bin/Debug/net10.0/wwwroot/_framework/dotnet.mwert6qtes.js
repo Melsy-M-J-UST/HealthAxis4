@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "HealthAxis3.BlazorUI",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-I3yDFQ/YD+0XP1DX5xXv5n11A0PpH0VlW4pIE2yZS2A=",
+    "hash": "sha256-MRMkW478As1uXzDEuQ/baluW3z+oWB7ErvuY3mjBQsw=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.ikrs475e5v.js"
@@ -1241,9 +1241,9 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
         "cache": "force-cache"
       },
       {
-        "virtualPath": "Healthaxis3.Shared.wasm",
-        "name": "Healthaxis3.Shared.gqps7vy08h.wasm",
-        "hash": "sha256-SNTNvyD1mt967n7dvKNzroiDCCEfu21qXMIa8y3C5SM=",
+        "virtualPath": "HealthAxis3.Shared.wasm",
+        "name": "HealthAxis3.Shared.opma6pvq4s.wasm",
+        "hash": "sha256-fMuUZ4q/PFYD/PRhVPGioSo9+caG1DyJ4ZiFgftm+B0=",
         "cache": "force-cache"
       },
       {
@@ -1254,22 +1254,22 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "HealthAxis3.BlazorUI.wasm",
-        "name": "HealthAxis3.BlazorUI.9jilnjzmql.wasm",
-        "hash": "sha256-FaR9Q3A2eQ4Ym6tji7z/RcZIpx9KQ+LHAIU+/qQnuoo=",
+        "name": "HealthAxis3.BlazorUI.6zih4r3lbd.wasm",
+        "hash": "sha256-rkWGi0IQE8OzCpVHCF9CW3CVj5RldrLFXXNnEv/SZcc=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
-        "virtualPath": "Healthaxis3.Shared.pdb",
-        "name": "Healthaxis3.Shared.cjg997h59w.pdb",
-        "hash": "sha256-+DCYbpWbFA4BzH1v0H1VrPXWT7rb9HY+V8CPBk/Gl3E=",
+        "virtualPath": "HealthAxis3.Shared.pdb",
+        "name": "HealthAxis3.Shared.kov1i6xppd.pdb",
+        "hash": "sha256-XC8vKHkACSCa28sO1sGv6ds4ADX9Bl6Nqf4Oa6y2V7U=",
         "cache": "force-cache"
       },
       {
         "virtualPath": "HealthAxis3.BlazorUI.pdb",
-        "name": "HealthAxis3.BlazorUI.2m16op1zwr.pdb",
-        "hash": "sha256-VsbMKkyDR6+6gkbothCMwRZSEdMDjo9bHc4g0V7kTB0=",
+        "name": "HealthAxis3.BlazorUI.14bul6evuz.pdb",
+        "hash": "sha256-P78JpbXm7KKhKUCe8tFYNNHZUDxMhBlV2fNvx8J7oYs=",
         "cache": "force-cache"
       }
     ],

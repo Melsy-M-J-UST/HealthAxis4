@@ -1,48 +1,137 @@
 ﻿@page "/dashboard"
+@inject HttpClient Http
+@inject IJSRuntime JS
 
-<h3 class="mb-4">HealthAxis Admin Dashboard</h3>
 
-<div class="row">
-    <div class="col-md-4">
-        <div class="card dashboard-card bg-primary text-white">
-            <div class="card-body">
-                <h5>Patients</h5>
-                <h2>@PatientTotalCount</h2>
+@if (isLoading)
+{
+    <div class="text-center mt-5">
+        <div class="spinner-border text-primary"></div>
+        <p>Loading dashboard...</p>
+    </div>
+}
+else
+{
+    <h3 class="mb-4 text-primary fw-bold">🏥 HealthAxis Admin Dashboard</h3>
+
+    <div class="row g-4">
+
+        <!-- Patients -->
+        <div class="col-md-3">
+            <div class="card dashboard-card text-white bg-primary"
+            title="Active Patients: @PatientActiveCount">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Patients</h5>
+                        <h2>@PatientTotalCount</h2>
+                    </div>
+                    <div class="card-icon">👤</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-4">
-        <div class="card dashboard-card bg-success text-white">
-            <div class="card-body">
-                <h5>Doctors</h5>
-                <h2>@DoctorTotalCount</h2>
+        <!-- Doctors -->
+        <div class="col-md-3">
+            <div class="card dashboard-card text-white bg-success"
+            title="Active Doctors: @DoctorActiveCount">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Doctors</h5>
+                        <h2>@DoctorTotalCount</h2>
+                    </div>
+                    <div class="card-icon">🩺</div>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="col-md-4">
-        <div class="card dashboard-card bg-warning text-dark">
-            <div class="card-body">
-                <h5>Appointments</h5>
-                <h2>@AppointmentTotalCount</h2>
+        <!-- Total Appointments -->
+        <div class="col-md-3">
+            <div class="card dashboard-card text-dark bg-warning">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Total Appointments</h5>
+                        <h2>@AppointmentTotalCount</h2>
+                    </div>
+                    <div class="card-icon">📅</div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card dashboard-card bg-secondary text-dark">
-            <div class="card-body">
-                <h5>Todays Appointments</h5>
-                <h2>@AppointmentTodayCount</h2>
+
+        <!-- Today's Appointments -->
+        <div class="col-md-3">
+            <div class="card dashboard-card text-white bg-secondary">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>Today</h5>
+                        <h2>@AppointmentTodayCount</h2>
+                    </div>
+                    <div class="card-icon">⏰</div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
+        <!-- Weekly Appointments -->
+        <div class="col-md-3">
+            <div class="card dashboard-card text-white bg-info">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                    <div>
+                        <h5>This Week</h5>
+                        <h2>@AppointmentWeeklyCount</h2>
+                    </div>
+                    <div class="card-icon">📈</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+}
 @code {
 
+    bool isLoading = true;
     int PatientTotalCount = 0;
+    int PatientActiveCount = 0;
     int DoctorTotalCount = 0;
+    int DoctorActiveCount = 0;
     int AppointmentTotalCount = 0;
     int AppointmentTodayCount = 0;
+    int AppointmentWeeklyCount = 0;
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true;
+        var token = await JS.InvokeAsync<string>("localStorage.getItem", "token");
+
+        Http.DefaultRequestHeaders.Authorization =
+            new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+        var doctors = await Http.GetFromJsonAsync<List<DoctorDto>>("api/Admin/Doctors");
+        if (doctors != null)
+        {
+            DoctorTotalCount = doctors.Count;
+            DoctorActiveCount = doctors.Count(d => d.IsActive);
+        }
+
+        var patients = await Http.GetFromJsonAsync<List<PatientDto>>("api/Admin/Patients");
+        if (patients != null)
+        {
+            PatientTotalCount = patients.Count;
+            PatientActiveCount = patients.Count(p => p.IsActive);
+        }
+
+        var appointments = await Http.GetFromJsonAsync<List<AppointmentDto>>("api/Appointment");
+        if (appointments != null)
+        {
+            AppointmentTotalCount = appointments.Count;
+
+            var today = DateTime.Today;
+
+            AppointmentTodayCount = appointments
+                .Count(a => a.ScheduledDate.Date == today);
+
+            AppointmentWeeklyCount = appointments
+                .Count(a => a.ScheduledDate >= today &&
+                            a.ScheduledDate <= today.AddDays(7));
+        }
+        isLoading = false;
+    }
 }

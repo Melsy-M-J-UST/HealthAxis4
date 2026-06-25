@@ -3,6 +3,7 @@
 @inject IJSRuntime js
 @inject CustomAuthenticationStateProvider AuthStateProvider
 @inherits LayoutComponentBase
+@inject NavigationManager Nav
 <div>
     @* <div class="sidebar">
         <NavMenu />
@@ -13,15 +14,15 @@
             <AuthorizeView Roles="Admin">
                 <Authorized Context="adminContext">
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="employees">Patient</NavLink>
+                        <NavLink class="nav-link" href="patient">Patient</NavLink>
                     </li> 
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Add">Doctor</NavLink>
+                        <NavLink class="nav-link" href="doctor">Doctor</NavLink>
                     </li>
                     <li class="nav-item">
-                        <NavLink class="nav-link" href="Add">Appointment Report</NavLink>
+                        <NavLink class="nav-link" href="report">Appointment Report</NavLink>
                     </li>
-                    <button class=" btn btn-link">Log Out</button>
+                    <button class=" btn btn-link" @onclick="HandleLogout">Log Out</button>
                 </Authorized>
 
                 <NotAuthorized>
@@ -45,5 +46,6 @@
         var identity = new ClaimsIdentity();
         var principal = new ClaimsPrincipal(identity);
         AuthStateProvider.NotifyUserLoggedOut();
+        Nav.NavigateTo("/login");
     }
 }

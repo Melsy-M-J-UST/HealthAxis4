@@ -28,9 +28,9 @@ namespace HealthAxis3.API.Repository.Implementation
             .Include(a => a.Patient)
             .Include(a => a.Doctor)
             .FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
-    }
+        }
 
-    public async Task<List<Appointment>> GetExpiredCancelledAsync(CancellationToken ct = default)
+        public async Task<List<Appointment>> GetExpiredCancelledAsync(CancellationToken ct = default)
         {
             return await context.Appointments
                 .Where(a => a.Status == "Cancelled" &&
@@ -40,17 +40,18 @@ namespace HealthAxis3.API.Repository.Implementation
 
         public async Task<bool> DeleteAsync(int id, CancellationToken ct = default)
         {
-            var appointment = await context.Appointments
-                .FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
-
+            var appointment = await context.Appointments.FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
             if (appointment == null)
+            {
                 return false;
-
+            }
+            else if (appointment.Status != "Cancelled")
+            {
+                return false;
+            }
             context.Appointments.Remove(appointment);
             await context.SaveChangesAsync(ct);
-
             return true;
         }
-
     }
 }

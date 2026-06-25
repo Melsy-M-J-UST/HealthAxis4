@@ -1,6 +1,6 @@
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\HealthAxis3.BlazorUI.runtimeconfig.json
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Healthaxis3.Shared.cjg997h59w.pdb
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Healthaxis3.Shared.gqps7vy08h.wasm
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.Shared.kov1i6xppd.pdb
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.Shared.opma6pvq4s.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.wp5b4xwrtz.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.4payhwuyuh.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.qjl31ej8ln.wasm
@@ -282,6 +282,7 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Dynamic.Runtime.dwxo8l4rdr.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.IO.Pipes.AccessControl.ddt7du9svb.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Collections.Immutable.jity4go0mw.wasm.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.Shared.kov1i6xppd.pdb.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Net.NameResolution.s5btvjcq6y.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.ComponentModel.Primitives.66wyka365l.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Threading.Tasks.Parallel.m6q3sy58px.wasm.gz
@@ -312,6 +313,7 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Data.Common.or5475be6q.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Resources.Reader.v4f2264f3m.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Runtime.InteropServices.JavaScript.a0smuvq74f.wasm.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.Shared.opma6pvq4s.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Security.Principal.Windows.w9a1l2myly.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Resources.Writer.yomp7oq8px.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.IO.g204ske44p.wasm.gz
@@ -332,7 +334,6 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Net.lkc10g164w.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.Win32.Primitives.i6x74v9vcb.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Net.Primitives.935qhm3yb8.wasm.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Healthaxis3.Shared.cjg997h59w.pdb.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.IO.Pipelines.u8n6swt2ok.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Drawing.pwn69jd1sx.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Threading.Tasks.Extensions.bxz0ahfwn3.wasm.gz
@@ -378,7 +379,6 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.Extensions.FileSystemGlobbing.jnewm5d55t.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Globalization.Extensions.7iv43bve8g.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Security.Cryptography.na4q58ou4y.wasm.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Healthaxis3.Shared.gqps7vy08h.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.Extensions.Configuration.Json.k1hilos7yb.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\System.Data.DataSetExtensions.aie27nz2fz.wasm.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.vi1uw8swyy.wasm.gz
@@ -633,8 +633,8 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\icudt_CJK.dat
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\icudt_EFIGS.dat
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\icudt_no_CJK.dat
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\Healthaxis3.Shared.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\Healthaxis3.Shared.pdb
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\HealthAxis3.Shared.dll
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\HealthAxis3.Shared.pdb
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\Microsoft.DotNet.HotReload.WebAssembly.Browser.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\EmbeddedAttribute.cs
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\ValidatableTypeAttribute.cs
@@ -846,7 +846,7 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\mscorlib.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\netstandard.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\System.Private.CoreLib.wasm
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\Healthaxis3.Shared.wasm
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\HealthAxis3.Shared.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\Microsoft.DotNet.HotReload.WebAssembly.Browser.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\webcil\HealthAxis3.BlazorUI.wasm
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\rjimswa.dswa.cache.json
@@ -861,7 +861,6 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\dotnet.js
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\staticwebassets\htmlassetplaceholders\build\wxqlkbb2k2.html
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\aoxijipp4q-{0}-99zm1jdh75-99zm1jdh75.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\nuiqshmoyb-{0}-nk9bgqz024-nk9bgqz024.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\y1l802uujc-{0}-bqjiyaj88i-bqjiyaj88i.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\2psfxud0wr-{0}-c2jlpeoesf-c2jlpeoesf.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\yr72teg1gy-{0}-erw9l3u2r3-erw9l3u2r3.gz
@@ -1117,8 +1116,8 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\4fw55jcwxr-{0}-tjcz0u77k5-tjcz0u77k5.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\vj0u17kwjb-{0}-tptq2av103-tptq2av103.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\j9pc6r8wu3-{0}-lfu7j35m59-lfu7j35m59.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\r0494cou44-{0}-gqps7vy08h-gqps7vy08h.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\kh2nclw8n4-{0}-cjg997h59w-cjg997h59w.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\fx8uc8z7yo-{0}-opma6pvq4s-opma6pvq4s.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\aqcxzsrjxs-{0}-kov1i6xppd-kov1i6xppd.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\deawo8id14-{0}-r0uvx0ebhi-r0uvx0ebhi.gz
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\staticwebassets.build.json
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\staticwebassets.build.json.cache
@@ -1131,13 +1130,14 @@ C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\refint\HealthAxis3.BlazorUI.dll
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\HealthAxis3.BlazorUI.pdb
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\ref\HealthAxis3.BlazorUI.dll
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.2m16op1zwr.pdb
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.9jilnjzmql.wasm
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\dotnet.m7ms85wtcj.js
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\dotnet.m7ms85wtcj.js.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.9jilnjzmql.wasm.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.2m16op1zwr.pdb.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\9z7rjtmudi-{0}-9jilnjzmql-9jilnjzmql.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\ui4boy0qyh-{0}-2m16op1zwr-2m16op1zwr.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\2hz80enzvb-{0}-m7ms85wtcj-m7ms85wtcj.gz
-C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\9oxo4j5101-{0}-oj0c1ggzhq-oj0c1ggzhq.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\nuiqshmoyb-{0}-elwop4zgv3-elwop4zgv3.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.14bul6evuz.pdb
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.6zih4r3lbd.wasm
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\dotnet.mwert6qtes.js
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\dotnet.mwert6qtes.js.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.6zih4r3lbd.wasm.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\bin\Debug\net10.0\wwwroot\_framework\HealthAxis3.BlazorUI.14bul6evuz.pdb.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\9z7rjtmudi-{0}-6zih4r3lbd-6zih4r3lbd.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\ui4boy0qyh-{0}-14bul6evuz-14bul6evuz.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\2hz80enzvb-{0}-mwert6qtes-mwert6qtes.gz
+C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.BlazorUI\obj\Debug\net10.0\compressed\9oxo4j5101-{0}-xo5t0lc7yl-xo5t0lc7yl.gz
