@@ -25,33 +25,30 @@ namespace HealthAxis3.Shared.Models.Dtos.HealthrecordDtos
 
         [Required(ErrorMessage = "Visit date is required")]
         [DataType(DataType.Date)]
-        //[CustomValidation(typeof(HealthRecord), nameof(ValidateVisitDate))]
+        [CustomValidation(typeof(HealthRecordDto), nameof(ValidateVisitDate))]
         public DateTime VisitDate { get; set; }
 
         [Required(ErrorMessage = "Diagnosis is required")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Diagnosis must be between 3 and 50 characters")]
-        public string Diagnosis { get; set; }
+        public required string Diagnosis { get; set; }
 
         [Required(ErrorMessage = "Prescription is required")]
         [StringLength(100, MinimumLength = 3, ErrorMessage = "Prescription must be between 3 and 100 characters")]
-        public string Prescription { get; set; }
+        public required string Prescription { get; set; }
 
         [StringLength(100, ErrorMessage = "Notes cannot exceed 100 characters")]
-        public string Notes { get; set; }
-        public DoctorDto Doctor { get; set; }
-        public PatientDto Patient { get; set; } = new PatientDto();
-        public AppointmentDto Appointment { get; set; } = new AppointmentDto();
+        public string Notes { get; set; } = string.Empty;
 
-        //[ForeignKey("AppointmentId")]
-        //public virtual Appointment Appointment { get; set; }
+        [ForeignKey("AppointmentId")]
+        public required virtual AppointmentDto Appointment { get; set; }
 
-        //[ForeignKey("PatientId")]
-        //public virtual Patient Patient { get; set; }
+        [ForeignKey("PatientId")]
+        public required virtual PatientDto Patient { get; set; }
 
-        //[ForeignKey("DoctorId")]
-        //public virtual Doctor Doctor { get; set; }
+        [ForeignKey("DoctorId")]
+        public required virtual DoctorDto Doctor { get; set; }
 
-        public static ValidationResult ValidateVisitDate(DateTime date)
+        public static ValidationResult? ValidateVisitDate(DateTime date)
         {
             if (date > DateTime.Today)
             {

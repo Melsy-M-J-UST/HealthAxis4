@@ -22,14 +22,14 @@ namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
 
         [Required(ErrorMessage = "Scheduled date is required")]
         [DataType(DataType.Date)]
-        //[CustomValidation(typeof(Appointment), nameof(ValidateAppointmentDate))]
+        [CustomValidation(typeof(AppointmentDto), nameof(ValidateAppointmentDate))]
         public DateTime ScheduledDate { get; set; }
 
         [Required(ErrorMessage = "Slot is required")]
         [RegularExpression(
             @"^(09:00 AM|10:00 AM|11:00 AM|12:00 PM|02:00 PM|03:00 PM|04:00 PM|05:00 PM)$",
             ErrorMessage = "Select a valid time slot")]
-        public string Slot { get; set; }
+        public required string Slot { get; set; }
 
         [Required(ErrorMessage = "Status is required")]
         [RegularExpression(@"^(Pending|Cancelled|Confirmed|Completed)$",
@@ -38,21 +38,13 @@ namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
         [StringLength(200, ErrorMessage = "Cancellation reason cannot exceed 200 characters")]
         public string CancellationReason { get; set; } = string.Empty;
 
-        [JsonIgnore]
-        public PatientDto Patient { get; set; } = new PatientDto();
-        [JsonIgnore]
-        public DoctorDto Doctor
-        {
-            get; set;
-        }= new DoctorDto();
+        [ForeignKey("PatientId")]
+        public required virtual PatientDto Patient { get; set; }
 
-        //[ForeignKey("PatientId")]
-        //public virtual Patient Patient { get; set; }
+        [ForeignKey("DoctorId")]
+        public required virtual DoctorDto Doctor { get; set; }
 
-        //[ForeignKey("DoctorId")]
-        //public virtual Doctor Doctor { get; set; }
-
-        public static ValidationResult ValidateAppointmentDate(DateTime date)
+        public static ValidationResult? ValidateAppointmentDate(DateTime date)
         {
             DateTime today = DateTime.Today;
             DateTime maxDate = today.AddMonths(6);

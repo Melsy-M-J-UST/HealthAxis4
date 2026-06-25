@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthAxis3.Shared")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6df82f7dc53d5bb08471322ba36b0f49d0123689")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc45a2af04bbd675dd1a7bcdd341201dc6863828")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthAxis3.Shared")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthAxis3.Shared")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\HealthAxis3.Tests.csproj": {}
+    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj": {}
   },
   "projects": {
     "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj": {
@@ -533,14 +533,14 @@
         }
       }
     },
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.Shared\\HealthAxis3.Shared.csproj": {
+    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.Shared\\HealthAxis3.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
         "projectName": "HealthAxis3.Shared",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.Shared\\HealthAxis3.Shared.csproj",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.Shared\\obj\\",
+        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -875,12 +875,12 @@
         }
       }
     },
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\HealthAxis3.Tests.csproj": {
+    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\HealthAxis3.Tests.csproj",
-        "projectName": "HealthAxis3.Tests",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\HealthAxis3.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj",
+        "projectName": "Healthaxis3.Tests",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\obj\\",
         "projectStyle": "PackageReference",

@@ -3792,8 +3792,8 @@
     },
     "HealthAxis3.Shared/1.0.0": {
       "type": "project",
-      "path": "../HealthAxis3.Shared/HealthAxis3.Shared.csproj",
-      "msbuildProject": "../HealthAxis3.Shared/HealthAxis3.Shared.csproj"
+      "path": "../Healthaxis3.Shared/HealthAxis3.Shared.csproj",
+      "msbuildProject": "../Healthaxis3.Shared/HealthAxis3.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
