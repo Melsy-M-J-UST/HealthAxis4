@@ -1,14 +1,9 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
-using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Service.Implementation;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Net.NetworkInformation;
-using System.Text;
-using Xunit;
+using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using HealthAxis3.Shared.Models.Dtos.PatientDtos;
 
@@ -93,7 +88,7 @@ namespace HealthAxis3.Tests.ServiceTests
         [Fact]
         public async Task UpdateStatus_Should_Return_NotFound()
         {
-            _repoMock.Setup(r => r.GetByIdAsync(1, It.IsAny<CancellationToken>())).ReturnsAsync((Appointment)null);
+            _repoMock.Setup(r => r.GetByIdAsync(1, It.IsAny<CancellationToken>())).ReturnsAsync((Appointment?)null);
 
             var result = await _service.UpdateAppointmentStatus(1, "Confirmed");
 
@@ -169,7 +164,7 @@ namespace HealthAxis3.Tests.ServiceTests
         [Fact]
         public async Task DeleteAppointment_NotFound()
         {
-            _repoMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((Appointment)null);
+            _repoMock.Setup(r => r.GetByIdAsync(1)).ReturnsAsync((Appointment?)null);
 
             var result = await _service.DeleteAppointment(1);
 
