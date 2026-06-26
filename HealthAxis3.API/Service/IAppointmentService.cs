@@ -11,5 +11,6 @@ namespace HealthAxis3.API.Service
         Task<List<AppointmentDto>> GetByPatientIdAsync(int id, CancellationToken ct = default);
         Task<string> UpdateAppointmentStatus(int id, string status, string? reason = null);
         Task<string> DeleteAppointment(int id);
+        Task<List<AppointmentReportDto>> GetAppointmentReportAsync();
     }
 }

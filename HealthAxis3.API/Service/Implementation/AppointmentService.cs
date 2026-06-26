@@ -109,5 +109,23 @@ namespace HealthAxis3.API.Service.Implementation
                 await repository.DeleteAsync(appt.AppointmentId);
             }
         }
+        public async Task<List<AppointmentReportDto>> GetAppointmentReportAsync()
+        {
+            var appointments = await repository.GetAllAsync();
+
+            var report = appointments
+                .GroupBy(a => a.ScheduledDate.Date)
+                .Select(g => new AppointmentReportDto
+                {
+                    Date = g.Key,
+                    CompletedCount = g.Count(a => a.Status == "Completed"),
+                    CancelledCount = g.Count(a => a.Status == "Cancelled"),
+                    ConfirmedCount = g.Count(a => a.Status == "Confirmed")
+                })
+                .OrderBy(r => r.Date)
+                .ToList();
+
+            return report;
+        }
     }
 }
