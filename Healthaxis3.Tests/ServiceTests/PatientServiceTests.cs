@@ -14,6 +14,7 @@ namespace HealthAxis3.Tests.ServiceTests
         private readonly PatientService _service;
 
         private readonly PatientDto dto;
+        private readonly PatientCreateDto dtoCreate;
         private readonly Patient entity;
         private readonly List<Patient> entities;
         private readonly List<PatientDto> dtos;
@@ -24,6 +25,7 @@ namespace HealthAxis3.Tests.ServiceTests
             _mapperMock = new Mock<IMapper>();
             _service = new PatientService(_repoMock.Object, _mapperMock.Object);
             dto = new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) };
+            dtoCreate = new PatientCreateDto { PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) };
             entity = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) };
 
             entities = new List<Patient> { new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) } };
@@ -34,14 +36,20 @@ namespace HealthAxis3.Tests.ServiceTests
         [Fact]
         public async Task AddAsync_Should_Map_Save_And_ReturnDto()
         {
-            _mapperMock.Setup(m => m.Map<Patient>(dto)).Returns(entity);
-            _repoMock.Setup(r => r.CreateAsync(entity)).ReturnsAsync(entity);
-            _mapperMock.Setup(m => m.Map<PatientDto>(entity)).Returns(dto);
+            _mapperMock.Setup(m => m.Map<Patient>(dtoCreate))
+                       .Returns(entity);
 
-            var result = await _service.AddAsync(dto);
+            _repoMock
+                .Setup(r => r.CreateAsync(It.IsAny<Patient>()))
+                .ReturnsAsync(entity);
 
-            _mapperMock.Verify(m => m.Map<Patient>(dto), Times.Once);
-            _repoMock.Verify(r => r.CreateAsync(entity), Times.Once);
+            _mapperMock.Setup(m => m.Map<PatientDto>(entity))
+                       .Returns(dto);
+
+            var result = await _service.AddAsync(dtoCreate);
+
+            _mapperMock.Verify(m => m.Map<Patient>(dtoCreate), Times.Once);
+            _repoMock.Verify(r => r.CreateAsync(It.IsAny<Patient>()), Times.Once);
             _mapperMock.Verify(m => m.Map<PatientDto>(entity), Times.Once);
 
             Assert.NotNull(result);
