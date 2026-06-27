@@ -21,8 +21,6 @@ namespace HealthAxis3.API.Models
         [Required]
         [DataType(DataType.Date)]
         [CustomValidation(typeof(Patient), nameof(ValidateDOB))]
-
-        [JsonIgnore]
         public DateTime DateOfBirth { get; set; }
 
         [NotMapped]

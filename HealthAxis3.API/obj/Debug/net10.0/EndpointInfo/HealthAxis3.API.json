@@ -6,6 +6,18 @@
     "version": "v1"
   },
   "paths": {
+    "/api/Admin/Report": {
+      "get": {
+        "tags": [
+          "AdminAppointment"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Admin/Doctors": {
       "post": {
         "tags": [
@@ -87,9 +99,30 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "AdminDoctor"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/Admin/Doctors/DoctorDeactivate/{id}": {
+    "/api/Admin/Doctors/{id}/status": {
       "put": {
         "tags": [
           "AdminDoctor"
@@ -112,7 +145,7 @@
         }
       }
     },
-    "/api/Admin/Patients/{id}/status": {
+    "/api/Admin/Patients/{id}/update": {
       "put": {
         "tags": [
           "AdminPatient"
@@ -158,6 +191,29 @@
       "get": {
         "tags": [
           "AdminPatient"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Admin/Patients/{id}/status": {
+      "put": {
+        "tags": [
+          "AdminPatient"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -543,17 +599,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatientDto"
+                "$ref": "#/components/schemas/PatientCreateDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PatientDto"
+                "$ref": "#/components/schemas/PatientCreateDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PatientDto"
+                "$ref": "#/components/schemas/PatientCreateDto"
               }
             }
           }
@@ -633,7 +689,6 @@
     "schemas": {
       "AppointmentDto": {
         "required": [
-          "appointmentId",
           "doctor",
           "doctorId",
           "patient",
@@ -710,7 +765,6 @@
       },
       "DoctorDto": {
         "required": [
-          "doctorId",
           "doctorName",
           "experience",
           "fees",
@@ -759,7 +813,6 @@
           "diagnosis",
           "doctor",
           "doctorId",
-          "healthRecordId",
           "patient",
           "patientId",
           "prescription",
@@ -829,11 +882,56 @@
         },
         "additionalProperties": false
       },
-      "PatientDto": {
+      "PatientCreateDto": {
         "required": [
           "email",
           "gender",
-          "patientId",
+          "patientName",
+          "phoneNumber"
+        ],
+        "type": "object",
+        "properties": {
+          "patientName": {
+            "maxLength": 30,
+            "minLength": 0,
+            "pattern": "^[A-Za-z\\s]+$",
+            "type": "string"
+          },
+          "gender": {
+            "minLength": 1,
+            "pattern": "^(Male|Female|Transgender|Others)$",
+            "type": "string"
+          },
+          "phoneNumber": {
+            "minLength": 1,
+            "pattern": "^[6-9][0-9]{9}$",
+            "type": "string"
+          },
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "insuranceId": {
+            "pattern": "^INS[0-9]{4}$",
+            "type": "string",
+            "nullable": true
+          },
+          "registeredDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isActive": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PatientDto": {
+        "required": [
+          "dateOfBirth",
+          "email",
+          "gender",
           "patientName",
           "phoneNumber"
         ],
@@ -848,6 +946,10 @@
             "minLength": 0,
             "pattern": "^[A-Za-z\\s]+$",
             "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date"
           },
           "age": {
             "type": "integer",
@@ -972,6 +1074,9 @@
     }
   ],
   "tags": [
+    {
+      "name": "AdminAppointment"
+    },
     {
       "name": "AdminDoctor"
     },

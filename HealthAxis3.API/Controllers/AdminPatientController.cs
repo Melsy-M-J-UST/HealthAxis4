@@ -1,4 +1,5 @@
 ﻿using HealthAxis3.API.Service;
+using HealthAxis3.API.Service.Implementation;
 using HealthAxis3.Shared.Models.Dtos.PatientDtos;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
@@ -11,7 +12,7 @@ namespace HealthAxis3.API.Controllers
     [ApiController]
     public class AdminPatientController(IPatientService patientService) : ControllerBase
     {
-        [HttpPut("{id}/status")]
+        [HttpPut("{id}/update")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> UpdatePatientStatus(int id, [FromBody] PatientUpdateDto dto)
         {
@@ -25,6 +26,14 @@ namespace HealthAxis3.API.Controllers
         public async Task<IActionResult> GetAllPatients()
         {
             var result = await patientService.GetAllAsync();
+            return Ok(result);
+        }
+        [HttpPut("{id}/status")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> ToggleStatus(int id)
+        {
+            var result = await patientService.DeactivatePatientAsync(id);
+            if (result == null) return NotFound();
             return Ok(result);
         }
     }

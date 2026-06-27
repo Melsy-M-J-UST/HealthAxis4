@@ -20,10 +20,7 @@ namespace HealthAxis3.API.Controllers
         }
         [HttpGet("search")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        public async Task<IActionResult> Search(
-    [FromQuery] int? id,
-    [FromQuery] string? name,
-    [FromQuery] string? specialisation)
+        public async Task<IActionResult> Search([FromQuery] int? id, [FromQuery] string? name, [FromQuery] string? specialisation)
         {
             List<DoctorDto> result = [];
 
@@ -33,7 +30,7 @@ namespace HealthAxis3.API.Controllers
 
                 if (data != null)
                 {
-                    result.Add(data); // wrap single item into list
+                    result.Add(data);
                 }
             }
             else if (!string.IsNullOrWhiteSpace(name))

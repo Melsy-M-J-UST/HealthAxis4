@@ -48,8 +48,24 @@
   },
   {
     "ContainingType": "HealthAxis3.API.Controllers.AdminDoctorController",
-    "Method": "DeactivateDoctor",
-    "RelativePath": "api/Admin/Doctors/DoctorDeactivate/{id}",
+    "Method": "GetById",
+    "RelativePath": "api/Admin/Doctors/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthAxis3.API.Controllers.AdminDoctorController",
+    "Method": "ToggleStatus",
+    "RelativePath": "api/Admin/Doctors/{id}/status",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -74,8 +90,24 @@
   },
   {
     "ContainingType": "HealthAxis3.API.Controllers.AdminPatientController",
-    "Method": "UpdatePatientStatus",
+    "Method": "ToggleStatus",
     "RelativePath": "api/Admin/Patients/{id}/status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthAxis3.API.Controllers.AdminPatientController",
+    "Method": "UpdatePatientStatus",
+    "RelativePath": "api/Admin/Patients/{id}/update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -91,6 +123,16 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "HealthAxis3.API.Controllers.AdminAppointmentController",
+    "Method": "GetReport",
+    "RelativePath": "api/Admin/Report",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": []
   },
   {
@@ -344,7 +386,7 @@
     "Parameters": [
       {
         "Name": "entity",
-        "Type": "HealthAxis3.Shared.Models.Dtos.PatientDtos.PatientDto",
+        "Type": "HealthAxis3.Shared.Models.Dtos.PatientDtos.PatientCreateDto",
         "IsRequired": true
       }
     ],

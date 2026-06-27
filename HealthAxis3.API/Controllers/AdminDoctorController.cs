@@ -9,7 +9,7 @@ namespace HealthAxis3.API.Controllers
 {
     [Route("api/Admin/Doctors")]
     [ApiController]
-    public class AdminDoctorController(IDoctorService doctorService,IMapper mapper) : ControllerBase
+    public class AdminDoctorController(IDoctorService doctorService, IMapper mapper) : ControllerBase
     {
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
@@ -35,21 +35,32 @@ namespace HealthAxis3.API.Controllers
             var result = await doctorService.UpdateAsync(id, savedEntity);
             if (result == null) return NotFound();
             else return Ok(result);
-        }        
-        [HttpPut("DoctorDeactivate/{id:int}")]
+        }
+        [HttpPut("{id}/status")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        public async Task<IActionResult> DeactivateDoctor(int id)
+        public async Task<IActionResult> ToggleStatus(int id)
         {
-            if (!ModelState.IsValid) return BadRequest();
             var result = await doctorService.DeactivateDoctorAsync(id);
             if (result == null) return NotFound();
-            else return Ok(result);
+            return Ok(result);
         }
         [HttpGet]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> GetAllDoctors()
         {
             var result = await doctorService.GetAllAsync();
+            return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await doctorService.GetByIdAsync(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
             return Ok(result);
         }
     }

@@ -17,4 +17,5 @@ builder.Services.AddScoped<AuthenticationStateProvider>(sp =>
     return sp.GetRequiredService<CustomAuthenticationStateProvider>();
 });
 builder.Services.AddScoped<PatientService>();
+builder.Services.AddScoped<DoctorService>();
 await builder.Build().RunAsync();

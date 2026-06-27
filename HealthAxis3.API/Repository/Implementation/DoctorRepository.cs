@@ -8,13 +8,12 @@ namespace HealthAxis3.API.Repository.Implementation
     [ExcludeFromCodeCoverage]
     public class DoctorRepository(AppDbContext context) : Repository<Doctor>(context), IDoctorRepository
     {
-        //getavailable doctors
         public async Task<Doctor?> DeactivateAsync(int id, CancellationToken ct = default)
         {
             var doctor = await GetByIdAsync(id, ct);
             if (doctor != null)
             {
-                doctor.IsActive = false;
+                doctor.IsActive = !doctor.IsActive;
                 await context.SaveChangesAsync(ct);
             }
             return doctor;
@@ -42,6 +41,10 @@ namespace HealthAxis3.API.Repository.Implementation
                 .ToList();
 
             return availableSlots;
+        }
+        public async Task<List<Doctor>> GetAvailableDoctors(CancellationToken ct=default)
+        {
+            return await context.Set<Doctor>().Where(doc=> doc.IsActive==true).ToListAsync(ct);
         }
     }
 }

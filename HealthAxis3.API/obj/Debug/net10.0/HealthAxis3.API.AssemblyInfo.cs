@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthAxis3.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dc45a2af04bbd675dd1a7bcdd341201dc6863828")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9288a7db23d5a312860e6e11043be4aa1b7eede8")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthAxis3.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthAxis3.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

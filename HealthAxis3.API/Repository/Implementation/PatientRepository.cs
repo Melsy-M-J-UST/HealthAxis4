@@ -13,7 +13,7 @@ namespace HealthAxis3.API.Repository.Implementation
             var patient = await GetByIdAsync(id, ct);
             if (patient != null)
             {
-                patient.IsActive = false;
+                patient.IsActive = !patient.IsActive;
                 await context.SaveChangesAsync(ct);
             }
             return patient;

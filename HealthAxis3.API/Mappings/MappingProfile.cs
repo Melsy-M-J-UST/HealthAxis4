@@ -12,13 +12,14 @@ namespace HealthAxis3.API.Mappings
         public MappingProfile()
         {
             CreateMap<Patient, PatientDto>().ReverseMap();
-            CreateMap<Doctor, DoctorDto>().ReverseMap();
-            CreateMap<Appointment, AppointmentDto>().ReverseMap();
-            CreateMap<HealthRecord, HealthRecordDto>().ReverseMap();
+            CreateMap<PatientCreateDto, Patient>();
             CreateMap<Patient, PatientUpdateDto>().ReverseMap();
+            CreateMap<Doctor, DoctorDto>().ReverseMap();
+            CreateMap<DoctorDto, DoctorUpdateDto>();
             CreateMap<Doctor, DoctorUpdateDto>().ReverseMap();
+            CreateMap<Appointment, AppointmentDto>().ReverseMap();
             CreateMap<Appointment, AppointmentUpdateDto>().ReverseMap();
-
+            CreateMap<HealthRecord, HealthRecordDto>().ReverseMap();
         }
     }
 }

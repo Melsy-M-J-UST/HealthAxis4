@@ -33,7 +33,7 @@ namespace HealthAxis3.API.Controllers
         }
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> Create([FromBody] PatientDto entity)
+        public async Task<IActionResult> Create([FromBody] PatientCreateDto entity)
         {
             if (!ModelState.IsValid)
             {

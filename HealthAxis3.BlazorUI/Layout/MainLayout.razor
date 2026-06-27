@@ -1,44 +1,80 @@
-﻿@using System.Security.Claims
-@using Microsoft.AspNetCore.Components.Authorization
-@inject IJSRuntime js
+﻿@inject IJSRuntime js
 @inject CustomAuthenticationStateProvider AuthStateProvider
 @inherits LayoutComponentBase
 @inject NavigationManager Nav
-<div>
-    @* <div class="sidebar">
-        <NavMenu />
-    </div> *@
-    <nav class=" navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="">HealthAxis</a>
-        <ul class="navbar-nav">
-            <AuthorizeView Roles="Admin">
-                <Authorized Context="adminContext">
-                    <li class="nav-item">
-                        <NavLink class="nav-link" href="patient">Patient</NavLink>
-                    </li> 
-                    <li class="nav-item">
-                        <NavLink class="nav-link" href="doctor">Doctor</NavLink>
-                    </li>
-                    <li class="nav-item">
-                        <NavLink class="nav-link" href="report">Appointment Report</NavLink>
-                    </li>
-                    <button class=" btn btn-link" @onclick="HandleLogout">Log Out</button>
-                </Authorized>
 
-                <NotAuthorized>
-                    <li class="nav-item">
-                        <NavLink class="nav-link" href="login">Login</NavLink>
-                    </li>
-                </NotAuthorized>
-            </AuthorizeView>
-        </ul>
+<div class="layout-wrapper">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm px-4">
+
+        <a class="navbar-brand fw-bold text-white" href="/dashboard">
+            HealthAxis
+        </a>
+
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav me-auto">
+
+                <AuthorizeView Roles="Admin">
+                    <Authorized>
+
+                        <li class="nav-item">
+                            <NavLink class="nav-link px-3" href="patient" Match="NavLinkMatch.All">
+                                Patients
+                            </NavLink>
+                        </li>
+
+                        <li class="nav-item">
+                            <NavLink class="nav-link px-3" href="doctor">
+                                Doctors
+                            </NavLink>
+                        </li>
+
+                        <li class="nav-item">
+                            <NavLink class="nav-link px-3" href="report">
+                                Reports
+                            </NavLink>
+                        </li>
+
+                    </Authorized>
+                </AuthorizeView>
+            </ul>
+
+            <ul class="navbar-nav align-items-center">
+
+                <AuthorizeView>
+                    <Authorized>
+                        <li class="nav-item">
+                            <button class="btn btn-outline-light btn-sm px-3 rounded-pill"
+                                    @onclick="HandleLogout">
+                                Logout
+                            </button>
+                        </li>
+                    </Authorized>
+
+                    <NotAuthorized>
+                        <li class="nav-item">
+                            <NavLink class="btn btn-outline-light btn-sm px-3 rounded-pill"
+                                     href="login">
+                                Login
+                            </NavLink>
+                        </li>
+                    </NotAuthorized>
+                </AuthorizeView>
+
+            </ul>
+        </div>
     </nav>
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
+
+    <main class="content-wrapper">
+        <div class="container-fluid mt-4">
+            <article class="content-card p-4">
+                @Body
+            </article>
+        </div>
     </main>
+
 </div>
+
 @code {
     private async Task HandleLogout()
     {

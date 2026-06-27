@@ -1,17 +1,31 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Models;
-using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using HealthAxis3.API.Repository;
+using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using Microsoft.AspNetCore.Identity;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class DoctorService(IDoctorRepository repository, IMapper mapper) : IDoctorService
+    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager) : IDoctorService
     {
         public async Task<DoctorDto> AddAsync(DoctorDto entity)
         {
             var doctor = mapper.Map<Doctor>(entity);
-            var savedEntity = await repository.CreateAsync(doctor);
-            return mapper.Map<DoctorDto>(savedEntity);
+
+            var saved = await repository.CreateAsync(doctor);
+
+            var email = GenerateDoctorEmail(saved.DoctorName);
+
+            var user = new ApplicationUser
+            {
+                Email = email,
+                UserName = email
+            };
+
+            await userManager.CreateAsync(user, "Doctor@123");
+            await userManager.AddToRoleAsync(user, "Doctor");
+
+            return mapper.Map<DoctorDto>(saved);
         }
 
         public async Task<List<DoctorDto>> GetAllAsync()
@@ -49,6 +63,21 @@ namespace HealthAxis3.API.Service.Implementation
         {
             var deactivated = await repository.DeactivateAsync(id);
             return mapper.Map<DoctorUpdateDto>(deactivated);
+        }
+        private string GenerateDoctorEmail(string name)
+        {
+            name = name.ToLower();
+
+            var parts = name.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+            if (parts.Length > 1)
+            {
+                var first = parts[0];
+                var rest = string.Join("", parts.Skip(1));
+                return $"{first}.{rest}@healthaxis.com";
+            }
+
+            return $"{name}@healthaxis.com";
         }
     }
 }

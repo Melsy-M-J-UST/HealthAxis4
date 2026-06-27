@@ -29,19 +29,40 @@
                 <td>@patient.Email</td>
                 <td>@patient.PhoneNumber</td>
                 <td>
-                    <input class="form-check-input"
-                           type="checkbox"
-                           role="switch"
-                           checked="@patient.IsActive"
-                           @onchange="@(() => OnToggleClicked(patient))" />
+                    <div class="form-check form-switch">
+                        <input class="form-check-input"
+                               type="checkbox"
+                               checked="@patient.IsActive"
+                               @onclick="() => OnToggleClicked(patient)"
+                               @onclick:preventDefault="true" />
+
+                        <label class="form-check-label">
+                            @(patient.IsActive ? "Active" : "Inactive")
+                        </label>
+                    </div>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 
-<!-- Confirmation Dialog -->
-@if (ShowDialog)
+<div class="mt-3">
+    <button class="btn btn-sm btn-secondary"
+            disabled="@(CurrentPage == 1)"
+            @onclick="() => SetPage(CurrentPage - 1)">
+        Prev
+    </button>
+
+    <span class="mx-2">Page @CurrentPage of @TotalPages</span>
+
+    <button class="btn btn-sm btn-secondary"
+            disabled="@(CurrentPage == TotalPages)"
+            @onclick="() => SetPage(CurrentPage + 1)">
+        Next
+    </button>
+</div>
+
+@if (ShowConfirm)
 {
     <div class="modal fade show d-block" tabindex="-1" style="background-color:rgba(0,0,0,0.5)">
         <div class="modal-dialog">
@@ -57,8 +78,8 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" @onclick="CloseDialog">Cancel</button>
-                    <button class="btn btn-primary" @onclick="ConfirmToggle">Yes</button>
+                    <button class="btn btn-secondary" @onclick="CloseConfirm">Cancel</button>
+                    <button class="btn btn-danger" @onclick="ConfirmToggle">Yes</button>
                 </div>
             </div>
         </div>
@@ -67,8 +88,16 @@
 
 @code {
     private List<PatientDto> Patients = new();
-    private bool ShowDialog = false;
+    private bool ShowConfirm = false;
     private PatientDto? SelectedPatient;
+
+    private int CurrentPage = 1;
+    private int PageSize = 5;
+    private List<PatientDto> PagedPatients =>
+        Patients.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+
+    private int TotalPages =>
+        (int)Math.Ceiling(Patients.Count / (double)PageSize);
 
     protected override async Task OnInitializedAsync()
     {
@@ -77,28 +106,21 @@
     private void OnToggleClicked(PatientDto patient)
     {
         SelectedPatient = patient;
-        ShowDialog = true;
+        ShowConfirm = true;
     }
-    private void CloseDialog()
+    private void CloseConfirm()
     {
-        ShowDialog = false;
+        ShowConfirm = false;
         SelectedPatient = null;
     }
     private async Task ConfirmToggle()
     {
-        if (SelectedPatient != null)
-        {
-            bool newStatus = !SelectedPatient.IsActive;
-            bool success = await PatientService.UpdatePatientStatusAsync(SelectedPatient.PatientId, newStatus);
-            if (success)
-            {
-                SelectedPatient.IsActive = newStatus;
-            }
-            else
-            {
-                Console.WriteLine("Update failed");
-            }
-        }
-        CloseDialog();
+        await PatientService.ToggleStatus(SelectedPatient!.PatientId);
+        SelectedPatient!.IsActive = !SelectedPatient.IsActive;
+        ShowConfirm = false; 
+    }
+    private void SetPage(int page)
+    {
+        CurrentPage = page;
     }
 }

@@ -28,12 +28,16 @@ namespace HealthAxis3.API.Repository.Implementation
 
         public async Task<T?> UpdateAsync(int id, T entity, CancellationToken ct = default)
         {
-            var existing = await _context.Set<T>().FindAsync([entity], ct);
+            var existing = await _context.Set<T>().FindAsync([id], ct);
 
-            if (existing == null) { return null; }
+            if (existing == null)
+                return null;
+
             _context.Entry(existing).CurrentValues.SetValues(entity);
+
             await _context.SaveChangesAsync(ct);
-            return entity;
+
+            return existing;
         }
     }
 }

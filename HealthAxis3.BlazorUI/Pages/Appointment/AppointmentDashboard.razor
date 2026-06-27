@@ -1,0 +1,42 @@
+﻿@page "/report"
+@inject HttpClient Http
+
+<h3>Appointment Report</h3>
+
+@if (reports == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Completed</th>
+                <th>Cancelled</th>
+                <th>Confirmed</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in reports)
+            {
+                <tr>
+                    <td>@item.Date.ToString("dd-MM-yyyy")</td>
+                    <td>@item.CompletedCount</td>
+                    <td>@item.CancelledCount</td>
+                    <td>@item.ConfirmedCount</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<AppointmentReportDto>? reports;
+
+    protected override async Task OnInitializedAsync()
+    {
+        reports = await Http.GetFromJsonAsync<List<AppointmentReportDto>>("api/Admin/Report");
+    }
+}
