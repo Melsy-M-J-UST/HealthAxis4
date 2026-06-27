@@ -1,10 +1,11 @@
-﻿using Xunit;
-using Moq;
-using AutoMapper;
-using HealthAxis3.API.Service.Implementation;
-using HealthAxis3.API.Repository;
+﻿using AutoMapper;
 using HealthAxis3.API.Models;
+using HealthAxis3.API.Repository;
+using HealthAxis3.API.Service.Implementation;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
+using Microsoft.AspNetCore.Identity;
+using Moq;
+using Xunit;
 
 namespace HealthAxis3.Tests.ServiceTests
 {
@@ -21,12 +22,14 @@ namespace HealthAxis3.Tests.ServiceTests
         private readonly DoctorUpdateDto updateDto;
         private readonly Doctor updatedDoctor;
         private readonly DoctorUpdateDto resultDto;
+        private readonly Mock<UserManager<ApplicationUser>> _userManagerMock;
 
         public DoctorServiceTests()
         {
             _repoMock = new Mock<IDoctorRepository>();
             _mapperMock = new Mock<IMapper>();
-            _service = new DoctorService(_repoMock.Object, _mapperMock.Object);
+            _userManagerMock = new Mock<UserManager<ApplicationUser>>();
+            _service = new DoctorService(_repoMock.Object, _mapperMock.Object, _userManagerMock.Object);
 
             _dto = new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" };
             _entity = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" };
@@ -48,6 +51,8 @@ namespace HealthAxis3.Tests.ServiceTests
             _mapperMock.Verify(m => m.Map<Doctor>(_dto), Times.Once);
             _repoMock.Verify(r => r.CreateAsync(_entity), Times.Once);
             _mapperMock.Verify(m => m.Map<DoctorDto>(_entity), Times.Once);
+            _userManagerMock.Verify(x => x.CreateAsync(It.IsAny<ApplicationUser>(), "Doctor@123"),Times.Once);
+            _userManagerMock.Verify(x => x.AddToRoleAsync(It.IsAny<ApplicationUser>(), "Doctor"),Times.Once);
 
             Assert.NotNull(result);
         }
