@@ -4,7 +4,47 @@
 
 @using HealthAxis3.Shared.Models.Dtos.PatientDtos
 
-<h3 class="mb-3">Patient Dashboard</h3>
+<h3 class="mb-4 text-primary fw-bold">👤 Patient Dashboard</h3>
+
+<div class="row g-4 mb-4">
+
+    <div class="col-md-4">
+        <div class="card text-white bg-primary shadow-sm rounded-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h6>Total Patients</h6>
+                    <h3>@TotalPatients</h3>
+                </div>
+                <div style="font-size:30px;">👥</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-success shadow-sm rounded-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h6>Active</h6>
+                    <h3>@ActivePatients</h3>
+                </div>
+                <div style="font-size:30px;">✅</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card text-white bg-danger shadow-sm rounded-3">
+            <div class="card-body d-flex justify-content-between align-items-center">
+                <div>
+                    <h6>Inactive</h6>
+                    <h3>@InactivePatients</h3>
+                </div>
+                <div style="font-size:30px;">❌</div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <table class="table table-striped">
     <thead>
@@ -19,7 +59,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var patient in Patients)
+        @foreach (var patient in PagedPatients)
         {
             <tr>
                 <td>@patient.PatientId</td>
@@ -91,13 +131,14 @@
     private bool ShowConfirm = false;
     private PatientDto? SelectedPatient;
 
+    private int TotalPatients => Patients.Count;
+    private int ActivePatients => Patients.Count(p => p.IsActive);
+    private int InactivePatients => Patients.Count(p => !p.IsActive);
+
     private int CurrentPage = 1;
     private int PageSize = 5;
-    private List<PatientDto> PagedPatients =>
-        Patients.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
-
-    private int TotalPages =>
-        (int)Math.Ceiling(Patients.Count / (double)PageSize);
+    private List<PatientDto> PagedPatients =>Patients.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+    private int TotalPages =>(int)Math.Ceiling(Patients.Count / (double)PageSize);
 
     protected override async Task OnInitializedAsync()
     {
