@@ -1,6 +1,10 @@
 <Solution>
+  <Project Path="HealthAxis3.AngularUI/HealthAxis3.AngularUI.esproj">
+    <Build />
+    <Deploy />
+  </Project>
   <Project Path="HealthAxis3.API/HealthAxis3.API.csproj" />
   <Project Path="HealthAxis3.BlazorUI/HealthAxis3.BlazorUI.csproj" Id="7bc128d8-46cb-48a1-9939-c680a445dcc9" />
-  <Project Path="Healthaxis3.Shared/HealthAxis3.Shared.csproj" Id="23518fc8-a39b-45cd-bc99-f608da32220b" />
+  <Project Path="Healthaxis3.Shared/HealthAxis3.Shared.csproj" Id="d01d8067-f33b-4f71-b13b-c4ccd0553acc" />
   <Project Path="Healthaxis3.Tests/Healthaxis3.Tests.csproj" Id="63f09d27-da79-4a38-b2bb-0ffca1f97ec6" />
 </Solution>
