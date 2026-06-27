@@ -36,5 +36,16 @@ namespace HealthAxis3.API.Controllers
             if (result == null) return NotFound();
             return Ok(result);
         }
+        [HttpGet("{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        public async Task<IActionResult> GetById(int id)
+        {
+            var result = await patientService.GetByIdAsync(id);
+            if (result == null)
+            {
+                return NotFound();
+            }
+            return Ok(result);
+        }
     }
 }

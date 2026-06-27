@@ -17,7 +17,6 @@ namespace HealthAxis3.Shared.Models.Dtos.PatientDtos
         [Required]
         [DataType(DataType.Date)]
         [CustomValidation(typeof(PatientDto), nameof(ValidateDOB))]
-        [JsonIgnore]
         public DateTime DateOfBirth { get; set; }
 
         [Required]

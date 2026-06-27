@@ -43,7 +43,7 @@ namespace HealthAxis3.API.Controllers
             {
                 var result = await service.AddAsync(entity);
                 if (result == null) return NotFound();
-                else return CreatedAtAction("GetById", new { result.PatientId }, result);
+                else return CreatedAtAction("GetById", new { id = result.PatientId }, result);
             }
         }
         [HttpPut("{id:int}")]
