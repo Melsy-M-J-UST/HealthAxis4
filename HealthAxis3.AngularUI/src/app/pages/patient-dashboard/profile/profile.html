@@ -1,0 +1,33 @@
+<div class="top-bar">
+  <button class="back-btn" routerLink="/dashboard">
+    ⬅ Back to Dashboard
+  </button>
+</div>
+
+<div class="profile-page">
+
+  <h2>My Profile</h2>
+
+  <label>Name</label>
+  <input [(ngModel)]="user.name">
+
+  <label>Email</label>
+  <input [(ngModel)]="user.email">
+
+  <label>Date of Birth</label>
+  <input type="date" [(ngModel)]="user.dob">
+
+  <p>Age: {{ age }}</p>
+
+  <label>Phone</label>
+  <input [(ngModel)]="user.phone">
+
+  <label>Insurance ID</label>
+  <input [(ngModel)]="user.insuranceId">
+
+  <div class="profile-pagelabel">
+    <input [(ngModel)]="user.gender">
+
+    <button (click)="saveProfile()">Save</button>
+  </div>
+</div>

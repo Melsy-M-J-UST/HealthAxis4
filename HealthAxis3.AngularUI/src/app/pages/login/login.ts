@@ -7,13 +7,13 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './login.html',
   styleUrls: ['./login.css']
 })
-export class Login {
+export class LoginComponent {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
+      email: ['Email is required', [Validators.required, Validators.email]],
+      password: ['Invalid Password', Validators.required]
     });
   }
 

@@ -1,0 +1,288 @@
+<header class="header">
+  <div class="logo">HealthAxis</div>
+
+  <div class="profile">
+    <div class="avatar" (click)="toggleMenu()">
+      {{ user.initials }}
+    </div>
+
+    <div class="dropdown" *ngIf="showMenu">
+      <p class="name">{{ user.name }}</p>
+
+      <a routerLink="/profile">👤 View Profile</a>
+
+      <button (click)="openPasswordModal()">🔒 Change Password</button>
+      <button (click)="openLogoutModal()">🚪 Sign Out</button>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- TODAY APPOINTMENTS -->
+  <div class="card">
+    <h2>Today's Appointments</h2>
+
+    <div *ngIf="todayAppointments.length === 0" class="empty-state">
+      No appointments scheduled for today ✅
+    </div>
+
+    <table *ngIf="todayAppointments.length > 0">
+      <tr>
+        <th>Doctor</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+
+      <tr *ngFor="let a of todayAppointments">
+        <td>{{ a.doctor }}</td>
+        <td>{{ a.slot }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+          <button class="danger" (click)="cancelAppointment(a)">
+            Cancel
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- ACTION CARDS -->
+  <div class="actions">
+    <div class="action-card" (click)="openBookingModal()">
+      📅 Book Appointment
+    </div>
+    <div class="action-card" (click)="openDoctorSearch()">
+      🔎 Search Doctors
+    </div>
+    <div class="action-card" (click)="openMyDoctorsModal()">
+      👨‍⚕️ My Doctors
+    </div>
+  </div>
+
+</div>
+
+<div class="card">
+  <h2>My Appointments</h2>
+
+  <div *ngIf="appointments.length === 0" class="empty-state">
+    You have no appointments yet 📅
+  </div>
+
+  <table *ngIf="appointments.length > 0">
+    <tr>
+      <th>Doctor</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Status</th>
+      <th>Health Record</th>
+    </tr>
+
+    <tr *ngFor="let a of appointments">
+      <td>{{ a.doctor }}</td>
+      <td>{{ a.date }}</td>
+      <td>{{ a.slot }}</td>
+      <td>{{ a.status }}</td>
+      <td>
+        <button *ngIf="a.status === 'Completed'"
+                (click)="viewHealthRecord(a)">
+          View
+        </button>
+        <span *ngIf="a.status !== 'Completed'">—</span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- PASSWORD MODAL -->
+<div class="modal" *ngIf="showPasswordModal">
+  <div class="modal-box">
+    <h3>Change Password</h3>
+
+    <input type="password" placeholder="New Password">
+    <input type="password" placeholder="Confirm Password">
+
+    <div class="btn-group">
+      <button (click)="closeModals()">Cancel</button>
+      <button class="primary">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div class="modal" *ngIf="showLogoutModal">
+  <div class="modal-box">
+    <h3>Are you sure you want to sign out?</h3>
+
+    <div class="btn-group">
+      <button (click)="closeModals()">Cancel</button>
+      <button class="danger">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="showBookingModal">
+
+  <div class="modal-box large">
+
+    <h2>📅 Book Appointment</h2>
+
+
+    <!-- SPECIALISATION -->
+    <label>Specialisation</label>
+    <select [(ngModel)]="newAppointment.specialization"
+            (change)="onSpecializationChange()">
+      <option value="">Select</option>
+      <option *ngFor="let s of specialisations" [value]="s">
+        {{ s }}
+      </option>
+    </select>
+
+    <!-- DOCTOR -->
+    <label>Doctor</label>
+    <select [(ngModel)]="newAppointment.doctor">
+      <option value="">Select</option>
+      <option *ngFor="let d of filteredDoctors" [value]="d.name">
+        {{ d.name }}
+      </option>
+    </select>
+
+    <!-- DATE -->
+    <label>Date</label>
+    <input type="date"
+           [(ngModel)]="newAppointment.date"
+           [min]="today" />
+
+    <!-- SLOT -->
+    <label>Time Slot</label>
+    <select [(ngModel)]="newAppointment.slot">
+      <option value="">Select</option>
+      <option *ngFor="let s of slots">
+        {{ s }}
+      </option>
+    </select>
+
+    <!-- ACTIONS -->
+    <div class="btn-group">
+      <button (click)="closeBookingModal()">Cancel</button>
+      <button class="primary"
+              [disabled]="!newAppointment.specialization ||
+              !newAppointment.doctor ||
+              !newAppointment.date ||
+              !newAppointment.slot"
+              (click)="bookAppointment()">
+        Confirm
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div class="modal" *ngIf="selectedRecord">
+  <div class="modal-box">
+
+    <h3>Health Record</h3>
+
+    <p><strong>Diagnosis:</strong> {{ selectedRecord.diagnosis }}</p>
+
+    <p><strong>Prescription:</strong> {{ selectedRecord.prescription }}</p>
+
+    <p>
+      <strong>Notes:</strong>
+      <span *ngIf="selectedRecord.notes; else noNotes">
+        {{ selectedRecord.notes }}
+      </span>
+
+      <ng-template #noNotes>
+        <span class="light-text">No notes available</span>
+      </ng-template>
+    </p>
+
+    <button (click)="selectedRecord = null">Close</button>
+
+  </div>
+</div>
+<div class="modal" *ngIf="showDoctorModal">
+  <div class="modal-box large">
+
+    <h2>Search Doctors</h2>
+
+    <div style="position: relative;">
+      <input type="text"
+             placeholder="Search specialisation..."
+             [(ngModel)]="searchText"
+             (focus)="onFocus()"
+             (input)="filterSpecialisations()"
+             (blur)="onBlur()" />
+
+      <!-- ✅ DROPDOWN (shows only on focus) -->
+      <div class="dropdown-list" *ngIf="showDropdown">
+
+        <div class="all-option"
+             (click)="selectAllDoctors()">
+          All Doctors
+        </div>
+
+        <!-- No results -->
+        <div *ngIf="filteredSpecialisations.length === 0" class="light-text">
+          No such specialisation
+        </div>
+
+        <!-- Filtered list -->
+        <div *ngFor="let s of filteredSpecialisations"
+             (click)="selectSpecialisation(s)">
+          {{ s }}
+        </div>
+
+      </div>
+    </div>
+
+    <!-- DOCTOR TABLE -->
+    <table *ngIf="filteredDoctorsList.length > 0">
+      <tr>
+        <th>Doctor</th>
+        <th>Specialisation</th>
+      </tr>
+
+      <tr *ngFor="let d of filteredDoctorsList">
+        <td>{{ d.name }}</td>
+        <td>{{ d.specialization }}</td>
+      </tr>
+    </table>
+
+    <button (click)="closeDoctorSearch()">Close</button>
+
+  </div>
+</div>
+<!-- ✅ MY DOCTORS MODAL -->
+<div class="modal" *ngIf="showMyDoctorsModal">
+  <div class="modal-box large">
+
+    <h2>👨‍⚕️ My Doctors</h2>
+
+    <!-- ✅ EMPTY STATE -->
+    <div *ngIf="myDoctors.length === 0" class="empty-state">
+      You haven't consulted any doctors yet
+    </div>
+
+    <!-- ✅ DOCTORS TABLE -->
+    <table *ngIf="myDoctors.length > 0">
+      <tr>
+        <th>Doctor</th>
+        <th>Specialisation</th>
+      </tr>
+
+      <tr *ngFor="let d of myDoctors">
+        <td>{{ d.name }}</td>
+        <td>{{ d.specialization }}</td>
+      </tr>
+    </table>
+
+    <!-- ✅ CLOSE BUTTON -->
+    <div class="btn-group">
+      <button (click)="closeMyDoctorsModal()">Close</button>
+    </div>
+
+  </div>
+</div>

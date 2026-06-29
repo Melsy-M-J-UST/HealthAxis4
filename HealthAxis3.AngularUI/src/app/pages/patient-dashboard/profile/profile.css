@@ -1,0 +1,33 @@
+.profile-page {
+  max-width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+button {
+  background: #2a7de1;
+  color: white;
+}
+.top-bar {
+  margin-bottom: 15px;
+}
+
+.back-btn {
+  background: #2a7de1;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+  .back-btn:hover {
+    background: #1e63c4;
+  }

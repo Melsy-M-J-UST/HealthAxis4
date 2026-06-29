@@ -7,15 +7,15 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.html',
   styleUrls: ['./register.css']
 })
-export class Register {
+export class RegisterComponent {
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.registerForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      name: ['Name should only contain alphabets and spaces and should be a minimum of 3 letters', Validators.required],
+      email: ['Enter a valid email', [Validators.required, Validators.email]],
+      password: ['Password should be minimum of 8 and maximum of 12 characters. It should include at least one uppercase, one lowercase, a number and a special character.', Validators.required],
+      confirmPassword: ['Passwords do not match', Validators.required]
     });
   }
 
