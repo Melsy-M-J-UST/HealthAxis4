@@ -48,6 +48,8 @@ export class ProfileComponent {
     return age;
   }
 
+ 
+
   saveProfile() {
     localStorage.setItem(this.userKey, JSON.stringify(this.user));
 

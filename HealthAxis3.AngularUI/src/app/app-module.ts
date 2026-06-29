@@ -9,9 +9,20 @@ import { RegisterComponent } from './pages/register/register';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PatientDashboardComponent } from './pages/patient-dashboard/patient-dashboard';
 import { ProfileComponent } from './pages/patient-dashboard/profile/profile';
+import { HeaderComponent } from './components/header/header';
+import { SidebarComponent } from './components/sidebar/sidebar';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, RegisterComponent, PatientDashboardComponent, ProfileComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    RegisterComponent,
+    PatientDashboardComponent,
+    ProfileComponent,
+    HeaderComponent,
+    SidebarComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],
   bootstrap: [AppComponent],

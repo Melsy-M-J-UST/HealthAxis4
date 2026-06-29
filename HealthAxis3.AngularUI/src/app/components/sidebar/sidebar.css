@@ -1,0 +1,18 @@
+.sidebar {
+  width: 220px;
+  background: #ffffff;
+  height: calc(100vh - 60px);
+  padding: 20px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+.menu-item {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+  .menu-item:hover {
+    background: #eef5ff;
+  }

@@ -1,101 +1,88 @@
-<header class="header">
-  <div class="logo">HealthAxis</div>
+<app-header [showMenuEnabled]="true"></app-header>
 
-  <div class="profile">
-    <div class="avatar" (click)="toggleMenu()">
-      {{ user.initials }}
+<div class="layout">
+
+  <!-- ✅ SIDEBAR -->
+  <app-sidebar></app-sidebar>
+
+  <div class="container">
+      <!-- TODAY APPOINTMENTS -->
+      <div class="card">
+        <h2>Today's Appointments</h2>
+
+        <div *ngIf="todayAppointments.length === 0" class="empty-state">
+          No appointments scheduled for today ✅
+        </div>
+
+        <table *ngIf="todayAppointments.length > 0">
+          <tr>
+            <th>Doctor</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th></th>
+          </tr>
+
+          <tr *ngFor="let a of todayAppointments">
+            <td>{{ a.doctor }}</td>
+            <td>{{ a.slot }}</td>
+            <td>{{ a.status }}</td>
+            <td>
+              <button class="danger" (click)="cancelAppointment(a)">
+                Cancel
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- ACTION CARDS -->
+      <div class="actions">
+        <div class="action-card" (click)="openBookingModal()">
+          📅 Book Appointment
+        </div>
+        <div class="action-card" (click)="openDoctorSearch()">
+          🔎 Search Doctors
+        </div>
+        <div class="action-card" (click)="openMyDoctorsModal()">
+          👨‍⚕️ My Doctors
+        </div>
+      </div>
+
     </div>
 
-    <div class="dropdown" *ngIf="showMenu">
-      <p class="name">{{ user.name }}</p>
+    <div class="card">
+      <h2>My Appointments</h2>
 
-      <a routerLink="/profile">👤 View Profile</a>
+      <div *ngIf="appointments.length === 0" class="empty-state">
+        You have no appointments yet 📅
+      </div>
 
-      <button (click)="openPasswordModal()">🔒 Change Password</button>
-      <button (click)="openLogoutModal()">🚪 Sign Out</button>
+      <table *ngIf="appointments.length > 0">
+        <tr>
+          <th>Doctor</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Health Record</th>
+        </tr>
+
+        <tr *ngFor="let a of appointments">
+          <td>{{ a.doctor }}</td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.slot }}</td>
+          <td>{{ a.status }}</td>
+          <td>
+            <button *ngIf="a.status === 'Completed'"
+                    (click)="viewHealthRecord(a)">
+              View
+            </button>
+            <span *ngIf="a.status !== 'Completed'">—</span>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
-</header>
-
-<div class="container">
-
-  <!-- TODAY APPOINTMENTS -->
-  <div class="card">
-    <h2>Today's Appointments</h2>
-
-    <div *ngIf="todayAppointments.length === 0" class="empty-state">
-      No appointments scheduled for today ✅
-    </div>
-
-    <table *ngIf="todayAppointments.length > 0">
-      <tr>
-        <th>Doctor</th>
-        <th>Time</th>
-        <th>Status</th>
-        <th></th>
-      </tr>
-
-      <tr *ngFor="let a of todayAppointments">
-        <td>{{ a.doctor }}</td>
-        <td>{{ a.slot }}</td>
-        <td>{{ a.status }}</td>
-        <td>
-          <button class="danger" (click)="cancelAppointment(a)">
-            Cancel
-          </button>
-        </td>
-      </tr>
-    </table>
-  </div>
-
-  <!-- ACTION CARDS -->
-  <div class="actions">
-    <div class="action-card" (click)="openBookingModal()">
-      📅 Book Appointment
-    </div>
-    <div class="action-card" (click)="openDoctorSearch()">
-      🔎 Search Doctors
-    </div>
-    <div class="action-card" (click)="openMyDoctorsModal()">
-      👨‍⚕️ My Doctors
-    </div>
-  </div>
-
-</div>
-
-<div class="card">
-  <h2>My Appointments</h2>
-
-  <div *ngIf="appointments.length === 0" class="empty-state">
-    You have no appointments yet 📅
-  </div>
-
-  <table *ngIf="appointments.length > 0">
-    <tr>
-      <th>Doctor</th>
-      <th>Date</th>
-      <th>Time</th>
-      <th>Status</th>
-      <th>Health Record</th>
-    </tr>
-
-    <tr *ngFor="let a of appointments">
-      <td>{{ a.doctor }}</td>
-      <td>{{ a.date }}</td>
-      <td>{{ a.slot }}</td>
-      <td>{{ a.status }}</td>
-      <td>
-        <button *ngIf="a.status === 'Completed'"
-                (click)="viewHealthRecord(a)">
-          View
-        </button>
-        <span *ngIf="a.status !== 'Completed'">—</span>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<!-- PASSWORD MODAL -->
+    <!-- PASSWORD MODAL -->
 <div class="modal" *ngIf="showPasswordModal">
   <div class="modal-box">
     <h3>Change Password</h3>
@@ -151,8 +138,8 @@
     <!-- DATE -->
     <label>Date</label>
     <input type="date"
-           [(ngModel)]="newAppointment.date"
-           [min]="today" />
+            [(ngModel)]="newAppointment.date"
+            [min]="today" />
 
     <!-- SLOT -->
     <label>Time Slot</label>
@@ -168,9 +155,9 @@
       <button (click)="closeBookingModal()">Cancel</button>
       <button class="primary"
               [disabled]="!newAppointment.specialization ||
-              !newAppointment.doctor ||
-              !newAppointment.date ||
-              !newAppointment.slot"
+          !newAppointment.doctor ||
+          !newAppointment.date ||
+          !newAppointment.slot"
               (click)="bookAppointment()">
         Confirm
       </button>
@@ -210,17 +197,17 @@
 
     <div style="position: relative;">
       <input type="text"
-             placeholder="Search specialisation..."
-             [(ngModel)]="searchText"
-             (focus)="onFocus()"
-             (input)="filterSpecialisations()"
-             (blur)="onBlur()" />
+              placeholder="Search specialisation..."
+              [(ngModel)]="searchText"
+              (focus)="onFocus()"
+              (input)="filterSpecialisations()"
+              (blur)="onBlur()" />
 
       <!-- ✅ DROPDOWN (shows only on focus) -->
       <div class="dropdown-list" *ngIf="showDropdown">
 
         <div class="all-option"
-             (click)="selectAllDoctors()">
+              (click)="selectAllDoctors()">
           All Doctors
         </div>
 
@@ -231,7 +218,7 @@
 
         <!-- Filtered list -->
         <div *ngFor="let s of filteredSpecialisations"
-             (click)="selectSpecialisation(s)">
+              (click)="selectSpecialisation(s)">
           {{ s }}
         </div>
 

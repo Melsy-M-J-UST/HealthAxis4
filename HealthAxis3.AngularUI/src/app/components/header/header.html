@@ -1,0 +1,48 @@
+<header class="dashboard-header">
+
+  <div class="logo" routerLink="/dashboard">
+    HealthAxis
+  </div>
+
+  <div class="right-section">
+
+    <div class="notification" (click)="toggleNotifications()">
+      🔔
+      <span class="badge" *ngIf="notifications.length > 0">
+        {{ notifications.length }}
+      </span>
+    </div>
+
+    <div class="notif-dropdown" *ngIf="showNotifications">
+      <p *ngIf="notifications.length === 0">No notifications</p>
+
+      <div *ngFor="let n of notifications">
+        {{ n }}
+      </div>
+    </div>
+
+    <div class="profile">
+
+      <!-- AVATAR -->
+      <div class="avatar"
+           (click)="toggleMenu()"
+           [class.disabled]="!showMenuEnabled">
+        {{ initials }}
+      </div>
+
+      <!-- ✅ DROPDOWN -->
+      <div *ngIf="showMenu && showMenuEnabled" class="dropdown">
+
+        <p class="name">{{ userName }}</p>
+
+        <button (click)="goToProfile()">👤 View Profile</button>
+
+        <button (click)="openPassword()">🔒 Change Password</button>
+
+        <button class="danger" (click)="logout()">🚪 Log Out</button>
+
+      </div>
+
+    </div>
+
+</header>

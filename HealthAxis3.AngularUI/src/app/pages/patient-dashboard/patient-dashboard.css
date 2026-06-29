@@ -285,4 +285,18 @@ th {
 td, th {
   padding: 10px;
 }
+.layout {
+  display: flex;
+}
 
+.container {
+  flex: 1;
+  padding: 20px;
+  background: #f5f9ff;
+  min-height: 100vh;
+}
+
+/* Card spacing */
+.card {
+  margin-bottom: 20px;
+}
