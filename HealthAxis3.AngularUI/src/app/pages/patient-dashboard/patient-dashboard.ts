@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { UtilService } from './src/app/services/util';
+import { AppointmentService } from '../../services/appointment.service';
 
 
 @Component({
@@ -16,7 +17,10 @@ export class PatientDashboardComponent {
     name: '',
     initials: ''
   };
-  constructor(private utilService: UtilService) { }
+  constructor(
+    private appointmentService: AppointmentService,
+    private utilService: UtilService
+  ) { }
 
   ngOnInit() {
     const storedUser = localStorage.getItem(this.userKey);
@@ -34,9 +38,7 @@ export class PatientDashboardComponent {
   showLogoutModal = false;
 
   get todayAppointments() {
-    const today = new Date().toISOString().split('T')[0];
-
-    return this.appointments.filter(a => a.date === today);
+    return this.appointmentService.getTodayAppointments();
   }
 
   toggleMenu() {
@@ -57,7 +59,7 @@ export class PatientDashboardComponent {
   }
 
   cancelAppointment(app: any) {
-    alert('Appointment cancelled');
+    this.appointmentService.cancelAppointment(app);
   }
 
   showBookingModal = false;
@@ -74,7 +76,9 @@ export class PatientDashboardComponent {
   today = new Date().toISOString().split('T')[0];
   slots = ['10:00 AM', '11:00 AM', '2:00 PM', '3:00 PM'];
 
-  appointments: any[] = [];
+  get appointments() {
+    return this.appointmentService.getAppointments();
+  }
 
   newAppointment = {
     specialization: '',
@@ -103,32 +107,15 @@ export class PatientDashboardComponent {
   /* BOOK APPOINTMENT */
   bookAppointment() {
 
-    // ✅ Check slot availability
-    const conflict = this.appointments.find(a =>
-      a.date === this.newAppointment.date &&
-      a.slot === this.newAppointment.slot &&
-      (a.doctor === this.newAppointment.doctor)
-    );
+    const result = this.appointmentService.addAppointment(this.newAppointment);
 
-    if (conflict) {
-      alert('Slot already booked for this doctor ❌');
+    if (!result.success) {
+      alert(result.message);
       return;
     }
 
-    // ✅ Add appointment
-    this.appointments.push({
-      ...this.newAppointment,
-      date: this.newAppointment.date,
-      status: 'Pending',
-      healthRecord: {
-        diagnosis: '',
-        prescription: '',
-        notes: ''
-      }
-    });
-    alert('Appointment Booked ✅');
+    alert(result.message);
 
-    // Reset
     this.newAppointment = {
       specialization: '',
       doctor: '',
@@ -200,24 +187,7 @@ export class PatientDashboardComponent {
     this.filteredDoctorsList = this.doctors;
   }
   get myDoctors() {
-    const uniqueDoctors: any[] = [];
-
-    this.appointments.forEach(a => {
-      const exists = uniqueDoctors.find(d => d.name === a.doctor);
-
-      if (!exists) {
-        // find doctor details from master list
-        const doctorDetails = this.doctors.find(
-          d => d.name === a.doctor
-        );
-
-        if (doctorDetails) {
-          uniqueDoctors.push(doctorDetails);
-        }
-      }
-    });
-
-    return uniqueDoctors;
+    return this.appointmentService.getMyDoctors(this.doctors);
   }
   showMyDoctorsModal = false;
 
