@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { UtilService } from './src/app/services/util';
-import { AppointmentService } from '../../services/appointment.service';
+import { UtilService } from '../../services/util';
+import { AppointmentService } from '../../services/appointment';
 
 
 @Component({
