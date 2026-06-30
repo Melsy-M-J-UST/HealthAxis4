@@ -11,51 +11,31 @@ import { AppointmentService } from '../../services/appointment';
 })
 export class PatientDashboardComponent {
 
-  userKey = 'patientUser';
+  // userKey = 'patientUser';
 
-  user: any = {
-    name: '',
-    initials: ''
-  };
+  // user: any = {
+  //   name: '',
+  //   initials: ''
+  // };
   constructor(
     private appointmentService: AppointmentService,
     private utilService: UtilService
   ) { }
 
   ngOnInit() {
-    const storedUser = localStorage.getItem(this.userKey);
+    // const storedUser = localStorage.getItem(this.userKey);
 
-    if (storedUser) {
-      const data = JSON.parse(storedUser);
+    // if (storedUser) {
+    //   const data = JSON.parse(storedUser);
 
-      this.user.name = data.name;
-      this.user.initials = this.utilService.getInitials(data.name);
-    }
+    //   this.user.name = data.name;
+    //   this.user.initials = this.utilService.getInitials(data.name);
+    // }
+    // this.loadUser();
   }
-
-  showMenu = false;
-  showPasswordModal = false;
-  showLogoutModal = false;
 
   get todayAppointments() {
     return this.appointmentService.getTodayAppointments();
-  }
-
-  toggleMenu() {
-    this.showMenu = !this.showMenu;
-  }
-
-  openPasswordModal() {
-    this.showPasswordModal = true;
-  }
-
-  openLogoutModal() {
-    this.showLogoutModal = true;
-  }
-
-  closeModals() {
-    this.showLogoutModal = false;
-    this.showPasswordModal = false;
   }
 
   cancelAppointment(app: any) {

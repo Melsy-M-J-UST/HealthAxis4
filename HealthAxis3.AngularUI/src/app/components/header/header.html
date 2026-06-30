@@ -37,12 +37,38 @@
 
         <button (click)="goToProfile()">👤 View Profile</button>
 
-        <button (click)="openPassword()">🔒 Change Password</button>
+        <button (click)="openPasswordModal()">🔒 Change Password</button>
 
         <button class="danger" (click)="logout()">🚪 Log Out</button>
 
       </div>
 
     </div>
-
+  </div>
 </header>
+<!-- PASSWORD MODAL -->
+<div class="modal" *ngIf="showPasswordModal">
+  <div class="modal-box">
+    <h3>Change Password</h3>
+
+    <input type="password" placeholder="New Password">
+    <input type="password" placeholder="Confirm Password">
+
+    <div class="btn-group">
+      <button (click)="closeModals()">Cancel</button>
+      <button class="primary">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- LOGOUT MODAL -->
+<div class="modal" *ngIf="showLogoutModal">
+  <div class="modal-box">
+    <h3>Are you sure you want to sign out?</h3>
+
+    <div class="btn-group">
+      <button (click)="closeModals()">Cancel</button>
+      <button class="danger">Sign Out</button>
+    </div>
+  </div>
+</div>

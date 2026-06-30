@@ -12,26 +12,25 @@ export class ProfileComponent {
   userKey = 'patientUser';
 
   user: any = {};
+  saved = false;
+    userService: any;
   ngOnInit() {
-    const storedUser = localStorage.getItem(this.userKey);
+    const storedUser =this.userService.getUser(this.userKey);
 
     if (storedUser) {
       this.user = JSON.parse(storedUser);
     } else {
-      // default user
       this.user = {
         name: 'Melsy Maneesha',
         email: 'melsy@email.com',
-        dob: '2000-05-10',
+        dob: '2004-02-19',
         phone: '9876543210',
-        insuranceId: 'INS123456',
+        insuranceId: 'INS1234',
         gender: 'Female'
       };
     }
   }
   
-
-  // ✅ Calculate age automatically
   get age(): number {
     if (!this.user.dob) return 0;
 
@@ -48,11 +47,7 @@ export class ProfileComponent {
     return age;
   }
 
- 
-
   saveProfile() {
-    localStorage.setItem(this.userKey, JSON.stringify(this.user));
-
-    alert('Profile updated successfully ✅');
+    this.userService.setUser(this.user);
   }
 }

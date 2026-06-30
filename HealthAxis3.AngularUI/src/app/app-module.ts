@@ -11,6 +11,7 @@ import { PatientDashboardComponent } from './pages/patient-dashboard/patient-das
 import { ProfileComponent } from './pages/patient-dashboard/profile/profile';
 import { HeaderComponent } from './components/header/header';
 import { SidebarComponent } from './components/sidebar/sidebar';
+import { DoctorDashboardComponent } from './pages/doctor-dashboard/doctor-dashboard';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SidebarComponent } from './components/sidebar/sidebar';
     ProfileComponent,
     HeaderComponent,
     SidebarComponent,
+    DoctorDashboardComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
   providers: [provideBrowserGlobalErrorListeners()],

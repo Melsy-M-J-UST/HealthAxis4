@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UtilService } from '../../services/util';
+import { UserService } from '../../services/user';
 
 @Component({
   selector: 'app-header',
@@ -15,16 +16,39 @@ export class HeaderComponent {
   initials = '';
   userName = '';
   showMenu = false;
-  constructor(private utilService: UtilService, private router: Router) { }
+  showPasswordModal = false;
+  showLogoutModal = false;
+  user: any = {};
+  constructor(private router: Router, private userService: UserService) { }
+
+  // loadUser() {
+  //   const storedUser = this.userService.getUserName('patientUser');
+
+  //   if (storedUser) {
+  //     const data = JSON.parse(storedUser);
+
+  //     this.userName = data.name;
+  //     this.initials = this.userService.getInitials();
+  //   }
+  // }
 
   ngOnInit() {
-    const storedUser = localStorage.getItem('patientUser');
+    this.userName = this.userService.getUserName();
+    this.initials = this.userService.getInitials();
+    this.user = this.userService.getUser();
+  }
 
-    if (storedUser) {
-      const data = JSON.parse(storedUser);
-      this.userName = data.name;
-      this.initials = this.utilService.getInitials(data.name);
-    }
+  openPasswordModal() {
+    this.showPasswordModal = true;
+  }
+
+  openLogoutModal() {
+    this.showLogoutModal = true;
+  }
+
+  closeModals() {
+    this.showLogoutModal = false;
+    this.showPasswordModal = false;
   }
   toggleMenu() {
     if (this.showMenuEnabled) {
@@ -42,13 +66,13 @@ export class HeaderComponent {
   }
 
   goToProfile() {
-    this.router.navigate(['/profile']);
+    this.router.navigate(['/dashboard/profile']);
     this.showMenu = false;
   }
 
   logout() {
-    if (confirm('Are you sure you want to sign out?')) {
-      localStorage.removeItem('patientUser');
+    if (confirm('Are you sure you want to log out?')) {
+      this.userService.clearUser();
       this.router.navigate(['/login']);
     }
   }
@@ -66,5 +90,14 @@ export class HeaderComponent {
 
   toggleNotifications() {
     this.showNotifications = !this.showNotifications;
+  }
+  saveProfile() {
+    this.userService.setUser(this.user);
+
+    // ✅ refresh header instantly
+    this.userName = this.userService.getUserName();
+    this.initials = this.userService.getInitials();
+
+    this.closeModals();
   }
 }

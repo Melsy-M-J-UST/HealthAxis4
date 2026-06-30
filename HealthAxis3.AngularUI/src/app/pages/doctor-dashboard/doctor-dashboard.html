@@ -1,0 +1,209 @@
+<app-header [showMenuEnabled]="true"></app-header>
+
+<div class="layout">
+
+  <div class="content">
+
+    <!-- ✅ TODAY APPOINTMENTS -->
+    <div class="card">
+      <h2>Today's Appointments</h2>
+
+      <div *ngIf="todayAppointments.length === 0" class="empty-state">
+        No appointments today
+      </div>
+
+      <table *ngIf="todayAppointments.length > 0">
+        <tr>
+          <th>Patient</th>
+          <th>Time</th>
+          <th>Status</th>
+        </tr>
+
+        <tr *ngFor="let a of todayAppointments">
+          <td>{{ a.patient }}</td>
+          <td>{{ a.slot }}</td>
+          <td>{{ a.status }}</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ✅ ACTION CARDS -->
+    <div class="actions">
+
+      <div class="action-card" (click)="openPatientsModal()">
+        👨‍👩‍👦 My Patients
+      </div>
+
+      <div class="action-card" (click)="openAppointmentsModal()">
+        📅 My Appointments ({{ appointments.length }})
+      </div>
+
+    </div>
+
+    <!-- ✅ WEEK SCHEDULE -->
+    <div class="card">
+      <h2>This Week Schedule</h2>
+
+      <table *ngIf="weekAppointments.length > 0">
+        <tr>
+          <th>Patient</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+
+        <tr *ngFor="let a of weekAppointments">
+          <td>{{ a.patient }}</td>
+          <td>{{ a.date }}</td>
+          <td>{{ a.slot }}</td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- ✅ MY PATIENTS MODAL -->
+<div class="modal" *ngIf="showPatientsModal">
+  <div class="modal-box large" (click)="$event.stopPropagation()">
+
+    <h2>My Patients</h2>
+
+    <div *ngIf="patients.length === 0" class="empty-state">
+      No patients yet
+    </div>
+
+    <table *ngIf="patients.length > 0">
+      <tr>
+        <th>Name</th>
+        <th>Recent Visit</th>
+        <th>Appointments</th>
+        <th>All Records</th>
+      </tr>
+
+      <tr *ngFor="let p of patients">
+        <td>{{ p.name }}</td>
+        <td>{{ p.lastVisit }}</td>
+
+        <td>
+          <button class="icon-btn" (click)="openPatientAppointments(p)">📋</button>
+        </td>
+
+        <td>
+          <button class="icon-btn" (click)="openAllRecords(p)">📑</button>
+        </td>
+      </tr>
+    </table>
+    <div class="btn-group">
+      <button (click)="closePatientsModal()">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ PATIENT APPOINTMENTS -->
+<div class="modal" *ngIf="selectedPatientAppointments">
+  <div class="modal-box large">
+
+    <h3>Patient Appointments</h3>
+
+    <table>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Record</th>
+      </tr>
+
+      <tr *ngFor="let a of selectedPatientAppointments">
+        <td>{{ a.date }}</td>
+        <td>{{ a.slot }}</td>
+        <td>
+          <button (click)="viewHealthRecord(a)">View</button>
+        </td>
+      </tr>
+    </table>
+
+    <button (click)="selectedPatientAppointments = null">Close</button>
+
+  </div>
+</div>
+
+<!-- ✅ ALL HEALTH RECORDS -->
+<div class="modal" *ngIf="selectedAllRecords">
+  <div class="modal-box large">
+
+    <h3>All Health Records</h3>
+
+    <div *ngFor="let r of selectedAllRecords">
+      <p><b>Date:</b> {{ r.date }}</p>
+      <p><b>Diagnosis:</b> {{ r.healthRecord.diagnosis }}</p>
+      <hr>
+    </div>
+
+    <button (click)="selectedAllRecords = null">Close</button>
+
+  </div>
+</div>
+
+<!-- ✅ SINGLE RECORD -->
+<div class="modal" *ngIf="selectedRecord">
+  <div class="modal-box">
+
+    <h3>Health Record</h3>
+
+    <p><b>Diagnosis:</b> {{ selectedRecord.diagnosis }}</p>
+    <p><b>Prescription:</b> {{ selectedRecord.prescription }}</p>
+
+    <p>
+      <b>Notes:</b>
+      <span *ngIf="selectedRecord.notes; else noNotes">
+        {{ selectedRecord.notes }}
+      </span>
+    </p>
+
+    <ng-template #noNotes>
+      <span class="light-text">No notes available</span>
+    </ng-template>
+
+    <button (click)="selectedRecord = null">Close</button>
+
+  </div>
+</div>
+<!-- ✅ MY APPOINTMENTS MODAL -->
+<div class="modal"
+     *ngIf="showAppointmentsModal"
+     (click)="closeAppointmentsModal()">
+
+  <div class="modal-box large"
+       (click)="$event.stopPropagation()">
+
+    <h2>📅 My Appointments</h2>
+
+    <!-- ✅ EMPTY -->
+    <div *ngIf="appointments.length === 0" class="empty-state">
+      No appointments found
+    </div>
+
+    <!-- ✅ TABLE -->
+    <table *ngIf="appointments.length > 0">
+      <tr>
+        <th>Patient</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+      </tr>
+
+      <tr *ngFor="let a of appointments">
+        <td>{{ a.patient }}</td>
+        <td>{{ a.date }}</td>
+        <td>{{ a.slot }}</td>
+        <td>{{ a.status }}</td>
+      </tr>
+    </table>
+
+    <!-- ✅ CLOSE -->
+    <div class="btn-group">
+      <button (click)="closeAppointmentsModal()">Close</button>
+    </div>
+
+  </div>
+
+</div>
