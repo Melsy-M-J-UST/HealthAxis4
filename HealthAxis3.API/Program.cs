@@ -100,7 +100,7 @@ builder.Services.AddCors(p =>
 {
     p.AddPolicy("CorsPolicy", cfg =>
     {
-        cfg.WithOrigins("https://localhost:7113").AllowAnyHeader().AllowAnyMethod();
+        cfg.WithOrigins("https://localhost:7113","https://localhost:64647").AllowAnyHeader().AllowAnyMethod();
     });
 });
 builder.Services.AddCors(options =>
@@ -124,13 +124,6 @@ using (var scope = app.Services.CreateScope())
     await RoleSeeder.SeedRoleAsync(roleManager);
 
 }
-
-// Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
-//    app.UseSwagger();
-//    app.UseSwaggerUI();
-//}
 
 app.UseSwagger();
 app.UseSwaggerUI();

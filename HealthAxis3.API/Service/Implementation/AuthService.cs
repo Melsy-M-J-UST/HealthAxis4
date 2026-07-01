@@ -32,7 +32,7 @@ namespace HealthAxis3.API.Service.Implementation
 
                 var responses = new AuthResponse
                 {
-                    Accesstoken = tokens,
+                    AccessToken = tokens,
                     Role = roles.FirstOrDefault() ?? "",
                     UserId = user.Id,
                     Message = "FirstLogin"
@@ -50,7 +50,7 @@ namespace HealthAxis3.API.Service.Implementation
 
             var response = new AuthResponse
             {
-                Accesstoken = token,
+                AccessToken = token,
                 Role = role,
                 UserId = user.Id
             };

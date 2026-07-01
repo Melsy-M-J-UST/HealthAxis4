@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { AuthService } from '../../services/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,29 +9,83 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './register.html',
   styleUrls: ['./register.css']
 })
+
 export class RegisterComponent {
+
   registerForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+
     this.registerForm = this.fb.group({
-      name: ['Name should only contain alphabets and spaces and should be a minimum of 3 letters', Validators.required],
-      email: ['Enter a valid email', [Validators.required, Validators.email]],
-      password: ['Password should be minimum of 8 and maximum of 12 characters. It should include at least one uppercase, one lowercase, a number and a special character.', Validators.required],
-      confirmPassword: ['Passwords do not match', Validators.required]
-    });
+      name: ['', [
+        Validators.required,
+        Validators.pattern('^[A-Za-z ]{3,}$')
+      ]],
+
+      dob: ['', Validators.required],
+
+      gender: ['', Validators.required],
+
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+
+      phone: ['', [
+        Validators.required,
+        Validators.pattern('^[6-9][0-9]{9}$')
+      ]],
+
+      insuranceId: [''],
+
+      password: ['', [
+        Validators.required,
+        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,12}$')
+      ]],
+
+      confirmPassword: ['', Validators.required]
+
+    }, { validators: this.passwordMatchValidator });
+
+  }
+
+  passwordMatchValidator(form: AbstractControl) {
+    const password = form.get('password')?.value;
+    const confirm = form.get('confirmPassword')?.value;
+
+    return password === confirm ? null : { mismatch: true };
   }
 
   onRegister() {
-    if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
 
-      if (this.registerForm.value.password !== this.registerForm.value.confirmPassword) {
-        alert("Passwords do not match");
-        return;
-      }
-
-      // 👉 Replace with API call
-      // this.authService.register(this.registerForm.value).subscribe(...)
+    if (this.registerForm.invalid) {
+      this.registerForm.markAllAsTouched();
+      return;
     }
+
+    const payload = {
+      name: this.registerForm.value.name,
+      dob: this.registerForm.value.dob,
+      gender: this.registerForm.value.gender,
+      email: this.registerForm.value.email,
+      phone: this.registerForm.value.phone,
+      insuranceId: this.registerForm.value.insuranceId,
+      password: this.registerForm.value.password
+    };
+
+    this.authService.register(payload).subscribe({
+      next: () => {
+        alert('✅ Registration successful');
+        this.router.navigate(['/login']);
+      },
+      error: () => {
+        alert('❌ Registration failed');
+      }
+    });
   }
+
 }

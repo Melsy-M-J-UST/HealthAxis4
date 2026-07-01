@@ -2,6 +2,7 @@ import { Component, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { UtilService } from '../../services/util';
 import { UserService } from '../../services/user';
+import { AuthService } from '../../services/auth';
 
 @Component({
   selector: 'app-header',
@@ -19,8 +20,20 @@ export class HeaderComponent {
   showPasswordModal = false;
   showLogoutModal = false;
   user: any = {};
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(private router: Router, private userService: UserService, private authservice: AuthService ) { }
 
+  isLoggedIn() {
+    return this.authservice.isLoggedIn();
+  }
+  isAdmin() {
+    return this.authservice.getUserRoles().includes('Admin');
+  }
+  isPatient() {
+    return this.authservice.getUserRoles().includes('Patient');
+  }
+  isDoctor() {
+    return this.authservice.getUserRoles().includes('Doctor');
+  }
   // loadUser() {
   //   const storedUser = this.userService.getUserName('patientUser');
 

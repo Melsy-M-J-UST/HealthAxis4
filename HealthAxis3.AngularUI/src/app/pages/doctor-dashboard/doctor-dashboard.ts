@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppointmentService } from '../../services/appointment';
 
 @Component({
   selector: 'app-doctor-dashboard',
@@ -9,48 +10,11 @@ import { Component } from '@angular/core';
 
 export class DoctorDashboardComponent {
 
-  appointments: any[] = [
-    {
-      patient: 'John Doe',
-      date: '2026-06-29',
-      slot: '11:00 AM',
-      status: 'Completed',
-      cancelReason: '',
-      healthRecord: {
-        diagnosis: 'Viral Fever',
-        prescription: 'Paracetamol',
-        notes: ''
-      }
-    },
-    {
-      patient: 'Mary Jane',
-      date: '2026-06-30',
-      slot: '10:00 AM',
-      status: 'Confirmed',
-      cancelReason: '',
-      healthRecord: {
-        diagnosis: '',
-        prescription: '',
-        notes: ''
-      }
-    },
-    {
-      patient: 'John Doe',
-      date: '2026-06-28',
-      slot: '02:00 PM',
-      status: 'Completed',
-      cancelReason: '',
-      healthRecord: {
-        diagnosis: 'Cold',
-        prescription: 'Cough Syrup',
-        notes: 'Follow-up after 3 days'
-      }
-    }
-  ];
+  constructor(private appointmentService: AppointmentService) { }
 
+  appointments: any[] = [];
   todayAppointments: any[] = [];
   weekAppointments: any[] = [];
-
   patients: any[] = [];
 
   showPatientsModal = false;
@@ -58,20 +22,27 @@ export class DoctorDashboardComponent {
   selectedAllRecords: any = null;
   selectedRecord: any = null;
   showAppointmentsModal = false;
-  // ✅ INIT
+
   ngOnInit() {
+    this.loadData();
+  }
 
-    const today = new Date().toISOString().split('T')[0];
+  loadData() {
+    this.appointmentService.loadAppointments().subscribe({
+      next: () => {
 
-    // ✅ Today's Appointments
-    this.todayAppointments = this.appointments.filter(
-      a => a.date === today
-    );
+        this.appointments = this.appointmentService.getAllAppointments();
+        this.todayAppointments = this.appointmentService.getTodayAppointments();
+        this.weekAppointments = this.appointmentService.getWeeklyAppointments();
 
-    // ✅ This week's (simplified for now)
-    this.weekAppointments = this.appointments;
+      },
+      error: (err) => {
+        console.error('Error loading appointments', err);
+      }
+    });
+  }
 
-    // ✅ Derive patients list
+  preparePatients() {
     const map = new Map();
 
     this.appointments.forEach(a => {
@@ -85,13 +56,10 @@ export class DoctorDashboardComponent {
       }
 
       map.get(a.patient).appointments.push(a);
-
     });
 
     this.patients = Array.from(map.values());
   }
-
-  // ✅ MODAL CONTROLS
 
   openPatientsModal() {
     this.showPatientsModal = true;

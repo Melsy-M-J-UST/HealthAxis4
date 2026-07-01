@@ -43,8 +43,8 @@
                 Console.WriteLine("Empty response");
                 return;
             }
-            await JS.InvokeVoidAsync("localStorage.setItem", "token", authResponse.Accesstoken);
-            AuthStateProvider.NotifyUserLoggedIn(authResponse.Accesstoken);
+            await JS.InvokeVoidAsync("localStorage.setItem", "token", authResponse.AccessToken);
+            AuthStateProvider.NotifyUserLoggedIn(authResponse.AccessToken);
             if (authResponse.Message == "FirstLogin")
             {
                 Console.WriteLine("First login - redirecting to change password");

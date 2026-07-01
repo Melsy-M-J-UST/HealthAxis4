@@ -1,12 +1,10 @@
 <app-header [showMenuEnabled]="true"></app-header>
 
 <div class="layout">
-
-  <!-- ✅ SIDEBAR -->
-  <!--<app-sidebar></app-sidebar>-->
+ 
+  <app-sidebar></app-sidebar>
 
   <div class="container">
-      <!-- TODAY APPOINTMENTS -->
       <div class="card">
         <h2>Today's Appointments</h2>
 
@@ -35,7 +33,6 @@
         </table>
       </div>
 
-      <!-- ACTION CARDS -->
       <div class="actions">
         <div class="action-card" (click)="openBookingModal()">
           📅 Book Appointment
@@ -47,7 +44,6 @@
           👨‍⚕️ My Doctors
         </div>
       </div>
-
     </div>
 
     <div class="card">
@@ -89,8 +85,6 @@
 
     <h2>📅 Book Appointment</h2>
 
-
-    <!-- SPECIALISATION -->
     <label>Specialisation</label>
     <select [(ngModel)]="newAppointment.specialization"
             (change)="onSpecializationChange()">
@@ -100,7 +94,6 @@
       </option>
     </select>
 
-    <!-- DOCTOR -->
     <label>Doctor</label>
     <select [(ngModel)]="newAppointment.doctor">
       <option value="">Select</option>
@@ -109,13 +102,11 @@
       </option>
     </select>
 
-    <!-- DATE -->
     <label>Date</label>
     <input type="date"
             [(ngModel)]="newAppointment.date"
             [min]="today" />
 
-    <!-- SLOT -->
     <label>Time Slot</label>
     <select [(ngModel)]="newAppointment.slot">
       <option value="">Select</option>
@@ -124,7 +115,6 @@
       </option>
     </select>
 
-    <!-- ACTIONS -->
     <div class="btn-group">
       <button (click)="closeBookingModal()">Cancel</button>
       <button class="primary"
@@ -177,7 +167,6 @@
               (input)="filterSpecialisations()"
               (blur)="onBlur()" />
 
-      <!-- ✅ DROPDOWN (shows only on focus) -->
       <div class="dropdown-list" *ngIf="showDropdown">
 
         <div class="all-option"
@@ -185,12 +174,10 @@
           All Doctors
         </div>
 
-        <!-- No results -->
         <div *ngIf="filteredSpecialisations.length === 0" class="light-text">
           No such specialisation
         </div>
 
-        <!-- Filtered list -->
         <div *ngFor="let s of filteredSpecialisations"
               (click)="selectSpecialisation(s)">
           {{ s }}
@@ -199,7 +186,6 @@
       </div>
     </div>
 
-    <!-- DOCTOR TABLE -->
     <table *ngIf="filteredDoctorsList.length > 0">
       <tr>
         <th>Doctor</th>
@@ -216,18 +202,16 @@
 
   </div>
 </div>
-<!-- ✅ MY DOCTORS MODAL -->
+
 <div class="modal" *ngIf="showMyDoctorsModal">
   <div class="modal-box large">
 
     <h2>👨‍⚕️ My Doctors</h2>
 
-    <!-- ✅ EMPTY STATE -->
     <div *ngIf="myDoctors.length === 0" class="empty-state">
       You haven't consulted any doctors yet
     </div>
 
-    <!-- ✅ DOCTORS TABLE -->
     <table *ngIf="myDoctors.length > 0">
       <tr>
         <th>Doctor</th>
@@ -240,7 +224,6 @@
       </tr>
     </table>
 
-    <!-- ✅ CLOSE BUTTON -->
     <div class="btn-group">
       <button (click)="closeMyDoctorsModal()">Close</button>
     </div>
