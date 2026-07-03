@@ -12,22 +12,19 @@ export class AppointmentService {
 
   private appointments: any[] = [];
 
-  // ✅ LOAD APPOINTMENTS FROM API
   loadAppointments(): Observable<any[]> {
-    return this.http.get<any[]>(`${API_BASE_URL}/appointments`)
+    return this.http.get<any[]>(`${API_BASE_URL}/appointment`)
       .pipe(
         tap((data) => {
-          this.appointments = data; // ✅ cache locally
+          this.appointments = data;
         })
       );
   }
 
-  // ✅ GET ALL (FROM CACHE)
   getAllAppointments() {
     return this.appointments;
   }
 
-  // ✅ TODAY APPOINTMENTS
   getTodayAppointments() {
     const today = new Date().toISOString().split('T')[0];
 
@@ -36,7 +33,6 @@ export class AppointmentService {
     );
   }
 
-  // ✅ WEEKLY APPOINTMENTS
   getWeeklyAppointments() {
     const today = new Date();
 
@@ -51,30 +47,25 @@ export class AppointmentService {
     });
   }
 
-  // ✅ CHECK SLOT AVAILABILITY
   checkAvailability(doctor: string, date: string, slot: string): Observable<any> {
     return this.http.get<any>(
-      `${API_BASE_URL}/appointments/check-availability`,
+      `${API_BASE_URL}/appointment/check-availability`,
       {
         params: { doctor, date, slot }
       }
     );
   }
 
-  // ✅ ADD APPOINTMENT
   addAppointment(data: any): Observable<any> {
-    return this.http.post(`${API_BASE_URL}/appointments`, data);
+    return this.http.post(`${API_BASE_URL}/appointment`, data);
   }
 
-  // ✅ UPDATE APPOINTMENT (CONFIRM / CANCEL / COMPLETE)
   updateAppointment(id: string, data: any): Observable<any> {
-    return this.http.put(`${API_BASE_URL}/appointments/${id}`, data);
+    return this.http.put(`${API_BASE_URL}/appointment/${id}`, data);
   }
 
-  // ✅ MY DOCTORS
   getMyDoctors(doctors: any[]) {
     const myDoctorNames = this.appointments.map(a => a.doctor);
     return doctors.filter(d => myDoctorNames.includes(d.name));
   }
-
 }

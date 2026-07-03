@@ -13,7 +13,7 @@ export class DoctorService {
   private doctors: any[] = [];
 
   loadDoctors(): Observable<any[]> {
-    return this.http.get<any[]>(`${API_BASE_URL}/doctors`)
+    return this.http.get<any[]>(`${API_BASE_URL}/Doctor`)
       .pipe(
         tap((data) => {
           this.doctors = data;

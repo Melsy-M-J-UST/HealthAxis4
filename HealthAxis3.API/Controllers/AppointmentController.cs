@@ -12,14 +12,14 @@ namespace HealthAxis3.API.Controllers
     public class AppointmentController(IAppointmentService service) : ControllerBase
     {
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Doctor, Patient")]
         public async Task<IActionResult> GetAll()
         {
             var result = await service.GetAllAsync();
             return Ok(result);
         }
         [HttpGet("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient, Doctor")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await service.GetByIdAsync(id);
@@ -33,7 +33,7 @@ namespace HealthAxis3.API.Controllers
             }
         }
         [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]
         public async Task<IActionResult> Create([FromBody] AppointmentDto entity)
         {
             if (!ModelState.IsValid)
@@ -65,7 +65,6 @@ namespace HealthAxis3.API.Controllers
             return Ok(new { message = result });
         }
 
-        // ✅ Delete
         [HttpDelete("{id}")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
         public async Task<IActionResult> Delete(int id)

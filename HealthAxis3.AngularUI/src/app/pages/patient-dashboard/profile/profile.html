@@ -1,30 +1,19 @@
 <app-header [showMenuEnabled]="false"></app-header>
 
-<!-- PROFILE CARD -->
 <form #profileForm="ngForm" class="profile-card">
 
   <h2>👤 My Profile</h2>
 
-
   <div class="form-group">
     <label for="patientName">Name *</label>
-    <input name="patientname"
-           [(ngModel)]="user.patientName"
-           required
-           #patientName="ngModel" />
-
+    <input id="patientname" name="patientname" [(ngModel)]="user.patientName" required #patientName="ngModel" />
     <div class="error" *ngIf="patientName.invalid && patientName.touched">
       Name is required
     </div>
 
     <div class="form-group">
       <label for="email">Email *</label>
-      <input name="email"
-             [(ngModel)]="user.email"
-             required
-             email
-             #email="ngModel" />
-
+      <input id="email" name="email" [(ngModel)]="user.email" required email #email="ngModel" />
       <div class="error" *ngIf="email.invalid && email.touched">
         Enter a valid email
       </div>
@@ -32,12 +21,7 @@
 
     <div class="form-group">
       <label for="dateOfBirth">Date of Birth *</label>
-      <input type="date"
-             name="dateOfBirth"
-             [(ngModel)]="user.dateOfBirth"
-             required
-             #dateOfBirth="ngModel" />
-
+      <input type="date" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="user.dateOfBirth" required #dateOfBirth="ngModel" />
       <div class="error" *ngIf="dateOfBirth.invalid && dateOfBirth.touched">
         Date of birth is required
       </div>
@@ -46,9 +30,10 @@
     <div class="info-box">
       Age: <strong>{{ age }}</strong>
     </div>
+
     <div class="form-group">
       <label for="gender">Gender *</label>
-      <select name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
+      <select id="gender" name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
         <option value="">Select Gender</option>
         <option>Male</option>
         <option>Female</option>
@@ -62,12 +47,7 @@
 
     <div class="form-group">
       <label for="phoneNumber">Phone *</label>
-      <input name="phoneNumber"
-             [(ngModel)]="user.phoneNumber"
-             required
-             pattern="^[6-9][0-9]{9}$"
-             #phoneNumber="ngModel" />
-
+      <input id="phoneNumber" name="phoneNumber" [(ngModel)]="user.phoneNumber" required pattern="^[6-9][0-9]{9}$" #phoneNumber="ngModel" />
       <div class="error" *ngIf="phoneNumber.invalid && phoneNumber.touched">
         Enter valid 10-digit phone number
       </div>
@@ -75,9 +55,7 @@
 
     <div class="form-group">
       <label for="insuranceId">Insurance ID</label>
-      <input name="insuranceId"
-             [(ngModel)]="user.insuranceId"
-             #insurance="ngModel" />
+      <input id="insuranceId" name="insuranceId" [(ngModel)]="user.insuranceId" #insurance="ngModel" />
     </div>
 
   </div>

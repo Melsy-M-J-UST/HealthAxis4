@@ -12,14 +12,14 @@ namespace HealthAxis3.API.Controllers
     public class DoctorController(IDoctorService service) : ControllerBase
     {
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]
         public async Task<IActionResult> GetAll()
         {
             var result = await service.GetAllAsync();
             return Ok(result);
         }
         [HttpGet("search")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]
         public async Task<IActionResult> Search([FromQuery] int? id, [FromQuery] string? name, [FromQuery] string? specialisation)
         {
             List<DoctorDto> result = [];
