@@ -23,7 +23,7 @@ export class ProfileComponent {
 
   ngOnInit() {
 
-    this.userId = this.getUserIdFromToken();
+    this.userId = localStorage.getItem("patientId");
     this.loadProfile();
   }
 
@@ -40,10 +40,12 @@ export class ProfileComponent {
   loadProfile() {
 
     if (!this.userId) return;
-
-    this.patientService.getPatientById(this.userId)
+    this.patientService.getPatientById(Number(this.userId))
       .subscribe({
         next: (data) => {
+          if (data.dateOfBirth) {
+            data.dateOfBirth = data.dateOfBirth.split('T')[0];
+          }
           this.user = data;
         },
         error: (err) => {
@@ -54,9 +56,9 @@ export class ProfileComponent {
 
   get age(): number {
 
-    if (!this.user.dob) return 0;
+    if (!this.user.dateOfBirth) return 0;
 
-    const birthDate = new Date(this.user.dob);
+    const birthDate = new Date(this.user.dateOfBirth);
     const today = new Date();
 
     let age = today.getFullYear() - birthDate.getFullYear();
@@ -74,7 +76,7 @@ export class ProfileComponent {
 
     if (!this.userId) return;
 
-    this.patientService.updatePatient(this.userId, this.user)
+    this.patientService.updatePatient(Number(this.userId), this.user)
       .subscribe({
         next: () => {
           this.saved = true;

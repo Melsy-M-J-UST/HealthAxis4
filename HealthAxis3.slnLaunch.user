@@ -3,6 +3,10 @@
     "Name": "New Profile",
     "Projects": [
       {
+        "Path": "HealthAxis3.AngularUI\\HealthAxis3.AngularUI.esproj",
+        "Action": "Start"
+      },
+      {
         "Path": "HealthAxis3.API\\HealthAxis3.API.csproj",
         "Action": "Start"
       },

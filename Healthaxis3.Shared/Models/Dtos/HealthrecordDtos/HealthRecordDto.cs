@@ -11,7 +11,6 @@ namespace HealthAxis3.Shared.Models.Dtos.HealthrecordDtos
     [ExcludeFromCodeCoverage]
     public class HealthRecordDto
     {
-        [Required]
         public int HealthRecordId { get; set; }
 
         [Required(ErrorMessage = "AppointmentId is required")]

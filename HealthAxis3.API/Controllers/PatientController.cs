@@ -18,7 +18,7 @@ namespace HealthAxis3.API.Controllers
             return Ok(result);
         }
         [HttpGet("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Doctor")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Doctor, Patient")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await service.GetByIdAsync(id);

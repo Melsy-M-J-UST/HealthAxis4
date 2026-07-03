@@ -25,12 +25,12 @@ export class PatientService {
     return this.patients;
   }
 
-  getPatientById(id: string): Observable<any> {
-    return this.http.get(`${API_BASE_URL}/patients/${id}`);
+  getPatientById(id: number): Observable<any> {
+    return this.http.get(`${API_BASE_URL}/Patient/${id}`);
   }
 
-  updatePatient(id: string, data: any): Observable<any> {
-    return this.http.put(`${API_BASE_URL}/patients/${id}`, data);
+  updatePatient(id: number, data: any): Observable<any> {
+    return this.http.put(`${API_BASE_URL}/Patient/${id}`, data);
   }
 
 }

@@ -12,7 +12,8 @@ import { ProfileComponent } from './pages/patient-dashboard/profile/profile';
 import { HeaderComponent } from './components/header/header';
 import { SidebarComponent } from './components/sidebar/sidebar';
 import { DoctorDashboardComponent } from './pages/doctor-dashboard/doctor-dashboard';
-import { HttpClientModule, provideHttpClient } from '@angular/common/http';
+import { withInterceptors, provideHttpClient } from '@angular/common/http';
+import { authInterceptor } from './interceptors/auth-interceptor';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,8 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
     SidebarComponent,
     DoctorDashboardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule, HttpClientModule],
-  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient()],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, FormsModule],
+  providers: [provideBrowserGlobalErrorListeners(), provideHttpClient(withInterceptors([authInterceptor]))],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,6 @@
-﻿using HealthAxis3.Shared.Models;
+﻿using HealthAxis3.API.Data;
 using HealthAxis3.API.Models;
+using HealthAxis3.Shared.Models;
 using HealthAxis3.Shared.Models.Dtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -9,7 +10,7 @@ using System.Text;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class AuthService(UserManager<ApplicationUser> userManager, IConfiguration config) : IAuthService
+    public class AuthService(UserManager<ApplicationUser> userManager, AppDbContext context, IConfiguration config) : IAuthService
     {
         public async Task<(bool Success, string Message, AuthResponse? Data, int ExpiresIn)> Login(LoginDto request)
         {
@@ -25,7 +26,7 @@ namespace HealthAxis3.API.Service.Implementation
 
             var roles = await userManager.GetRolesAsync(user);
 
-            if (user.IsFirstLogin && roles.Any(r => r == "Patient" || r == "Doctor"))
+            if (user.IsFirstLogin && roles.Any(r => r == "Doctor"))
             {
 
                 var tokens = await GenerateToken(user);
@@ -48,11 +49,15 @@ namespace HealthAxis3.API.Service.Implementation
 
             var expiry = int.Parse(config["Jwt:AccessTokenExpirationMinutes"]!);
 
+            var patient = context.Patients
+                .FirstOrDefault(p => p.UserId == user.Id);
+
             var response = new AuthResponse
             {
                 AccessToken = token,
                 Role = role,
-                UserId = user.Id
+                UserId = user.Id,
+                PatientId = patient?.PatientId
             };
 
             return (true, "User Logged in Successfully", response, expiry);
@@ -79,8 +84,25 @@ namespace HealthAxis3.API.Service.Implementation
                 return (false, "Error creating user", "");
 
             await userManager.AddToRoleAsync(user, request.Role);
+            if (request.Role == "Patient")
+            {
+                var patient = new Patient
+                {
+                    UserId = user.Id,
+                    PatientName = request.PatientName,
+                    Email = request.Email,
+                    PhoneNumber = request.PhoneNumber,
+                    DateOfBirth = request.DateOfBirth,
+                    Gender = request.Gender,
+                    InsuranceId = request.InsuranceId
+                };
+
+                context.Patients.Add(patient);
+                await context.SaveChangesAsync();
+            }
 
             return (true, "User Registered Successfully", user.Id);
+
         }
 
         public async Task<(bool Success, string Message)> CreateDoctorUser(string email)

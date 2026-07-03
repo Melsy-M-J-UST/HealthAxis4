@@ -7,18 +7,18 @@
 
 
   <div class="form-group">
-    <label>Name *</label>
-    <input name="name"
-           [(ngModel)]="user.name"
+    <label for="patientName">Name *</label>
+    <input name="patientname"
+           [(ngModel)]="user.patientName"
            required
-           #name="ngModel" />
+           #patientName="ngModel" />
 
-    <div class="error" *ngIf="name.invalid && name.touched">
+    <div class="error" *ngIf="patientName.invalid && patientName.touched">
       Name is required
     </div>
 
     <div class="form-group">
-      <label>Email *</label>
+      <label for="email">Email *</label>
       <input name="email"
              [(ngModel)]="user.email"
              required
@@ -31,14 +31,14 @@
     </div>
 
     <div class="form-group">
-      <label>Date of Birth *</label>
+      <label for="dateOfBirth">Date of Birth *</label>
       <input type="date"
-             name="dob"
-             [(ngModel)]="user.dob"
+             name="dateOfBirth"
+             [(ngModel)]="user.dateOfBirth"
              required
-             #dob="ngModel" />
+             #dateOfBirth="ngModel" />
 
-      <div class="error" *ngIf="dob.invalid && dob.touched">
+      <div class="error" *ngIf="dateOfBirth.invalid && dateOfBirth.touched">
         Date of birth is required
       </div>
     </div>
@@ -46,34 +46,8 @@
     <div class="info-box">
       Age: <strong>{{ age }}</strong>
     </div>
-
     <div class="form-group">
-      <label>Phone *</label>
-      <input name="phone"
-             [(ngModel)]="user.phone"
-             required
-             pattern="^[6-9][0-9]{9}$"
-             #phone="ngModel" />
-
-      <div class="error" *ngIf="phone.invalid && phone.touched">
-        Enter valid 10-digit phone number
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Insurance ID *</label>
-      <input name="insuranceId"
-             [(ngModel)]="user.insuranceId"
-             required
-             #insurance="ngModel" />
-
-      <div class="error" *ngIf="insurance.invalid && insurance.touched">
-        Insurance ID is required
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label>Gender</label>
+      <label for="gender">Gender *</label>
       <select name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
         <option value="">Select Gender</option>
         <option>Male</option>
@@ -86,11 +60,30 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <label for="phoneNumber">Phone *</label>
+      <input name="phoneNumber"
+             [(ngModel)]="user.phoneNumber"
+             required
+             pattern="^[6-9][0-9]{9}$"
+             #phoneNumber="ngModel" />
+
+      <div class="error" *ngIf="phoneNumber.invalid && phoneNumber.touched">
+        Enter valid 10-digit phone number
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="insuranceId">Insurance ID</label>
+      <input name="insuranceId"
+             [(ngModel)]="user.insuranceId"
+             #insurance="ngModel" />
+    </div>
+
   </div>
     <div *ngIf="saved" class="success-msg">
       Profile updated successfully ✅
     </div>
-    <!-- ACTION BUTTON -->
     <button class="save-btn" [disabled]="profileForm.invalid" (click)="saveProfile()">
       💾 Save Changes
     </button>

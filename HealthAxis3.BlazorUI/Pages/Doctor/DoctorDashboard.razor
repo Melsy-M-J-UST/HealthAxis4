@@ -1,11 +1,60 @@
 ﻿@page "/doctor"
 @inject DoctorService DoctorService
 
-<h3 class="mb-3">Doctor Dashboard</h3>
+<h3 class="mb-4 fw-bold text-primary">🩺 Doctor Management</h3>
 
-<div class="d-flex justify-content-between mb-3">
+<div class="row g-4 mb-4">
 
-    <select class="form-select w-25" @onchange="OnFilterChanged">
+    <div class="col-md-4">
+        <div class="card dashboard-card text-white"
+             style="background: linear-gradient(135deg,#4e73df,#224abe)">
+            <div class="card-body d-flex justify-content-between">
+                <div>
+                    <h6>Total Doctors</h6>
+                    <h2>@TotalDoctors</h2>
+                </div>
+                <div class="card-icon">👨‍⚕</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card dashboard-card text-white"
+             style="background: linear-gradient(135deg,#1cc88a,#13855c)">
+            <div class="card-body d-flex justify-content-between">
+                <div>
+                    <h6>Active</h6>
+                    <h2>@ActiveDoctors</h2>
+                </div>
+                <div class="card-icon">✅</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card dashboard-card text-white"
+             style="background: linear-gradient(135deg,#e74a3b,#b02a1f)">
+            <div class="card-body d-flex justify-content-between">
+                <div>
+                    <h6>Inactive</h6>
+                    <h2>@InactiveDoctors</h2>
+                </div>
+                <div class="card-icon">❌</div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    <input type="text"
+           class="form-control w-25 shadow-sm"
+           placeholder="Search doctor..."
+           @bind="SearchText"
+           @bind:event="oninput" />
+
+    <select class="form-select w-25 shadow-sm" @onchange="OnFilterChanged">
         <option value="">All Specialisations</option>
         @foreach (var spec in Specialisations)
         {
@@ -13,16 +62,19 @@
         }
     </select>
 
-    <button class="btn btn-primary" @onclick="OpenAddModal">+ Add Doctor</button>
+    <button class="btn btn-primary shadow-sm" @onclick="OpenAddModal">
+        + Add Doctor
+    </button>
+
 </div>
 
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Name</th>
-            <th>Specialisation</th>
-            <th>Experience</th>
-            <th>Fees</th>
+            <th @onclick='() => SortBy("name")'>Name ⬍</th>
+            <th @onclick='() => SortBy("specialisation")'>Specialisation ⬍</th>
+            <th @onclick='() => SortBy("experience")'>Experience ⬍</th>
+            <th @onclick='() => SortBy("fees")'>Fees ⬍</th>
             <th>Status</th>
             <th>Actions</th>
         </tr>
@@ -144,17 +196,7 @@
         </div>
     </div>
 }
-<style>
-    .form-check-input:checked {
-        background-color: #28a745;
-        border-color: #28a745;
-    }
 
-    .form-check-input:not(:checked) {
-        background-color: #dc3545;
-        border-color: #dc3545;
-    }
-</style>
 @code {
     private List<DoctorDto> Doctors = new();
     private List<string> Specialisations = new()
@@ -167,14 +209,15 @@
     private DoctorDto? SelectedDoctor;
     private bool ShowConfirm = false;
     private string selectedSpec = "";
+
+    private int TotalDoctors => Doctors.Count;
+    private int ActiveDoctors => Doctors.Count(d => d.IsActive);
+    private int InactiveDoctors => Doctors.Count(d => !d.IsActive);
+
     private int CurrentPage = 1;
     private int PageSize = 5;
-
-    private List<DoctorDto> PagedDoctors =>
-        Doctors.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
-
-    private int TotalPages =>
-        (int)Math.Ceiling(Doctors.Count / (double)PageSize);
+    private List<DoctorDto> PagedDoctors =>Doctors.Skip((CurrentPage - 1) * PageSize).Take(PageSize).ToList();
+    private int TotalPages => (int)Math.Ceiling(Doctors.Count / (double)PageSize);
 
     private bool ShowModal = false;
     private bool IsEdit = false;
@@ -183,6 +226,9 @@
         DoctorName = "",
         Specialisation = ""
     };
+    private string SearchText = "";
+    private string SortColumn = "";
+    private bool SortAscending = true;
 
     protected override async Task OnInitializedAsync()
     {
@@ -269,4 +315,23 @@
     {
         ShowModal = false;
     }
+    private void SortBy(string column)
+    {
+        if (SortColumn == column)
+            SortAscending = !SortAscending;
+        else
+        {
+            SortColumn = column;
+            SortAscending = true;
+        }
+    }
+    private List<DoctorDto> FilteredDoctors =>
+    AllDoctors
+        .Where(d =>
+            (string.IsNullOrEmpty(SearchText) ||
+             d.DoctorName.Contains(SearchText, StringComparison.OrdinalIgnoreCase)) &&
+            (string.IsNullOrEmpty(selectedSpec) ||
+             d.Specialisation != null &&
+             d.Specialisation.Equals(selectedSpec, StringComparison.OrdinalIgnoreCase))).ToList().
+             OrderByDynamic(SortColumn, SortAscending).ToList();
 }

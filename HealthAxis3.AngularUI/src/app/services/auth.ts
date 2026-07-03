@@ -15,6 +15,10 @@ export class AuthService {
   }
   setSession(authResponse: AuthResponse) {
     localStorage.setItem("token", authResponse.accessToken);
+    if (authResponse.patientId) {
+      localStorage.setItem("patientId", authResponse.patientId.toString()
+      );
+    }
   }
   getToken() : string|null{
     return localStorage.getItem("token");
@@ -39,7 +43,7 @@ export class AuthService {
     console.log('exp:', exp);
     console.log('now:', Math.floor(Date.now() / 1000));
     
-    return exp > currentTime;
+    return exp < currentTime;
   }
   private parseJwt(token: string): any | null {
     try {

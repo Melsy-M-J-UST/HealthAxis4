@@ -61,6 +61,9 @@ namespace HealthAxis3.API.Models
 
         public bool IsActive { get; set; } = true;
 
+        public string? UserId { get; set; }
+
+        public ApplicationUser? User { get; set; }
         public static ValidationResult? ValidateDOB(DateTime dob)
         {
             if (dob > DateTime.Today)

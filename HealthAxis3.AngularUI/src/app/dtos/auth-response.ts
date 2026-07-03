@@ -1,5 +1,9 @@
 export interface AuthResponse {
   accessToken: string;
-  meassage: string;
+  message: string;
   expiresIn: number;
+  role: string;
+  userId: string;
+  patientId: number;
+
 }

@@ -5,37 +5,52 @@
     <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
 
       <div class="form-group">
-        <label>Full Name</label>
-        <input type="text" formControlName="name" placeholder="Enter your name" />
-        <div class="text-danger" *ngIf="registerForm.get('name')?.touched">
-          <span *ngIf="registerForm.get('name')?.errors?.['required']">
+        <label for="patientName">Full Name</label>
+        <input id="patientName" type="text" formControlName="patientName" placeholder="Enter your name" />
+        <div class="text-danger" *ngIf="registerForm.get('patientName')?.touched">
+          <span *ngIf="registerForm.get('patientName')?.errors?.['required']">
             Name is required
           </span>
-          <span *ngIf="registerForm.get('name')?.errors?.['pattern']">
+          <span *ngIf="registerForm.get('patientName')?.errors?.['pattern']">
             Minimum 3 letters, only alphabets & spaces
           </span>
         </div>
       </div>
 
       <div class="form-group">
-        <label>Date of Birth</label>
-        <input type="date" formControlName="dob" />
+        <label for="dateOfBirth">Date of Birth</label>
+        <input id="dateOfBirth" type="date" formControlName="dateOfBirth" />
+        <div class="text-danger" *ngIf="registerForm.get('dateOfBirth')?.touched">
+          <span *ngIf="registerForm.get('dateOfBirth')?.errors?.['required']">
+            Date of birth is required
+          </span>
+          <span *ngIf="registerForm.get('dateOfBirth')?.errors?.['futureDate']">
+            Date of Birth must be a past date
+          </span>
+        </div>
       </div>
 
       <div class="form-group">
-        <label>Gender</label>
-        <select formControlName="gender">
+        <label for="gender">Gender</label>
+        <select id="gender" formControlName="gender">
           <option value="">Select Gender</option>
           <option>Male</option>
           <option>Female</option>
           <option>Transgender</option>
           <option>Others</option>
         </select>
+        <div class="text-danger">
+          @if(registerForm.controls["gender"].touched || registerForm.controls["gender"].dirty){
+          @if(registerForm.controls["gender"].errors?.['required']){
+          <span>Gender is required</span>
+          }
+          }
+        </div>
       </div>
 
       <div class="form-group">
-        <label>Email</label>
-        <input type="email" formControlName="email" placeholder="Enter your email" />
+        <label for="email">Email</label>
+        <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
         <div class="text-danger">
           @if(registerForm.controls["email"].touched || registerForm.controls["email"].dirty){
           @if(registerForm.controls["email"].errors?.['required']){
@@ -46,22 +61,30 @@
       </div>
 
       <div class="form-group">
-        <label>Phone Number</label>
-        <input type="text" formControlName="phone" placeholder="Enter your Phone Number"/>
-        <div class="text-danger" *ngIf="registerForm.get('phone')?.errors?.['pattern']">
+        <label for="phoneNumber">Phone Number</label>
+        <input id="phoneNumber" type="text" formControlName="phoneNumber" placeholder="Enter your Phone Number" />
+        <div class="text-danger" *ngIf="registerForm.get('phoneNumber')?.touched">
+          <span *ngIf="registerForm.get('phoneNumber')?.errors?.['required']">
+            Phone number is required
+          </span>
+          <span *ngIf="registerForm.get('phoneNumber')?.errors?.['pattern']">
           Enter valid 10 digit number
+          </span>
         </div>
       </div>
 
       <div class="form-group">
-        <label>Insurance Id</label>
-        <input type="text" formControlName="insuranceId" placeholder="Optional" />
+        <label for="insuranceId">Insurance Id</label>
+        <input id="insuranceId" type="text" formControlName="insuranceId" placeholder="Optional" />
       </div>
 
       <div class="form-group">
-        <label>Password</label>
-        <input type="password" formControlName="password" placeholder="Enter your Password"/>
-        <div class="text-danger">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password" placeholder="Enter your Password"/>
+        <div class="text-danger" *ngIf="registerForm.get('password')?.touched">
+          <span *ngIf="registerForm.get('password')?.errors?.['required']">
+            Password is required
+          </span>
           <span *ngIf="registerForm.get('password')?.errors?.['pattern']">
             Password should be minimum of 8 and maximum of 12 characters. It should include at least one uppercase, one lowercase, a number and a special character.
           </span>
@@ -70,8 +93,8 @@
       </div>
 
       <div class="form-group">
-        <label>Confirm Password</label>
-        <input type="password" formControlName="confirmPassword" />
+        <label for="confirmPassword">Confirm Password</label>
+        <input id="confirmPassword" type="password" formControlName="confirmPassword" />
         <div class="text-danger" *ngIf="registerForm.errors?.['mismatch']">
           Passwords do not match
         </div>

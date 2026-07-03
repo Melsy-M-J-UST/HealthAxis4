@@ -184,3 +184,51 @@ button {
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
+.dashboard-card {
+    border: none;
+    border-radius: 16px;
+    padding: 10px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+    .dashboard-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    }
+
+.card-icon {
+    font-size: 32px;
+    opacity: 0.9;
+}
+
+.status-badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.badge-active {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-inactive {
+    background-color: #dc3545;
+    color: white;
+}
+
+.table-modern {
+    border-radius: 12px;
+    overflow: hidden;
+}
+/*toggle*/
+.form-check-input:checked {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.form-check-input:not(:checked) {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}

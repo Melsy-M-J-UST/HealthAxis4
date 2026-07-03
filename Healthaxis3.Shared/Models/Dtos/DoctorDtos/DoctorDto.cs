@@ -6,7 +6,6 @@ namespace HealthAxis3.Shared.Models.Dtos.DoctorDtos
     [ExcludeFromCodeCoverage]
     public class DoctorDto
     {
-        [Required(ErrorMessage = "DoctorId is required")]
         public int DoctorId { get; set; }
 
         [Required(ErrorMessage = "Doctor Name is required")]

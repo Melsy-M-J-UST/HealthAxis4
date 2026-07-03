@@ -19,6 +19,11 @@ namespace HealthAxis3.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<Patient>()
+            .HasOne(p => p.User)
+            .WithMany()
+            .HasForeignKey(p => p.UserId);
+
             modelBuilder.Entity<HealthRecord>()
             .HasOne(hr => hr.Patient)
             .WithMany()

@@ -7,7 +7,6 @@ namespace HealthAxis3.Shared.Models.Dtos.PatientDtos
 {
     public class PatientDto
     {
-        [Required(ErrorMessage = "PatientId is required")]
         public int PatientId { get; set; }
 
         [Required]
@@ -18,10 +17,8 @@ namespace HealthAxis3.Shared.Models.Dtos.PatientDtos
         [Required]
         [DataType(DataType.Date)]
         [CustomValidation(typeof(PatientDto), nameof(ValidateDOB))]
-        [JsonIgnore]
         public DateTime DateOfBirth { get; set; }
 
-        [NotMapped]
         public int Age
         {
             get
@@ -29,7 +26,7 @@ namespace HealthAxis3.Shared.Models.Dtos.PatientDtos
                 var today = DateTime.Today;
                 int age = today.Year - DateOfBirth.Year;
 
-                if (DateOfBirth.Date > today.AddYears(-age))
+                if (DateOfBirth > today.AddYears(-age))
                 {
                     age--;
                 }

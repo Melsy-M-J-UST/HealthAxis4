@@ -21,12 +21,16 @@ export class RegisterComponent {
   ) {
 
     this.registerForm = this.fb.group({
-      name: ['', [
+      patientName: ['', [
         Validators.required,
         Validators.pattern('^[A-Za-z ]{3,}$')
       ]],
 
-      dob: ['', Validators.required],
+      dateOfBirth: ['', [
+        Validators.required,
+        this.futureDateValidator
+      ]],
+
 
       gender: ['', Validators.required],
 
@@ -35,7 +39,7 @@ export class RegisterComponent {
         Validators.email
       ]],
 
-      phone: ['', [
+      phoneNumber: ['', [
         Validators.required,
         Validators.pattern('^[6-9][0-9]{9}$')
       ]],
@@ -53,6 +57,19 @@ export class RegisterComponent {
 
   }
 
+  futureDateValidator(control: any) {
+    if (!control.value) return null;
+
+    const selectedDate = new Date(control.value);
+    const today = new Date();
+
+    today.setHours(0, 0, 0, 0);
+
+    return selectedDate <= today
+      ? null
+      : { futureDate: true };
+  }
+
   passwordMatchValidator(form: AbstractControl) {
     const password = form.get('password')?.value;
     const confirm = form.get('confirmPassword')?.value;
@@ -68,13 +85,15 @@ export class RegisterComponent {
     }
 
     const payload = {
-      name: this.registerForm.value.name,
-      dob: this.registerForm.value.dob,
+      patientName: this.registerForm.value.patientName,
+      dateOfBirth: this.registerForm.value.dateOfBirth,
       gender: this.registerForm.value.gender,
       email: this.registerForm.value.email,
-      phone: this.registerForm.value.phone,
+      phoneNumber: this.registerForm.value.phoneNumber,
       insuranceId: this.registerForm.value.insuranceId,
-      password: this.registerForm.value.password
+      password: this.registerForm.value.password,
+      confirmPassword: this.registerForm.value.confirmPassword,
+      role: "Patient"
     };
 
     this.authService.register(payload).subscribe({
@@ -82,8 +101,13 @@ export class RegisterComponent {
         alert('✅ Registration successful');
         this.router.navigate(['/login']);
       },
-      error: () => {
+      error: (err) => {
         alert('❌ Registration failed');
+
+        console.log('Status:', err.status);
+        console.log('Full Error:', err);
+        console.log('Response Body:', err.error);
+
       }
     });
   }
