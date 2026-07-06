@@ -16,8 +16,7 @@ export class AuthService {
   setSession(authResponse: AuthResponse) {
     localStorage.setItem("token", authResponse.accessToken);
     if (authResponse.patientId) {
-      localStorage.setItem("patientId", authResponse.patientId.toString()
-      );
+      localStorage.setItem("patientId", authResponse.patientId.toString());
     }
   }
   getToken() : string|null{

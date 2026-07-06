@@ -4,7 +4,6 @@
 
   <div class="content">
 
-    <!-- ✅ TODAY APPOINTMENTS -->
     <div class="card">
       <h2>Today's Appointments</h2>
 
@@ -27,7 +26,6 @@
       </table>
     </div>
 
-    <!-- ✅ ACTION CARDS -->
     <div class="actions">
 
       <div class="action-card" (click)="openPatientsModal()">
@@ -40,7 +38,6 @@
 
     </div>
 
-    <!-- ✅ WEEK SCHEDULE -->
     <div class="card">
       <h2>This Week Schedule</h2>
 
@@ -62,7 +59,6 @@
   </div>
 </div>
 
-<!-- ✅ MY PATIENTS MODAL -->
 <div class="modal" *ngIf="showPatientsModal">
   <div class="modal-box large" (click)="$event.stopPropagation()">
 
@@ -99,7 +95,6 @@
   </div>
 </div>
 
-<!-- ✅ PATIENT APPOINTMENTS -->
 <div class="modal" *ngIf="selectedPatientAppointments">
   <div class="modal-box large">
 
@@ -126,7 +121,6 @@
   </div>
 </div>
 
-<!-- ✅ ALL HEALTH RECORDS -->
 <div class="modal" *ngIf="selectedAllRecords">
   <div class="modal-box large">
 
@@ -143,7 +137,6 @@
   </div>
 </div>
 
-<!-- ✅ SINGLE RECORD -->
 <div class="modal" *ngIf="selectedRecord">
   <div class="modal-box">
 
@@ -167,7 +160,7 @@
 
   </div>
 </div>
-<!-- ✅ MY APPOINTMENTS MODAL -->
+
 <div class="modal"
      *ngIf="showAppointmentsModal"
      (click)="closeAppointmentsModal()">
@@ -177,12 +170,10 @@
 
     <h2>📅 My Appointments</h2>
 
-    <!-- ✅ EMPTY -->
     <div *ngIf="appointments.length === 0" class="empty-state">
       No appointments found
     </div>
 
-    <!-- ✅ TABLE -->
     <table *ngIf="appointments.length > 0">
       <tr>
         <th>Patient</th>
@@ -199,7 +190,6 @@
       </tr>
     </table>
 
-    <!-- ✅ CLOSE -->
     <div class="btn-group">
       <button (click)="closeAppointmentsModal()">Close</button>
     </div>

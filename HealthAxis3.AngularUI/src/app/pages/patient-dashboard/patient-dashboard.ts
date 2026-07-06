@@ -37,7 +37,7 @@ export class PatientDashboardComponent {
   filteredDoctorsList: any[] = [];
 
   today = new Date().toISOString().split('T')[0];
-  slots = ['10:00 AM', '11:00 AM', '2:00 PM', '3:00 PM'];
+  slots = ['09:00 AM','10:00 AM', '11:00 AM','12:00 PM', '2:00 PM', '3:00 PM','4:00 PM','5:00 PM'];
 
   newAppointment = {
     specialization: '',
