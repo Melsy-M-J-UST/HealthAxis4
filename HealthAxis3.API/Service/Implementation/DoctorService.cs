@@ -3,11 +3,19 @@ using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text.Json;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager) : IDoctorService
+    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager, IDistributedCache cache) : IDoctorService
     {
+        private const string doctorsCacheKey = "doctors:all";
+        private static readonly DistributedCacheEntryOptions cacheOptions = new DistributedCacheEntryOptions
+        {
+            AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(5),
+            SlidingExpiration = TimeSpan.FromMinutes(10) 
+        };
         public async Task<DoctorDto> AddAsync(DoctorDto entity)
         {
             var doctor = mapper.Map<Doctor>(entity);
@@ -30,6 +38,12 @@ namespace HealthAxis3.API.Service.Implementation
 
         public async Task<List<DoctorDto>> GetAllAsync()
         {
+            var cached = await cache.GetStringAsync(doctorsCacheKey);
+            if (string.IsNullOrEmpty(cached))
+            {
+            return JsonSerializer.Deserialize<List<DoctorDto>>(cached) ?? new List<DoctorDto>();
+                if(_List<EmployeeDto)>;
+            }
             return mapper.Map<List<DoctorDto>>(await repository.GetAllAsync());
         }
 

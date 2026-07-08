@@ -16,6 +16,7 @@ using Microsoft.OpenApi;
 using System.Text;
 using System.Text.Json;
 using Serilog;
+using HealthAxis3.API.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, services, configuration) => {
@@ -124,6 +125,13 @@ builder.Services.AddMassTransit(x =>
 
         cfg.ConfigureEndpoints(context);
     });
+});
+builder.Services.Configure<GarnetOptions>(builder.Configuration.GetSection("Garnet"));
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    var garnetOptions = builder.Configuration.GetSection("Garnet").Get<GarnetOptions>()?? new GarnetOptions();
+    options.Configuration = garnetOptions.ConnectionString;
+    options.InstanceName =garnetOptions.InstanceName;
 });
 builder.Services.AddCors(p =>
 {
