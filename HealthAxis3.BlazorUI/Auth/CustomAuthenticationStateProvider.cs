@@ -5,14 +5,10 @@ using System.Text.Json;
 
 namespace HealthAxis3.BlazorUI.Auth
 {
-    public class CustomAuthenticationStateProvider : AuthenticationStateProvider
+    public class CustomAuthenticationStateProvider(IJSRuntime js) : AuthenticationStateProvider
     {
-        private ClaimsPrincipal _currentUser = new ClaimsPrincipal(new ClaimsIdentity());
-        private readonly IJSRuntime _js;
-        public CustomAuthenticationStateProvider(IJSRuntime js)
-        {
-            _js = js;
-        }
+        private ClaimsPrincipal _currentUser = new(new ClaimsIdentity());
+        private readonly IJSRuntime _js = js;
 
         public async override Task<AuthenticationState> GetAuthenticationStateAsync()
         {
@@ -33,7 +29,7 @@ namespace HealthAxis3.BlazorUI.Auth
                 return new AuthenticationState(_currentUser);
             }
         }
-        private IEnumerable<Claim> ParseClaimsFromJwt(string jwt)
+        private static List<Claim> ParseClaimsFromJwt(string jwt)
         {
             var claims = new List<Claim>();
             var parts = jwt.Split(".");
