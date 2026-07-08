@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj": {}
+    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj": {
+    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj",
         "projectName": "HealthAxis3.API",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\obj\\",
+        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -34,8 +34,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
-                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj"
+              "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
+                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj"
               }
             }
           }
@@ -61,6 +61,14 @@
               "target": "Package",
               "version": "[16.1.1, )"
             },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[9.1.2, )"
+            },
+            "MassTransit.RabbitMQ": {
+              "target": "Package",
+              "version": "[9.1.2, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[10.0.8, )"
@@ -82,6 +90,18 @@
             "Microsoft.aspnetcore.identity.entityframeworkcore": {
               "target": "Package",
               "version": "[10.0.9, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Serilog.Sinks.Console": {
+              "target": "Package",
+              "version": "[6.1.1, )"
+            },
+            "Serilog.Sinks.File": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -533,14 +553,14 @@
         }
       }
     },
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
+    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
         "projectName": "HealthAxis3.Shared",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Shared\\obj\\",
+        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -875,14 +895,14 @@
         }
       }
     },
-    "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj": {
+    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj",
         "projectName": "Healthaxis3.Tests",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Tests\\Healthaxis3.Tests.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\Healthaxis3.Tests\\obj\\",
+        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -905,11 +925,11 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj": {
-                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj"
+              "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj": {
+                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj"
               },
-              "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.Shared\\HealthAxis3.Shared.csproj": {
-                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.Shared\\HealthAxis3.Shared.csproj"
+              "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
+                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj"
               }
             }
           }
