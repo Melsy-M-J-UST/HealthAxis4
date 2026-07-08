@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6Wc6R2Q4zFI=",
+  "dgSpecHash": "YiOR8MdwxI0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\310054\\source\\repos\\HealthAxis3\\HealthAxis3.API\\HealthAxis3.API.csproj",
+  "projectFilePath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\310054\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\310054\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
