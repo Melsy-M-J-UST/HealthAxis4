@@ -1,10 +1,13 @@
 using HealthAxis3.API.Data;
+using HealthAxis3.API.Events;
 using HealthAxis3.API.Mappings;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Repository.Implementation;
 using HealthAxis3.API.Service;
+using HealthAxis3.API.Service.Background;
 using HealthAxis3.API.Service.Implementation;
+using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +15,19 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi;
 using System.Text;
 using System.Text.Json;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog((context, services, configuration) => {
+    configuration.ReadFrom.Configuration(context.Configuration)
+    .ReadFrom.Services(services)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.File(
+    "logs/healthaxis-.log",
+    rollingInterval: RollingInterval.Day,
+    retainedFileCountLimit: 7);
+});
 // Add services to the container.
 
 builder.Services.AddControllers()
@@ -96,6 +109,22 @@ builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 builder.Services.AddScoped<IHealthRecordRepository, HealthRecordRepository>();
 builder.Services.AddScoped<IHealthRecordService, HealthRecordService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddHostedService<HeartbeatBackgroundService>();
+builder.Services.AddMassTransit(x =>
+{
+    x.AddConsumer<AppointmentBookedConsumer>();
+
+    x.UsingRabbitMq((context, cfg) =>
+    {
+        cfg.Host("localhost", "/", h =>
+        {
+            h.Username("guest");
+            h.Password("guest");
+        });
+
+        cfg.ConfigureEndpoints(context);
+    });
+});
 builder.Services.AddCors(p =>
 {
     p.AddPolicy("CorsPolicy", cfg =>
@@ -136,4 +165,5 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+app.UseSerilogRequestLogging();
 await app.RunAsync();

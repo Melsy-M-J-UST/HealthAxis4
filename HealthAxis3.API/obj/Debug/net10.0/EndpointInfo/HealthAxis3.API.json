@@ -222,6 +222,29 @@
         }
       }
     },
+    "/api/Admin/Patients/{id}": {
+      "get": {
+        "tags": [
+          "AdminPatient"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Appointment": {
       "get": {
         "tags": [
@@ -580,6 +603,52 @@
         }
       }
     },
+    "/api/Notifications/{doctorId}": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "parameters": [
+          {
+            "name": "doctorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/notifications/{doctorId}": {
+      "get": {
+        "tags": [
+          "Notifications"
+        ],
+        "parameters": [
+          {
+            "name": "doctorId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Patient": {
       "get": {
         "tags": [
@@ -884,6 +953,7 @@
       },
       "PatientCreateDto": {
         "required": [
+          "dateOfBirth",
           "email",
           "gender",
           "patientName",
@@ -896,6 +966,10 @@
             "minLength": 0,
             "pattern": "^[A-Za-z\\s]+$",
             "type": "string"
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date"
           },
           "gender": {
             "minLength": 1,
@@ -1039,6 +1113,26 @@
       "RegisterDto": {
         "type": "object",
         "properties": {
+          "patientName": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateOfBirth": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "gender": {
+            "type": "string",
+            "nullable": true
+          },
+          "phoneNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "insuranceId": {
+            "type": "string",
+            "nullable": true
+          },
           "email": {
             "type": "string",
             "nullable": true
@@ -1094,6 +1188,9 @@
     },
     {
       "name": "HealthRecord"
+    },
+    {
+      "name": "Notifications"
     },
     {
       "name": "Patient"

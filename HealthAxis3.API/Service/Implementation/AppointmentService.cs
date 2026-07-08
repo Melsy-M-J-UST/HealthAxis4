@@ -1,16 +1,26 @@
 ﻿using AutoMapper;
+using HealthAxis3.API.Events;
 using HealthAxis3.API.Models;
-using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.API.Repository;
+using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
+using MassTransit;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class AppointmentService(IAppointmentRepository repository, IMapper mapper) : IAppointmentService
+    public class AppointmentService(IAppointmentRepository repository, IMapper mapper, IBus bus) : IAppointmentService
     {
         public async Task<AppointmentDto> AddAsync(AppointmentDto entity)
         {
             var appointment = mapper.Map<Appointment>(entity);
             var savedEntity = await repository.CreateAsync(appointment);
+            await bus.Publish( new AppointmentBookedEvent
+            {
+                AppointmentId = appointment.AppointmentId,
+                PatientName = appointment.Patient.PatientName,
+                DoctorId = appointment.DoctorId,
+                ScheduledDate = appointment.ScheduledDate,
+                TimeSlot = appointment.Slot
+            });
             return mapper.Map<AppointmentDto>(savedEntity);
         }
 

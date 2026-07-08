@@ -1,13 +1,30 @@
 ﻿using HealthAxis3.API.Data;
+using HealthAxis3.API.Events;
 using HealthAxis3.API.Models;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
 namespace HealthAxis3.API.Repository.Implementation
 {
     [ExcludeFromCodeCoverage]
-    public class AppointmentRepository(AppDbContext context) : Repository<Appointment>(context), IAppointmentRepository
+    public class AppointmentRepository(AppDbContext context,IBus bus) : Repository<Appointment>(context), IAppointmentRepository
     {
+        public async Task<Appointment> CreatesAsync(Appointment appointment, CancellationToken ct = default)
+        {
+            await context.Set<Appointment>().AddAsync(appointment, ct);
+            await context.SaveChangesAsync(ct);
+            await bus.Publish(new AppointmentBookedEvent
+            {
+                AppointmentId = appointment.AppointmentId,
+                PatientName = appointment.Patient.PatientName,
+                DoctorId = appointment.DoctorId,
+                ScheduledDate = appointment.ScheduledDate,
+                TimeSlot = appointment.Slot
+            });
+
+            return appointment;
+        }
         public async Task<List<Appointment>> GetByDoctorIdAsync(int id, CancellationToken ct = default)
         {
             var existing = await context.Set<Appointment>().Where(e => e.DoctorId == id).ToListAsync(ct);
