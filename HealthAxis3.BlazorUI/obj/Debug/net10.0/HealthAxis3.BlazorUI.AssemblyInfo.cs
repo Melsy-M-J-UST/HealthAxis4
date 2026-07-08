@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthAxis3.BlazorUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9288a7db23d5a312860e6e11043be4aa1b7eede8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffeeca729d87653485e91c1e2c0c064df2e2fb8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthAxis3.BlazorUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthAxis3.BlazorUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
