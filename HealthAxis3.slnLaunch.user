@@ -5,6 +5,14 @@
       {
         "Path": "HealthAxis3.API\\HealthAxis3.API.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "HealthAxis3.AngularUI\\HealthAxis3.AngularUI.esproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "HealthAxis3.BlazorUI\\HealthAxis3.BlazorUI.csproj",
+        "Action": "Start"
       }
     ]
   }
