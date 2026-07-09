@@ -4,6 +4,7 @@ using HealthAxis3.API.Repository;
 using HealthAxis3.API.Service.Implementation;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Caching.Distributed;
 using Moq;
 using Xunit;
 
@@ -13,6 +14,7 @@ namespace HealthAxis3.Tests.ServiceTests
     {
         private readonly Mock<IDoctorRepository> _repoMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<IDistributedCache> _cacheMock;
         private readonly DoctorService _service;
 
         private readonly DoctorDto _dto;
@@ -28,8 +30,20 @@ namespace HealthAxis3.Tests.ServiceTests
         {
             _repoMock = new Mock<IDoctorRepository>();
             _mapperMock = new Mock<IMapper>();
-            _userManagerMock = new Mock<UserManager<ApplicationUser>>();
-            _service = new DoctorService(_repoMock.Object, _mapperMock.Object, _userManagerMock.Object);
+            var store = new Mock<IUserStore<ApplicationUser>>();
+            _userManagerMock = new Mock<UserManager<ApplicationUser>>(
+                store.Object,
+                null!, // IOptions<IdentityOptions>
+                null!, // IPasswordHasher<ApplicationUser>
+                null!, // IEnumerable<IUserValidator<ApplicationUser>>
+                null!, // IEnumerable<IPasswordValidator<ApplicationUser>>
+                null!, // ILookupNormalizer
+                null!, // IdentityErrorDescriber
+                null!, // IServiceProvider
+                null!  // ILogger<UserManager<ApplicationUser>>
+            );
+            _cacheMock = new Mock<IDistributedCache> ();
+            _service = new DoctorService(_repoMock.Object, _mapperMock.Object, _userManagerMock.Object, _cacheMock.Object);
 
             _dto = new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" };
             _entity = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" };

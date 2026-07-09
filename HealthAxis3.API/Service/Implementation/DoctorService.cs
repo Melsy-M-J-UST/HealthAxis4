@@ -33,18 +33,22 @@ namespace HealthAxis3.API.Service.Implementation
             await userManager.CreateAsync(user, "Doctor@123");
             await userManager.AddToRoleAsync(user, "Doctor");
 
-            return mapper.Map<DoctorDto>(saved);
+            var doctorDto= mapper.Map<DoctorDto>(saved);
+            await cache.RemoveAsync(doctorsCacheKey);
+            return doctorDto;
         }
 
         public async Task<List<DoctorDto>> GetAllAsync()
         {
             var cached = await cache.GetStringAsync(doctorsCacheKey);
-            if (string.IsNullOrEmpty(cached))
+            if (!string.IsNullOrEmpty(cached))
             {
-            return JsonSerializer.Deserialize<List<DoctorDto>>(cached) ?? new List<DoctorDto>();
-                if(_List<EmployeeDto)>;
+            var doctorList= JsonSerializer.Deserialize<List<DoctorDto>>(cached) ?? new List<DoctorDto>();
+                if (doctorList != null) return doctorList;
             }
-            return mapper.Map<List<DoctorDto>>(await repository.GetAllAsync());
+            var doctors = mapper.Map<List<DoctorDto>>(await repository.GetAllAsync());
+            await cache.SetStringAsync(doctorsCacheKey, JsonSerializer.Serialize(doctors), cacheOptions);
+            return doctors;
         }
 
         public async Task<DoctorDto> GetByIdAsync(int id)
@@ -65,8 +69,9 @@ namespace HealthAxis3.API.Service.Implementation
             var doctor = mapper.Map<Doctor>(entity);
             doctor.DoctorId = id;
             var updated = await repository.UpdateAsync(id, doctor);
-            return mapper.Map<DoctorUpdateDto>(updated);
-
+            var updatedDto = mapper.Map<DoctorUpdateDto>(updated);
+            await cache.RemoveAsync(doctorsCacheKey);
+            return updatedDto;
         }
         public async Task<List<string>> GetAvailableSlots(int doctorId, DateTime date)
         {

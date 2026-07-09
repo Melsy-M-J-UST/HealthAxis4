@@ -17,6 +17,7 @@ using System.Text;
 using System.Text.Json;
 using Serilog;
 using HealthAxis3.API.Options;
+using HealthAxis3.API.Messaging;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Host.UseSerilog((context, services, configuration) => {
@@ -111,6 +112,8 @@ builder.Services.AddScoped<IHealthRecordRepository, HealthRecordRepository>();
 builder.Services.AddScoped<IHealthRecordService, HealthRecordService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddHostedService<HeartbeatBackgroundService>();
+builder.Services.AddHostedService<AppointmentBookedConsumer>();
+builder.Services.AddSingleton<RabbitMqPublisher>();
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<AppointmentBookedConsumer>();
