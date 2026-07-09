@@ -1,11 +1,15 @@
 ﻿using AutoMapper;
+using HealthAxis3.API.Events;
+using HealthAxis3.API.Messaging;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
 using HealthAxis3.API.Service.Implementation;
-using Moq;
 using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using HealthAxis3.Shared.Models.Dtos.PatientDtos;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Moq;
 
 namespace HealthAxis3.Tests.ServiceTests
 {
@@ -13,6 +17,8 @@ namespace HealthAxis3.Tests.ServiceTests
     {
         private readonly Mock<IAppointmentRepository> _repoMock;
         private readonly Mock<IMapper> _mapperMock;
+        private readonly Mock<ILogger<AppointmentService>> _loggerMock;
+        private readonly Mock<RabbitMqPublisher> _publisherMock;
         private readonly AppointmentService _service;
         private readonly AppointmentDto dto;
         private readonly Appointment entity;
@@ -23,7 +29,31 @@ namespace HealthAxis3.Tests.ServiceTests
         {
             _repoMock = new Mock<IAppointmentRepository>();
             _mapperMock = new Mock<IMapper>();
-            _service = new AppointmentService(_repoMock.Object, _mapperMock.Object);
+            _loggerMock = new Mock<ILogger<AppointmentService>>();
+            var configurationMock = new Mock<IConfiguration>();
+
+            configurationMock.Setup(c => c.GetSection("RabbitMQ")["HostName"])
+                             .Returns("localhost");
+            configurationMock.Setup(c => c.GetSection("RabbitMQ")["port"])
+                             .Returns("5672");
+            configurationMock.Setup(c => c.GetSection("RabbitMQ")["UserName"])
+                             .Returns("guest");
+            configurationMock.Setup(c => c.GetSection("RabbitMQ")["Password"])
+                             .Returns("guest");
+            configurationMock.Setup(c => c.GetSection("RabbitMQ")["VirtualHost"])
+                             .Returns("/");
+            configurationMock.Setup(c => c.GetSection("RabbitMQ")["QueueName"])
+                             .Returns("appointments");
+
+            _publisherMock = new Mock<RabbitMqPublisher>(
+                configurationMock.Object
+            );
+
+            _service = new AppointmentService(
+                _repoMock.Object,
+                _mapperMock.Object,
+                _loggerMock.Object,
+                _publisherMock.Object);
 
             dto = new AppointmentDto { AppointmentId = 1, Doctor= new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient= new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot="09:00 AM" };
             entity = new Appointment { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" };
@@ -220,5 +250,6 @@ namespace HealthAxis3.Tests.ServiceTests
             _repoMock.Verify(r => r.DeleteAsync(1), Times.Once);
             _repoMock.Verify(r => r.DeleteAsync(2), Times.Once);
         }
+
     }
 }
