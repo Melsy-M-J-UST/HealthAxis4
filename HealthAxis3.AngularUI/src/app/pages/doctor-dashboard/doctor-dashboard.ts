@@ -36,7 +36,7 @@ export class DoctorDashboardComponent {
         this.weekAppointments = this.appointmentService.getWeeklyAppointments();
 
       },
-      error: (err) => {
+      error: (err: Error) => {
         console.error('Error loading appointments', err);
       }
     });

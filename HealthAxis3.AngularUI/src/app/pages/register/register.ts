@@ -101,7 +101,7 @@ export class RegisterComponent {
         alert('✅ Registration successful');
         this.router.navigate(['/login']);
       },
-      error: (err) => {
+      error: (err: any) => {
         alert('❌ Registration failed');
 
         console.log('Status:', err.status);

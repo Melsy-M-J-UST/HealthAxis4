@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     this.authService.login(this.loginForm.value).subscribe({
-      next: (response) => {
+      next: (response: any) => {
         console.log('Login success ✅');
         console.log(response)
         this.authService.setSession(response)
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
           }
         }
       },
-      error: (errorMessage) => {
+      error: (errorMessage: Error) => {
         this.errorMessage = "Invalid Login Credentials";
         console.log(this.errorMessage);
       }

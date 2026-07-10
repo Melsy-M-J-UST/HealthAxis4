@@ -25,8 +25,8 @@
                 Password = rabbitConfig["Password"]!,
                 VirtualHost = rabbitConfig["VirtualHost"]!
             };
-            _connection = await factory.CreateConnectionAsync();
-            _channel = await _connection.CreateChannelAsync();
+            _connection = await factory.CreateConnectionAsync(cancellationToken);
+            _channel = await _connection.CreateChannelAsync(cancellationToken: cancellationToken);
             _logger.LogInformation("Hosting service started in the background-------------------");
             await base.StartAsync(cancellationToken);
         }
@@ -85,8 +85,8 @@
         public override async Task StopAsync(CancellationToken cancellationToken)
         {
             _logger.LogInformation("Stopping hosting service...");
-            if(_channel!=null) await _channel.CloseAsync();
-            if(_connection != null) await _connection.CloseAsync();
+            if(_channel!=null) await _channel.CloseAsync(cancellationToken: cancellationToken);
+            if(_connection != null) await _connection.CloseAsync(cancellationToken: cancellationToken);
             await base.StopAsync(cancellationToken);
         }
     }

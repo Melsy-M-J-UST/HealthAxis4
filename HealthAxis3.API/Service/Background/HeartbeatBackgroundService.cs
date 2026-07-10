@@ -15,13 +15,8 @@
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                _logger.LogInformation(
-                    "Heartbeat running at {Time}",
-                    DateTime.Now);
-
-                await Task.Delay(
-                    TimeSpan.FromSeconds(10),
-                    stoppingToken);
+                _logger.LogInformation("Heartbeat running at {Time}", DateTime.Now);
+                await Task.Delay( TimeSpan.FromSeconds(10), stoppingToken);
             }
         }
     }

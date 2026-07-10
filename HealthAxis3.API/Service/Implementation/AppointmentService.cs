@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using HealthAxis3.API.Events;
-using HealthAxis3.API.Messaging;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
 using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
+using MassTransit;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class AppointmentService(IAppointmentRepository repository, IMapper mapper, ILogger logger, RabbitMqPublisher rabbitMqPublisher) : IAppointmentService
+    public class AppointmentService(IAppointmentRepository repository, IMapper mapper, ILogger logger, IPublishEndpoint publishEndPoint) : IAppointmentService
     {
         public async Task<AppointmentDto> AddAsync(AppointmentDto entity)
         {
@@ -15,7 +15,7 @@ namespace HealthAxis3.API.Service.Implementation
             var savedEntity = await repository.CreateAsync(appointment);
             logger.LogInformation("Appointment booked. AppointmentId={AppointmentId}, DoctorId={DoctorId}", appointment.AppointmentId, appointment.DoctorId);
             var result = mapper.Map<AppointmentDto>(savedEntity);
-            await rabbitMqPublisher.PublishAsync(new AppointmentBookedEvent
+            await publishEndPoint.Publish(new AppointmentBookedEvent
             {
                 AppointmentId = appointment.AppointmentId,
                 PatientName = appointment.Patient.PatientName,
@@ -33,17 +33,17 @@ namespace HealthAxis3.API.Service.Implementation
 
         public async Task<List<AppointmentDto>> GetByDoctorIdAsync(int id, CancellationToken ct = default)
         {
-            return mapper.Map<List<AppointmentDto>>(await repository.GetByDoctorIdAsync(id));
+            return mapper.Map<List<AppointmentDto>>(await repository.GetByDoctorIdAsync(id, ct));
         }
 
         public async Task<AppointmentDto> GetByIdAsync(int id, CancellationToken ct= default)
         {
-            return mapper.Map<AppointmentDto>(await repository.GetByIdAsync(id));
+            return mapper.Map<AppointmentDto>(await repository.GetByIdAsync(id, ct));
         }
 
         public async Task<List<AppointmentDto>> GetByPatientIdAsync(int id, CancellationToken ct = default)
         {
-            return mapper.Map<List<AppointmentDto>>(await repository.GetByPatientIdAsync(id));
+            return mapper.Map<List<AppointmentDto>>(await repository.GetByPatientIdAsync(id, ct));
         }
 
         public async Task<string> UpdateAppointmentStatus(int id, string status, string? reason = null)

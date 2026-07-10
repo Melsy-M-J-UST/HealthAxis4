@@ -42,13 +42,13 @@ export class ProfileComponent {
     if (!this.userId) return;
     this.patientService.getPatientById(Number(this.userId))
       .subscribe({
-        next: (data) => {
+        next: (data : any) => {
           if (data.dateOfBirth) {
             data.dateOfBirth = data.dateOfBirth.split('T')[0];
           }
           this.user = data;
         },
-        error: (err) => {
+        error: (err: Error) => {
           console.error('Error loading profile', err);
         }
       });

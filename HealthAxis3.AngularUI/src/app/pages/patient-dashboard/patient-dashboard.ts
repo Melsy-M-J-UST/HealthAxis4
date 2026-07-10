@@ -62,12 +62,12 @@ export class PatientDashboardComponent {
             this.doctors = this.doctorService.getDoctors();
             this.specialisations = this.doctorService.getSpecialisations();
           },
-          error: (err) => {
+          error: (err : Error) => {
             console.error('Doctor API error', err);
           }
         });
       },
-      error: (err) => {
+      error: (err : Error) => {
         console.error('Error loading appointments', err);
       }
     });
@@ -95,7 +95,7 @@ export class PatientDashboardComponent {
       .checkAvailability(doctor, date, slot)
       .subscribe({
 
-        next: (res) => {
+        next: (res : any) => {
 
           if (!res.available) {
             alert('❌ Slot already booked');

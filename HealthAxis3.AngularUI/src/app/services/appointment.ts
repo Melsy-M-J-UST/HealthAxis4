@@ -13,9 +13,7 @@ export class AppointmentService {
   private appointments: any[] = [];
 
   loadAppointments(): Observable<any[]> {
-    return this.http.get<any[]>(`${API_BASE_URL}/appointment`)
-      .pipe(
-        tap((data) => {
+    return this.http.get<any[]>(`${API_BASE_URL}/appointment`).pipe( tap((data : any) => {
           this.appointments = data;
         })
       );
