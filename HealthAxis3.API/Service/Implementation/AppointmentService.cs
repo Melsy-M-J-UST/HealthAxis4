@@ -7,7 +7,7 @@ using MassTransit;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class AppointmentService(IAppointmentRepository repository, IMapper mapper, ILogger logger, IPublishEndpoint publishEndPoint) : IAppointmentService
+    public class AppointmentService(IAppointmentRepository repository, IMapper mapper, ILogger<AppointmentService> logger, IPublishEndpoint publishEndPoint) : IAppointmentService
     {
         public async Task<AppointmentDto> AddAsync(AppointmentDto entity)
         {

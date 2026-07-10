@@ -1,5 +1,4 @@
 using HealthAxis3.API.Data;
-using HealthAxis3.API.Events;
 using HealthAxis3.API.Mappings;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
@@ -112,21 +111,23 @@ builder.Services.AddScoped<IHealthRecordRepository, HealthRecordRepository>();
 builder.Services.AddScoped<IHealthRecordService, HealthRecordService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddHostedService<HeartbeatBackgroundService>();
-builder.Services.AddHostedService<AppointmentBookedConsumer>();
-builder.Services.AddSingleton<RabbitMqPublisher>();
+var rabbitMQConfiguration = builder.Configuration.GetSection("RabbitMQ");
 builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<AppointmentBookedConsumer>();
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("localhost", "/", h =>
+        cfg.Host(rabbitMQConfiguration["HostName"], rabbitMQConfiguration["VirtualHost"], h =>
         {
-            h.Username("guest");
-            h.Password("guest");
+            h.Username(rabbitMQConfiguration["UserName"]!);
+            h.Password(rabbitMQConfiguration["Password"]!);
         });
-
-        cfg.ConfigureEndpoints(context);
+        cfg.ReceiveEndpoint(rabbitMQConfiguration["AppointmentQueue"]!, e =>
+        {
+            e.ConfigureConsumer<AppointmentBookedConsumer>(context);
+        });
+        //cfg.ConfigureEndpoints(context);
     });
 });
 builder.Services.Configure<GarnetOptions>(builder.Configuration.GetSection("Garnet"));

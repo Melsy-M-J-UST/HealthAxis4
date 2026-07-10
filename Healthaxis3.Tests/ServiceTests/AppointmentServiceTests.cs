@@ -7,6 +7,7 @@ using HealthAxis3.API.Service.Implementation;
 using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using HealthAxis3.Shared.Models.Dtos.PatientDtos;
+using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Moq;
@@ -18,18 +19,18 @@ namespace HealthAxis3.Tests.ServiceTests
         private readonly Mock<IAppointmentRepository> _repoMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<ILogger<AppointmentService>> _loggerMock;
-        private readonly Mock<RabbitMqPublisher> _publisherMock;
         private readonly AppointmentService _service;
         private readonly AppointmentDto dto;
         private readonly Appointment entity;
         private readonly List<Appointment> list;
         private readonly List<AppointmentDto> dtoList;
-
+        private readonly Mock<IPublishEndpoint> _publishEndpointMock;
         public AppointmentServiceTests()
         {
             _repoMock = new Mock<IAppointmentRepository>();
             _mapperMock = new Mock<IMapper>();
             _loggerMock = new Mock<ILogger<AppointmentService>>();
+            _publishEndpointMock = new Mock<IPublishEndpoint>();
             var configurationMock = new Mock<IConfiguration>();
 
             configurationMock.Setup(c => c.GetSection("RabbitMQ")["HostName"])
@@ -45,15 +46,11 @@ namespace HealthAxis3.Tests.ServiceTests
             configurationMock.Setup(c => c.GetSection("RabbitMQ")["QueueName"])
                              .Returns("appointments");
 
-            _publisherMock = new Mock<RabbitMqPublisher>(
-                configurationMock.Object
-            );
-
             _service = new AppointmentService(
                 _repoMock.Object,
                 _mapperMock.Object,
                 _loggerMock.Object,
-                _publisherMock.Object);
+                _publishEndpointMock.Object);
 
             dto = new AppointmentDto { AppointmentId = 1, Doctor= new DoctorDto { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient= new PatientDto { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot="09:00 AM" };
             entity = new Appointment { AppointmentId = 1, Doctor = new Doctor { DoctorId = 1, DoctorName = "Meera Varma", Specialisation = "Cardiologist" }, Patient = new Patient { PatientId = 1, PatientName = "Arun", Email = "arun@test.com", Gender = "Male", PhoneNumber = "8744356654", DateOfBirth = DateTime.Today.AddYears(-25) }, Slot = "09:00 AM" };
