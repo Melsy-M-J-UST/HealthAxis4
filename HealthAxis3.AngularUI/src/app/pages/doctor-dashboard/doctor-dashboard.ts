@@ -27,8 +27,11 @@ export class DoctorDashboardComponent {
     this.loadData();
   }
 
-  loadData() {
-    this.appointmentService.loadAppointments().subscribe({
+  loadData()
+  {
+    const doctorId = Number(localStorage.getItem('doctorId'));
+    if (!doctorId) return;
+    this.appointmentService.loadDoctorAppointments(doctorId).subscribe({
       next: () => {
 
         this.appointments = this.appointmentService.getAllAppointments();
@@ -38,6 +41,9 @@ export class DoctorDashboardComponent {
       },
       error: (err: Error) => {
         console.error('Error loading appointments', err);
+        this.appointments = [];
+        this.todayAppointments = [];
+        this.weekAppointments = [];
       }
     });
   }

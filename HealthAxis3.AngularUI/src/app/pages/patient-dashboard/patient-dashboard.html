@@ -1,83 +1,87 @@
 <app-header [showMenuEnabled]="true"></app-header>
 
 <div class="layout">
- 
+
   <app-sidebar></app-sidebar>
 
   <div class="container">
-      <div class="card">
-        <h2>Today's Appointments</h2>
-
-        <div *ngIf="todayAppointments.length === 0" class="empty-state">
-          No appointments scheduled for today ✅
-        </div>
-
-        <table *ngIf="todayAppointments.length > 0">
-          <tr>
-            <th>Doctor</th>
-            <th>Time</th>
-            <th>Status</th>
-            <th></th>
-          </tr>
-
-          <tr *ngFor="let a of todayAppointments">
-            <td>{{ a.doctor }}</td>
-            <td>{{ a.slot }}</td>
-            <td>{{ a.status }}</td>
-            <td>
-              <button class="danger" (click)="cancelAppointment(a)">
-                Cancel
-              </button>
-            </td>
-          </tr>
-        </table>
-      </div>
-
-      <div class="actions">
-        <div class="action-card" (click)="openBookingModal()">
-          📅 Book Appointment
-        </div>
-        <div class="action-card" (click)="openDoctorSearch()">
-          🔎 Search Doctors
-        </div>
-        <div class="action-card" (click)="openMyDoctorsModal()">
-          👨‍⚕️ My Doctors
-        </div>
-      </div>
-    </div>
-
     <div class="card">
-      <h2>My Appointments</h2>
+      <h2>Today's Appointments</h2>
 
-      <div *ngIf="appointments.length === 0" class="empty-state">
-        You have no appointments yet 📅
+      <div *ngIf="todayAppointments.length === 0" class="empty-state">
+        No appointments scheduled for today ✅
       </div>
 
-      <table *ngIf="appointments.length > 0">
+      <table *ngIf="todayAppointments.length > 0">
         <tr>
           <th>Doctor</th>
-          <th>Date</th>
           <th>Time</th>
           <th>Status</th>
-          <th>Health Record</th>
+          <th></th>
         </tr>
 
-        <tr *ngFor="let a of appointments">
+        <tr *ngFor="let a of todayAppointments">
           <td>{{ a.doctor }}</td>
-          <td>{{ a.date }}</td>
           <td>{{ a.slot }}</td>
           <td>{{ a.status }}</td>
           <td>
-            <button *ngIf="a.status === 'Completed'"
-                    (click)="viewHealthRecord(a)">
-              View
+            <button class="danger" *ngIf="a.status !== 'Cancelled'" (click)="cancelAppointment(a)">
+              Cancel
             </button>
-            <span *ngIf="a.status !== 'Completed'">—</span>
+            <span *ngIf="a.status === 'Cancelled'">
+              Cancelled
+            </span>
           </td>
         </tr>
       </table>
     </div>
+
+    <div class="actions">
+      <div class="action-card" (click)="openBookingModal()">
+        📅 Book Appointment
+      </div>
+      <div class="action-card" (click)="openDoctorSearch()">
+        🔎 Search Doctors
+      </div>
+      <div class="action-card" (click)="openMyDoctorsModal()">
+        👨‍⚕️ My Doctors
+      </div>
+    </div>
   </div>
+  <br /><br />
+
+  <div class="card">
+    <h2>My Appointments</h2>
+
+    <div *ngIf="appointments.length === 0" class="empty-state">
+      You have no appointments yet 📅
+    </div>
+
+    <table *ngIf="appointments.length > 0">
+      <tr>
+        <th>Doctor</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Health Record</th>
+      </tr>
+
+      <tr *ngFor="let a of appointments">
+        <td>{{ a.doctor }}</td>
+        <td>{{ a.date }}</td>
+        <td>{{ a.slot }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+          <button *ngIf="a.status === 'Completed'"
+                  (click)="viewHealthRecord(a)">
+            View
+          </button>
+          <span *ngIf="a.status !== 'Completed'">—</span>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
 
 <div class="modal" *ngIf="showBookingModal">
 
@@ -86,8 +90,8 @@
     <h2>📅 Book Appointment</h2>
 
     <label>Specialisation</label>
-    <select [(ngModel)]="newAppointment.specialization"
-            (change)="onSpecializationChange()">
+    <select [(ngModel)]="newAppointment.specialisation"
+            (change)="onSpecialisationChange()">
       <option value="">Select</option>
       <option *ngFor="let s of specialisations" [value]="s">
         {{ s }}
@@ -97,8 +101,8 @@
     <label>Doctor</label>
     <select [(ngModel)]="newAppointment.doctor">
       <option value="">Select</option>
-      <option *ngFor="let d of filteredDoctors" [value]="d.name">
-        {{ d.name }}
+      <option *ngFor="let d of filteredDoctors" [value]="d">
+        {{ d.doctorName }}
       </option>
     </select>
 
@@ -118,7 +122,7 @@
     <div class="btn-group">
       <button (click)="closeBookingModal()">Cancel</button>
       <button class="primary"
-              [disabled]="!newAppointment.specialization ||
+              [disabled]="!newAppointment.specialisation ||
           !newAppointment.doctor ||
           !newAppointment.date ||
           !newAppointment.slot"
@@ -178,8 +182,7 @@
           No such specialisation
         </div>
 
-        <div *ngFor="let s of filteredSpecialisations"
-              (click)="selectSpecialisation(s)">
+        <div *ngFor="let s of filteredSpecialisations" (click)="selectSpecialisation(s)">
           {{ s }}
         </div>
 
@@ -187,14 +190,14 @@
     </div>
 
     <table *ngIf="filteredDoctorsList.length > 0">
-      <tr>
+      <tr style="text-align:center">
         <th>Doctor</th>
         <th>Specialisation</th>
       </tr>
 
       <tr *ngFor="let d of filteredDoctorsList">
-        <td>{{ d.name }}</td>
-        <td>{{ d.specialization }}</td>
+        <td>{{ d.doctorName }}</td>
+        <td>{{ d.specialisation }}</td>
       </tr>
     </table>
 
@@ -219,8 +222,8 @@
       </tr>
 
       <tr *ngFor="let d of myDoctors">
-        <td>{{ d.name }}</td>
-        <td>{{ d.specialization }}</td>
+        <td>{{ d.doctorName }}</td>
+        <td>{{ d.specialisation }}</td>
       </tr>
     </table>
 

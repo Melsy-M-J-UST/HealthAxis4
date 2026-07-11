@@ -23,14 +23,7 @@ namespace HealthAxis3.API.Controllers
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await service.GetByIdAsync(id);
-            if (result == null)
-            {
-                return NotFound();
-            }
-            else
-            {
                 return Ok(result);
-            }
         }
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient")]
@@ -52,7 +45,6 @@ namespace HealthAxis3.API.Controllers
         public async Task<IActionResult> UpdateStatus(int id, [FromQuery] string status, [FromQuery] string? reason)
         {
             var result = await service.UpdateAppointmentStatus(id, status, reason);
-
             if (result == "REDIRECT_TO_HEALTH_RECORD")
             {
                 return Ok(new
@@ -61,7 +53,6 @@ namespace HealthAxis3.API.Controllers
                     redirectUrl = $"/HealthRecord/Create?appointmentId={id}"
                 });
             }
-
             return Ok(new { message = result });
         }
 
@@ -72,7 +63,21 @@ namespace HealthAxis3.API.Controllers
             var result = await service.DeleteAppointment(id);
             return Ok(new { message = result });
         }
+
+        [HttpGet("patient/{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Patient, Doctor")]
+        public async Task<IActionResult> GetByPatientId([FromRoute] int id)
+        {
+            var result = await service.GetByPatientIdAsync(id);
+            return Ok(result);
+        }
+
+        [HttpGet("doctor/{id}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Doctor")]
+        public async Task<IActionResult> GetByDoctorId([FromRoute] int id)
+        {
+            var result = await service.GetByDoctorIdAsync(id);
+            return Ok(result);
+        }
     }
-
 }
-

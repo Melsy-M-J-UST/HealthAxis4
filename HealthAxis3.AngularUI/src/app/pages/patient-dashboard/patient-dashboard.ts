@@ -26,7 +26,7 @@ export class PatientDashboardComponent {
   showDoctorModal = false;
   showDropdown = false;
   showMyDoctorsModal = false;
-
+  selectedDoctor: any;
   selectedRecord: any = null;
 
   searchText = '';
@@ -40,52 +40,59 @@ export class PatientDashboardComponent {
   slots = ['09:00 AM','10:00 AM', '11:00 AM','12:00 PM', '2:00 PM', '3:00 PM','4:00 PM','5:00 PM'];
 
   newAppointment = {
-    specialization: '',
+    specialisation: '',
+    doctorId: 0,
     doctor: '',
     date: '',
-    slot: ''
+    slot: '',
+    status: 'Pending',
+    patientId: Number(localStorage.getItem('patientId')),
   };
 
   ngOnInit() {
     this.loadData();
   }
 
-  loadData() {
-    this.appointmentService.loadAppointments().subscribe({
+  loadData()
+  {
+    const patientId = Number(localStorage.getItem('patientId'));
+    if (!patientId) return;
+
+    this.doctorService.loadDoctors().subscribe({
+      next: () =>
+      {
+        this.doctors = this.doctorService.getDoctors();
+        this.specialisations = this.doctorService.getSpecialisations();
+      },
+      error: err =>
+      {
+        console.error('Doctor API error', err);
+      }
+    });
+    this.appointmentService.loadPatientAppointments(patientId).subscribe({
       next: () => {
 
         this.appointments = this.appointmentService.getAllAppointments();
         this.todayAppointments = this.appointmentService.getTodayAppointments();
         this.weekAppointments = this.appointmentService.getWeeklyAppointments();
-        this.doctorService.loadDoctors().subscribe({
-          next: () => {
-            this.doctors = this.doctorService.getDoctors();
-            this.specialisations = this.doctorService.getSpecialisations();
-          },
-          error: (err : Error) => {
-            console.error('Doctor API error', err);
-          }
-        });
       },
       error: (err : Error) => {
         console.error('Error loading appointments', err);
+        this.appointments = [];
+        this.todayAppointments = [];
+        this.weekAppointments = [];
       }
     });
   }
   cancelAppointment(app: any) {
     const updated = { ...app, status: 'Cancelled' };
-
-    this.appointmentService
-      .updateAppointment(app.id, updated)
-      .subscribe(() => {
+    this.appointmentService.updateAppointment(app.id, updated).subscribe(() => {
         this.loadData();
       });
   }
 
   bookAppointment() {
-
     const { doctor, date, slot } = this.newAppointment;
-
     if (!doctor || !date || !slot) {
       alert('Please fill all fields ❗');
       return;
@@ -111,10 +118,13 @@ export class PatientDashboardComponent {
                 alert('✅ Appointment booked');
 
                 this.newAppointment = {
-                  specialization: '',
+                  specialisation: '',
+                  doctorId: 0,
                   doctor: '',
                   date: '',
-                  slot: ''
+                  slot: '',
+                  status: 'Pending',
+                  patientId: Number(localStorage.getItem('patientId')),
                 };
 
                 this.closeBookingModal();
@@ -167,9 +177,9 @@ export class PatientDashboardComponent {
     this.showDoctorModal = false;
   }
 
-  onSpecializationChange() {
+  onSpecialisationChange() {
     this.filteredDoctors = this.doctors.filter(
-      d => d.specialization === this.newAppointment.specialization
+      d => d.specialisation === this.newAppointment.specialisation
     );
   }
 
@@ -196,7 +206,7 @@ export class PatientDashboardComponent {
     this.showDropdown = false;
 
     this.filteredDoctorsList = this.doctors.filter(
-      d => d.specialization === s
+      d => d.specialisation === s
     );
   }
 

@@ -11,14 +11,24 @@ export class AppointmentService {
   constructor(private http: HttpClient) { }
 
   private appointments: any[] = [];
+  selectedDoctor: any;
 
-  loadAppointments(): Observable<any[]> {
-    return this.http.get<any[]>(`${API_BASE_URL}/appointment`).pipe( tap((data : any) => {
+  loadPatientAppointments(patientId: number): Observable<any[]>
+  {
+    return this.http.get<any[]>(`${API_BASE_URL}/appointment/patient/${patientId}`).pipe(tap((data) =>
+        {
           this.appointments = data;
         })
       );
   }
-
+  loadDoctorAppointments(doctorId: number): Observable<any[]>
+  {
+    return this.http.get<any[]>(`${API_BASE_URL}/appointment/doctor/${doctorId}`).pipe(tap((data) =>
+    {
+      this.appointments = data;
+    })
+    );
+  }
   getAllAppointments() {
     return this.appointments;
   }
@@ -45,9 +55,14 @@ export class AppointmentService {
     });
   }
 
-  checkAvailability(doctor: string, date: string, slot: string): Observable<any> {
+  checkAvailability(doctor: any, date: string, slot: string): Observable<any>
+  {
+    console.log(doctor);
+    console.log(JSON.stringify(doctor));
+    console.log('selectedDoctor:', JSON.stringify( doctor));
+    const doctorId = doctor.doctorId;
     return this.http.get<any>(
-      `${API_BASE_URL}/appointment/check-availability`,
+      `${API_BASE_URL}/Doctor/doctors/${doctorId}/availability`,
       {
         params: { doctor, date, slot }
       }
