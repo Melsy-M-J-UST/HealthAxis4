@@ -27,4 +27,15 @@ export class DoctorService {
     const specs = this.doctors.map(d => d.specialisation);
     return [...new Set(specs)];
   }
+
+  getAvailableSlots( doctorId: number, date: string): Observable<string[]>
+  {
+    return this.http.get<string[]>(`${API_BASE_URL}/Doctor/doctors/${doctorId}/availability`,
+      {
+        params: {
+          date: date
+        }
+      }
+    );
+  }
 }

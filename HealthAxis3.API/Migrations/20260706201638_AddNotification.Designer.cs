@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthAxis3.API.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20260706201638_AddNotification")]
-    partial class AddNotification
+    [Migration("20260710094326_Checkmigration")]
+    partial class Checkmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -280,6 +280,29 @@ namespace HealthAxis3.API.Migrations
                     b.HasIndex("PatientId");
 
                     b.ToTable("HealthRecords");
+                });
+
+            modelBuilder.Entity("HealthAxis3.API.Models.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DoctorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("HealthAxis3.API.Models.Patient", b =>

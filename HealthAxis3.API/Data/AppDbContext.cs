@@ -10,12 +10,12 @@ namespace HealthAxis3.API.Data
     [ExcludeFromCodeCoverage]
     public class AppDbContext(DbContextOptions<AppDbContext> options) : IdentityDbContext<ApplicationUser>(options)
     {
-        public DbSet<Patient> Patients { get; set; }
-        public DbSet<Doctor> Doctors { get; set; }
-        public DbSet<Appointment> Appointments { get; set; }
-        public DbSet<HealthRecord> HealthRecords { get; set; }
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<Notification> Notifications { get; set; }
+        public required DbSet<Patient> Patients { get; set; }
+        public required DbSet<Doctor> Doctors { get; set; }
+        public required DbSet<Appointment> Appointments { get; set; }
+        public required DbSet<HealthRecord> HealthRecords { get; set; }
+        public required DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public required DbSet<Notification> Notifications { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

@@ -17,6 +17,7 @@ namespace HealthAxis3.Tests.ServiceTests
     public class AppointmentServiceTests
     {
         private readonly Mock<IAppointmentRepository> _repoMock;
+        private readonly Mock<IPatientRepository> _prepoMock;
         private readonly Mock<IMapper> _mapperMock;
         private readonly Mock<ILogger<AppointmentService>> _loggerMock;
         private readonly AppointmentService _service;
@@ -28,6 +29,7 @@ namespace HealthAxis3.Tests.ServiceTests
         public AppointmentServiceTests()
         {
             _repoMock = new Mock<IAppointmentRepository>();
+            _prepoMock = new Mock<IPatientRepository>();
             _mapperMock = new Mock<IMapper>();
             _loggerMock = new Mock<ILogger<AppointmentService>>();
             _publishEndpointMock = new Mock<IPublishEndpoint>();
@@ -48,6 +50,7 @@ namespace HealthAxis3.Tests.ServiceTests
 
             _service = new AppointmentService(
                 _repoMock.Object,
+                _prepoMock.Object,
                 _mapperMock.Object,
                 _loggerMock.Object,
                 _publishEndpointMock.Object);

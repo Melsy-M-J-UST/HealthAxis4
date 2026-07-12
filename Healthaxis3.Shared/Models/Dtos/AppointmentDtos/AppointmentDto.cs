@@ -38,10 +38,10 @@ namespace HealthAxis3.Shared.Models.Dtos.AppointmentDtos
         public string CancellationReason { get; set; } = string.Empty;
 
         [ForeignKey("PatientId")]
-        public required virtual PatientDto Patient { get; set; }
+        public virtual PatientDto? Patient { get; set; }
 
         [ForeignKey("DoctorId")]
-        public required virtual DoctorDto Doctor { get; set; }
+        public virtual DoctorDto? Doctor { get; set; }
 
         public static ValidationResult? ValidateAppointmentDate(DateTime date)
         {

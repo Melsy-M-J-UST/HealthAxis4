@@ -72,8 +72,7 @@
         <td>{{ a.slot }}</td>
         <td>{{ a.status }}</td>
         <td>
-          <button *ngIf="a.status === 'Completed'"
-                  (click)="viewHealthRecord(a)">
+          <button *ngIf="a.status === 'Completed'" (click)="viewHealthRecord(a)">
             View
           </button>
           <span *ngIf="a.status !== 'Completed'">—</span>
@@ -90,8 +89,7 @@
     <h2>📅 Book Appointment</h2>
 
     <label>Specialisation</label>
-    <select [(ngModel)]="newAppointment.specialisation"
-            (change)="onSpecialisationChange()">
+    <select [(ngModel)]="newAppointment.specialisation" (change)="onSpecialisationChange()">
       <option value="">Select</option>
       <option *ngFor="let s of specialisations" [value]="s">
         {{ s }}
@@ -99,17 +97,15 @@
     </select>
 
     <label>Doctor</label>
-    <select [(ngModel)]="newAppointment.doctor">
-      <option value="">Select</option>
-      <option *ngFor="let d of filteredDoctors" [value]="d">
+    <select [(ngModel)]="newAppointment.doctor" (change)="loadAvailableSlots()">
+      <option [ngValue]="null">Select</option>
+      <option *ngFor="let d of filteredDoctors" [ngValue]="d">
         {{ d.doctorName }}
       </option>
     </select>
 
     <label>Date</label>
-    <input type="date"
-            [(ngModel)]="newAppointment.date"
-            [min]="today" />
+    <input type="date" [(ngModel)]="newAppointment.date" [min]="today" (change)="loadAvailableSlots()" />
 
     <label>Time Slot</label>
     <select [(ngModel)]="newAppointment.slot">
@@ -164,15 +160,8 @@
     <h2>Search Doctors</h2>
 
     <div style="position: relative;">
-      <input type="text"
-              placeholder="Search specialisation..."
-              [(ngModel)]="searchText"
-              (focus)="onFocus()"
-              (input)="filterSpecialisations()"
-              (blur)="onBlur()" />
-
+      <input type="text" placeholder="Search specialisation..." [(ngModel)]="searchText" (focus)="onFocus()" (input)="filterSpecialisations()" (blur)="onBlur()" />
       <div class="dropdown-list" *ngIf="showDropdown">
-
         <div class="all-option"
               (click)="selectAllDoctors()">
           All Doctors

@@ -2,12 +2,13 @@
 using HealthAxis3.API.Events;
 using HealthAxis3.API.Models;
 using HealthAxis3.API.Repository;
+using HealthAxis3.API.Repository.Implementation;
 using HealthAxis3.Shared.Models.Dtos.AppointmentDtos;
 using MassTransit;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class AppointmentService(IAppointmentRepository repository, IMapper mapper, ILogger<AppointmentService> logger, IPublishEndpoint publishEndPoint) : IAppointmentService
+    public class AppointmentService(IAppointmentRepository repository, IPatientRepository patientRepository, IMapper mapper, ILogger<AppointmentService> logger, IPublishEndpoint publishEndPoint) : IAppointmentService
     {
         public async Task<AppointmentDto> AddAsync(AppointmentDto entity)
         {
@@ -15,10 +16,15 @@ namespace HealthAxis3.API.Service.Implementation
             var savedEntity = await repository.CreateAsync(appointment);
             logger.LogInformation("Appointment booked. AppointmentId={AppointmentId}, DoctorId={DoctorId}", appointment.AppointmentId, appointment.DoctorId);
             var result = mapper.Map<AppointmentDto>(savedEntity);
+            var patient = await patientRepository.GetByIdAsync(savedEntity.PatientId);
+            if (patient == null)
+            {
+                throw new InvalidOperationException($"Patient {savedEntity.PatientId} not found");
+            }
             await publishEndPoint.Publish(new AppointmentBookedEvent
             {
                 AppointmentId = appointment.AppointmentId,
-                PatientName = appointment.Patient.PatientName,
+                PatientName = patient.PatientName,
                 DoctorId = appointment.DoctorId,
                 ScheduledDate = appointment.ScheduledDate,
                 TimeSlot = appointment.Slot

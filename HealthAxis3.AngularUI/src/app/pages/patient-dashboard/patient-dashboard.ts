@@ -9,11 +9,7 @@ import { DoctorService } from '../../services/doctor';
   styleUrls: ['./patient-dashboard.css']
 })
 export class PatientDashboardComponent {
-
-  constructor(
-    private appointmentService: AppointmentService,
-    private doctorService: DoctorService
-  ) { }
+  constructor(private appointmentService: AppointmentService, private doctorService: DoctorService) { }
 
   appointments: any[] = [];
   todayAppointments: any[] = [];
@@ -37,12 +33,11 @@ export class PatientDashboardComponent {
   filteredDoctorsList: any[] = [];
 
   today = new Date().toISOString().split('T')[0];
-  slots = ['09:00 AM','10:00 AM', '11:00 AM','12:00 PM', '2:00 PM', '3:00 PM','4:00 PM','5:00 PM'];
+  slots: string[] = [];
 
   newAppointment = {
     specialisation: '',
-    doctorId: 0,
-    doctor: '',
+    doctor: null as any,
     date: '',
     slot: '',
     status: 'Pending',
@@ -84,13 +79,33 @@ export class PatientDashboardComponent {
       }
     });
   }
+  loadAvailableSlots()
+  {
+    const doctor = this.newAppointment.doctor;
+    const date = this.newAppointment.date;
+    if (!doctor || !date)
+    {
+      this.slots = [];
+      return;
+    }
+    this.doctorService.getAvailableSlots(doctor.doctorId, date).subscribe({
+      next: (data) =>
+      {
+        this.slots = data;
+      },
+      error: (err) =>
+      {
+        console.error(err);
+        this.slots = [];
+      }
+    });
+  }
   cancelAppointment(app: any) {
     const updated = { ...app, status: 'Cancelled' };
     this.appointmentService.updateAppointment(app.id, updated).subscribe(() => {
         this.loadData();
       });
   }
-
   bookAppointment() {
     const { doctor, date, slot } = this.newAppointment;
     if (!doctor || !date || !slot) {
@@ -98,52 +113,32 @@ export class PatientDashboardComponent {
       return;
     }
 
-    this.appointmentService
-      .checkAvailability(doctor, date, slot)
-      .subscribe({
+    const appointmentDto = {
+      patientId: this.newAppointment.patientId,
+      doctorId: this.newAppointment.doctor.doctorId,
+      scheduledDate: this.newAppointment.date,
+      slot: this.newAppointment.slot,
+      status: "Pending"
+    };
 
-        next: (res : any) => {
-
-          if (!res.available) {
-            alert('❌ Slot already booked');
-            return;
-          }
-
-          this.appointmentService
-            .addAppointment(this.newAppointment)
-            .subscribe({
-
-              next: () => {
-
-                alert('✅ Appointment booked');
-
-                this.newAppointment = {
-                  specialisation: '',
-                  doctorId: 0,
-                  doctor: '',
-                  date: '',
-                  slot: '',
-                  status: 'Pending',
-                  patientId: Number(localStorage.getItem('patientId')),
-                };
-
-                this.closeBookingModal();
-                this.loadData();
-              },
-
-              error: () => {
-                alert('❌ Booking failed');
-              }
-
-            });
-
-        },
-
-        error: () => {
-          alert('❌ Availability check failed');
-        }
-
-      });
+    this.appointmentService.addAppointment(appointmentDto).subscribe({
+      next: () => {
+        alert('✅ Appointment booked');
+        this.newAppointment = {
+          specialisation: '',
+          doctor: null as any,
+          date: '',
+          slot: '',
+          status: 'Pending',
+          patientId: Number(localStorage.getItem('patientId')),
+        };
+        this.closeBookingModal();
+        this.loadData();
+      },
+      error: () => {
+        alert('❌ Booking failed');
+      }
+    });
   }
 
   viewHealthRecord(appointment: any) {
@@ -169,7 +164,6 @@ export class PatientDashboardComponent {
   openDoctorSearch() {
     this.showDoctorModal = true;
     this.searchText = 'All Doctors';
-
     this.filteredDoctorsList = this.doctors;
     this.filteredSpecialisations = this.specialisations;
   }
@@ -178,9 +172,7 @@ export class PatientDashboardComponent {
   }
 
   onSpecialisationChange() {
-    this.filteredDoctors = this.doctors.filter(
-      d => d.specialisation === this.newAppointment.specialisation
-    );
+    this.filteredDoctors = this.doctors.filter(d => d.specialisation === this.newAppointment.specialisation);
   }
 
   onFocus() {
@@ -195,31 +187,24 @@ export class PatientDashboardComponent {
   }
 
   filterSpecialisations() {
-    this.filteredSpecialisations = this.specialisations.filter(s =>
-      s.toLowerCase().includes(this.searchText.toLowerCase())
-    );
+    this.filteredSpecialisations = this.specialisations.filter(s => s.toLowerCase().includes(this.searchText.toLowerCase()));
   }
 
   selectSpecialisation(s: string) {
     this.selectedSpecialisation = s;
     this.searchText = s;
     this.showDropdown = false;
-
-    this.filteredDoctorsList = this.doctors.filter(
-      d => d.specialisation === s
-    );
+    this.filteredDoctorsList = this.doctors.filter(d => d.specialisation === s);
   }
 
   selectAllDoctors() {
     this.selectedSpecialisation = '';
     this.searchText = 'All Doctors';
     this.showDropdown = false;
-
     this.filteredDoctorsList = this.doctors;
   }
 
   get myDoctors() {
     return this.appointmentService.getMyDoctors(this.doctors);
   }
-
 }
