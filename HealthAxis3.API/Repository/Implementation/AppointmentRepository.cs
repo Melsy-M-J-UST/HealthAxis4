@@ -12,30 +12,28 @@ namespace HealthAxis3.API.Repository.Implementation
     {
         public async Task<List<Appointment>> GetByDoctorIdAsync(int id, CancellationToken ct = default)
         {
-            var existing = await context.Set<Appointment>().Where(e => e.DoctorId == id).ToListAsync(ct);
+            var existing = await context.Set<Appointment>().Include(a => a.Patient).Include(a => a.Doctor).Where(e => e.DoctorId == id).ToListAsync(ct);
             return existing;
         }
         public async Task<List<Appointment>> GetByPatientIdAsync(int id, CancellationToken ct = default)
         {
-            var existing = await context.Set<Appointment>().Where(e => e.PatientId == id).ToListAsync(ct);
+            var existing = await context.Set<Appointment>().Include(a => a.Patient).Include(a => a.Doctor).Where(e => e.PatientId == id).ToListAsync(ct);
             return existing;
         }
 
 
         public async Task<Appointment?> GetWithDetailsAsync(int id, CancellationToken ct = default)
         {
-            return await context.Appointments
-            .Include(a => a.Patient)
-            .Include(a => a.Doctor)
-            .FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
+            return await context.Appointments.Include(a => a.Patient).Include(a => a.Doctor).FirstOrDefaultAsync(a => a.AppointmentId == id, ct);
+        }
+        public async Task<List<Appointment>> GetAllWithDetailsAsync(CancellationToken ct = default)
+        {
+            return await context.Appointments.Include(a => a.Patient).Include(a => a.Doctor).ToListAsync(ct);
         }
 
         public async Task<List<Appointment>> GetExpiredCancelledAsync(CancellationToken ct = default)
         {
-            return await context.Appointments
-                .Where(a => a.Status == "Cancelled" &&
-                            a.ScheduledDate < DateTime.Now)
-                .ToListAsync(ct);
+            return await context.Appointments.Where(a => a.Status == "Cancelled" && a.ScheduledDate < DateTime.Now).ToListAsync(ct);
         }
 
         public async Task<bool> DeleteAsync(int id, CancellationToken ct = default)

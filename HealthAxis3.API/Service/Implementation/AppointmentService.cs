@@ -34,7 +34,7 @@ namespace HealthAxis3.API.Service.Implementation
 
         public async Task<List<AppointmentDto>> GetAllAsync()
         {
-            return mapper.Map<List<AppointmentDto>>(await repository.GetAllAsync());
+            return mapper.Map<List<AppointmentDto>>(await repository.GetAllWithDetailsAsync());
         }
 
         public async Task<List<AppointmentDto>> GetByDoctorIdAsync(int id, CancellationToken ct = default)
@@ -44,7 +44,7 @@ namespace HealthAxis3.API.Service.Implementation
 
         public async Task<AppointmentDto> GetByIdAsync(int id, CancellationToken ct= default)
         {
-            return mapper.Map<AppointmentDto>(await repository.GetByIdAsync(id, ct));
+            return mapper.Map<AppointmentDto>(await repository.GetWithDetailsAsync(id, ct));
         }
 
         public async Task<List<AppointmentDto>> GetByPatientIdAsync(int id, CancellationToken ct = default)
@@ -101,10 +101,8 @@ namespace HealthAxis3.API.Service.Implementation
         public async Task<string> DeleteAppointment(int id)
         {
             var appointment = await repository.GetByIdAsync(id);
-
             if (appointment == null)
                 return "Appointment not found";
-
             if (appointment.Status == "Cancelled")
             {
                 if (DateTime.Now >= appointment.ScheduledDate)
@@ -114,14 +112,12 @@ namespace HealthAxis3.API.Service.Implementation
                 }
                 return "Cannot delete before appointment date";
             }
-
             return "Only cancelled appointments can be deleted";
         }
 
         public async Task CleanupCancelledAppointments()
         {
             var expired = await repository.GetExpiredCancelledAsync();
-
             foreach (var appt in expired)
             {
                 await repository.DeleteAsync(appt.AppointmentId);
@@ -130,19 +126,13 @@ namespace HealthAxis3.API.Service.Implementation
         public async Task<List<AppointmentReportDto>> GetAppointmentReportAsync()
         {
             var appointments = await repository.GetAllAsync();
-
-            var report = appointments
-                .GroupBy(a => a.ScheduledDate.Date)
-                .Select(g => new AppointmentReportDto
-                {
-                    Date = g.Key,
-                    CompletedCount = g.Count(a => a.Status == "Completed"),
-                    CancelledCount = g.Count(a => a.Status == "Cancelled"),
-                    ConfirmedCount = g.Count(a => a.Status == "Confirmed")
-                })
-                .OrderBy(r => r.Date)
-                .ToList();
-
+            var report = appointments.GroupBy(a => a.ScheduledDate.Date).Select(g => new AppointmentReportDto
+            {
+                Date = g.Key,
+                CompletedCount = g.Count(a => a.Status == "Completed"),
+                CancelledCount = g.Count(a => a.Status == "Cancelled"),
+                ConfirmedCount = g.Count(a => a.Status == "Confirmed")
+            }).OrderBy(r => r.Date).ToList();
             return report;
         }
     }
