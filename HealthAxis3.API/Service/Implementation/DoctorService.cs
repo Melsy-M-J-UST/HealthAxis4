@@ -86,16 +86,13 @@ namespace HealthAxis3.API.Service.Implementation
         private string GenerateDoctorEmail(string name)
         {
             name = name.ToLower();
-
             var parts = name.Split(" ", StringSplitOptions.RemoveEmptyEntries);
-
             if (parts.Length > 1)
             {
                 var first = parts[0];
                 var rest = string.Join("", parts.Skip(1));
                 return $"{first}.{rest}@healthaxis.com";
             }
-
             return $"{name}@healthaxis.com";
         }
     }

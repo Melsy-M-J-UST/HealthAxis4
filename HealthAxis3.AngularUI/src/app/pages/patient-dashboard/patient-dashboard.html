@@ -62,6 +62,7 @@
         <th>Time</th>
         <th>Status</th>
         <th>Health Record</th>
+        <th>Action</th>
       </tr>
 
       <tr *ngFor="let a of appointments">
@@ -75,6 +76,12 @@
           </button>
           <span *ngIf="a.status !== 'Completed'">—</span>
         </td>
+        <td>
+
+          <button class="danger-btn" [disabled]="a.status==='Cancelled'" (click)="openCancelModal(a)">
+            Cancel Appointment
+          </button>
+        </td>
       </tr>
     </table>
   </div>
@@ -87,7 +94,7 @@
     <h2>📅 Book Appointment</h2>
 
     <label>Specialisation</label>
-    <select [(ngModel)]="newAppointment.specialisation" (change)="onSpecialisationChange()">
+    <select id="specialisation" name="specialisation" [(ngModel)]="newAppointment.specialisation" (change)="onSpecialisationChange()">
       <option value="">Select</option>
       <option *ngFor="let s of specialisations" [value]="s">
         {{ s }}
@@ -95,7 +102,7 @@
     </select>
 
     <label>Doctor</label>
-    <select [(ngModel)]="newAppointment.doctor" (change)="loadAvailableSlots()">
+    <select id="doctor" name="doctor" [(ngModel)]="newAppointment.doctor" (change)="loadAvailableSlots()">
       <option [ngValue]="null">Select</option>
       <option *ngFor="let d of filteredDoctors" [ngValue]="d">
         {{ d.doctorName }}
@@ -103,10 +110,10 @@
     </select>
 
     <label>Date</label>
-    <input type="date" [(ngModel)]="newAppointment.date" [min]="today" (change)="loadAvailableSlots()" />
+    <input id="scheduledDate" name="scheduledDate" type="date" [(ngModel)]="newAppointment.date" [min]="today" (change)="loadAvailableSlots()" />
 
     <label>Time Slot</label>
-    <select [(ngModel)]="newAppointment.slot">
+    <select id="slot" name="slot" [(ngModel)]="newAppointment.slot">
       <option value="">Select</option>
       <option *ngFor="let s of slots">
         {{ s }}
@@ -116,10 +123,7 @@
     <div class="btn-group">
       <button (click)="closeBookingModal()">Cancel</button>
       <button class="primary"
-              [disabled]="!newAppointment.specialisation ||
-          !newAppointment.doctor ||
-          !newAppointment.date ||
-          !newAppointment.slot"
+              [disabled]="!newAppointment.specialisation || !newAppointment.doctor || !newAppointment.date || !newAppointment.slot"
               (click)="bookAppointment()">
         Confirm
       </button>
@@ -158,7 +162,7 @@
     <h2>Search Doctors</h2>
 
     <div style="position: relative;">
-      <input type="text" placeholder="Search specialisation..." [(ngModel)]="searchText" (focus)="onFocus()" (input)="filterSpecialisations()" (blur)="onBlur()" />
+      <input id="searchSpecialisation" name="searchSpecialisation" type="text" placeholder="Search specialisation..." [(ngModel)]="searchText" (focus)="onFocus()" (input)="filterSpecialisations()" (blur)="onBlur()" />
       <div class="dropdown-list" *ngIf="showDropdown">
         <div class="all-option"
               (click)="selectAllDoctors()">
@@ -216,6 +220,61 @@
 
     <div class="btn-group">
       <button (click)="closeMyDoctorsModal()">Close</button>
+    </div>
+
+  </div>
+</div>
+<div class="modal" *ngIf="showCancelModal">
+  <div class="cancel-modal">
+
+    <div class="modal-header">
+      <div class="warning-icon">⚠️</div>
+      <h2>Cancel Appointment</h2>
+      <p>
+        Are you sure you want to cancel this appointment?
+        This action cannot be undone.
+      </p>
+    </div>
+
+    <div class="appointment-info" *ngIf="selectedAppointment">
+      <div>
+        <strong>Doctor:</strong>
+        {{ selectedAppointment.doctor?.doctorName }}
+      </div>
+
+      <div>
+        <strong>Date:</strong>
+        {{ selectedAppointment.scheduledDate | date:'dd/MM/yyyy' }}
+      </div>
+
+      <div>
+        <strong>Time:</strong>
+        {{ selectedAppointment.slot }}
+      </div>
+    </div>
+
+    <label class="field-label">
+      Cancellation Reason <span>*</span>
+    </label>
+
+    <textarea id="cancellationReason" name="cancellationReason" rows="4" [(ngModel)]="cancellationReason" placeholder="Please let us know why you're cancelling..." maxlength="250">
+    </textarea>
+
+    <div class="char-count">
+      {{ cancellationReason.length }}/250
+    </div>
+
+    <div class="btn-group">
+      <button class="secondary-btn"
+              (click)="closeCancelModal()">
+        Keep Appointment
+      </button>
+
+      <button class="danger-btn"
+              [disabled]="!cancellationReason.trim()"
+              (click)="submitCancellation()">
+        Cancel Appointment
+      </button>
     </div>
 
   </div>

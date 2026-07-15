@@ -18,7 +18,13 @@ using Serilog;
 using HealthAxis3.API.Options;
 using HealthAxis3.API.Messaging;
 
+Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateBootstrapLogger();
+Log.Information("HealthAxis Api Starting ..... ");
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSerilog((services,configuration)=>
+    configuration.ReadFrom.Configuration(builder.Configuration).ReadFrom.Services(services).Enrich.FromLogContext()
+);
 builder.Host.UseSerilog((context, services, configuration) => {
     configuration.ReadFrom.Configuration(context.Configuration)
     .ReadFrom.Services(services)
@@ -158,6 +164,7 @@ builder.Services.AddAutoMapper(cfg =>
 });
 
 var app = builder.Build();
+app.UseSerilogRequestLogging();
 using (var scope = app.Services.CreateScope())
 {
 

@@ -9,13 +9,14 @@ namespace HealthAxis3.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AppointmentController(IAppointmentService service) : ControllerBase
+    public class AppointmentController(IAppointmentService service, ILogger<AppointmentController> logger) : ControllerBase
     {
         [HttpGet]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin, Doctor, Patient")]
         public async Task<IActionResult> GetAll()
         {
             var result = await service.GetAllAsync();
+            logger.LogInformation("Retrieved all appointments successfully.");
             return Ok(result);
         }
         [HttpGet("{id}")]
@@ -23,6 +24,12 @@ namespace HealthAxis3.API.Controllers
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await service.GetByIdAsync(id);
+            if (result == null)
+            {
+                logger.LogWarning("Appointment with ID {id} not found.", id);
+                return NotFound();
+            }
+            logger.LogInformation(" Details of {id} received",id);
                 return Ok(result);
         }
         [HttpPost]

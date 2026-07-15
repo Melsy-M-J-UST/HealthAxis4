@@ -77,6 +77,19 @@ export class AppointmentService {
     return this.http.put(`${API_BASE_URL}/appointment/${id}`, data);
   }
 
+  updateAppointmentStatus(id: number, status: string, reason?: string): Observable<any>
+  {
+    return this.http.put(`${API_BASE_URL}/appointment/${id}/status`, {},
+      {
+        params:
+        {
+          status,
+          reason: reason || ''
+        }
+      }
+    );
+  }
+
   getMyDoctors(doctors: any[]) {
     const myDoctorNames = this.appointments.map(a => a.doctor);
     return doctors.filter(d => myDoctorNames.includes(d.name));

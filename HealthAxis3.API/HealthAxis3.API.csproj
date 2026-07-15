@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.1.1" />
+    <PackageReference Include="elastic.serilog.sinks" Version="9.0.0" />
     <PackageReference Include="MassTransit" Version="9.1.2" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="9.1.2" />
     <PackageReference Include="Microsoft.aspnetcore.authentication.jwtbearer" Version="10.0.9" />
@@ -24,6 +25,8 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.caching.StackExchangeRedis" Version="10.0.9" />
     <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+    <PackageReference Include="serilog.enrichers.environment" Version="3.0.1" />
+    <PackageReference Include="serilog.settings.configuration" Version="10.0.1" />
     <PackageReference Include="Serilog.Sinks.Console" Version="6.1.1" />
     <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
     <PackageReference Include="StackExchange.Redis" Version="3.0.11" />

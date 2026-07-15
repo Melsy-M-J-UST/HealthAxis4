@@ -43,6 +43,9 @@ export class PatientDashboardComponent {
     status: 'Pending',
     patientId: Number(localStorage.getItem('patientId')),
   };
+  showCancelModal = false;
+  selectedAppointment: any = null;
+  cancellationReason = '';
 
   ngOnInit() {
     this.loadData();
@@ -207,4 +210,44 @@ export class PatientDashboardComponent {
   get myDoctors() {
     return this.appointmentService.getMyDoctors(this.doctors);
   }
+
+  openCancelModal(appointment: any)
+  {
+    this.selectedAppointment = appointment;
+    this.cancellationReason = '';
+    this.showCancelModal = true;
+  }
+
+  closeCancelModal()
+  {
+    this.showCancelModal = false;
+    this.selectedAppointment = null;
+    this.cancellationReason = '';
+  }
+
+  submitCancellation()
+  {
+
+    if (!this.cancellationReason.trim())
+    {
+      alert('Please provide a cancellation reason');
+      return;
+    }
+
+    this.appointmentService.updateAppointmentStatus(this.selectedAppointment.appointmentId, 'Cancelled', this.cancellationReason)
+      .subscribe({
+        next: () =>
+        {
+          alert('Appointment cancelled successfully');
+          this.closeCancelModal();
+          this.loadData();
+        },
+        error: (err) =>
+        {
+          console.error(err);
+          alert('Failed to cancel appointment');
+        }
+      });
+  }
+
 }
