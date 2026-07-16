@@ -12,14 +12,14 @@ namespace HealthAxis3.API.Controllers
     public class HealthRecordController(IHealthRecordService service) : ControllerBase
     {
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Doctor, Patient")]
         public async Task<IActionResult> GetAll()
         {
             var result = await service.GetAllAsync();
             return Ok(result);
         }
         [HttpGet("{id}")]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Doctor, Patient")]
         public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var result = await service.GetByIdAsync(id);
@@ -33,7 +33,7 @@ namespace HealthAxis3.API.Controllers
             }
         }
         [HttpPost]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Doctor")]
         public async Task<IActionResult> Create([FromBody] HealthRecordDto entity)
         {
             if (!ModelState.IsValid)
@@ -44,7 +44,7 @@ namespace HealthAxis3.API.Controllers
             {
                 var result = await service.AddAsync(entity);
                 if (result == null) return NotFound();
-                else return CreatedAtAction("GetById", new { result.HealthRecordId }, result);
+                else return Ok(result);
             }
         }
         //[HttpPut("{id:int}")]

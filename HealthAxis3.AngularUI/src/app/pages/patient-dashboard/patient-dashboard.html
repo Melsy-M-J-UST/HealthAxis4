@@ -78,7 +78,7 @@
         </td>
         <td>
 
-          <button class="danger-btn" [disabled]="a.status==='Cancelled'" (click)="openCancelModal(a)">
+          <button class="danger-btn" [disabled]="a.status==='Cancelled' || a.status ==='Completed'" (click)="openCancelModal(a)">
             Cancel Appointment
           </button>
         </td>

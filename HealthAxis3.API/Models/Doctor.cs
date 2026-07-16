@@ -32,5 +32,7 @@ namespace HealthAxis3.API.Models
 
         [Required]
         public bool IsActive { get; set; } = true;
+        public string? UserId { get; set; }
+        public ApplicationUser? User { get; set; }
     }
 }

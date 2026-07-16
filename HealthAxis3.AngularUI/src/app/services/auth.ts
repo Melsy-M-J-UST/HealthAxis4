@@ -18,6 +18,10 @@ export class AuthService {
     if (authResponse.patientId) {
       localStorage.setItem("patientId", authResponse.patientId.toString());
     }
+    if (authResponse.doctorId)
+    {
+      localStorage.setItem("doctorId", authResponse.doctorId.toString());
+    }
   }
   getToken() : string|null{
     return localStorage.getItem("token");
@@ -31,17 +35,10 @@ export class AuthService {
   isTokenExpired(): boolean {
     const token = this.getToken();
     if (!token) return true;
-
     const payload = this.parseJwt(token);
-
     const exp = payload?.exp;
-
     if (!exp) return true;
-
-    const currentTime = Math.floor(Date.now() / 1000);
-    console.log('exp:', exp);
-    console.log('now:', Math.floor(Date.now() / 1000));
-    
+    const currentTime = Math.floor(Date.now() / 1000);    
     return exp < currentTime;
   }
   private parseJwt(token: string): any | null {
@@ -52,15 +49,13 @@ export class AuthService {
     }
     catch {
       return null;
-    }
-    
+    }                   
   }
   getUserRoles() {
     const token = this.getToken();
     if (!token) return [];
     const payload = this.parseJwt(token);
     if (!payload) return [];
-
     const roleClaims = payload.role ?? payload["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"];
     return Array.isArray(roleClaims) ? roleClaims : [roleClaims];
   }

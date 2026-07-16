@@ -1,4 +1,4 @@
-<app-header [showMenuEnabled]="true"></app-header>
+<app-header [showMenuEnabled]="true" [doctor]="doctor"></app-header>
 
 <div class="layout">
 
@@ -19,7 +19,7 @@
         </tr>
 
         <tr *ngFor="let a of todayAppointments">
-          <td>{{ a.patient }}</td>
+          <td>{{ a.patient.patientName }}</td>
           <td>{{ a.slot }}</td>
           <td>{{ a.status }}</td>
         </tr>
@@ -49,8 +49,8 @@
         </tr>
 
         <tr *ngFor="let a of weekAppointments">
-          <td>{{ a.patient }}</td>
-          <td>{{ a.date }}</td>
+          <td>{{ a.patient.patientName }}</td>
+          <td>{{ a.scheduledDate | date:'dd/MM/yyyy'  }}</td>
           <td>{{ a.slot }}</td>
         </tr>
       </table>
@@ -77,7 +77,7 @@
       </tr>
 
       <tr *ngFor="let p of patients">
-        <td>{{ p.name }}</td>
+        <td>{{ p.patientName }}</td>
         <td>{{ p.lastVisit }}</td>
 
         <td>
@@ -108,7 +108,7 @@
       </tr>
 
       <tr *ngFor="let a of selectedPatientAppointments">
-        <td>{{ a.date }}</td>
+        <td>{{ a.scheduledDate | date:'dd/MM/yyyy' }}</td>
         <td>{{ a.slot }}</td>
         <td>
           <button (click)="viewHealthRecord(a)">View</button>
@@ -127,7 +127,7 @@
     <h3>All Health Records</h3>
 
     <div *ngFor="let r of selectedAllRecords">
-      <p><b>Date:</b> {{ r.date }}</p>
+      <p><b>Date:</b> {{ r.visitedDate | date:'dd/MM/yyyy'  }}</p>
       <p><b>Diagnosis:</b> {{ r.healthRecord.diagnosis }}</p>
       <hr>
     </div>
@@ -180,18 +180,69 @@
         <th>Date</th>
         <th>Time</th>
         <th>Status</th>
+        <td>Action</td>
       </tr>
 
       <tr *ngFor="let a of appointments">
-        <td>{{ a.patient }}</td>
-        <td>{{ a.date }}</td>
+        <td>{{ a.patient.patientName }}</td>
+        <td>{{  a.scheduledDate | date:'dd/MM/yyyy'  }}</td>
         <td>{{ a.slot }}</td>
         <td>{{ a.status }}</td>
+        <td>
+          <button *ngIf="a.status === 'Pending'" (click)="updateStatus(a, 'Confirmed')">
+            Confirm
+          </button>
+          <button *ngIf="a.status === 'Pending'" (click)="updateStatus(a, 'Cancelled')">
+            Cancel
+          </button>
+          <button *ngIf="a.status === 'Confirmed'" (click)="updateStatus(a, 'Cancelled')">
+            Cancel
+          </button>
+          <button *ngIf="a.status === 'Confirmed'" (click)="openCompleteModal(a)">
+            Complete
+          </button>
+          <span *ngIf="a.status === 'Completed'">
+            ✅ Completed
+          </span>
+        </td>
       </tr>
     </table>
 
     <div class="btn-group">
       <button (click)="closeAppointmentsModal()">Close</button>
+    </div>
+
+  </div>
+
+</div>
+<div class="modal" *ngIf="showCompleteModal">
+
+  <div class="modal-box large">
+
+    <h3>Complete Appointment</h3>
+
+    <label>Diagnosis</label>
+    <input type="text"
+           [(ngModel)]="healthRecord.diagnosis">
+
+    <label>Prescription</label>
+    <textarea [(ngModel)]="healthRecord.prescription">
+    </textarea>
+
+    <label>Notes</label>
+    <textarea [(ngModel)]="healthRecord.notes">
+    </textarea>
+
+    <div class="btn-group">
+
+      <button (click)="completeAppointment()">
+        Save & Complete
+      </button>
+
+      <button (click)="closeCompleteModal()">
+        Cancel
+      </button>
+
     </div>
 
   </div>

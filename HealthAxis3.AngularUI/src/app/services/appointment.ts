@@ -35,31 +35,20 @@ export class AppointmentService {
 
   getTodayAppointments() {
     const today = new Date().toISOString().split('T')[0];
-
-    return this.appointments.filter(a =>
-      a.date === today && a.status !== 'Cancelled'
-    );
+    return this.appointments.filter(a => a.date === today && a.status !== 'Cancelled' );
   }
 
   getWeeklyAppointments() {
     const today = new Date();
-
     return this.appointments.filter(a => {
       const appointmentDate = new Date(a.date);
-
-      const diff =
-        (appointmentDate.getTime() - today.getTime()) /
-        (1000 * 60 * 60 * 24);
-
+      const diff = (appointmentDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24);
       return diff >= 0 && diff <= 7 && a.status !== 'Cancelled';
     });
   }
 
   checkAvailability(doctor: any, date: string, slot: string): Observable<any>
   {
-    console.log(doctor);
-    console.log(JSON.stringify(doctor));
-    console.log('selectedDoctor:', JSON.stringify( doctor));
     const doctorId = doctor.doctorId;
     return this.http.get<any>(
       `${API_BASE_URL}/Doctor/doctors/${doctorId}/availability`,

@@ -5,5 +5,6 @@ export interface AuthResponse {
   role: string;
   userId: string;
   patientId: number;
+  doctorId: number;
 
 }

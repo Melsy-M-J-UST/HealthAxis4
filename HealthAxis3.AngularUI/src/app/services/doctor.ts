@@ -38,4 +38,8 @@ export class DoctorService {
       }
     );
   }
+  getDoctorById(doctorId: number): Observable<any>
+  {
+    return this.http.get<any>(`${API_BASE_URL}/Doctor/${doctorId}`);
+  }
 }

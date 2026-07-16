@@ -1,6 +1,5 @@
 import { Component, HostListener, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { UtilService } from '../../services/util';
 import { UserService } from '../../services/user';
 import { AuthService } from '../../services/auth';
 
@@ -20,7 +19,10 @@ export class HeaderComponent {
   showPasswordModal = false;
   showLogoutModal = false;
   user: any = {};
-  constructor(private router: Router, private userService: UserService, private authservice: AuthService ) { }
+  userRole = '';
+  showDoctorProfileModal = false;
+  @Input() doctor: any;
+  constructor(private router: Router, private userService: UserService, private authservice: AuthService) { }
 
   isLoggedIn() {
     return this.authservice.isLoggedIn();
@@ -34,21 +36,12 @@ export class HeaderComponent {
   isDoctor() {
     return this.authservice.getUserRoles().includes('Doctor');
   }
-  // loadUser() {
-  //   const storedUser = this.userService.getUserName('patientUser');
-
-  //   if (storedUser) {
-  //     const data = JSON.parse(storedUser);
-
-  //     this.userName = data.name;
-  //     this.initials = this.userService.getInitials();
-  //   }
-  // }
 
   ngOnInit() {
     this.userName = this.userService.getUserName();
     this.initials = this.userService.getInitials();
     this.user = this.userService.getUser();
+    this.userRole = localStorage.getItem('role') || '';
   }
 
   openPasswordModal() {
@@ -79,8 +72,14 @@ export class HeaderComponent {
   }
 
   goToProfile() {
-    this.router.navigate(['/dashboard/profile']);
-    this.showMenu = false;
+      if (this.isDoctor())
+      {
+        this.showDoctorProfileModal = true;
+      } else
+      {
+        this.router.navigate(['/dashboard/profile']);
+      }
+      this.showMenu = false;
   }
 
   logout() {
@@ -96,21 +95,19 @@ export class HeaderComponent {
 
   showNotifications = false;
 
-  notifications: string[] = [
-    'Appointment booked ✅',
-    'Reminder: Today appointment at 10 AM'
-  ];
+  notifications: string[] = [];
 
   toggleNotifications() {
     this.showNotifications = !this.showNotifications;
   }
   saveProfile() {
     this.userService.setUser(this.user);
-
-    // ✅ refresh header instantly
     this.userName = this.userService.getUserName();
     this.initials = this.userService.getInitials();
-
     this.closeModals();
+  }
+  closeDoctorProfileModal()
+  {
+    this.showDoctorProfileModal = false;
   }
 }

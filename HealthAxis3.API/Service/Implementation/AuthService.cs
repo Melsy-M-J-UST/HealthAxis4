@@ -25,7 +25,7 @@ namespace HealthAxis3.API.Service.Implementation
                 return (false, "Invalid credentials", null, 0);
 
             var roles = await userManager.GetRolesAsync(user);
-
+            var doctor = context.Doctors.FirstOrDefault(d => d.UserId == user.Id);
             if (user.IsFirstLogin && roles.Any(r => r == "Doctor"))
             {
 
@@ -36,7 +36,8 @@ namespace HealthAxis3.API.Service.Implementation
                     AccessToken = tokens,
                     Role = roles.FirstOrDefault() ?? "",
                     UserId = user.Id,
-                    Message = "FirstLogin"
+                    Message = "FirstLogin",
+                    DoctorId = doctor?.DoctorId
                 };
 
                 return (true, "FirstLogin", responses, 0);
@@ -51,7 +52,6 @@ namespace HealthAxis3.API.Service.Implementation
 
             var patient = context.Patients
                 .FirstOrDefault(p => p.UserId == user.Id);
-
             var response = new AuthResponse
             {
                 AccessToken = token,

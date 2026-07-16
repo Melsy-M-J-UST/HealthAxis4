@@ -1,74 +1,179 @@
 <header class="dashboard-header">
 
-  <div class="logo" routerLink="/dashboard">
-    HealthAxis
+  <div class="left-section">
+
+    <div class="logo"
+         [routerLink]="isDoctor() ? '/doctor-dashboard' : '/dashboard'">
+      🏥 HealthAxis
+    </div>
+
+    <div class="role-badge" [ngClass]="{'doctor-badge': isDoctor(), 'patient-badge': isPatient() }">
+      <span *ngIf="isDoctor()">👨‍⚕️ Doctor</span>
+      <span *ngIf="isPatient()">🧑 Patient</span>
+    </div>
+
   </div>
 
   <div class="right-section">
 
-    <div class="notification" (click)="toggleNotifications()">
-      🔔
-      <span class="badge" *ngIf="notifications.length > 0">
-        {{ notifications.length }}
-      </span>
+    <div *ngIf="isDoctor()" class="quick-info">
+      Today's Appointments
     </div>
 
-    <div class="notif-dropdown" *ngIf="showNotifications">
-      <p *ngIf="notifications.length === 0">No notifications</p>
+    <div class="notification" (click)="toggleNotifications()">
 
-      <div *ngFor="let n of notifications">
-        {{ n }}
+      🔔
+
+      <span class="badge"
+            *ngIf="notifications.length > 0">
+        {{ notifications.length }}
+      </span>
+
+      <div class="notif-dropdown"
+           *ngIf="showNotifications">
+
+        <div class="notif-header">
+          Notifications
+        </div>
+
+        <div *ngIf="notifications.length === 0"
+             class="empty-notification">
+          No notifications
+        </div>
+
+        <div class="notif-item"
+             *ngFor="let n of notifications">
+          {{ n }}
+        </div>
+
       </div>
+
     </div>
 
     <div class="profile">
 
-      <!-- AVATAR -->
       <div class="avatar"
            (click)="toggleMenu()"
            [class.disabled]="!showMenuEnabled">
+
+        {{ initials }}
+
+        <span class="online-dot"></span>
+
+      </div>
+
+      <div *ngIf="showMenu && showMenuEnabled"
+           class="dropdown">
+
+        <div class="user-section">
+
+          <div class="avatar-large">
+            {{ initials }}
+          </div>
+
+          <div>
+
+            <div class="name">
+              {{ userName }}
+            </div>
+
+            <div class="role">
+              {{ userRole }}
+            </div>
+
+          </div>
+
+        </div>
+
+        <hr>
+
+        <button (click)="goToProfile()">
+          👤 View Profile
+        </button>
+
+        <button (click)="openPasswordModal()">
+          🔒 Change Password
+        </button>
+
+        <button class="danger"
+                (click)="logout()">
+          🚪 Logout
+        </button>
+      </div>
+    </div>
+  </div>
+
+</header>
+<div class="modal" *ngIf="showDoctorProfileModal">
+
+  <div class="modal-box profile-modal">
+
+    <div class="profile-header">
+
+      <div class="profile-avatar">
         {{ initials }}
       </div>
 
-      <!-- ✅ DROPDOWN -->
-      <div *ngIf="showMenu && showMenuEnabled" class="dropdown">
+      <div>
+        <h2>{{ user.doctorName }}</h2>
+        <p class="sub-title">👨‍⚕️ {{ user.specialisation }}</p>
+      </div>
 
-        <p class="name">{{ userName }}</p>
+    </div>
 
-        <button (click)="goToProfile()">👤 View Profile</button>
+    <div class="profile-details">
 
-        <button (click)="openPasswordModal()">🔒 Change Password</button>
+      <!--<div class="detail-row">
+        <span class="label">Doctor ID</span>
+        <span class="value">{{ doctor.doctorId }}</span>
+      </div>-->
 
-        <button class="danger" (click)="logout()">🚪 Log Out</button>
+      <div class="detail-row">
+        <span class="label">Doctor Name</span>
+        <span class="value">{{ doctor.doctorName }}</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Specialisation</span>
+        <span class="value">{{ doctor.specialisation }}</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Experience</span>
+        <span class="value">{{ doctor.experience }} Years</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Consultation Fee</span>
+        <span class="value">₹{{ doctor.fees }}</span>
+      </div>
+
+      <div class="detail-row">
+        <span class="label">Status</span>
+
+        <span class="status-active"
+              *ngIf="user.isActive">
+          Active
+        </span>
+
+        <span class="status-inactive"
+              *ngIf="!user.isActive">
+          Inactive
+        </span>
 
       </div>
 
     </div>
-  </div>
-</header>
-<!-- PASSWORD MODAL -->
-<div class="modal" *ngIf="showPasswordModal">
-  <div class="modal-box">
-    <h3>Change Password</h3>
-
-    <input type="password" placeholder="New Password">
-    <input type="password" placeholder="Confirm Password">
 
     <div class="btn-group">
-      <button (click)="closeModals()">Cancel</button>
-      <button class="primary">Save</button>
-    </div>
-  </div>
-</div>
 
-<!-- LOGOUT MODAL -->
-<div class="modal" *ngIf="showLogoutModal">
-  <div class="modal-box">
-    <h3>Are you sure you want to sign out?</h3>
+      <button class="secondary-btn"
+              (click)="closeDoctorProfileModal()">
+        Close
+      </button>
 
-    <div class="btn-group">
-      <button (click)="closeModals()">Cancel</button>
-      <button class="danger">Sign Out</button>
     </div>
+
   </div>
+
 </div>

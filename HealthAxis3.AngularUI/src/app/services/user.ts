@@ -5,17 +5,23 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  private storageKey = 'patientUser';
-
+   private getStorageKey(): string
+  {
+    const role = localStorage.getItem('role');
+    if (role === 'Doctor')
+    {
+      return 'doctorUser';
+    }
+    return 'patientUser';
+  }
   private user: any = null;
-
   constructor() {
     this.loadUser();
   }
 
-  private loadUser(): void {
-    const storedUser = localStorage.getItem(this.storageKey);
-
+  private loadUser(): void
+  {
+    const storedUser = localStorage.getItem(this.getStorageKey());
     if (storedUser) {
       this.user = JSON.parse(storedUser);
     } else {
@@ -33,26 +39,19 @@ export class UserService {
 
   getInitials(): string {
     const name = this.getUserName();
-
     if (!name) return '';
-
-    return name
-      .split(' ')
-      .map((n: string) => n[0])
-      .join('')
-      .toUpperCase();
+    return name.split(' ').map((n: string) => n[0]).join('').toUpperCase();
   }
 
   setUser(userData: any): void {
     this.user = userData;
-    localStorage.setItem(this.storageKey, JSON.stringify(userData));
+    localStorage.setItem(this.getStorageKey(), JSON.stringify(userData));
   }
 
   updateUserField(field: string, value: any): void {
     if (!this.user) return;
-
     this.user[field] = value;
-    localStorage.setItem(this.storageKey, JSON.stringify(this.user));
+    localStorage.setItem(this.getStorageKey(), JSON.stringify(this.user));
   }
 
   refreshUser(): void {
@@ -61,7 +60,7 @@ export class UserService {
 
   clearUser(): void {
     this.user = null;
-    localStorage.removeItem(this.storageKey);
+    localStorage.removeItem(this.getStorageKey());
   }
 
   isLoggedIn(): boolean {

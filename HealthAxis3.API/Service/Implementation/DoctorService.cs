@@ -4,11 +4,12 @@ using HealthAxis3.API.Repository;
 using HealthAxis3.Shared.Models.Dtos.DoctorDtos;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Caching.Distributed;
+using Serilog.Core;
 using System.Text.Json;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager, IDistributedCache cache) : IDoctorService
+    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager, IDistributedCache cache, ILogger<DoctorService> logger) : IDoctorService
     {
         private const string doctorsCacheKey = "doctors:all";
         private static readonly DistributedCacheEntryOptions cacheOptions = new DistributedCacheEntryOptions
@@ -35,6 +36,7 @@ namespace HealthAxis3.API.Service.Implementation
 
             var doctorDto= mapper.Map<DoctorDto>(saved);
             await cache.RemoveAsync(doctorsCacheKey);
+            logger.LogInformation("Search doctors cache invalidated. CacheKey: {doctorsCacheKey}", doctorsCacheKey);
             return doctorDto;
         }
 
@@ -47,6 +49,7 @@ namespace HealthAxis3.API.Service.Implementation
                 if (doctorList != null) return doctorList;
             }
             var doctors = mapper.Map<List<DoctorDto>>(await repository.GetAllAsync());
+            logger.LogInformation("Search doctors cache validated. CacheKey: {doctorsCacheKey}", doctorsCacheKey);
             await cache.SetStringAsync(doctorsCacheKey, JsonSerializer.Serialize(doctors), cacheOptions);
             return doctors;
         }

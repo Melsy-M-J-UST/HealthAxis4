@@ -39,13 +39,13 @@ namespace HealthAxis3.Shared.Models.Dtos.HealthrecordDtos
         public string Notes { get; set; } = string.Empty;
 
         [ForeignKey("AppointmentId")]
-        public required virtual AppointmentDto Appointment { get; set; }
+        public virtual AppointmentDto? Appointment { get; set; }
 
         [ForeignKey("PatientId")]
-        public required virtual PatientDto Patient { get; set; }
+        public virtual PatientDto? Patient { get; set; }
 
         [ForeignKey("DoctorId")]
-        public required virtual DoctorDto Doctor { get; set; }
+        public virtual DoctorDto? Doctor { get; set; }
 
         public static ValidationResult? ValidateVisitDate(DateTime date)
         {

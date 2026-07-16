@@ -28,10 +28,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginForm.value).subscribe({
       next: (response: any) => {
         console.log('Login success ✅');
-        console.log(response)
         this.authService.setSession(response)
         const returnUrl = this.route.snapshot.queryParams['returnUrl'];
-        console.log('Return URL:', returnUrl);
         if (returnUrl) {
           this.router.navigateByUrl(returnUrl);
         } else {
@@ -39,6 +37,10 @@ export class LoginComponent implements OnInit {
           console.log('Roles:', roles);
           if (roles.includes('Doctor'))
           {
+            if (response.doctorId)
+            {
+              localStorage.setItem('doctorId', response.doctorId.toString());
+            }
             this.router.navigate(['/doctordashboard']);
           }
           else if (roles.includes('Patient'))
