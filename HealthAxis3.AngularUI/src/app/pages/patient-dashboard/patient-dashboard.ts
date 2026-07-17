@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AppointmentService } from '../../services/appointment';
 import { DoctorService } from '../../services/doctor';
+import { HealthRecordService } from '../../services/health-record';
 
 @Component({
   selector: 'app-patient-dashboard',
@@ -8,8 +9,9 @@ import { DoctorService } from '../../services/doctor';
   templateUrl: './patient-dashboard.html',
   styleUrls: ['./patient-dashboard.css']
 })
-export class PatientDashboardComponent {
-  constructor(private appointmentService: AppointmentService, private doctorService: DoctorService) { }
+export class PatientDashboardComponent
+{
+  constructor(private appointmentService: AppointmentService, private doctorService: DoctorService, private healthRecordService: HealthRecordService) { }
 
   appointments: any[] = [];
   todayAppointments: any[] = [];
@@ -144,8 +146,18 @@ export class PatientDashboardComponent {
     });
   }
 
-  viewHealthRecord(appointment: any) {
-    this.selectedRecord = appointment.healthRecord;
+  viewHealthRecord(appointment: any)
+  {
+     this.healthRecordService.getByAppointmentId( appointment.appointmentId).subscribe({
+       next: (record: any) =>
+       {
+         this.selectedRecord = record;
+       },
+       error: err =>
+       {
+         console.error(err);
+       }
+     });
   }
 
   openBookingModal() {

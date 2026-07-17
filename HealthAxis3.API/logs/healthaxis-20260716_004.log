@@ -1,0 +1,847 @@
+2026-07-16 15:34:23.897 +05:30 [INF] Configured endpoint HealthAxis3.API.events.queue, Consumer: HealthAxis3.API.Messaging.AppointmentBookedConsumer
+2026-07-16 15:34:26.626 +05:30 [INF] Heartbeat running at "2026-07-16T15:34:26.6248718+05:30"
+2026-07-16 15:34:27.547 +05:30 [INF] Bus started: "rabbitmq://localhost/"
+2026-07-16 15:34:27.632 +05:30 [INF] Now listening on: https://localhost:7120
+2026-07-16 15:34:27.642 +05:30 [INF] Now listening on: http://localhost:5042
+2026-07-16 15:34:27.761 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-16 15:34:27.769 +05:30 [INF] Hosting environment: Development
+2026-07-16 15:34:27.774 +05:30 [INF] Content root path: C:\Users\310054\source\repos\HealthAxis4\HealthAxis3.API
+2026-07-16 15:34:36.830 +05:30 [INF] Heartbeat running at "2026-07-16T15:34:36.8299681+05:30"
+2026-07-16 15:34:46.889 +05:30 [INF] Heartbeat running at "2026-07-16T15:34:46.8892695+05:30"
+2026-07-16 15:34:56.913 +05:30 [INF] Heartbeat running at "2026-07-16T15:34:56.9131059+05:30"
+2026-07-16 15:35:02.448 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 34.6267 ms
+2026-07-16 15:35:03.438 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 886.7866 ms
+2026-07-16 15:35:03.449 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 948.0856 ms
+2026-07-16 15:35:03.533 +05:30 [INF] HTTP OPTIONS /api/appointment/doctor/10 responded 204 in 0.7235 ms
+2026-07-16 15:35:03.533 +05:30 [INF] HTTP OPTIONS /api/Doctor/10 responded 204 in 0.7264 ms
+2026-07-16 15:35:03.969 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-07-16 15:35:04.142 +05:30 [INF] HTTP GET /api/Doctor/10 responded 200 in 431.0454 ms
+2026-07-16 15:35:04.151 +05:30 [INF] HTTP GET /api/Doctor/10 responded 200 in 603.2894 ms
+2026-07-16 15:35:04.326 +05:30 [INF] HTTP GET /api/appointment/doctor/10 responded 200 in 615.5276 ms
+2026-07-16 15:35:04.335 +05:30 [INF] HTTP GET /api/appointment/doctor/10 responded 200 in 790.0975 ms
+2026-07-16 15:35:06.927 +05:30 [INF] Heartbeat running at "2026-07-16T15:35:06.9268766+05:30"
+2026-07-16 15:35:16.933 +05:30 [INF] Heartbeat running at "2026-07-16T15:35:16.9338599+05:30"
+2026-07-16 15:35:26.936 +05:30 [INF] Heartbeat running at "2026-07-16T15:35:26.9365547+05:30"
+2026-07-16 15:35:36.941 +05:30 [INF] Heartbeat running at "2026-07-16T15:35:36.9409284+05:30"
+2026-07-16 15:35:46.981 +05:30 [INF] Heartbeat running at "2026-07-16T15:35:46.9816422+05:30"
+2026-07-16 15:35:55.663 +05:30 [INF] HTTP OPTIONS /api/HealthRecord responded 204 in 0.2131 ms
+2026-07-16 15:35:56.197 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 517.8771 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:35:56.242 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 569.9437 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:35:56.265 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-16 15:35:56.992 +05:30 [INF] Heartbeat running at "2026-07-16T15:35:56.9928136+05:30"
+2026-07-16 15:36:07.004 +05:30 [INF] Heartbeat running at "2026-07-16T15:36:07.0039375+05:30"
+2026-07-16 15:36:17.011 +05:30 [INF] Heartbeat running at "2026-07-16T15:36:17.0115816+05:30"
+2026-07-16 15:36:27.021 +05:30 [INF] Heartbeat running at "2026-07-16T15:36:27.0214420+05:30"
+2026-07-16 15:36:37.027 +05:30 [INF] Heartbeat running at "2026-07-16T15:36:37.0269821+05:30"
+2026-07-16 15:36:47.035 +05:30 [INF] Heartbeat running at "2026-07-16T15:36:47.0350835+05:30"
+2026-07-16 15:36:57.042 +05:30 [INF] Heartbeat running at "2026-07-16T15:36:57.0425426+05:30"
+2026-07-16 15:37:07.063 +05:30 [INF] Heartbeat running at "2026-07-16T15:37:07.0633095+05:30"
+2026-07-16 15:37:17.067 +05:30 [INF] Heartbeat running at "2026-07-16T15:37:17.0677188+05:30"
+2026-07-16 15:37:27.170 +05:30 [INF] Heartbeat running at "2026-07-16T15:37:27.1703230+05:30"
+2026-07-16 15:37:37.179 +05:30 [INF] Heartbeat running at "2026-07-16T15:37:37.1793945+05:30"
+2026-07-16 15:37:47.180 +05:30 [INF] Heartbeat running at "2026-07-16T15:37:47.1809147+05:30"
+2026-07-16 15:37:57.188 +05:30 [INF] Heartbeat running at "2026-07-16T15:37:57.1886578+05:30"
+2026-07-16 15:38:07.200 +05:30 [INF] Heartbeat running at "2026-07-16T15:38:07.2002836+05:30"
+2026-07-16 15:38:17.216 +05:30 [INF] Heartbeat running at "2026-07-16T15:38:17.2160753+05:30"
+2026-07-16 15:38:27.225 +05:30 [INF] Heartbeat running at "2026-07-16T15:38:27.2251824+05:30"
+2026-07-16 15:38:37.230 +05:30 [INF] Heartbeat running at "2026-07-16T15:38:37.2308321+05:30"
+2026-07-16 15:38:47.243 +05:30 [INF] Heartbeat running at "2026-07-16T15:38:47.2425723+05:30"
+2026-07-16 15:38:57.249 +05:30 [INF] Heartbeat running at "2026-07-16T15:38:57.2493035+05:30"
+2026-07-16 15:39:07.258 +05:30 [INF] Heartbeat running at "2026-07-16T15:39:07.2580387+05:30"
+2026-07-16 15:39:17.268 +05:30 [INF] Heartbeat running at "2026-07-16T15:39:17.2687197+05:30"
+2026-07-16 15:39:27.281 +05:30 [INF] Heartbeat running at "2026-07-16T15:39:27.2811906+05:30"
+2026-07-16 15:39:37.294 +05:30 [INF] Heartbeat running at "2026-07-16T15:39:37.2948595+05:30"
+2026-07-16 15:39:47.305 +05:30 [INF] Heartbeat running at "2026-07-16T15:39:47.3054011+05:30"
+2026-07-16 15:39:57.315 +05:30 [INF] Heartbeat running at "2026-07-16T15:39:57.3152848+05:30"
+2026-07-16 15:40:07.335 +05:30 [INF] Heartbeat running at "2026-07-16T15:40:07.3354833+05:30"
+2026-07-16 15:40:17.340 +05:30 [INF] Heartbeat running at "2026-07-16T15:40:17.3407832+05:30"
+2026-07-16 15:40:27.354 +05:30 [INF] Heartbeat running at "2026-07-16T15:40:27.3540626+05:30"
+2026-07-16 15:40:37.366 +05:30 [INF] Heartbeat running at "2026-07-16T15:40:37.3660418+05:30"
+2026-07-16 15:40:47.384 +05:30 [INF] Heartbeat running at "2026-07-16T15:40:47.3834528+05:30"
+2026-07-16 15:40:57.402 +05:30 [INF] Heartbeat running at "2026-07-16T15:40:57.4022620+05:30"
+2026-07-16 15:41:07.416 +05:30 [INF] Heartbeat running at "2026-07-16T15:41:07.4162235+05:30"
+2026-07-16 15:41:17.422 +05:30 [INF] Heartbeat running at "2026-07-16T15:41:17.4225949+05:30"
+2026-07-16 15:41:27.444 +05:30 [INF] Heartbeat running at "2026-07-16T15:41:27.4448291+05:30"
+2026-07-16 15:41:37.462 +05:30 [INF] Heartbeat running at "2026-07-16T15:41:37.4629435+05:30"
+2026-07-16 15:41:47.476 +05:30 [INF] Heartbeat running at "2026-07-16T15:41:47.4762988+05:30"
+2026-07-16 15:41:57.484 +05:30 [INF] Heartbeat running at "2026-07-16T15:41:57.4843802+05:30"
+2026-07-16 15:42:07.502 +05:30 [INF] Heartbeat running at "2026-07-16T15:42:07.5028361+05:30"
+2026-07-16 15:42:17.518 +05:30 [INF] Heartbeat running at "2026-07-16T15:42:17.5182832+05:30"
+2026-07-16 15:42:27.535 +05:30 [INF] Heartbeat running at "2026-07-16T15:42:27.5350290+05:30"
+2026-07-16 15:42:30.643 +05:30 [INF] HTTP OPTIONS /api/HealthRecord responded 204 in 0.3295 ms
+2026-07-16 15:42:30.706 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 34.9708 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:42:30.717 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 48.2082 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:42:30.733 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-16 15:42:37.545 +05:30 [INF] Heartbeat running at "2026-07-16T15:42:37.5444613+05:30"
+2026-07-16 15:42:47.609 +05:30 [INF] Heartbeat running at "2026-07-16T15:42:47.6084061+05:30"
+2026-07-16 15:42:57.632 +05:30 [INF] Heartbeat running at "2026-07-16T15:42:57.6325304+05:30"
+2026-07-16 15:43:07.637 +05:30 [INF] Heartbeat running at "2026-07-16T15:43:07.6377709+05:30"
+2026-07-16 15:43:17.646 +05:30 [INF] Heartbeat running at "2026-07-16T15:43:17.6461662+05:30"
+2026-07-16 15:43:27.659 +05:30 [INF] Heartbeat running at "2026-07-16T15:43:27.6596911+05:30"
+2026-07-16 15:43:37.670 +05:30 [INF] Heartbeat running at "2026-07-16T15:43:37.6704109+05:30"
+2026-07-16 15:43:47.683 +05:30 [INF] Heartbeat running at "2026-07-16T15:43:47.6828646+05:30"
+2026-07-16 15:43:57.694 +05:30 [INF] Heartbeat running at "2026-07-16T15:43:57.6944092+05:30"
+2026-07-16 15:44:07.703 +05:30 [INF] Heartbeat running at "2026-07-16T15:44:07.7031956+05:30"
+2026-07-16 15:44:17.717 +05:30 [INF] Heartbeat running at "2026-07-16T15:44:17.7176529+05:30"
+2026-07-16 15:44:27.729 +05:30 [INF] Heartbeat running at "2026-07-16T15:44:27.7298244+05:30"
+2026-07-16 15:44:37.739 +05:30 [INF] Heartbeat running at "2026-07-16T15:44:37.7391465+05:30"
+2026-07-16 15:44:47.778 +05:30 [INF] Heartbeat running at "2026-07-16T15:44:47.7786875+05:30"
+2026-07-16 15:44:57.787 +05:30 [INF] Heartbeat running at "2026-07-16T15:44:57.7870769+05:30"
+2026-07-16 15:45:07.796 +05:30 [INF] Heartbeat running at "2026-07-16T15:45:07.7965680+05:30"
+2026-07-16 15:45:17.804 +05:30 [INF] Heartbeat running at "2026-07-16T15:45:17.8041956+05:30"
+2026-07-16 15:45:27.810 +05:30 [INF] Heartbeat running at "2026-07-16T15:45:27.8105190+05:30"
+2026-07-16 15:45:37.814 +05:30 [INF] Heartbeat running at "2026-07-16T15:45:37.8147214+05:30"
+2026-07-16 15:45:47.945 +05:30 [INF] Heartbeat running at "2026-07-16T15:45:47.9453570+05:30"
+2026-07-16 15:45:57.962 +05:30 [INF] Heartbeat running at "2026-07-16T15:45:57.9628371+05:30"
+2026-07-16 15:46:07.981 +05:30 [INF] Heartbeat running at "2026-07-16T15:46:07.9812019+05:30"
+2026-07-16 15:46:17.995 +05:30 [INF] Heartbeat running at "2026-07-16T15:46:17.9954284+05:30"
+2026-07-16 15:46:28.004 +05:30 [INF] Heartbeat running at "2026-07-16T15:46:28.0044991+05:30"
+2026-07-16 15:46:35.965 +05:30 [INF] HTTP OPTIONS /api/HealthRecord responded 204 in 0.2041 ms
+2026-07-16 15:46:35.989 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 15.0904 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:46:36.001 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 27.8305 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:46:36.015 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-16 15:46:38.014 +05:30 [INF] Heartbeat running at "2026-07-16T15:46:38.0147515+05:30"
+2026-07-16 15:46:39.263 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 12.5995 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:46:39.276 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 26.0675 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:46:39.290 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-16 15:46:42.728 +05:30 [INF] HTTP OPTIONS /api/HealthRecord responded 204 in 0.1143 ms
+2026-07-16 15:46:42.746 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 7.5430 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:46:42.762 +05:30 [ERR] HTTP POST /api/HealthRecord responded 500 in 23.5769 ms
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-16 15:46:42.776 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No route matches the supplied values.
+   at Microsoft.AspNetCore.Mvc.CreatedAtActionResult.OnFormatting(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsyncCore(ActionContext context, ObjectResult result, Type objectType, Object value)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor.ExecuteAsync(ActionContext context, ObjectResult result)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeNextResultFilterAsync[TFilter,TFilterAsync]()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-16 15:46:48.016 +05:30 [INF] Heartbeat running at "2026-07-16T15:46:48.0165099+05:30"
+2026-07-16 15:46:58.027 +05:30 [INF] Heartbeat running at "2026-07-16T15:46:58.0275856+05:30"
+2026-07-16 15:47:08.035 +05:30 [INF] Heartbeat running at "2026-07-16T15:47:08.0359033+05:30"
+2026-07-16 15:47:18.053 +05:30 [INF] Heartbeat running at "2026-07-16T15:47:18.0539432+05:30"
+2026-07-16 15:47:28.067 +05:30 [INF] Heartbeat running at "2026-07-16T15:47:28.0673449+05:30"
+2026-07-16 15:47:38.082 +05:30 [INF] Heartbeat running at "2026-07-16T15:47:38.0824526+05:30"
+2026-07-16 15:47:48.092 +05:30 [INF] Heartbeat running at "2026-07-16T15:47:48.0925333+05:30"
+2026-07-16 15:47:58.101 +05:30 [INF] Heartbeat running at "2026-07-16T15:47:58.1015309+05:30"
+2026-07-16 15:48:08.116 +05:30 [INF] Heartbeat running at "2026-07-16T15:48:08.1160203+05:30"
+2026-07-16 15:48:18.133 +05:30 [INF] Heartbeat running at "2026-07-16T15:48:18.1334674+05:30"
+2026-07-16 15:48:59.523 +05:30 [INF] Configured endpoint HealthAxis3.API.events.queue, Consumer: HealthAxis3.API.Messaging.AppointmentBookedConsumer
+2026-07-16 15:49:01.550 +05:30 [INF] Heartbeat running at "2026-07-16T15:49:01.5485537+05:30"
+2026-07-16 15:49:02.300 +05:30 [INF] Bus started: "rabbitmq://localhost/"
+2026-07-16 15:49:02.474 +05:30 [INF] Now listening on: https://localhost:7120
+2026-07-16 15:49:02.482 +05:30 [INF] Now listening on: http://localhost:5042
+2026-07-16 15:49:02.606 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-16 15:49:02.620 +05:30 [INF] Hosting environment: Development
+2026-07-16 15:49:02.624 +05:30 [INF] Content root path: C:\Users\310054\source\repos\HealthAxis4\HealthAxis3.API
+2026-07-16 15:49:11.747 +05:30 [INF] Heartbeat running at "2026-07-16T15:49:11.7472275+05:30"
+2026-07-16 15:49:21.762 +05:30 [INF] Heartbeat running at "2026-07-16T15:49:21.7622551+05:30"
+2026-07-16 15:49:31.769 +05:30 [INF] Heartbeat running at "2026-07-16T15:49:31.7698616+05:30"
+2026-07-16 15:49:41.813 +05:30 [INF] Heartbeat running at "2026-07-16T15:49:41.7751071+05:30"
+2026-07-16 15:49:43.933 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 21.8103 ms
+2026-07-16 15:49:44.764 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 774.2162 ms
+2026-07-16 15:49:44.771 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 813.7751 ms
+2026-07-16 15:49:45.009 +05:30 [INF] HTTP OPTIONS /api/appointment/doctor/10 responded 204 in 0.5397 ms
+2026-07-16 15:49:45.009 +05:30 [INF] HTTP OPTIONS /api/Doctor/10 responded 204 in 0.4321 ms
+2026-07-16 15:49:45.359 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-07-16 15:49:45.510 +05:30 [INF] HTTP GET /api/Doctor/10 responded 200 in 343.5850 ms
+2026-07-16 15:49:45.516 +05:30 [INF] HTTP GET /api/Doctor/10 responded 200 in 496.1439 ms
+2026-07-16 15:49:45.666 +05:30 [INF] HTTP GET /api/appointment/doctor/10 responded 200 in 499.5608 ms
+2026-07-16 15:49:45.672 +05:30 [INF] HTTP GET /api/appointment/doctor/10 responded 200 in 653.4551 ms
+2026-07-16 15:49:51.832 +05:30 [INF] Heartbeat running at "2026-07-16T15:49:51.8318042+05:30"
+2026-07-16 15:50:01.841 +05:30 [INF] Heartbeat running at "2026-07-16T15:50:01.8413561+05:30"
+2026-07-16 15:50:11.858 +05:30 [INF] Heartbeat running at "2026-07-16T15:50:11.8585971+05:30"
+2026-07-16 15:50:21.872 +05:30 [INF] Heartbeat running at "2026-07-16T15:50:21.8721857+05:30"
+2026-07-16 15:50:22.286 +05:30 [INF] HTTP OPTIONS /api/HealthRecord responded 204 in 0.3242 ms
+2026-07-16 15:50:22.636 +05:30 [INF] HTTP POST /api/HealthRecord responded 200 in 332.8878 ms
+2026-07-16 15:50:22.643 +05:30 [INF] HTTP POST /api/HealthRecord responded 200 in 347.5981 ms
+2026-07-16 15:50:22.651 +05:30 [INF] HTTP OPTIONS /api/appointment/5/status responded 204 in 0.1749 ms
+2026-07-16 15:50:22.739 +05:30 [INF] HTTP PUT /api/appointment/5/status responded 200 in 79.3693 ms
+2026-07-16 15:50:22.745 +05:30 [INF] HTTP PUT /api/appointment/5/status responded 200 in 85.6906 ms
+2026-07-16 15:50:22.753 +05:30 [INF] HTTP OPTIONS /api/Doctor/10 responded 204 in 0.1104 ms
+2026-07-16 15:50:22.753 +05:30 [INF] HTTP OPTIONS /api/appointment/doctor/10 responded 204 in 0.0474 ms
+2026-07-16 15:50:22.768 +05:30 [INF] HTTP GET /api/Doctor/10 responded 200 in 7.3252 ms
+2026-07-16 15:50:22.772 +05:30 [INF] HTTP GET /api/Doctor/10 responded 200 in 12.2101 ms
+2026-07-16 15:50:22.774 +05:30 [INF] HTTP GET /api/appointment/doctor/10 responded 200 in 13.1238 ms
+2026-07-16 15:50:22.780 +05:30 [INF] HTTP GET /api/appointment/doctor/10 responded 200 in 19.2579 ms
+2026-07-16 15:50:31.881 +05:30 [INF] Heartbeat running at "2026-07-16T15:50:31.8815506+05:30"
+2026-07-16 15:50:41.895 +05:30 [INF] Heartbeat running at "2026-07-16T15:50:41.8952652+05:30"
+2026-07-16 15:50:51.913 +05:30 [INF] Heartbeat running at "2026-07-16T15:50:51.9138904+05:30"
+2026-07-16 15:51:01.925 +05:30 [INF] Heartbeat running at "2026-07-16T15:51:01.9251738+05:30"
+2026-07-16 15:51:11.945 +05:30 [INF] Heartbeat running at "2026-07-16T15:51:11.9459021+05:30"
+2026-07-16 15:51:21.953 +05:30 [INF] Heartbeat running at "2026-07-16T15:51:21.9537023+05:30"
+2026-07-16 15:51:31.972 +05:30 [INF] Heartbeat running at "2026-07-16T15:51:31.9728176+05:30"
+2026-07-16 15:51:41.986 +05:30 [INF] Heartbeat running at "2026-07-16T15:51:41.9860966+05:30"
+2026-07-16 15:51:52.003 +05:30 [INF] Heartbeat running at "2026-07-16T15:51:52.0038340+05:30"
+2026-07-16 15:52:02.016 +05:30 [INF] Heartbeat running at "2026-07-16T15:52:02.0164948+05:30"
+2026-07-16 15:52:12.024 +05:30 [INF] Heartbeat running at "2026-07-16T15:52:12.0242655+05:30"
+2026-07-16 15:52:22.030 +05:30 [INF] Heartbeat running at "2026-07-16T15:52:22.0307439+05:30"
+2026-07-16 15:52:32.034 +05:30 [INF] Heartbeat running at "2026-07-16T15:52:32.0342816+05:30"
+2026-07-16 15:52:42.037 +05:30 [INF] Heartbeat running at "2026-07-16T15:52:42.0377522+05:30"
+2026-07-16 15:52:52.055 +05:30 [INF] Heartbeat running at "2026-07-16T15:52:52.0552889+05:30"
+2026-07-16 15:53:02.059 +05:30 [INF] Heartbeat running at "2026-07-16T15:53:02.0593150+05:30"
+2026-07-16 15:53:12.068 +05:30 [INF] Heartbeat running at "2026-07-16T15:53:12.0685279+05:30"
+2026-07-16 15:53:22.077 +05:30 [INF] Heartbeat running at "2026-07-16T15:53:22.0779262+05:30"
+2026-07-16 15:53:32.086 +05:30 [INF] Heartbeat running at "2026-07-16T15:53:32.0861960+05:30"
+2026-07-16 15:53:42.091 +05:30 [INF] Heartbeat running at "2026-07-16T15:53:42.0915938+05:30"
+2026-07-16 15:53:52.095 +05:30 [INF] Heartbeat running at "2026-07-16T15:53:52.0951555+05:30"
+2026-07-16 15:54:02.110 +05:30 [INF] Heartbeat running at "2026-07-16T15:54:02.1106290+05:30"
+2026-07-16 15:54:12.132 +05:30 [INF] Heartbeat running at "2026-07-16T15:54:12.1325730+05:30"
+2026-07-16 15:54:22.146 +05:30 [INF] Heartbeat running at "2026-07-16T15:54:22.1465431+05:30"
+2026-07-16 15:54:32.148 +05:30 [INF] Heartbeat running at "2026-07-16T15:54:32.1488433+05:30"
+2026-07-16 15:54:42.161 +05:30 [INF] Heartbeat running at "2026-07-16T15:54:42.1616746+05:30"
+2026-07-16 15:54:52.166 +05:30 [INF] Heartbeat running at "2026-07-16T15:54:52.1667160+05:30"
+2026-07-16 15:55:02.179 +05:30 [INF] Heartbeat running at "2026-07-16T15:55:02.1792441+05:30"
+2026-07-16 15:55:12.183 +05:30 [INF] Heartbeat running at "2026-07-16T15:55:12.1836097+05:30"
+2026-07-16 15:55:22.200 +05:30 [INF] Heartbeat running at "2026-07-16T15:55:22.2003937+05:30"
+2026-07-16 15:55:32.207 +05:30 [INF] Heartbeat running at "2026-07-16T15:55:32.2078501+05:30"
+2026-07-16 15:55:42.230 +05:30 [INF] Heartbeat running at "2026-07-16T15:55:42.2303631+05:30"
+2026-07-16 15:55:48.199 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 0.2141 ms
+2026-07-16 15:55:48.369 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 162.7106 ms
+2026-07-16 15:55:48.376 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 169.4726 ms
+2026-07-16 15:55:48.416 +05:30 [INF] HTTP OPTIONS /api/Doctor responded 204 in 0.1183 ms
+2026-07-16 15:55:48.416 +05:30 [INF] HTTP OPTIONS /api/appointment/patient/8 responded 204 in 0.1027 ms
+2026-07-16 15:55:48.499 +05:30 [INF] HTTP GET /api/appointment/patient/8 responded 200 in 35.8538 ms
+2026-07-16 15:55:48.505 +05:30 [INF] HTTP GET /api/appointment/patient/8 responded 200 in 42.1026 ms
+2026-07-16 15:55:48.804 +05:30 [INF] Search doctors cache validated. CacheKey: doctors:all
+2026-07-16 15:55:48.830 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 405.1951 ms
+2026-07-16 15:55:48.834 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 410.9856 ms
+2026-07-16 15:55:52.238 +05:30 [INF] Heartbeat running at "2026-07-16T15:55:52.2387614+05:30"
+2026-07-16 15:56:02.248 +05:30 [INF] Heartbeat running at "2026-07-16T15:56:02.2480802+05:30"
+2026-07-16 15:56:12.253 +05:30 [INF] Heartbeat running at "2026-07-16T15:56:12.2533407+05:30"
+2026-07-16 15:56:22.256 +05:30 [INF] Heartbeat running at "2026-07-16T15:56:22.2566037+05:30"
+2026-07-16 15:56:32.262 +05:30 [INF] Heartbeat running at "2026-07-16T15:56:32.2627045+05:30"
+2026-07-16 15:56:42.276 +05:30 [INF] Heartbeat running at "2026-07-16T15:56:42.2759496+05:30"
+2026-07-16 15:56:52.291 +05:30 [INF] Heartbeat running at "2026-07-16T15:56:52.2912482+05:30"
+2026-07-16 15:57:02.300 +05:30 [INF] Heartbeat running at "2026-07-16T15:57:02.3004299+05:30"
+2026-07-16 15:57:12.310 +05:30 [INF] Heartbeat running at "2026-07-16T15:57:12.3108765+05:30"
+2026-07-16 15:57:22.322 +05:30 [INF] Heartbeat running at "2026-07-16T15:57:22.3227399+05:30"
+2026-07-16 15:57:31.006 +05:30 [INF] HTTP OPTIONS /api/Patient/8 responded 204 in 0.1696 ms
+2026-07-16 15:57:31.051 +05:30 [INF] HTTP GET /api/Patient/8 responded 200 in 31.2044 ms
+2026-07-16 15:57:31.057 +05:30 [INF] HTTP GET /api/Patient/8 responded 200 in 38.8267 ms
+2026-07-16 15:57:32.331 +05:30 [INF] Heartbeat running at "2026-07-16T15:57:32.3318693+05:30"
+2026-07-16 15:57:42.347 +05:30 [INF] Heartbeat running at "2026-07-16T15:57:42.3477848+05:30"
+2026-07-16 15:57:52.363 +05:30 [INF] Heartbeat running at "2026-07-16T15:57:52.3630162+05:30"
+2026-07-16 15:58:02.370 +05:30 [INF] Heartbeat running at "2026-07-16T15:58:02.3708598+05:30"
+2026-07-16 15:58:12.385 +05:30 [INF] Heartbeat running at "2026-07-16T15:58:12.3859015+05:30"
+2026-07-16 15:58:22.397 +05:30 [INF] Heartbeat running at "2026-07-16T15:58:22.3974883+05:30"
+2026-07-16 15:58:32.409 +05:30 [INF] Heartbeat running at "2026-07-16T15:58:32.4097294+05:30"
+2026-07-16 15:58:42.516 +05:30 [INF] Heartbeat running at "2026-07-16T15:58:42.5167543+05:30"
+2026-07-16 15:58:52.542 +05:30 [INF] Heartbeat running at "2026-07-16T15:58:52.5427800+05:30"
+2026-07-16 15:59:02.552 +05:30 [INF] Heartbeat running at "2026-07-16T15:59:02.5522373+05:30"
+2026-07-16 15:59:12.568 +05:30 [INF] Heartbeat running at "2026-07-16T15:59:12.5686954+05:30"
+2026-07-16 15:59:22.569 +05:30 [INF] Heartbeat running at "2026-07-16T15:59:22.5691402+05:30"
+2026-07-16 15:59:32.577 +05:30 [INF] Heartbeat running at "2026-07-16T15:59:32.5771034+05:30"
+2026-07-16 15:59:42.592 +05:30 [INF] Heartbeat running at "2026-07-16T15:59:42.5927954+05:30"
+2026-07-16 15:59:52.603 +05:30 [INF] Heartbeat running at "2026-07-16T15:59:52.6036303+05:30"
+2026-07-16 16:00:02.616 +05:30 [INF] Heartbeat running at "2026-07-16T16:00:02.6165032+05:30"
+2026-07-16 16:00:12.623 +05:30 [INF] Heartbeat running at "2026-07-16T16:00:12.6233313+05:30"
+2026-07-16 16:00:22.627 +05:30 [INF] Heartbeat running at "2026-07-16T16:00:22.6276987+05:30"
+2026-07-16 16:00:32.635 +05:30 [INF] Heartbeat running at "2026-07-16T16:00:32.6352628+05:30"
+2026-07-16 16:00:42.642 +05:30 [INF] Heartbeat running at "2026-07-16T16:00:42.6424635+05:30"
+2026-07-16 16:00:52.661 +05:30 [INF] Heartbeat running at "2026-07-16T16:00:52.6616758+05:30"
+2026-07-16 16:01:02.668 +05:30 [INF] Heartbeat running at "2026-07-16T16:01:02.6688598+05:30"
+2026-07-16 16:01:12.676 +05:30 [INF] Heartbeat running at "2026-07-16T16:01:12.6763454+05:30"
+2026-07-16 16:01:22.691 +05:30 [INF] Heartbeat running at "2026-07-16T16:01:22.6912547+05:30"
+2026-07-16 16:01:32.700 +05:30 [INF] Heartbeat running at "2026-07-16T16:01:32.7000943+05:30"
+2026-07-16 16:01:42.716 +05:30 [INF] Heartbeat running at "2026-07-16T16:01:42.7167384+05:30"
+2026-07-16 16:01:52.752 +05:30 [INF] Heartbeat running at "2026-07-16T16:01:52.7526583+05:30"
+2026-07-16 16:02:02.758 +05:30 [INF] Heartbeat running at "2026-07-16T16:02:02.7582166+05:30"
+2026-07-16 16:02:12.767 +05:30 [INF] Heartbeat running at "2026-07-16T16:02:12.7674488+05:30"
+2026-07-16 16:02:22.780 +05:30 [INF] Heartbeat running at "2026-07-16T16:02:22.7805354+05:30"
+2026-07-16 16:02:32.786 +05:30 [INF] Heartbeat running at "2026-07-16T16:02:32.7864105+05:30"
+2026-07-16 16:02:42.794 +05:30 [INF] Heartbeat running at "2026-07-16T16:02:42.7945430+05:30"
+2026-07-16 16:02:52.803 +05:30 [INF] Heartbeat running at "2026-07-16T16:02:52.8035316+05:30"
+2026-07-16 16:03:02.811 +05:30 [INF] Heartbeat running at "2026-07-16T16:03:02.8113884+05:30"
+2026-07-16 16:03:12.818 +05:30 [INF] Heartbeat running at "2026-07-16T16:03:12.8181467+05:30"
+2026-07-16 16:03:22.827 +05:30 [INF] Heartbeat running at "2026-07-16T16:03:22.8273973+05:30"
+2026-07-16 16:03:32.844 +05:30 [INF] Heartbeat running at "2026-07-16T16:03:32.8445672+05:30"
+2026-07-16 16:03:42.856 +05:30 [INF] Heartbeat running at "2026-07-16T16:03:42.8564099+05:30"
+2026-07-16 16:03:52.865 +05:30 [INF] Heartbeat running at "2026-07-16T16:03:52.8651608+05:30"
+2026-07-16 16:04:02.875 +05:30 [INF] Heartbeat running at "2026-07-16T16:04:02.8752725+05:30"
+2026-07-16 16:04:12.886 +05:30 [INF] Heartbeat running at "2026-07-16T16:04:12.8862623+05:30"
+2026-07-16 16:04:22.900 +05:30 [INF] Heartbeat running at "2026-07-16T16:04:22.9002033+05:30"
+2026-07-16 16:04:32.907 +05:30 [INF] Heartbeat running at "2026-07-16T16:04:32.9079116+05:30"
+2026-07-16 16:04:42.919 +05:30 [INF] Heartbeat running at "2026-07-16T16:04:42.9198453+05:30"
+2026-07-16 16:04:52.925 +05:30 [INF] Heartbeat running at "2026-07-16T16:04:52.9255111+05:30"
+2026-07-16 16:05:02.943 +05:30 [INF] Heartbeat running at "2026-07-16T16:05:02.9429940+05:30"
+2026-07-16 16:05:12.956 +05:30 [INF] Heartbeat running at "2026-07-16T16:05:12.9562066+05:30"
+2026-07-16 16:05:22.962 +05:30 [INF] Heartbeat running at "2026-07-16T16:05:22.9618895+05:30"
+2026-07-16 16:05:32.972 +05:30 [INF] Heartbeat running at "2026-07-16T16:05:32.9722137+05:30"
+2026-07-16 16:05:42.989 +05:30 [INF] Heartbeat running at "2026-07-16T16:05:42.9897291+05:30"
+2026-07-16 16:05:53.003 +05:30 [INF] Heartbeat running at "2026-07-16T16:05:53.0035615+05:30"
+2026-07-16 16:06:03.013 +05:30 [INF] Heartbeat running at "2026-07-16T16:06:03.0131653+05:30"
+2026-07-16 16:06:13.033 +05:30 [INF] Heartbeat running at "2026-07-16T16:06:13.0332180+05:30"
+2026-07-16 16:06:23.048 +05:30 [INF] Heartbeat running at "2026-07-16T16:06:23.0482408+05:30"
+2026-07-16 16:06:33.057 +05:30 [INF] Heartbeat running at "2026-07-16T16:06:33.0574351+05:30"
+2026-07-16 16:06:43.072 +05:30 [INF] Heartbeat running at "2026-07-16T16:06:43.0729524+05:30"
+2026-07-16 16:06:53.087 +05:30 [INF] Heartbeat running at "2026-07-16T16:06:53.0876749+05:30"
+2026-07-16 16:07:03.096 +05:30 [INF] Heartbeat running at "2026-07-16T16:07:03.0968249+05:30"
+2026-07-16 16:07:13.107 +05:30 [INF] Heartbeat running at "2026-07-16T16:07:13.1076946+05:30"
+2026-07-16 16:07:23.123 +05:30 [INF] Heartbeat running at "2026-07-16T16:07:23.1237176+05:30"
+2026-07-16 16:07:33.138 +05:30 [INF] Heartbeat running at "2026-07-16T16:07:33.1381304+05:30"
+2026-07-16 16:07:43.145 +05:30 [INF] Heartbeat running at "2026-07-16T16:07:43.1452801+05:30"
+2026-07-16 16:07:53.155 +05:30 [INF] Heartbeat running at "2026-07-16T16:07:53.1558320+05:30"
+2026-07-16 16:08:03.170 +05:30 [INF] Heartbeat running at "2026-07-16T16:08:03.1705610+05:30"
+2026-07-16 16:08:13.183 +05:30 [INF] Heartbeat running at "2026-07-16T16:08:13.1838102+05:30"
+2026-07-16 16:08:23.194 +05:30 [INF] Heartbeat running at "2026-07-16T16:08:23.1947463+05:30"
+2026-07-16 16:08:33.214 +05:30 [INF] Heartbeat running at "2026-07-16T16:08:33.2149660+05:30"
+2026-07-16 16:08:43.221 +05:30 [INF] Heartbeat running at "2026-07-16T16:08:43.2214469+05:30"
+2026-07-16 16:08:53.226 +05:30 [INF] Heartbeat running at "2026-07-16T16:08:53.2264086+05:30"
+2026-07-16 16:09:03.229 +05:30 [INF] Heartbeat running at "2026-07-16T16:09:03.2293733+05:30"
+2026-07-16 16:09:13.240 +05:30 [INF] Heartbeat running at "2026-07-16T16:09:13.2405625+05:30"
+2026-07-16 16:09:23.257 +05:30 [INF] Heartbeat running at "2026-07-16T16:09:23.2578619+05:30"
+2026-07-16 16:09:33.269 +05:30 [INF] Heartbeat running at "2026-07-16T16:09:33.2692536+05:30"
+2026-07-16 16:09:43.280 +05:30 [INF] Heartbeat running at "2026-07-16T16:09:43.2805068+05:30"
+2026-07-16 16:09:53.289 +05:30 [INF] Heartbeat running at "2026-07-16T16:09:53.2896340+05:30"
+2026-07-16 16:10:03.298 +05:30 [INF] Heartbeat running at "2026-07-16T16:10:03.2986855+05:30"
+2026-07-16 16:10:13.310 +05:30 [INF] Heartbeat running at "2026-07-16T16:10:13.3106842+05:30"
+2026-07-16 16:10:23.330 +05:30 [INF] Heartbeat running at "2026-07-16T16:10:23.3300227+05:30"
+2026-07-16 16:10:33.335 +05:30 [INF] Heartbeat running at "2026-07-16T16:10:33.3356380+05:30"
+2026-07-16 16:10:43.345 +05:30 [INF] Heartbeat running at "2026-07-16T16:10:43.3458444+05:30"
+2026-07-16 16:10:53.359 +05:30 [INF] Heartbeat running at "2026-07-16T16:10:53.3597602+05:30"
+2026-07-16 16:11:03.374 +05:30 [INF] Heartbeat running at "2026-07-16T16:11:03.3747227+05:30"
+2026-07-16 16:11:13.391 +05:30 [INF] Heartbeat running at "2026-07-16T16:11:13.3912003+05:30"
+2026-07-16 16:11:23.406 +05:30 [INF] Heartbeat running at "2026-07-16T16:11:23.4062482+05:30"
+2026-07-16 16:11:33.415 +05:30 [INF] Heartbeat running at "2026-07-16T16:11:33.4153708+05:30"
+2026-07-16 16:11:43.425 +05:30 [INF] Heartbeat running at "2026-07-16T16:11:43.4249927+05:30"
+2026-07-16 16:11:53.432 +05:30 [INF] Heartbeat running at "2026-07-16T16:11:53.4323743+05:30"
+2026-07-16 16:12:03.441 +05:30 [INF] Heartbeat running at "2026-07-16T16:12:03.4411411+05:30"
+2026-07-16 16:12:13.457 +05:30 [INF] Heartbeat running at "2026-07-16T16:12:13.4576458+05:30"
+2026-07-16 16:12:23.464 +05:30 [INF] Heartbeat running at "2026-07-16T16:12:23.4649451+05:30"
+2026-07-16 16:12:33.482 +05:30 [INF] Heartbeat running at "2026-07-16T16:12:33.4822246+05:30"
+2026-07-16 16:12:43.500 +05:30 [INF] Heartbeat running at "2026-07-16T16:12:43.5009748+05:30"
+2026-07-16 16:12:53.507 +05:30 [INF] Heartbeat running at "2026-07-16T16:12:53.5077815+05:30"
+2026-07-16 16:13:03.516 +05:30 [INF] Heartbeat running at "2026-07-16T16:13:03.5159867+05:30"
+2026-07-16 16:13:13.526 +05:30 [INF] Heartbeat running at "2026-07-16T16:13:13.5262573+05:30"
+2026-07-16 16:13:23.530 +05:30 [INF] Heartbeat running at "2026-07-16T16:13:23.5305508+05:30"
+2026-07-16 16:13:33.545 +05:30 [INF] Heartbeat running at "2026-07-16T16:13:33.5451689+05:30"
+2026-07-16 16:13:43.560 +05:30 [INF] Heartbeat running at "2026-07-16T16:13:43.5604463+05:30"
+2026-07-16 16:13:53.580 +05:30 [INF] Heartbeat running at "2026-07-16T16:13:53.5806932+05:30"
+2026-07-16 16:14:03.592 +05:30 [INF] Heartbeat running at "2026-07-16T16:14:03.5929074+05:30"
+2026-07-16 16:14:13.610 +05:30 [INF] Heartbeat running at "2026-07-16T16:14:13.6100491+05:30"
+2026-07-16 16:14:23.622 +05:30 [INF] Heartbeat running at "2026-07-16T16:14:23.6227917+05:30"
+2026-07-16 16:14:33.638 +05:30 [INF] Heartbeat running at "2026-07-16T16:14:33.6383645+05:30"
+2026-07-16 16:14:43.651 +05:30 [INF] Heartbeat running at "2026-07-16T16:14:43.6512438+05:30"
+2026-07-16 16:14:53.667 +05:30 [INF] Heartbeat running at "2026-07-16T16:14:53.6677382+05:30"
+2026-07-16 16:15:03.683 +05:30 [INF] Heartbeat running at "2026-07-16T16:15:03.6836028+05:30"
+2026-07-16 16:15:13.689 +05:30 [INF] Heartbeat running at "2026-07-16T16:15:13.6898426+05:30"
+2026-07-16 16:15:23.707 +05:30 [INF] Heartbeat running at "2026-07-16T16:15:23.7079329+05:30"
+2026-07-16 16:15:33.715 +05:30 [INF] Heartbeat running at "2026-07-16T16:15:33.7155700+05:30"
+2026-07-16 16:15:43.725 +05:30 [INF] Heartbeat running at "2026-07-16T16:15:43.7251124+05:30"
+2026-07-16 16:15:53.742 +05:30 [INF] Heartbeat running at "2026-07-16T16:15:53.7422970+05:30"
+2026-07-16 16:16:03.746 +05:30 [INF] Heartbeat running at "2026-07-16T16:16:03.7468027+05:30"
+2026-07-16 16:16:13.755 +05:30 [INF] Heartbeat running at "2026-07-16T16:16:13.7550075+05:30"
+2026-07-16 16:16:23.758 +05:30 [INF] Heartbeat running at "2026-07-16T16:16:23.7586639+05:30"
+2026-07-16 16:16:33.771 +05:30 [INF] Heartbeat running at "2026-07-16T16:16:33.7711946+05:30"
+2026-07-16 16:16:43.786 +05:30 [INF] Heartbeat running at "2026-07-16T16:16:43.7861697+05:30"
+2026-07-16 16:16:53.800 +05:30 [INF] Heartbeat running at "2026-07-16T16:16:53.8001473+05:30"
+2026-07-16 16:17:03.806 +05:30 [INF] Heartbeat running at "2026-07-16T16:17:03.8062405+05:30"
+2026-07-16 16:17:13.827 +05:30 [INF] Heartbeat running at "2026-07-16T16:17:13.8278205+05:30"
+2026-07-16 16:17:23.843 +05:30 [INF] Heartbeat running at "2026-07-16T16:17:23.8431915+05:30"
+2026-07-16 16:17:33.844 +05:30 [INF] Heartbeat running at "2026-07-16T16:17:33.8442728+05:30"
+2026-07-16 16:17:43.859 +05:30 [INF] Heartbeat running at "2026-07-16T16:17:43.8598085+05:30"
+2026-07-16 16:17:53.872 +05:30 [INF] Heartbeat running at "2026-07-16T16:17:53.8728603+05:30"
+2026-07-16 16:18:03.885 +05:30 [INF] Heartbeat running at "2026-07-16T16:18:03.8855626+05:30"
+2026-07-16 16:18:13.900 +05:30 [INF] Heartbeat running at "2026-07-16T16:18:13.9005012+05:30"
+2026-07-16 16:18:23.908 +05:30 [INF] Heartbeat running at "2026-07-16T16:18:23.9084118+05:30"
+2026-07-16 16:18:33.915 +05:30 [INF] Heartbeat running at "2026-07-16T16:18:33.9151456+05:30"
+2026-07-16 16:18:44.005 +05:30 [INF] Heartbeat running at "2026-07-16T16:18:44.0058617+05:30"
+2026-07-16 16:18:54.023 +05:30 [INF] Heartbeat running at "2026-07-16T16:18:54.0236838+05:30"
+2026-07-16 16:19:04.028 +05:30 [INF] Heartbeat running at "2026-07-16T16:19:04.0285888+05:30"
+2026-07-16 16:19:14.047 +05:30 [INF] Heartbeat running at "2026-07-16T16:19:14.0477637+05:30"
+2026-07-16 16:19:24.048 +05:30 [INF] Heartbeat running at "2026-07-16T16:19:24.0481081+05:30"
+2026-07-16 16:19:34.062 +05:30 [INF] Heartbeat running at "2026-07-16T16:19:34.0620483+05:30"
+2026-07-16 16:19:44.066 +05:30 [INF] Heartbeat running at "2026-07-16T16:19:44.0659791+05:30"
+2026-07-16 16:19:54.066 +05:30 [INF] Heartbeat running at "2026-07-16T16:19:54.0662398+05:30"
+2026-07-16 16:20:04.079 +05:30 [INF] Heartbeat running at "2026-07-16T16:20:04.0790302+05:30"
+2026-07-16 16:20:14.092 +05:30 [INF] Heartbeat running at "2026-07-16T16:20:14.0919893+05:30"
+2026-07-16 16:20:24.098 +05:30 [INF] Heartbeat running at "2026-07-16T16:20:24.0981925+05:30"
+2026-07-16 16:20:34.100 +05:30 [INF] Heartbeat running at "2026-07-16T16:20:34.1006735+05:30"
+2026-07-16 16:20:44.102 +05:30 [INF] Heartbeat running at "2026-07-16T16:20:44.1027167+05:30"
+2026-07-16 16:20:54.114 +05:30 [INF] Heartbeat running at "2026-07-16T16:20:54.1149016+05:30"
+2026-07-16 16:21:04.119 +05:30 [INF] Heartbeat running at "2026-07-16T16:21:04.1196416+05:30"
+2026-07-16 16:21:14.134 +05:30 [INF] Heartbeat running at "2026-07-16T16:21:14.1341359+05:30"
+2026-07-16 16:21:24.146 +05:30 [INF] Heartbeat running at "2026-07-16T16:21:24.1461462+05:30"
+2026-07-16 16:21:34.160 +05:30 [INF] Heartbeat running at "2026-07-16T16:21:34.1609034+05:30"
+2026-07-16 16:21:44.173 +05:30 [INF] Heartbeat running at "2026-07-16T16:21:44.1733989+05:30"
+2026-07-16 16:21:54.184 +05:30 [INF] Heartbeat running at "2026-07-16T16:21:54.1842596+05:30"
+2026-07-16 16:22:04.195 +05:30 [INF] Heartbeat running at "2026-07-16T16:22:04.1954730+05:30"
+2026-07-16 16:22:14.206 +05:30 [INF] Heartbeat running at "2026-07-16T16:22:14.2060295+05:30"
+2026-07-16 16:22:24.213 +05:30 [INF] Heartbeat running at "2026-07-16T16:22:24.2139010+05:30"
+2026-07-16 16:22:34.235 +05:30 [INF] Heartbeat running at "2026-07-16T16:22:34.2355796+05:30"
+2026-07-16 16:22:44.249 +05:30 [INF] Heartbeat running at "2026-07-16T16:22:44.2495350+05:30"
+2026-07-16 16:22:54.294 +05:30 [INF] Heartbeat running at "2026-07-16T16:22:54.2940847+05:30"
+2026-07-16 16:23:04.309 +05:30 [INF] Heartbeat running at "2026-07-16T16:23:04.3099150+05:30"
+2026-07-16 16:23:14.325 +05:30 [INF] Heartbeat running at "2026-07-16T16:23:14.3255859+05:30"
+2026-07-16 16:23:24.331 +05:30 [INF] Heartbeat running at "2026-07-16T16:23:24.3316625+05:30"
+2026-07-16 16:23:34.349 +05:30 [INF] Heartbeat running at "2026-07-16T16:23:34.3491436+05:30"
+2026-07-16 16:23:44.357 +05:30 [INF] Heartbeat running at "2026-07-16T16:23:44.3571160+05:30"
+2026-07-16 16:23:54.370 +05:30 [INF] Heartbeat running at "2026-07-16T16:23:54.3705127+05:30"
+2026-07-16 16:24:04.382 +05:30 [INF] Heartbeat running at "2026-07-16T16:24:04.3829152+05:30"
+2026-07-16 16:24:14.387 +05:30 [INF] Heartbeat running at "2026-07-16T16:24:14.3870856+05:30"
+2026-07-16 16:24:24.399 +05:30 [INF] Heartbeat running at "2026-07-16T16:24:24.3999705+05:30"
+2026-07-16 16:24:34.404 +05:30 [INF] Heartbeat running at "2026-07-16T16:24:34.4049239+05:30"
+2026-07-16 16:24:44.419 +05:30 [INF] Heartbeat running at "2026-07-16T16:24:44.4199345+05:30"
+2026-07-16 16:24:54.440 +05:30 [INF] Heartbeat running at "2026-07-16T16:24:54.4408406+05:30"
+2026-07-16 16:25:04.444 +05:30 [INF] Heartbeat running at "2026-07-16T16:25:04.4449042+05:30"
+2026-07-16 16:25:14.459 +05:30 [INF] Heartbeat running at "2026-07-16T16:25:14.4593270+05:30"
+2026-07-16 16:25:24.470 +05:30 [INF] Heartbeat running at "2026-07-16T16:25:24.4708835+05:30"
+2026-07-16 16:25:34.490 +05:30 [INF] Heartbeat running at "2026-07-16T16:25:34.4900011+05:30"
+2026-07-16 16:25:44.503 +05:30 [INF] Heartbeat running at "2026-07-16T16:25:44.5033839+05:30"
+2026-07-16 16:25:54.510 +05:30 [INF] Heartbeat running at "2026-07-16T16:25:54.5104888+05:30"
+2026-07-16 16:26:04.516 +05:30 [INF] Heartbeat running at "2026-07-16T16:26:04.5168780+05:30"
+2026-07-16 16:26:14.525 +05:30 [INF] Heartbeat running at "2026-07-16T16:26:14.5254595+05:30"
+2026-07-16 16:26:24.543 +05:30 [INF] Heartbeat running at "2026-07-16T16:26:24.5433713+05:30"
+2026-07-16 16:26:34.562 +05:30 [INF] Heartbeat running at "2026-07-16T16:26:34.5624957+05:30"
+2026-07-16 16:26:44.577 +05:30 [INF] Heartbeat running at "2026-07-16T16:26:44.5771845+05:30"
+2026-07-16 16:26:54.598 +05:30 [INF] Heartbeat running at "2026-07-16T16:26:54.5980565+05:30"
+2026-07-16 16:27:04.607 +05:30 [INF] Heartbeat running at "2026-07-16T16:27:04.6071400+05:30"
+2026-07-16 16:27:14.622 +05:30 [INF] Heartbeat running at "2026-07-16T16:27:14.6222214+05:30"
+2026-07-16 16:27:24.640 +05:30 [INF] Heartbeat running at "2026-07-16T16:27:24.6402262+05:30"
+2026-07-16 16:27:34.656 +05:30 [INF] Heartbeat running at "2026-07-16T16:27:34.6567825+05:30"
+2026-07-16 16:27:44.672 +05:30 [INF] Heartbeat running at "2026-07-16T16:27:44.6724907+05:30"
+2026-07-16 16:27:54.679 +05:30 [INF] Heartbeat running at "2026-07-16T16:27:54.6797101+05:30"
+2026-07-16 16:28:04.686 +05:30 [INF] Heartbeat running at "2026-07-16T16:28:04.6862929+05:30"
+2026-07-16 16:28:14.700 +05:30 [INF] Heartbeat running at "2026-07-16T16:28:14.7000224+05:30"
+2026-07-16 16:28:24.718 +05:30 [INF] Heartbeat running at "2026-07-16T16:28:24.7183691+05:30"
+2026-07-16 16:28:34.733 +05:30 [INF] Heartbeat running at "2026-07-16T16:28:34.7336936+05:30"
+2026-07-16 16:28:44.743 +05:30 [INF] Heartbeat running at "2026-07-16T16:28:44.7434545+05:30"
+2026-07-16 16:28:54.757 +05:30 [INF] Heartbeat running at "2026-07-16T16:28:54.7570925+05:30"
+2026-07-16 16:29:04.774 +05:30 [INF] Heartbeat running at "2026-07-16T16:29:04.7749529+05:30"
+2026-07-16 16:29:14.790 +05:30 [INF] Heartbeat running at "2026-07-16T16:29:14.7900521+05:30"
+2026-07-16 16:29:24.798 +05:30 [INF] Heartbeat running at "2026-07-16T16:29:24.7983435+05:30"
+2026-07-16 16:29:34.817 +05:30 [INF] Heartbeat running at "2026-07-16T16:29:34.8179188+05:30"
+2026-07-16 16:29:44.833 +05:30 [INF] Heartbeat running at "2026-07-16T16:29:44.8329960+05:30"
+2026-07-16 16:29:54.844 +05:30 [INF] Heartbeat running at "2026-07-16T16:29:54.8443724+05:30"
+2026-07-16 16:30:04.850 +05:30 [INF] Heartbeat running at "2026-07-16T16:30:04.8503689+05:30"
+2026-07-16 16:30:14.861 +05:30 [INF] Heartbeat running at "2026-07-16T16:30:14.8615278+05:30"
+2026-07-16 16:30:24.865 +05:30 [INF] Heartbeat running at "2026-07-16T16:30:24.8652984+05:30"
+2026-07-16 16:30:34.873 +05:30 [INF] Heartbeat running at "2026-07-16T16:30:34.8732905+05:30"
+2026-07-16 16:30:44.889 +05:30 [INF] Heartbeat running at "2026-07-16T16:30:44.8898622+05:30"
+2026-07-16 16:30:54.894 +05:30 [INF] Heartbeat running at "2026-07-16T16:30:54.8945891+05:30"
+2026-07-16 16:31:04.903 +05:30 [INF] Heartbeat running at "2026-07-16T16:31:04.9032351+05:30"
+2026-07-16 16:31:14.911 +05:30 [INF] Heartbeat running at "2026-07-16T16:31:14.9109848+05:30"
+2026-07-16 16:31:24.918 +05:30 [INF] Heartbeat running at "2026-07-16T16:31:24.9186818+05:30"
+2026-07-16 16:31:34.932 +05:30 [INF] Heartbeat running at "2026-07-16T16:31:34.9321321+05:30"
+2026-07-16 16:31:44.948 +05:30 [INF] Heartbeat running at "2026-07-16T16:31:44.9481800+05:30"
+2026-07-16 16:31:54.962 +05:30 [INF] Heartbeat running at "2026-07-16T16:31:54.9627271+05:30"
+2026-07-16 16:32:04.969 +05:30 [INF] Heartbeat running at "2026-07-16T16:32:04.9698742+05:30"
+2026-07-16 16:32:14.984 +05:30 [INF] Heartbeat running at "2026-07-16T16:32:14.9847453+05:30"
+2026-07-16 16:32:25.004 +05:30 [INF] Heartbeat running at "2026-07-16T16:32:25.0043543+05:30"
+2026-07-16 16:32:35.019 +05:30 [INF] Heartbeat running at "2026-07-16T16:32:35.0193004+05:30"
+2026-07-16 16:32:45.026 +05:30 [INF] Heartbeat running at "2026-07-16T16:32:45.0259891+05:30"
+2026-07-16 16:32:55.039 +05:30 [INF] Heartbeat running at "2026-07-16T16:32:55.0390931+05:30"
+2026-07-16 16:33:05.056 +05:30 [INF] Heartbeat running at "2026-07-16T16:33:05.0568829+05:30"
+2026-07-16 16:33:15.066 +05:30 [INF] Heartbeat running at "2026-07-16T16:33:15.0660994+05:30"
+2026-07-16 16:33:25.077 +05:30 [INF] Heartbeat running at "2026-07-16T16:33:25.0772904+05:30"
+2026-07-16 16:33:35.087 +05:30 [INF] Heartbeat running at "2026-07-16T16:33:35.0878536+05:30"
+2026-07-16 16:33:45.097 +05:30 [INF] Heartbeat running at "2026-07-16T16:33:45.0974430+05:30"
+2026-07-16 16:33:55.110 +05:30 [INF] Heartbeat running at "2026-07-16T16:33:55.1107040+05:30"
+2026-07-16 16:34:05.129 +05:30 [INF] Heartbeat running at "2026-07-16T16:34:05.1295645+05:30"
+2026-07-16 16:34:15.145 +05:30 [INF] Heartbeat running at "2026-07-16T16:34:15.1455790+05:30"
+2026-07-16 16:34:25.162 +05:30 [INF] Heartbeat running at "2026-07-16T16:34:25.1627390+05:30"
+2026-07-16 16:34:35.173 +05:30 [INF] Heartbeat running at "2026-07-16T16:34:35.1738113+05:30"
+2026-07-16 16:34:45.187 +05:30 [INF] Heartbeat running at "2026-07-16T16:34:45.1877679+05:30"
+2026-07-16 16:34:55.205 +05:30 [INF] Heartbeat running at "2026-07-16T16:34:55.2057794+05:30"
+2026-07-16 16:35:05.224 +05:30 [INF] Heartbeat running at "2026-07-16T16:35:05.2244856+05:30"
+2026-07-16 16:35:15.240 +05:30 [INF] Heartbeat running at "2026-07-16T16:35:15.2400527+05:30"
+2026-07-16 16:35:25.248 +05:30 [INF] Heartbeat running at "2026-07-16T16:35:25.2484638+05:30"
+2026-07-16 16:35:35.257 +05:30 [INF] Heartbeat running at "2026-07-16T16:35:35.2569659+05:30"
+2026-07-16 16:35:45.263 +05:30 [INF] Heartbeat running at "2026-07-16T16:35:45.2637491+05:30"
+2026-07-16 16:35:55.278 +05:30 [INF] Heartbeat running at "2026-07-16T16:35:55.2786515+05:30"
+2026-07-16 16:36:05.290 +05:30 [INF] Heartbeat running at "2026-07-16T16:36:05.2903211+05:30"
+2026-07-16 16:36:15.308 +05:30 [INF] Heartbeat running at "2026-07-16T16:36:15.3086460+05:30"
+2026-07-16 16:36:25.326 +05:30 [INF] Heartbeat running at "2026-07-16T16:36:25.3265194+05:30"
+2026-07-16 16:36:35.342 +05:30 [INF] Heartbeat running at "2026-07-16T16:36:35.3426772+05:30"
+2026-07-16 16:36:45.358 +05:30 [INF] Heartbeat running at "2026-07-16T16:36:45.3580136+05:30"
+2026-07-16 16:36:55.374 +05:30 [INF] Heartbeat running at "2026-07-16T16:36:55.3741579+05:30"
+2026-07-16 16:37:05.382 +05:30 [INF] Heartbeat running at "2026-07-16T16:37:05.3823117+05:30"
+2026-07-16 16:37:15.399 +05:30 [INF] Heartbeat running at "2026-07-16T16:37:15.3996052+05:30"
+2026-07-16 16:37:25.412 +05:30 [INF] Heartbeat running at "2026-07-16T16:37:25.4121802+05:30"
+2026-07-16 16:37:35.425 +05:30 [INF] Heartbeat running at "2026-07-16T16:37:35.4259237+05:30"
+2026-07-16 16:37:45.449 +05:30 [INF] Heartbeat running at "2026-07-16T16:37:45.4498891+05:30"
+2026-07-16 16:37:55.452 +05:30 [INF] Heartbeat running at "2026-07-16T16:37:55.4523596+05:30"
+2026-07-16 16:38:05.473 +05:30 [INF] Heartbeat running at "2026-07-16T16:38:05.4733924+05:30"
+2026-07-16 16:38:15.526 +05:30 [INF] Heartbeat running at "2026-07-16T16:38:15.5265977+05:30"
+2026-07-16 16:38:25.543 +05:30 [INF] Heartbeat running at "2026-07-16T16:38:25.5438285+05:30"
+2026-07-16 16:38:35.551 +05:30 [INF] Heartbeat running at "2026-07-16T16:38:35.5512091+05:30"
+2026-07-16 16:38:45.565 +05:30 [INF] Heartbeat running at "2026-07-16T16:38:45.5658283+05:30"
+2026-07-16 16:38:55.581 +05:30 [INF] Heartbeat running at "2026-07-16T16:38:55.5818749+05:30"
+2026-07-16 16:39:05.593 +05:30 [INF] Heartbeat running at "2026-07-16T16:39:05.5930810+05:30"
+2026-07-16 16:39:15.603 +05:30 [INF] Heartbeat running at "2026-07-16T16:39:15.6033754+05:30"
+2026-07-16 16:39:25.610 +05:30 [INF] Heartbeat running at "2026-07-16T16:39:25.6107996+05:30"
+2026-07-16 16:39:35.628 +05:30 [INF] Heartbeat running at "2026-07-16T16:39:35.6282965+05:30"
+2026-07-16 16:39:45.644 +05:30 [INF] Heartbeat running at "2026-07-16T16:39:45.6442958+05:30"
+2026-07-16 16:39:55.656 +05:30 [INF] Heartbeat running at "2026-07-16T16:39:55.6567596+05:30"
+2026-07-16 16:40:05.666 +05:30 [INF] Heartbeat running at "2026-07-16T16:40:05.6662891+05:30"
+2026-07-16 16:40:15.684 +05:30 [INF] Heartbeat running at "2026-07-16T16:40:15.6843666+05:30"
+2026-07-16 16:40:25.703 +05:30 [INF] Heartbeat running at "2026-07-16T16:40:25.7034097+05:30"
+2026-07-16 16:40:35.719 +05:30 [INF] Heartbeat running at "2026-07-16T16:40:35.7195380+05:30"
+2026-07-16 16:40:45.726 +05:30 [INF] Heartbeat running at "2026-07-16T16:40:45.7267229+05:30"
+2026-07-16 16:40:55.732 +05:30 [INF] Heartbeat running at "2026-07-16T16:40:55.7325075+05:30"
+2026-07-16 16:41:05.747 +05:30 [INF] Heartbeat running at "2026-07-16T16:41:05.7478458+05:30"
+2026-07-16 16:41:15.762 +05:30 [INF] Heartbeat running at "2026-07-16T16:41:15.7628939+05:30"
+2026-07-16 16:41:25.770 +05:30 [INF] Heartbeat running at "2026-07-16T16:41:25.7703977+05:30"
+2026-07-16 16:41:35.777 +05:30 [INF] Heartbeat running at "2026-07-16T16:41:35.7770286+05:30"
+2026-07-16 16:41:45.794 +05:30 [INF] Heartbeat running at "2026-07-16T16:41:45.7945250+05:30"
+2026-07-16 16:41:55.811 +05:30 [INF] Heartbeat running at "2026-07-16T16:41:55.8112415+05:30"
+2026-07-16 16:42:05.829 +05:30 [INF] Heartbeat running at "2026-07-16T16:42:05.8298767+05:30"
+2026-07-16 16:42:15.851 +05:30 [INF] Heartbeat running at "2026-07-16T16:42:15.8513328+05:30"
+2026-07-16 16:42:25.870 +05:30 [INF] Heartbeat running at "2026-07-16T16:42:25.8704295+05:30"
+2026-07-16 16:42:35.881 +05:30 [INF] Heartbeat running at "2026-07-16T16:42:35.8813223+05:30"
+2026-07-16 16:42:45.892 +05:30 [INF] Heartbeat running at "2026-07-16T16:42:45.8926541+05:30"
+2026-07-16 16:42:55.912 +05:30 [INF] Heartbeat running at "2026-07-16T16:42:55.9128912+05:30"
+2026-07-16 16:43:05.927 +05:30 [INF] Heartbeat running at "2026-07-16T16:43:05.9274918+05:30"
+2026-07-16 16:43:15.932 +05:30 [INF] Heartbeat running at "2026-07-16T16:43:15.9321619+05:30"
+2026-07-16 16:43:25.947 +05:30 [INF] Heartbeat running at "2026-07-16T16:43:25.9472708+05:30"
+2026-07-16 16:43:35.951 +05:30 [INF] Heartbeat running at "2026-07-16T16:43:35.9510511+05:30"
+2026-07-16 16:43:45.960 +05:30 [INF] Heartbeat running at "2026-07-16T16:43:45.9601372+05:30"
+2026-07-16 16:43:55.976 +05:30 [INF] Heartbeat running at "2026-07-16T16:43:55.9767711+05:30"
+2026-07-16 16:44:05.995 +05:30 [INF] Heartbeat running at "2026-07-16T16:44:05.9952030+05:30"
+2026-07-16 16:44:16.003 +05:30 [INF] Heartbeat running at "2026-07-16T16:44:16.0037391+05:30"
+2026-07-16 16:44:26.020 +05:30 [INF] Heartbeat running at "2026-07-16T16:44:26.0205742+05:30"
+2026-07-16 16:44:36.035 +05:30 [INF] Heartbeat running at "2026-07-16T16:44:36.0355356+05:30"
+2026-07-16 16:44:46.039 +05:30 [INF] Heartbeat running at "2026-07-16T16:44:46.0393777+05:30"
+2026-07-16 16:44:56.058 +05:30 [INF] Heartbeat running at "2026-07-16T16:44:56.0582137+05:30"
+2026-07-16 16:45:06.065 +05:30 [INF] Heartbeat running at "2026-07-16T16:45:06.0653627+05:30"
+2026-07-16 16:45:16.078 +05:30 [INF] Heartbeat running at "2026-07-16T16:45:16.0784101+05:30"
+2026-07-16 16:45:26.087 +05:30 [INF] Heartbeat running at "2026-07-16T16:45:26.0870994+05:30"
+2026-07-16 16:45:36.098 +05:30 [INF] Heartbeat running at "2026-07-16T16:45:36.0988813+05:30"
+2026-07-16 16:45:46.117 +05:30 [INF] Heartbeat running at "2026-07-16T16:45:46.1170119+05:30"
+2026-07-16 16:45:56.128 +05:30 [INF] Heartbeat running at "2026-07-16T16:45:56.1282272+05:30"
+2026-07-16 16:46:06.139 +05:30 [INF] Heartbeat running at "2026-07-16T16:46:06.1394574+05:30"
+2026-07-16 16:46:16.153 +05:30 [INF] Heartbeat running at "2026-07-16T16:46:16.1538546+05:30"
+2026-07-16 16:46:26.164 +05:30 [INF] Heartbeat running at "2026-07-16T16:46:26.1641669+05:30"
+2026-07-16 16:46:36.168 +05:30 [INF] Heartbeat running at "2026-07-16T16:46:36.1686503+05:30"
+2026-07-16 16:46:46.190 +05:30 [INF] Heartbeat running at "2026-07-16T16:46:46.1909366+05:30"
+2026-07-16 16:46:56.204 +05:30 [INF] Heartbeat running at "2026-07-16T16:46:56.2043922+05:30"
+2026-07-16 16:47:06.209 +05:30 [INF] Heartbeat running at "2026-07-16T16:47:06.2093518+05:30"
+2026-07-16 16:47:16.221 +05:30 [INF] Heartbeat running at "2026-07-16T16:47:16.2212162+05:30"
+2026-07-16 16:47:26.236 +05:30 [INF] Heartbeat running at "2026-07-16T16:47:26.2369724+05:30"
+2026-07-16 16:47:36.259 +05:30 [INF] Heartbeat running at "2026-07-16T16:47:36.2593212+05:30"
+2026-07-16 16:47:46.265 +05:30 [INF] Heartbeat running at "2026-07-16T16:47:46.2654586+05:30"
+2026-07-16 16:47:56.276 +05:30 [INF] Heartbeat running at "2026-07-16T16:47:56.2763123+05:30"
+2026-07-16 16:48:06.286 +05:30 [INF] Heartbeat running at "2026-07-16T16:48:06.2860873+05:30"
+2026-07-16 16:48:16.290 +05:30 [INF] Heartbeat running at "2026-07-16T16:48:16.2907362+05:30"
+2026-07-16 16:48:26.296 +05:30 [INF] Heartbeat running at "2026-07-16T16:48:26.2964751+05:30"
+2026-07-16 16:48:36.303 +05:30 [INF] Heartbeat running at "2026-07-16T16:48:36.3032560+05:30"
+2026-07-16 16:48:46.321 +05:30 [INF] Heartbeat running at "2026-07-16T16:48:46.3210045+05:30"
+2026-07-16 16:48:56.333 +05:30 [INF] Heartbeat running at "2026-07-16T16:48:56.3330702+05:30"
+2026-07-16 16:49:06.348 +05:30 [INF] Heartbeat running at "2026-07-16T16:49:06.3488610+05:30"
+2026-07-16 16:49:16.358 +05:30 [INF] Heartbeat running at "2026-07-16T16:49:16.3586555+05:30"
+2026-07-16 16:49:26.376 +05:30 [INF] Heartbeat running at "2026-07-16T16:49:26.3761768+05:30"
+2026-07-16 16:49:36.394 +05:30 [INF] Heartbeat running at "2026-07-16T16:49:36.3940254+05:30"
+2026-07-16 16:49:46.415 +05:30 [INF] Heartbeat running at "2026-07-16T16:49:46.4153234+05:30"
+2026-07-16 16:49:56.431 +05:30 [INF] Heartbeat running at "2026-07-16T16:49:56.4312108+05:30"
+2026-07-16 16:50:06.446 +05:30 [INF] Heartbeat running at "2026-07-16T16:50:06.4468384+05:30"
+2026-07-16 16:50:16.467 +05:30 [INF] Heartbeat running at "2026-07-16T16:50:16.4669768+05:30"
+2026-07-16 16:50:26.485 +05:30 [INF] Heartbeat running at "2026-07-16T16:50:26.4858540+05:30"
+2026-07-16 16:50:36.494 +05:30 [INF] Heartbeat running at "2026-07-16T16:50:36.4941745+05:30"
+2026-07-16 16:50:46.508 +05:30 [INF] Heartbeat running at "2026-07-16T16:50:46.5085606+05:30"
+2026-07-16 16:50:56.519 +05:30 [INF] Heartbeat running at "2026-07-16T16:50:56.5190653+05:30"
+2026-07-16 16:51:06.536 +05:30 [INF] Heartbeat running at "2026-07-16T16:51:06.5361763+05:30"
+2026-07-16 16:51:16.549 +05:30 [INF] Heartbeat running at "2026-07-16T16:51:16.5491454+05:30"
+2026-07-16 16:51:26.564 +05:30 [INF] Heartbeat running at "2026-07-16T16:51:26.5642600+05:30"
+2026-07-16 16:51:36.572 +05:30 [INF] Heartbeat running at "2026-07-16T16:51:36.5728781+05:30"
+2026-07-16 16:51:46.585 +05:30 [INF] Heartbeat running at "2026-07-16T16:51:46.5850934+05:30"
+2026-07-16 16:51:56.596 +05:30 [INF] Heartbeat running at "2026-07-16T16:51:56.5962439+05:30"
+2026-07-16 16:52:06.607 +05:30 [INF] Heartbeat running at "2026-07-16T16:52:06.6075355+05:30"
+2026-07-16 16:52:16.617 +05:30 [INF] Heartbeat running at "2026-07-16T16:52:16.6178836+05:30"
+2026-07-16 16:52:26.635 +05:30 [INF] Heartbeat running at "2026-07-16T16:52:26.6354591+05:30"
+2026-07-16 16:52:36.651 +05:30 [INF] Heartbeat running at "2026-07-16T16:52:36.6513432+05:30"
+2026-07-16 16:52:46.666 +05:30 [INF] Heartbeat running at "2026-07-16T16:52:46.6666549+05:30"
+2026-07-16 16:52:56.685 +05:30 [INF] Heartbeat running at "2026-07-16T16:52:56.6857507+05:30"
+2026-07-16 16:53:06.706 +05:30 [INF] Heartbeat running at "2026-07-16T16:53:06.7067639+05:30"
+2026-07-16 16:53:16.720 +05:30 [INF] Heartbeat running at "2026-07-16T16:53:16.7207638+05:30"
+2026-07-16 16:53:26.728 +05:30 [INF] Heartbeat running at "2026-07-16T16:53:26.7286844+05:30"
+2026-07-16 16:53:36.734 +05:30 [INF] Heartbeat running at "2026-07-16T16:53:36.7347384+05:30"
+2026-07-16 16:53:46.740 +05:30 [INF] Heartbeat running at "2026-07-16T16:53:46.7408341+05:30"
+2026-07-16 16:53:56.751 +05:30 [INF] Heartbeat running at "2026-07-16T16:53:56.7517628+05:30"
+2026-07-16 16:54:06.759 +05:30 [INF] Heartbeat running at "2026-07-16T16:54:06.7590057+05:30"
+2026-07-16 16:54:16.767 +05:30 [INF] Heartbeat running at "2026-07-16T16:54:16.7670752+05:30"
+2026-07-16 16:54:26.773 +05:30 [INF] Heartbeat running at "2026-07-16T16:54:26.7738500+05:30"
+2026-07-16 16:54:36.799 +05:30 [INF] Heartbeat running at "2026-07-16T16:54:36.7991414+05:30"
+2026-07-16 16:54:46.818 +05:30 [INF] Heartbeat running at "2026-07-16T16:54:46.8188168+05:30"
+2026-07-16 16:54:56.921 +05:30 [INF] Heartbeat running at "2026-07-16T16:54:56.9211145+05:30"
+2026-07-16 16:55:06.929 +05:30 [INF] Heartbeat running at "2026-07-16T16:55:06.9299427+05:30"
+2026-07-16 16:55:16.940 +05:30 [INF] Heartbeat running at "2026-07-16T16:55:16.9407962+05:30"
+2026-07-16 16:55:26.952 +05:30 [INF] Heartbeat running at "2026-07-16T16:55:26.9520863+05:30"
+2026-07-16 16:55:36.960 +05:30 [INF] Heartbeat running at "2026-07-16T16:55:36.9608424+05:30"
+2026-07-16 16:55:46.974 +05:30 [INF] Heartbeat running at "2026-07-16T16:55:46.9743295+05:30"
+2026-07-16 16:55:56.986 +05:30 [INF] Heartbeat running at "2026-07-16T16:55:56.9865360+05:30"
+2026-07-16 16:56:06.992 +05:30 [INF] Heartbeat running at "2026-07-16T16:56:06.9925668+05:30"
+2026-07-16 16:56:17.002 +05:30 [INF] Heartbeat running at "2026-07-16T16:56:17.0023418+05:30"
+2026-07-16 16:56:27.011 +05:30 [INF] Heartbeat running at "2026-07-16T16:56:27.0118998+05:30"

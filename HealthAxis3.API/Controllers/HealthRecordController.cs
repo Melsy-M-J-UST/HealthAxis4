@@ -47,14 +47,23 @@ namespace HealthAxis3.API.Controllers
                 else return Ok(result);
             }
         }
-        //[HttpPut("{id:int}")]
-        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
-        //public async Task<IActionResult> Update(int id, [FromBody] HealthRecordDto entity)
-        //{
-        //    if (!ModelState.IsValid) return BadRequest();
-        //    var result = await service.UpdateAsync(id, entity);
-        //    if (result == null) return NotFound();
-        //    else return Ok(result);
-        //}
+        [HttpGet("appointment/{appointmentId}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Doctor,Patient")]
+        public async Task<IActionResult> GetByAppointmentId(int appointmentId)
+        {
+            var result = await service.GetByAppointmentIdAsync(appointmentId);
+            if (result == null)
+                return NotFound();
+            return Ok(result);
+        }
+            //[HttpPut("{id:int}")]
+            //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Admin")]
+            //public async Task<IActionResult> Update(int id, [FromBody] HealthRecordDto entity)
+            //{
+            //    if (!ModelState.IsValid) return BadRequest();
+            //    var result = await service.UpdateAsync(id, entity);
+            //    if (result == null) return NotFound();
+            //    else return Ok(result);
+            //}
     }
 }

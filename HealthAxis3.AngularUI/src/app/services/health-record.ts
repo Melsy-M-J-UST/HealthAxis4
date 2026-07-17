@@ -15,4 +15,8 @@ export class HealthRecordService
   {
     return this.http.post(`${API_BASE_URL}/HealthRecord`, data);
   }
+  getByAppointmentId(appointmentId: number)
+  {
+    return this.http.get(`${API_BASE_URL}/HealthRecord/appointment/${appointmentId}`);
+  }
 }

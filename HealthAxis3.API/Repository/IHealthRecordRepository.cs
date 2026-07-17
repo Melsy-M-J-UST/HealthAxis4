@@ -6,5 +6,6 @@ namespace HealthAxis3.API.Repository
     {
         Task<List<HealthRecord>> GetByDoctorIdAsync(int id, CancellationToken ct = default);
         Task<List<HealthRecord>> GetByPatientIdAsync(int id, CancellationToken ct = default);
+        Task<HealthRecord?> GetByAppointmentIdAsync(int id, CancellationToken ct = default);
     }
 }

@@ -18,5 +18,10 @@ namespace HealthAxis3.API.Repository.Implementation
             var existing = await context.Set<HealthRecord>().Where(e => e.PatientId == id).ToListAsync(ct);
             return existing;
         }
+        public async Task<HealthRecord?> GetByAppointmentIdAsync(int id, CancellationToken ct = default)
+        {
+            var existing = await context.Set<HealthRecord>().FirstOrDefaultAsync(e => e.AppointmentId == id, ct);
+            return existing;
+        }
     }
 }

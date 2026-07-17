@@ -155,7 +155,12 @@ namespace HealthAxis3.API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.HasKey("DoctorId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Doctors");
 
@@ -561,6 +566,15 @@ namespace HealthAxis3.API.Migrations
                     b.Navigation("Doctor");
 
                     b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("HealthAxis3.API.Models.Doctor", b =>
+                {
+                    b.HasOne("HealthAxis3.API.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HealthAxis3.API.Models.HealthRecord", b =>
