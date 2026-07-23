@@ -1,0 +1,666 @@
+2026-07-23 20:37:59.544 +05:30 [INF] Configured endpoint HealthAxis3.API.events.queue, Consumer: HealthAxis3.API.Messaging.AppointmentBookedConsumer
+2026-07-23 20:38:04.754 +05:30 [INF] Heartbeat running at "2026-07-23T20:38:04.7482551+05:30"
+2026-07-23 20:38:06.467 +05:30 [INF] Bus started: "rabbitmq://localhost/"
+2026-07-23 20:38:06.928 +05:30 [INF] Now listening on: https://localhost:7120
+2026-07-23 20:38:06.999 +05:30 [INF] Now listening on: http://localhost:5042
+2026-07-23 20:38:07.934 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-23 20:38:08.504 +05:30 [INF] Hosting environment: Development
+2026-07-23 20:38:08.684 +05:30 [INF] Content root path: C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API
+2026-07-23 20:38:14.800 +05:30 [INF] Heartbeat running at "2026-07-23T20:38:14.8001283+05:30"
+2026-07-23 20:38:22.572 +05:30 [INF] HTTP OPTIONS /api/auth/register responded 204 in 84.1595 ms
+2026-07-23 20:38:24.838 +05:30 [INF] Heartbeat running at "2026-07-23T20:38:24.8384695+05:30"
+2026-07-23 20:38:29.988 +05:30 [INF] HTTP POST /api/auth/register responded 200 in 7142.9372 ms
+2026-07-23 20:38:30.207 +05:30 [INF] HTTP POST /api/auth/register responded 200 in 7464.2132 ms
+2026-07-23 20:38:35.000 +05:30 [INF] Heartbeat running at "2026-07-23T20:38:35.0006485+05:30"
+2026-07-23 20:38:45.276 +05:30 [INF] Heartbeat running at "2026-07-23T20:38:45.2760001+05:30"
+2026-07-23 20:38:55.355 +05:30 [INF] Heartbeat running at "2026-07-23T20:38:55.3553685+05:30"
+2026-07-23 20:38:58.317 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.8975 ms
+2026-07-23 20:39:04.852 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 6494.5744 ms
+2026-07-23 20:39:04.925 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 6572.7755 ms
+2026-07-23 20:39:05.410 +05:30 [INF] HTTP OPTIONS /api/Doctor responded 204 in 0.1891 ms
+2026-07-23 20:39:05.459 +05:30 [INF] HTTP OPTIONS /api/appointment/patient/1 responded 204 in 0.3324 ms
+2026-07-23 20:39:05.452 +05:30 [INF] Heartbeat running at "2026-07-23T20:39:05.4525195+05:30"
+2026-07-23 20:39:08.948 +05:30 [WRN] You do not have a valid license key for the Lucky Penny software AutoMapper. This is allowed for development and testing scenarios. If you are running in production you are required to have a licensed version. Please visit https://luckypennysoftware.com to obtain a valid license.
+2026-07-23 20:39:09.520 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 1304.4586 ms
+2026-07-23 20:39:09.595 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 3779.3609 ms
+2026-07-23 20:39:13.117 +05:30 [INF] Search doctors cache validated. CacheKey: doctors:all
+2026-07-23 20:39:13.428 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 5211.9765 ms
+2026-07-23 20:39:13.456 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 7702.5606 ms
+2026-07-23 20:39:15.349 +05:30 [INF] HTTP OPTIONS /api/Patient/1 responded 204 in 0.3833 ms
+2026-07-23 20:39:15.599 +05:30 [INF] HTTP GET /api/Patient/1 responded 200 in 150.1145 ms
+2026-07-23 20:39:15.630 +05:30 [INF] HTTP GET /api/Patient/1 responded 200 in 220.8383 ms
+2026-07-23 20:39:15.884 +05:30 [INF] Heartbeat running at "2026-07-23T20:39:15.8843874+05:30"
+2026-07-23 20:39:25.913 +05:30 [INF] Heartbeat running at "2026-07-23T20:39:25.9130920+05:30"
+2026-07-23 20:39:28.115 +05:30 [INF] HTTP OPTIONS /api/Patient/1 responded 204 in 0.3985 ms
+2026-07-23 20:39:28.377 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 224.9854 ms
+2026-07-23 20:39:28.405 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 254.3145 ms
+2026-07-23 20:39:35.948 +05:30 [INF] Heartbeat running at "2026-07-23T20:39:35.9486916+05:30"
+2026-07-23 20:39:45.965 +05:30 [INF] Heartbeat running at "2026-07-23T20:39:45.9658412+05:30"
+2026-07-23 20:39:55.999 +05:30 [INF] Heartbeat running at "2026-07-23T20:39:55.9995773+05:30"
+2026-07-23 20:40:06.016 +05:30 [INF] Heartbeat running at "2026-07-23T20:40:06.0165653+05:30"
+2026-07-23 20:40:16.042 +05:30 [INF] Heartbeat running at "2026-07-23T20:40:16.0420944+05:30"
+2026-07-23 20:40:25.065 +05:30 [INF] HTTP OPTIONS /api/Patient/1 responded 204 in 0.1862 ms
+2026-07-23 20:40:25.187 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 69.5372 ms
+2026-07-23 20:40:25.219 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 104.7717 ms
+2026-07-23 20:40:26.073 +05:30 [INF] Heartbeat running at "2026-07-23T20:40:26.0736831+05:30"
+2026-07-23 20:40:29.944 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 35.4918 ms
+2026-07-23 20:40:29.975 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 69.3953 ms
+2026-07-23 20:40:36.095 +05:30 [INF] Heartbeat running at "2026-07-23T20:40:36.0954223+05:30"
+2026-07-23 20:40:46.129 +05:30 [INF] Heartbeat running at "2026-07-23T20:40:46.1288448+05:30"
+2026-07-23 20:40:56.157 +05:30 [INF] Heartbeat running at "2026-07-23T20:40:56.1571481+05:30"
+2026-07-23 20:41:06.188 +05:30 [INF] Heartbeat running at "2026-07-23T20:41:06.1878723+05:30"
+2026-07-23 20:41:16.221 +05:30 [INF] Heartbeat running at "2026-07-23T20:41:16.2218255+05:30"
+2026-07-23 20:41:26.251 +05:30 [INF] Heartbeat running at "2026-07-23T20:41:26.2516886+05:30"
+2026-07-23 20:41:36.287 +05:30 [INF] Heartbeat running at "2026-07-23T20:41:36.2873429+05:30"
+2026-07-23 20:41:46.322 +05:30 [INF] Heartbeat running at "2026-07-23T20:41:46.3220681+05:30"
+2026-07-23 20:41:56.354 +05:30 [INF] Heartbeat running at "2026-07-23T20:41:56.3530968+05:30"
+2026-07-23 20:42:06.423 +05:30 [INF] Heartbeat running at "2026-07-23T20:42:06.3994602+05:30"
+2026-07-23 20:42:16.595 +05:30 [INF] Heartbeat running at "2026-07-23T20:42:16.5949657+05:30"
+2026-07-23 20:42:26.623 +05:30 [INF] Heartbeat running at "2026-07-23T20:42:26.6235497+05:30"
+2026-07-23 20:42:36.658 +05:30 [INF] Heartbeat running at "2026-07-23T20:42:36.6582262+05:30"
+2026-07-23 20:42:46.736 +05:30 [INF] Heartbeat running at "2026-07-23T20:42:46.7361829+05:30"
+2026-07-23 20:42:56.763 +05:30 [INF] Heartbeat running at "2026-07-23T20:42:56.7609225+05:30"
+2026-07-23 20:43:06.786 +05:30 [INF] Heartbeat running at "2026-07-23T20:43:06.7864221+05:30"
+2026-07-23 20:43:16.848 +05:30 [INF] Heartbeat running at "2026-07-23T20:43:16.8487355+05:30"
+2026-07-23 20:43:26.931 +05:30 [INF] Heartbeat running at "2026-07-23T20:43:26.9315039+05:30"
+2026-07-23 20:43:36.964 +05:30 [INF] Heartbeat running at "2026-07-23T20:43:36.9639969+05:30"
+2026-07-23 20:43:47.258 +05:30 [INF] Heartbeat running at "2026-07-23T20:43:47.2579007+05:30"
+2026-07-23 20:43:57.280 +05:30 [INF] Heartbeat running at "2026-07-23T20:43:57.2805124+05:30"
+2026-07-23 20:44:07.299 +05:30 [INF] Heartbeat running at "2026-07-23T20:44:07.2996539+05:30"
+2026-07-23 20:44:17.340 +05:30 [INF] Heartbeat running at "2026-07-23T20:44:17.3405299+05:30"
+2026-07-23 20:44:27.362 +05:30 [INF] Heartbeat running at "2026-07-23T20:44:27.3628788+05:30"
+2026-07-23 20:44:37.422 +05:30 [INF] Heartbeat running at "2026-07-23T20:44:37.4222573+05:30"
+2026-07-23 20:44:47.454 +05:30 [INF] Heartbeat running at "2026-07-23T20:44:47.4547462+05:30"
+2026-07-23 20:44:51.729 +05:30 [INF] HTTP OPTIONS /api/Patient/1 responded 204 in 0.5206 ms
+2026-07-23 20:44:51.888 +05:30 [ERR] Failed executing DbCommand (28ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Patients] SET [UserId] = @p0
+OUTPUT 1
+WHERE [PatientId] = @p1;
+2026-07-23 20:44:52.022 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'HealthAxis3.API.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: Could not save changes because the target table has database triggers. Please configure your table accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-output-clause for more information.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The target table 'Patients' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:47325ca4-98b3-44be-a4b3-571884c0c5e1
+Error Number:334,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: Could not save changes because the target table has database triggers. Please configure your table accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-output-clause for more information.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The target table 'Patients' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:47325ca4-98b3-44be-a4b3-571884c0c5e1
+Error Number:334,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2026-07-23 20:46:18.978 +05:30 [ERR] HTTP PUT /api/Patient/1 responded 500 in 87212.9558 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: Could not save changes because the target table has database triggers. Please configure your table accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-output-clause for more information.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The target table 'Patients' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:47325ca4-98b3-44be-a4b3-571884c0c5e1
+Error Number:334,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at HealthAxis3.API.Repository.Implementation.Repository`1.UpdateAsync(Int32 id, T entity, CancellationToken ct) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Repository\Implementation\Repository.cs:line 38
+   at HealthAxis3.API.Service.Implementation.PatientService.UpdateAsync(Int32 id, PatientDto entity) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Service\Implementation\PatientService.cs:line 47
+   at HealthAxis3.API.Controllers.PatientController.Update(Int32 id, PatientDto entity) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Controllers\PatientController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-23 20:46:19.054 +05:30 [INF] Heartbeat running at "2026-07-23T20:46:19.0541206+05:30"
+2026-07-23 20:46:19.422 +05:30 [ERR] HTTP PUT /api/Patient/1 responded 500 in 87659.3173 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: Could not save changes because the target table has database triggers. Please configure your table accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-output-clause for more information.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The target table 'Patients' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:47325ca4-98b3-44be-a4b3-571884c0c5e1
+Error Number:334,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at HealthAxis3.API.Repository.Implementation.Repository`1.UpdateAsync(Int32 id, T entity, CancellationToken ct) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Repository\Implementation\Repository.cs:line 38
+   at HealthAxis3.API.Service.Implementation.PatientService.UpdateAsync(Int32 id, PatientDto entity) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Service\Implementation\PatientService.cs:line 47
+   at HealthAxis3.API.Controllers.PatientController.Update(Int32 id, PatientDto entity) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Controllers\PatientController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-07-23 20:46:19.707 +05:30 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: Could not save changes because the target table has database triggers. Please configure your table accordingly, see https://aka.ms/efcore-docs-sqlserver-save-changes-and-output-clause for more information.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The target table 'Patients' of the DML statement cannot have any enabled triggers if the statement contains an OUTPUT clause without INTO clause.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:47325ca4-98b3-44be-a4b3-571884c0c5e1
+Error Number:334,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at HealthAxis3.API.Repository.Implementation.Repository`1.UpdateAsync(Int32 id, T entity, CancellationToken ct) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Repository\Implementation\Repository.cs:line 38
+   at HealthAxis3.API.Service.Implementation.PatientService.UpdateAsync(Int32 id, PatientDto entity) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Service\Implementation\PatientService.cs:line 47
+   at HealthAxis3.API.Controllers.PatientController.Update(Int32 id, PatientDto entity) in C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API\Controllers\PatientController.cs:line 54
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-07-23 20:46:32.827 +05:30 [INF] Heartbeat running at "2026-07-23T20:46:32.8275067+05:30"
+2026-07-23 20:46:42.384 +05:30 [INF] HTTP OPTIONS /api/Doctor responded 204 in 0.1938 ms
+2026-07-23 20:46:42.385 +05:30 [INF] HTTP OPTIONS /api/appointment/patient/1 responded 204 in 0.1379 ms
+2026-07-23 20:46:42.689 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 48.4987 ms
+2026-07-23 20:46:42.747 +05:30 [INF] Search doctors cache validated. CacheKey: doctors:all
+2026-07-23 20:46:42.826 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 188.9339 ms
+2026-07-23 20:46:42.849 +05:30 [INF] Heartbeat running at "2026-07-23T20:46:42.8494289+05:30"
+2026-07-23 20:46:42.895 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 316.1778 ms
+2026-07-23 20:46:42.976 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 404.8964 ms
+2026-07-23 20:46:52.972 +05:30 [INF] Heartbeat running at "2026-07-23T20:46:52.9722822+05:30"
+2026-07-23 20:47:02.989 +05:30 [INF] Heartbeat running at "2026-07-23T20:47:02.9892809+05:30"
+2026-07-23 20:47:11.609 +05:30 [INF] HTTP OPTIONS /api/Patient/1 responded 204 in 0.2023 ms
+2026-07-23 20:47:11.661 +05:30 [INF] HTTP GET /api/Patient/1 responded 200 in 15.6171 ms
+2026-07-23 20:47:11.678 +05:30 [INF] HTTP GET /api/Patient/1 responded 200 in 33.6135 ms
+2026-07-23 20:47:13.004 +05:30 [INF] Heartbeat running at "2026-07-23T20:47:13.0049479+05:30"
+2026-07-23 20:47:21.658 +05:30 [INF] HTTP OPTIONS /api/Patient/1 responded 204 in 0.2219 ms
+2026-07-23 20:47:21.720 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 31.6756 ms
+2026-07-23 20:47:21.749 +05:30 [INF] HTTP PUT /api/Patient/1 responded 200 in 64.2924 ms
+2026-07-23 20:47:23.022 +05:30 [INF] Heartbeat running at "2026-07-23T20:47:23.0225672+05:30"
+2026-07-23 20:47:33.048 +05:30 [INF] Heartbeat running at "2026-07-23T20:47:33.0479139+05:30"
+2026-07-23 20:47:43.079 +05:30 [INF] Heartbeat running at "2026-07-23T20:47:43.0793142+05:30"
+2026-07-23 20:47:53.101 +05:30 [INF] Heartbeat running at "2026-07-23T20:47:53.1008946+05:30"
+2026-07-23 20:48:03.127 +05:30 [INF] Heartbeat running at "2026-07-23T20:48:03.1269766+05:30"
+2026-07-23 20:48:13.145 +05:30 [INF] Heartbeat running at "2026-07-23T20:48:13.1443325+05:30"
+2026-07-23 20:48:23.157 +05:30 [INF] Heartbeat running at "2026-07-23T20:48:23.1573340+05:30"
+2026-07-23 20:48:33.167 +05:30 [INF] Heartbeat running at "2026-07-23T20:48:33.1677733+05:30"
+2026-07-23 20:48:43.185 +05:30 [INF] Heartbeat running at "2026-07-23T20:48:43.1855306+05:30"
+2026-07-23 20:48:53.199 +05:30 [INF] Heartbeat running at "2026-07-23T20:48:53.1989103+05:30"
+2026-07-23 20:49:03.228 +05:30 [INF] Heartbeat running at "2026-07-23T20:49:03.2284976+05:30"
+2026-07-23 20:49:05.949 +05:30 [INF] HTTP OPTIONS /api/appointment/patient/1 responded 204 in 0.2121 ms
+2026-07-23 20:49:05.950 +05:30 [INF] HTTP OPTIONS /api/Doctor responded 204 in 0.2590 ms
+2026-07-23 20:49:06.086 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 89.1829 ms
+2026-07-23 20:49:06.107 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 112.9422 ms
+2026-07-23 20:49:06.124 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 111.4152 ms
+2026-07-23 20:49:06.163 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 153.3319 ms
+2026-07-23 20:49:13.260 +05:30 [INF] Heartbeat running at "2026-07-23T20:49:13.2607746+05:30"
+2026-07-23 20:49:19.338 +05:30 [INF] HTTP GET /swagger responded 301 in 6.0325 ms
+2026-07-23 20:49:19.771 +05:30 [INF] HTTP GET /swagger/index.html responded 200 in 356.0816 ms
+2026-07-23 20:49:19.959 +05:30 [INF] HTTP GET /swagger/index.js responded 200 in 2.2804 ms
+2026-07-23 20:49:20.012 +05:30 [INF] HTTP GET /swagger/index.css responded 200 in 59.9141 ms
+2026-07-23 20:49:20.140 +05:30 [INF] HTTP GET /swagger/swagger-ui-standalone-preset.js responded 200 in 183.6229 ms
+2026-07-23 20:49:20.140 +05:30 [INF] HTTP GET /swagger/swagger-ui.css responded 200 in 187.0494 ms
+2026-07-23 20:49:20.201 +05:30 [INF] HTTP GET /swagger/swagger-ui-bundle.js responded 200 in 247.3079 ms
+2026-07-23 20:49:20.895 +05:30 [INF] HTTP GET /swagger/favicon-32x32.png responded 200 in 5.7358 ms
+2026-07-23 20:49:20.989 +05:30 [INF] HTTP GET /swagger/v1/swagger.json responded 200 in 133.4903 ms
+2026-07-23 20:49:23.301 +05:30 [INF] Heartbeat running at "2026-07-23T20:49:23.3008715+05:30"
+2026-07-23 20:49:33.326 +05:30 [INF] Heartbeat running at "2026-07-23T20:49:33.3255808+05:30"
+2026-07-23 20:49:43.327 +05:30 [INF] Heartbeat running at "2026-07-23T20:49:43.3272039+05:30"
+2026-07-23 20:49:53.335 +05:30 [INF] Heartbeat running at "2026-07-23T20:49:53.3357341+05:30"
+2026-07-23 20:50:03.365 +05:30 [INF] Heartbeat running at "2026-07-23T20:50:03.3656886+05:30"
+2026-07-23 20:50:13.392 +05:30 [INF] Heartbeat running at "2026-07-23T20:50:13.3929556+05:30"
+2026-07-23 20:50:23.432 +05:30 [INF] Heartbeat running at "2026-07-23T20:50:23.4325426+05:30"
+2026-07-23 20:50:33.528 +05:30 [INF] Heartbeat running at "2026-07-23T20:50:33.5286141+05:30"
+2026-07-23 20:50:43.549 +05:30 [INF] Heartbeat running at "2026-07-23T20:50:43.5496805+05:30"
+2026-07-23 20:50:53.570 +05:30 [INF] Heartbeat running at "2026-07-23T20:50:53.5708088+05:30"
+2026-07-23 20:51:03.596 +05:30 [INF] Heartbeat running at "2026-07-23T20:51:03.5966628+05:30"
+2026-07-23 20:51:13.619 +05:30 [INF] Heartbeat running at "2026-07-23T20:51:13.6198244+05:30"
+2026-07-23 20:51:23.642 +05:30 [INF] Heartbeat running at "2026-07-23T20:51:23.6428137+05:30"
+2026-07-23 20:51:33.666 +05:30 [INF] Heartbeat running at "2026-07-23T20:51:33.6660837+05:30"
+2026-07-23 20:51:43.692 +05:30 [INF] Heartbeat running at "2026-07-23T20:51:43.6924544+05:30"
+2026-07-23 20:51:53.712 +05:30 [INF] Heartbeat running at "2026-07-23T20:51:53.7127514+05:30"
+2026-07-23 20:52:03.732 +05:30 [INF] Heartbeat running at "2026-07-23T20:52:03.7322375+05:30"
+2026-07-23 20:52:13.758 +05:30 [INF] Heartbeat running at "2026-07-23T20:52:13.7580706+05:30"
+2026-07-23 20:52:23.775 +05:30 [INF] Heartbeat running at "2026-07-23T20:52:23.7752747+05:30"
+2026-07-23 20:52:33.800 +05:30 [INF] Heartbeat running at "2026-07-23T20:52:33.8008365+05:30"
+2026-07-23 20:52:43.828 +05:30 [INF] Heartbeat running at "2026-07-23T20:52:43.8280282+05:30"
+2026-07-23 20:52:53.859 +05:30 [INF] Heartbeat running at "2026-07-23T20:52:53.8591251+05:30"
+2026-07-23 20:53:03.933 +05:30 [INF] Heartbeat running at "2026-07-23T20:53:03.9335849+05:30"
+2026-07-23 20:53:14.107 +05:30 [INF] Heartbeat running at "2026-07-23T20:53:14.1071868+05:30"
+2026-07-23 20:53:24.129 +05:30 [INF] Heartbeat running at "2026-07-23T20:53:24.1295795+05:30"
+2026-07-23 20:53:34.162 +05:30 [INF] Heartbeat running at "2026-07-23T20:53:34.1628594+05:30"
+2026-07-23 20:53:44.705 +05:30 [INF] Heartbeat running at "2026-07-23T20:53:44.7056785+05:30"
+2026-07-23 20:53:54.775 +05:30 [INF] Heartbeat running at "2026-07-23T20:53:54.7748426+05:30"
+2026-07-23 20:54:04.813 +05:30 [INF] Heartbeat running at "2026-07-23T20:54:04.8133752+05:30"
+2026-07-23 20:54:14.827 +05:30 [INF] Heartbeat running at "2026-07-23T20:54:14.8272976+05:30"
+2026-07-23 20:54:24.900 +05:30 [INF] Heartbeat running at "2026-07-23T20:54:24.9002739+05:30"
+2026-07-23 20:54:34.919 +05:30 [INF] Heartbeat running at "2026-07-23T20:54:34.9194284+05:30"
+2026-07-23 20:54:44.945 +05:30 [INF] Heartbeat running at "2026-07-23T20:54:44.9457503+05:30"
+2026-07-23 20:54:54.965 +05:30 [INF] Heartbeat running at "2026-07-23T20:54:54.9658624+05:30"
+2026-07-23 20:55:04.980 +05:30 [INF] Heartbeat running at "2026-07-23T20:55:04.9806357+05:30"
+2026-07-23 20:55:15.007 +05:30 [INF] Heartbeat running at "2026-07-23T20:55:15.0072613+05:30"
+2026-07-23 20:55:25.027 +05:30 [INF] Heartbeat running at "2026-07-23T20:55:25.0274265+05:30"
+2026-07-23 20:55:35.044 +05:30 [INF] Heartbeat running at "2026-07-23T20:55:35.0445114+05:30"
+2026-07-23 20:55:45.076 +05:30 [INF] Heartbeat running at "2026-07-23T20:55:45.0759928+05:30"
+2026-07-23 20:55:55.122 +05:30 [INF] Heartbeat running at "2026-07-23T20:55:55.1221797+05:30"
+2026-07-23 20:56:05.142 +05:30 [INF] Heartbeat running at "2026-07-23T20:56:05.1421793+05:30"
+2026-07-23 20:56:15.165 +05:30 [INF] Heartbeat running at "2026-07-23T20:56:15.1654086+05:30"
+2026-07-23 20:56:25.213 +05:30 [INF] Heartbeat running at "2026-07-23T20:56:25.2135137+05:30"
+2026-07-23 20:56:35.259 +05:30 [INF] Heartbeat running at "2026-07-23T20:56:35.2595151+05:30"
+2026-07-23 20:56:45.541 +05:30 [INF] Heartbeat running at "2026-07-23T20:56:45.5418057+05:30"
+2026-07-23 20:56:55.575 +05:30 [INF] Heartbeat running at "2026-07-23T20:56:55.5754737+05:30"
+2026-07-23 20:57:05.593 +05:30 [INF] Heartbeat running at "2026-07-23T20:57:05.5937950+05:30"
+2026-07-23 20:57:15.620 +05:30 [INF] Heartbeat running at "2026-07-23T20:57:15.6202439+05:30"
+2026-07-23 20:57:25.639 +05:30 [INF] Heartbeat running at "2026-07-23T20:57:25.6395820+05:30"
+2026-07-23 20:57:35.658 +05:30 [INF] Heartbeat running at "2026-07-23T20:57:35.6580263+05:30"
+2026-07-23 20:57:45.684 +05:30 [INF] Heartbeat running at "2026-07-23T20:57:45.6845475+05:30"
+2026-07-23 20:57:55.717 +05:30 [INF] Heartbeat running at "2026-07-23T20:57:55.7172237+05:30"
+2026-07-23 20:58:05.738 +05:30 [INF] Heartbeat running at "2026-07-23T20:58:05.7381735+05:30"
+2026-07-23 20:58:15.766 +05:30 [INF] Heartbeat running at "2026-07-23T20:58:15.7665315+05:30"
+2026-07-23 20:58:25.797 +05:30 [INF] Heartbeat running at "2026-07-23T20:58:25.7971246+05:30"
+2026-07-23 20:58:35.820 +05:30 [INF] Heartbeat running at "2026-07-23T20:58:35.8206978+05:30"
+2026-07-23 20:58:45.848 +05:30 [INF] Heartbeat running at "2026-07-23T20:58:45.8483031+05:30"
+2026-07-23 20:58:55.882 +05:30 [INF] Heartbeat running at "2026-07-23T20:58:55.8820426+05:30"
+2026-07-23 20:59:05.909 +05:30 [INF] Heartbeat running at "2026-07-23T20:59:05.9092635+05:30"
+2026-07-23 20:59:15.937 +05:30 [INF] Heartbeat running at "2026-07-23T20:59:15.9373881+05:30"
+2026-07-23 20:59:25.967 +05:30 [INF] Heartbeat running at "2026-07-23T20:59:25.9673014+05:30"
+2026-07-23 20:59:35.996 +05:30 [INF] Heartbeat running at "2026-07-23T20:59:35.9960510+05:30"
+2026-07-23 20:59:46.026 +05:30 [INF] Heartbeat running at "2026-07-23T20:59:46.0260775+05:30"
+2026-07-23 20:59:56.051 +05:30 [INF] Heartbeat running at "2026-07-23T20:59:56.0512198+05:30"
+2026-07-23 21:00:06.079 +05:30 [INF] Heartbeat running at "2026-07-23T21:00:06.0792104+05:30"
+2026-07-23 21:00:16.149 +05:30 [INF] Heartbeat running at "2026-07-23T21:00:16.1493751+05:30"
+2026-07-23 21:00:26.173 +05:30 [INF] Heartbeat running at "2026-07-23T21:00:26.1732622+05:30"
+2026-07-23 21:00:36.230 +05:30 [INF] Heartbeat running at "2026-07-23T21:00:36.2299806+05:30"
+2026-07-23 21:00:46.251 +05:30 [INF] Heartbeat running at "2026-07-23T21:00:46.2518654+05:30"
+2026-07-23 21:00:56.276 +05:30 [INF] Heartbeat running at "2026-07-23T21:00:56.2765634+05:30"
+2026-07-23 21:01:06.301 +05:30 [INF] Heartbeat running at "2026-07-23T21:01:06.3015505+05:30"
+2026-07-23 21:01:16.318 +05:30 [INF] Heartbeat running at "2026-07-23T21:01:16.3181219+05:30"
+2026-07-23 21:01:26.343 +05:30 [INF] Heartbeat running at "2026-07-23T21:01:26.3430066+05:30"
+2026-07-23 21:01:36.364 +05:30 [INF] Heartbeat running at "2026-07-23T21:01:36.3640255+05:30"
+2026-07-23 21:01:46.385 +05:30 [INF] Heartbeat running at "2026-07-23T21:01:46.3852015+05:30"
+2026-07-23 21:01:56.406 +05:30 [INF] Heartbeat running at "2026-07-23T21:01:56.4065227+05:30"
+2026-07-23 21:02:06.429 +05:30 [INF] Heartbeat running at "2026-07-23T21:02:06.4296091+05:30"
+2026-07-23 21:02:16.461 +05:30 [INF] Heartbeat running at "2026-07-23T21:02:16.4611497+05:30"
+2026-07-23 21:02:26.477 +05:30 [INF] Heartbeat running at "2026-07-23T21:02:26.4771245+05:30"
+2026-07-23 21:02:36.501 +05:30 [INF] Heartbeat running at "2026-07-23T21:02:36.5019305+05:30"
+2026-07-23 21:02:46.524 +05:30 [INF] Heartbeat running at "2026-07-23T21:02:46.5241121+05:30"
+2026-07-23 21:02:56.548 +05:30 [INF] Heartbeat running at "2026-07-23T21:02:56.5485889+05:30"
+2026-07-23 21:03:06.614 +05:30 [INF] Heartbeat running at "2026-07-23T21:03:06.6142559+05:30"
+2026-07-23 21:03:16.638 +05:30 [INF] Heartbeat running at "2026-07-23T21:03:16.6383291+05:30"
+2026-07-23 21:03:26.660 +05:30 [INF] Heartbeat running at "2026-07-23T21:03:26.6601329+05:30"
+2026-07-23 21:03:36.676 +05:30 [INF] Heartbeat running at "2026-07-23T21:03:36.6759643+05:30"
+2026-07-23 21:03:46.730 +05:30 [INF] Heartbeat running at "2026-07-23T21:03:46.7303733+05:30"
+2026-07-23 21:03:56.758 +05:30 [INF] Heartbeat running at "2026-07-23T21:03:56.7580892+05:30"
+2026-07-23 21:04:06.784 +05:30 [INF] Heartbeat running at "2026-07-23T21:04:06.7845274+05:30"
+2026-07-23 21:04:16.802 +05:30 [INF] Heartbeat running at "2026-07-23T21:04:16.8022588+05:30"
+2026-07-23 21:04:26.817 +05:30 [INF] Heartbeat running at "2026-07-23T21:04:26.8176183+05:30"
+2026-07-23 21:04:36.830 +05:30 [INF] Heartbeat running at "2026-07-23T21:04:36.8301669+05:30"
+2026-07-23 21:04:46.845 +05:30 [INF] Heartbeat running at "2026-07-23T21:04:46.8452486+05:30"
+2026-07-23 21:04:56.859 +05:30 [INF] Heartbeat running at "2026-07-23T21:04:56.8590239+05:30"
+2026-07-23 21:05:06.885 +05:30 [INF] Heartbeat running at "2026-07-23T21:05:06.8850833+05:30"
+2026-07-23 21:05:16.913 +05:30 [INF] Heartbeat running at "2026-07-23T21:05:16.9137688+05:30"
+2026-07-23 21:05:26.933 +05:30 [INF] Heartbeat running at "2026-07-23T21:05:26.9339049+05:30"
+2026-07-23 21:05:36.968 +05:30 [INF] Heartbeat running at "2026-07-23T21:05:36.9688446+05:30"
+2026-07-23 21:05:46.985 +05:30 [INF] Heartbeat running at "2026-07-23T21:05:46.9852843+05:30"
+2026-07-23 21:05:57.004 +05:30 [INF] Heartbeat running at "2026-07-23T21:05:57.0046302+05:30"
+2026-07-23 21:06:07.032 +05:30 [INF] Heartbeat running at "2026-07-23T21:06:07.0323129+05:30"
+2026-07-23 21:06:17.059 +05:30 [INF] Heartbeat running at "2026-07-23T21:06:17.0595657+05:30"
+2026-07-23 21:06:27.080 +05:30 [INF] Heartbeat running at "2026-07-23T21:06:27.0807786+05:30"
+2026-07-23 21:06:37.117 +05:30 [INF] Heartbeat running at "2026-07-23T21:06:37.1169364+05:30"
+2026-07-23 21:06:47.235 +05:30 [INF] Heartbeat running at "2026-07-23T21:06:47.2353233+05:30"
+2026-07-23 21:06:57.266 +05:30 [INF] Heartbeat running at "2026-07-23T21:06:57.2667560+05:30"
+2026-07-23 21:07:07.292 +05:30 [INF] Heartbeat running at "2026-07-23T21:07:07.2921088+05:30"
+2026-07-23 21:07:17.307 +05:30 [INF] Heartbeat running at "2026-07-23T21:07:17.3074765+05:30"
+2026-07-23 21:07:27.330 +05:30 [INF] Heartbeat running at "2026-07-23T21:07:27.3300020+05:30"
+2026-07-23 21:07:37.363 +05:30 [INF] Heartbeat running at "2026-07-23T21:07:37.3633977+05:30"
+2026-07-23 21:07:47.396 +05:30 [INF] Heartbeat running at "2026-07-23T21:07:47.3967925+05:30"
+2026-07-23 21:07:57.422 +05:30 [INF] Heartbeat running at "2026-07-23T21:07:57.4221900+05:30"
+2026-07-23 21:08:07.446 +05:30 [INF] Heartbeat running at "2026-07-23T21:08:07.4465055+05:30"
+2026-07-23 21:08:17.459 +05:30 [INF] Heartbeat running at "2026-07-23T21:08:17.4596495+05:30"
+2026-07-23 21:08:27.482 +05:30 [INF] Heartbeat running at "2026-07-23T21:08:27.4822566+05:30"
+2026-07-23 21:08:37.502 +05:30 [INF] Heartbeat running at "2026-07-23T21:08:37.5019209+05:30"
+2026-07-23 21:08:47.526 +05:30 [INF] Heartbeat running at "2026-07-23T21:08:47.5265411+05:30"
+2026-07-23 21:08:57.542 +05:30 [INF] Heartbeat running at "2026-07-23T21:08:57.5425823+05:30"
+2026-07-23 21:09:07.554 +05:30 [INF] Heartbeat running at "2026-07-23T21:09:07.5545953+05:30"
+2026-07-23 21:09:17.569 +05:30 [INF] Heartbeat running at "2026-07-23T21:09:17.5691851+05:30"
+2026-07-23 21:09:27.589 +05:30 [INF] Heartbeat running at "2026-07-23T21:09:27.5893938+05:30"
+2026-07-23 21:09:37.624 +05:30 [INF] Heartbeat running at "2026-07-23T21:09:37.6247346+05:30"
+2026-07-23 21:09:47.647 +05:30 [INF] Heartbeat running at "2026-07-23T21:09:47.6470287+05:30"
+2026-07-23 21:09:57.671 +05:30 [INF] Heartbeat running at "2026-07-23T21:09:57.6717127+05:30"
+2026-07-23 21:10:07.691 +05:30 [INF] Heartbeat running at "2026-07-23T21:10:07.6911233+05:30"
+2026-07-23 21:10:17.705 +05:30 [INF] Heartbeat running at "2026-07-23T21:10:17.7058492+05:30"
+2026-07-23 21:10:27.721 +05:30 [INF] Heartbeat running at "2026-07-23T21:10:27.7214635+05:30"
+2026-07-23 21:10:37.757 +05:30 [INF] Heartbeat running at "2026-07-23T21:10:37.7577229+05:30"
+2026-07-23 21:10:47.788 +05:30 [INF] Heartbeat running at "2026-07-23T21:10:47.7889724+05:30"
+2026-07-23 21:10:58.046 +05:30 [INF] Heartbeat running at "2026-07-23T21:10:58.0461233+05:30"
+2026-07-23 21:11:08.083 +05:30 [INF] Heartbeat running at "2026-07-23T21:11:08.0834780+05:30"
+2026-07-23 21:11:18.112 +05:30 [INF] Heartbeat running at "2026-07-23T21:11:18.1124424+05:30"
+2026-07-23 21:11:28.140 +05:30 [INF] Heartbeat running at "2026-07-23T21:11:28.1405808+05:30"
+2026-07-23 21:11:38.158 +05:30 [INF] Heartbeat running at "2026-07-23T21:11:38.1582930+05:30"
+2026-07-23 21:11:48.178 +05:30 [INF] Heartbeat running at "2026-07-23T21:11:48.1781768+05:30"
+2026-07-23 21:11:58.205 +05:30 [INF] Heartbeat running at "2026-07-23T21:11:58.2052369+05:30"
+2026-07-23 21:12:08.222 +05:30 [INF] Heartbeat running at "2026-07-23T21:12:08.2224152+05:30"
+2026-07-23 21:12:18.238 +05:30 [INF] Heartbeat running at "2026-07-23T21:12:18.2380283+05:30"
+2026-07-23 21:12:28.273 +05:30 [INF] Heartbeat running at "2026-07-23T21:12:28.2734970+05:30"
+2026-07-23 21:12:38.356 +05:30 [INF] Heartbeat running at "2026-07-23T21:12:38.3568348+05:30"
+2026-07-23 21:12:48.624 +05:30 [INF] Heartbeat running at "2026-07-23T21:12:48.6246543+05:30"
+2026-07-23 21:12:58.690 +05:30 [INF] Heartbeat running at "2026-07-23T21:12:58.6900886+05:30"
+2026-07-23 21:13:08.710 +05:30 [INF] Heartbeat running at "2026-07-23T21:13:08.7102292+05:30"
+2026-07-23 21:13:18.726 +05:30 [INF] Heartbeat running at "2026-07-23T21:13:18.7266418+05:30"
+2026-07-23 21:13:28.744 +05:30 [INF] Heartbeat running at "2026-07-23T21:13:28.7446650+05:30"
+2026-07-23 21:13:38.765 +05:30 [INF] Heartbeat running at "2026-07-23T21:13:38.7658111+05:30"
+2026-07-23 21:13:48.794 +05:30 [INF] Heartbeat running at "2026-07-23T21:13:48.7945783+05:30"
+2026-07-23 21:13:58.808 +05:30 [INF] Heartbeat running at "2026-07-23T21:13:58.8086757+05:30"
+2026-07-23 21:14:08.786 +05:30 [INF] HTTP OPTIONS /api/auth/login responded 204 in 2.1719 ms
+2026-07-23 21:14:08.828 +05:30 [INF] Heartbeat running at "2026-07-23T21:14:08.8285100+05:30"
+2026-07-23 21:14:09.265 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 445.7727 ms
+2026-07-23 21:14:09.280 +05:30 [INF] HTTP POST /api/auth/login responded 200 in 466.6756 ms
+2026-07-23 21:14:09.335 +05:30 [INF] HTTP OPTIONS /api/Doctor responded 204 in 1.7212 ms
+2026-07-23 21:14:09.340 +05:30 [INF] HTTP OPTIONS /api/appointment/patient/1 responded 204 in 0.3630 ms
+2026-07-23 21:14:09.439 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 34.0325 ms
+2026-07-23 21:14:09.461 +05:30 [INF] HTTP GET /api/appointment/patient/1 responded 200 in 58.9482 ms
+2026-07-23 21:14:09.476 +05:30 [INF] Search doctors cache validated. CacheKey: doctors:all
+2026-07-23 21:14:09.509 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 120.9516 ms
+2026-07-23 21:14:09.528 +05:30 [INF] HTTP GET /api/Doctor responded 200 in 149.9073 ms
+2026-07-23 21:14:18.862 +05:30 [INF] Heartbeat running at "2026-07-23T21:14:18.8625384+05:30"
+2026-07-23 21:14:28.887 +05:30 [INF] Heartbeat running at "2026-07-23T21:14:28.8873237+05:30"
+2026-07-23 21:14:39.020 +05:30 [INF] Heartbeat running at "2026-07-23T21:14:39.0202399+05:30"
+2026-07-23 21:14:49.163 +05:30 [INF] Heartbeat running at "2026-07-23T21:14:49.1633634+05:30"
+2026-07-23 21:14:59.192 +05:30 [INF] Heartbeat running at "2026-07-23T21:14:59.1925008+05:30"
+2026-07-23 21:15:09.217 +05:30 [INF] Heartbeat running at "2026-07-23T21:15:09.2172460+05:30"
+2026-07-23 21:15:19.309 +05:30 [INF] Heartbeat running at "2026-07-23T21:15:19.3092224+05:30"
+2026-07-23 21:15:29.333 +05:30 [INF] Heartbeat running at "2026-07-23T21:15:29.3334296+05:30"
+2026-07-23 21:15:39.344 +05:30 [INF] Heartbeat running at "2026-07-23T21:15:39.3448432+05:30"
+2026-07-23 21:15:49.387 +05:30 [INF] Heartbeat running at "2026-07-23T21:15:49.3875910+05:30"
+2026-07-23 21:15:59.400 +05:30 [INF] Heartbeat running at "2026-07-23T21:15:59.4007354+05:30"
+2026-07-23 21:16:09.445 +05:30 [INF] Heartbeat running at "2026-07-23T21:16:09.4456917+05:30"
+2026-07-23 21:16:19.608 +05:30 [INF] Heartbeat running at "2026-07-23T21:16:19.6081680+05:30"
+2026-07-23 21:16:29.633 +05:30 [INF] Heartbeat running at "2026-07-23T21:16:29.6333917+05:30"
+2026-07-23 21:16:39.656 +05:30 [INF] Heartbeat running at "2026-07-23T21:16:39.6567466+05:30"
+2026-07-23 21:16:49.788 +05:30 [INF] Heartbeat running at "2026-07-23T21:16:49.7883157+05:30"
+2026-07-23 21:16:59.857 +05:30 [INF] Heartbeat running at "2026-07-23T21:16:59.8570191+05:30"
+2026-07-23 21:17:09.941 +05:30 [INF] Heartbeat running at "2026-07-23T21:17:09.9418307+05:30"
+2026-07-23 21:17:19.978 +05:30 [INF] Heartbeat running at "2026-07-23T21:17:19.9785107+05:30"
+2026-07-23 21:17:30.012 +05:30 [INF] Heartbeat running at "2026-07-23T21:17:30.0128672+05:30"
+2026-07-23 21:17:40.086 +05:30 [INF] Heartbeat running at "2026-07-23T21:17:40.0866154+05:30"
+2026-07-23 21:17:50.480 +05:30 [INF] Heartbeat running at "2026-07-23T21:17:50.4806985+05:30"
+2026-07-23 21:18:00.588 +05:30 [INF] Heartbeat running at "2026-07-23T21:18:00.5840888+05:30"
+2026-07-23 21:18:11.098 +05:30 [INF] Heartbeat running at "2026-07-23T21:18:11.0984939+05:30"
+2026-07-23 21:18:21.379 +05:30 [INF] Heartbeat running at "2026-07-23T21:18:21.3791412+05:30"
+2026-07-23 21:18:31.409 +05:30 [INF] Heartbeat running at "2026-07-23T21:18:31.4096287+05:30"
+2026-07-23 21:18:41.468 +05:30 [INF] Heartbeat running at "2026-07-23T21:18:41.4680196+05:30"
+2026-07-23 21:18:51.486 +05:30 [INF] Heartbeat running at "2026-07-23T21:18:51.4867540+05:30"
+2026-07-23 21:19:01.507 +05:30 [INF] Heartbeat running at "2026-07-23T21:19:01.5076247+05:30"
+2026-07-23 21:19:11.521 +05:30 [INF] Heartbeat running at "2026-07-23T21:19:11.5214682+05:30"
+2026-07-23 21:19:21.538 +05:30 [INF] Heartbeat running at "2026-07-23T21:19:21.5382474+05:30"
+2026-07-23 21:19:31.551 +05:30 [INF] Heartbeat running at "2026-07-23T21:19:31.5519017+05:30"
+2026-07-23 21:19:41.576 +05:30 [INF] Heartbeat running at "2026-07-23T21:19:41.5768095+05:30"
+2026-07-23 21:19:51.595 +05:30 [INF] Heartbeat running at "2026-07-23T21:19:51.5957624+05:30"
+2026-07-23 21:20:01.620 +05:30 [INF] Heartbeat running at "2026-07-23T21:20:01.6203876+05:30"
+2026-07-23 21:20:11.632 +05:30 [INF] Heartbeat running at "2026-07-23T21:20:11.6320564+05:30"
+2026-07-23 21:20:21.646 +05:30 [INF] Heartbeat running at "2026-07-23T21:20:21.6468173+05:30"
+2026-07-23 21:20:31.661 +05:30 [INF] Heartbeat running at "2026-07-23T21:20:31.6615109+05:30"
+2026-07-23 21:20:41.672 +05:30 [INF] Heartbeat running at "2026-07-23T21:20:41.6724926+05:30"
+2026-07-23 21:20:51.697 +05:30 [INF] Heartbeat running at "2026-07-23T21:20:51.6974254+05:30"
+2026-07-23 21:21:01.724 +05:30 [INF] Heartbeat running at "2026-07-23T21:21:01.7240158+05:30"
+2026-07-23 21:21:11.748 +05:30 [INF] Heartbeat running at "2026-07-23T21:21:11.7480923+05:30"
+2026-07-23 21:21:21.778 +05:30 [INF] Heartbeat running at "2026-07-23T21:21:21.7782568+05:30"
+2026-07-23 21:21:31.803 +05:30 [INF] Heartbeat running at "2026-07-23T21:21:31.8035443+05:30"
+2026-07-23 21:21:41.825 +05:30 [INF] Heartbeat running at "2026-07-23T21:21:41.8255461+05:30"
+2026-07-23 21:21:51.846 +05:30 [INF] Heartbeat running at "2026-07-23T21:21:51.8463798+05:30"
+2026-07-23 21:22:01.869 +05:30 [INF] Heartbeat running at "2026-07-23T21:22:01.8698131+05:30"
+2026-07-23 21:22:11.905 +05:30 [INF] Heartbeat running at "2026-07-23T21:22:11.9058706+05:30"
+2026-07-23 21:22:21.936 +05:30 [INF] Heartbeat running at "2026-07-23T21:22:21.9364648+05:30"
+2026-07-23 21:22:31.965 +05:30 [INF] Heartbeat running at "2026-07-23T21:22:31.9651683+05:30"
+2026-07-23 21:22:41.990 +05:30 [INF] Heartbeat running at "2026-07-23T21:22:41.9906307+05:30"
+2026-07-23 21:22:52.006 +05:30 [INF] Heartbeat running at "2026-07-23T21:22:52.0065699+05:30"
+2026-07-23 21:23:02.039 +05:30 [INF] Heartbeat running at "2026-07-23T21:23:02.0389925+05:30"
+2026-07-23 21:23:12.067 +05:30 [INF] Heartbeat running at "2026-07-23T21:23:12.0676256+05:30"
+2026-07-23 21:23:22.102 +05:30 [INF] Heartbeat running at "2026-07-23T21:23:22.1024409+05:30"
+2026-07-23 21:23:32.115 +05:30 [INF] Heartbeat running at "2026-07-23T21:23:32.1153980+05:30"
+2026-07-23 21:23:42.133 +05:30 [INF] Heartbeat running at "2026-07-23T21:23:42.1333900+05:30"
+2026-07-23 21:23:52.150 +05:30 [INF] Heartbeat running at "2026-07-23T21:23:52.1500626+05:30"
+2026-07-23 21:24:02.171 +05:30 [INF] Heartbeat running at "2026-07-23T21:24:02.1713469+05:30"
+2026-07-23 21:24:12.193 +05:30 [INF] Heartbeat running at "2026-07-23T21:24:12.1938621+05:30"
+2026-07-23 21:24:22.216 +05:30 [INF] Heartbeat running at "2026-07-23T21:24:22.2162803+05:30"
+2026-07-23 21:24:32.244 +05:30 [INF] Heartbeat running at "2026-07-23T21:24:32.2441998+05:30"
+2026-07-23 21:24:42.342 +05:30 [INF] Heartbeat running at "2026-07-23T21:24:42.3424907+05:30"
+2026-07-23 21:24:52.363 +05:30 [INF] Heartbeat running at "2026-07-23T21:24:52.3637687+05:30"
+2026-07-23 21:25:02.391 +05:30 [INF] Heartbeat running at "2026-07-23T21:25:02.3911735+05:30"
+2026-07-23 21:25:12.435 +05:30 [INF] Heartbeat running at "2026-07-23T21:25:12.4357640+05:30"
+2026-07-23 21:25:22.462 +05:30 [INF] Heartbeat running at "2026-07-23T21:25:22.4625503+05:30"
+2026-07-23 21:25:32.497 +05:30 [INF] Heartbeat running at "2026-07-23T21:25:32.4973644+05:30"
+2026-07-23 21:25:42.928 +05:30 [INF] Heartbeat running at "2026-07-23T21:25:42.9278330+05:30"
+2026-07-23 21:25:54.657 +05:30 [INF] Heartbeat running at "2026-07-23T21:25:54.6574027+05:30"
+2026-07-23 21:26:04.710 +05:30 [INF] Heartbeat running at "2026-07-23T21:26:04.7105976+05:30"
+2026-07-23 21:26:14.751 +05:30 [INF] Heartbeat running at "2026-07-23T21:26:14.7510140+05:30"
+2026-07-23 21:26:26.178 +05:30 [INF] Heartbeat running at "2026-07-23T21:26:26.1787364+05:30"
+2026-07-23 21:26:36.191 +05:30 [INF] Heartbeat running at "2026-07-23T21:26:36.1912417+05:30"
+2026-07-23 21:26:46.208 +05:30 [INF] Heartbeat running at "2026-07-23T21:26:46.2082608+05:30"
+2026-07-23 21:26:56.234 +05:30 [INF] Heartbeat running at "2026-07-23T21:26:56.2344825+05:30"
+2026-07-23 21:27:06.249 +05:30 [INF] Heartbeat running at "2026-07-23T21:27:06.2497539+05:30"
+2026-07-23 21:27:16.280 +05:30 [INF] Heartbeat running at "2026-07-23T21:27:16.2805929+05:30"
+2026-07-23 21:27:26.292 +05:30 [INF] Heartbeat running at "2026-07-23T21:27:26.2926668+05:30"
+2026-07-23 21:27:36.324 +05:30 [INF] Heartbeat running at "2026-07-23T21:27:36.3240417+05:30"
+2026-07-23 21:27:46.340 +05:30 [INF] Heartbeat running at "2026-07-23T21:27:46.3404351+05:30"
+2026-07-23 21:27:56.365 +05:30 [INF] Heartbeat running at "2026-07-23T21:27:56.3656049+05:30"
+2026-07-23 21:28:06.379 +05:30 [INF] Heartbeat running at "2026-07-23T21:28:06.3790037+05:30"
+2026-07-23 21:28:16.409 +05:30 [INF] Heartbeat running at "2026-07-23T21:28:16.4094178+05:30"
+2026-07-23 21:28:26.424 +05:30 [INF] Heartbeat running at "2026-07-23T21:28:26.4243701+05:30"
+2026-07-23 21:28:36.443 +05:30 [INF] Heartbeat running at "2026-07-23T21:28:36.4439281+05:30"
+2026-07-23 21:28:46.449 +05:30 [INF] Heartbeat running at "2026-07-23T21:28:46.4494574+05:30"
+2026-07-23 21:28:56.465 +05:30 [INF] Heartbeat running at "2026-07-23T21:28:56.4652217+05:30"
+2026-07-23 21:29:06.486 +05:30 [INF] Heartbeat running at "2026-07-23T21:29:06.4864399+05:30"
+2026-07-23 21:29:16.518 +05:30 [INF] Heartbeat running at "2026-07-23T21:29:16.5181509+05:30"
+2026-07-23 21:29:26.547 +05:30 [INF] Heartbeat running at "2026-07-23T21:29:26.5476150+05:30"
+2026-07-23 21:29:36.553 +05:30 [INF] Heartbeat running at "2026-07-23T21:29:36.5536386+05:30"
+2026-07-23 21:29:46.582 +05:30 [INF] Heartbeat running at "2026-07-23T21:29:46.5822186+05:30"
+2026-07-23 21:29:56.600 +05:30 [INF] Heartbeat running at "2026-07-23T21:29:56.6006800+05:30"
+2026-07-23 21:30:06.628 +05:30 [INF] Heartbeat running at "2026-07-23T21:30:06.6289674+05:30"
+2026-07-23 21:30:16.643 +05:30 [INF] Heartbeat running at "2026-07-23T21:30:16.6430810+05:30"
+2026-07-23 21:30:26.664 +05:30 [INF] Heartbeat running at "2026-07-23T21:30:26.6645421+05:30"
+2026-07-23 21:30:36.709 +05:30 [INF] Heartbeat running at "2026-07-23T21:30:36.7099255+05:30"
+2026-07-23 21:30:46.729 +05:30 [INF] Heartbeat running at "2026-07-23T21:30:46.7290841+05:30"
+2026-07-23 21:30:56.753 +05:30 [INF] Heartbeat running at "2026-07-23T21:30:56.7534938+05:30"
+2026-07-23 21:31:06.774 +05:30 [INF] Heartbeat running at "2026-07-23T21:31:06.7747942+05:30"
+2026-07-23 21:31:16.792 +05:30 [INF] Heartbeat running at "2026-07-23T21:31:16.7922469+05:30"
+2026-07-23 21:31:26.795 +05:30 [INF] Heartbeat running at "2026-07-23T21:31:26.7951166+05:30"
+2026-07-23 21:31:36.806 +05:30 [INF] Heartbeat running at "2026-07-23T21:31:36.8061574+05:30"
+2026-07-23 21:31:46.809 +05:30 [INF] Heartbeat running at "2026-07-23T21:31:46.8098936+05:30"
+2026-07-23 21:31:56.830 +05:30 [INF] Heartbeat running at "2026-07-23T21:31:56.8305363+05:30"
+2026-07-23 21:32:06.855 +05:30 [INF] Heartbeat running at "2026-07-23T21:32:06.8559632+05:30"
+2026-07-23 21:32:16.873 +05:30 [INF] Heartbeat running at "2026-07-23T21:32:16.8736325+05:30"
+2026-07-23 21:32:26.886 +05:30 [INF] Heartbeat running at "2026-07-23T21:32:26.8860230+05:30"
+2026-07-23 21:32:36.909 +05:30 [INF] Heartbeat running at "2026-07-23T21:32:36.9097333+05:30"
+2026-07-23 21:32:46.923 +05:30 [INF] Heartbeat running at "2026-07-23T21:32:46.9231893+05:30"
+2026-07-23 21:32:56.946 +05:30 [INF] Heartbeat running at "2026-07-23T21:32:56.9464762+05:30"
+2026-07-23 21:33:06.969 +05:30 [INF] Heartbeat running at "2026-07-23T21:33:06.9697182+05:30"
+2026-07-23 21:33:16.990 +05:30 [INF] Heartbeat running at "2026-07-23T21:33:16.9901729+05:30"
+2026-07-23 21:33:27.019 +05:30 [INF] Heartbeat running at "2026-07-23T21:33:27.0193630+05:30"
+2026-07-23 21:33:37.036 +05:30 [INF] Heartbeat running at "2026-07-23T21:33:37.0361429+05:30"
+2026-07-23 21:33:47.064 +05:30 [INF] Heartbeat running at "2026-07-23T21:33:47.0641256+05:30"
+2026-07-23 21:33:57.075 +05:30 [INF] Heartbeat running at "2026-07-23T21:33:57.0750695+05:30"
+2026-07-23 21:34:07.085 +05:30 [INF] Heartbeat running at "2026-07-23T21:34:07.0854277+05:30"
+2026-07-23 21:34:17.099 +05:30 [INF] Heartbeat running at "2026-07-23T21:34:17.0994983+05:30"
+2026-07-23 21:34:27.118 +05:30 [INF] Heartbeat running at "2026-07-23T21:34:27.1180801+05:30"
+2026-07-23 21:34:37.142 +05:30 [INF] Heartbeat running at "2026-07-23T21:34:37.1419284+05:30"
+2026-07-23 21:34:47.170 +05:30 [INF] Heartbeat running at "2026-07-23T21:34:47.1702923+05:30"
+2026-07-23 21:34:57.255 +05:30 [INF] Heartbeat running at "2026-07-23T21:34:57.2550540+05:30"
+2026-07-23 21:35:07.265 +05:30 [INF] Heartbeat running at "2026-07-23T21:35:07.2650728+05:30"
+2026-07-23 21:35:17.298 +05:30 [INF] Heartbeat running at "2026-07-23T21:35:17.2982021+05:30"
+2026-07-23 21:35:27.327 +05:30 [INF] Heartbeat running at "2026-07-23T21:35:27.3279129+05:30"
+2026-07-23 21:35:37.343 +05:30 [INF] Heartbeat running at "2026-07-23T21:35:37.3438030+05:30"
+2026-07-23 21:35:47.363 +05:30 [INF] Heartbeat running at "2026-07-23T21:35:47.3632489+05:30"
+2026-07-23 21:35:57.374 +05:30 [INF] Heartbeat running at "2026-07-23T21:35:57.3748246+05:30"
+2026-07-23 21:36:07.411 +05:30 [INF] Heartbeat running at "2026-07-23T21:36:07.4112858+05:30"
+2026-07-23 21:36:17.436 +05:30 [INF] Heartbeat running at "2026-07-23T21:36:17.4362079+05:30"
+2026-07-23 21:36:27.468 +05:30 [INF] Heartbeat running at "2026-07-23T21:36:27.4681988+05:30"
+2026-07-23 21:36:37.475 +05:30 [INF] Heartbeat running at "2026-07-23T21:36:37.4756220+05:30"
+2026-07-23 21:36:47.494 +05:30 [INF] Heartbeat running at "2026-07-23T21:36:47.4949004+05:30"
+2026-07-23 21:36:57.509 +05:30 [INF] Heartbeat running at "2026-07-23T21:36:57.5094006+05:30"
+2026-07-23 21:37:07.532 +05:30 [INF] Heartbeat running at "2026-07-23T21:37:07.5322389+05:30"
+2026-07-23 21:37:17.557 +05:30 [INF] Heartbeat running at "2026-07-23T21:37:17.5571201+05:30"
+2026-07-23 21:37:27.573 +05:30 [INF] Heartbeat running at "2026-07-23T21:37:27.5734097+05:30"
+2026-07-23 21:37:37.590 +05:30 [INF] Heartbeat running at "2026-07-23T21:37:37.5902108+05:30"
+2026-07-23 21:37:47.625 +05:30 [INF] Heartbeat running at "2026-07-23T21:37:47.6258806+05:30"
+2026-07-23 21:37:57.642 +05:30 [INF] Heartbeat running at "2026-07-23T21:37:57.6423304+05:30"
+2026-07-23 21:38:07.663 +05:30 [INF] Heartbeat running at "2026-07-23T21:38:07.6634325+05:30"
+2026-07-23 21:38:17.705 +05:30 [INF] Heartbeat running at "2026-07-23T21:38:17.7052128+05:30"
+2026-07-23 21:38:27.720 +05:30 [INF] Heartbeat running at "2026-07-23T21:38:27.7207884+05:30"
+2026-07-23 21:38:37.736 +05:30 [INF] Heartbeat running at "2026-07-23T21:38:37.7362963+05:30"
+2026-07-23 21:38:47.766 +05:30 [INF] Heartbeat running at "2026-07-23T21:38:47.7664751+05:30"
+2026-07-23 21:38:57.793 +05:30 [INF] Heartbeat running at "2026-07-23T21:38:57.7936133+05:30"
+2026-07-23 21:39:07.803 +05:30 [INF] Heartbeat running at "2026-07-23T21:39:07.8033239+05:30"
+2026-07-23 21:39:17.828 +05:30 [INF] Heartbeat running at "2026-07-23T21:39:17.8286261+05:30"
+2026-07-23 21:39:27.853 +05:30 [INF] Heartbeat running at "2026-07-23T21:39:27.8531226+05:30"
+2026-07-23 21:39:37.867 +05:30 [INF] Heartbeat running at "2026-07-23T21:39:37.8675939+05:30"
+2026-07-23 21:39:47.903 +05:30 [INF] Heartbeat running at "2026-07-23T21:39:47.9032403+05:30"
+2026-07-23 21:39:57.936 +05:30 [INF] Heartbeat running at "2026-07-23T21:39:57.9361379+05:30"
+2026-07-23 21:40:07.953 +05:30 [INF] Heartbeat running at "2026-07-23T21:40:07.9528195+05:30"
+2026-07-23 21:40:17.987 +05:30 [INF] Heartbeat running at "2026-07-23T21:40:17.9877848+05:30"
+2026-07-23 21:40:28.078 +05:30 [INF] Heartbeat running at "2026-07-23T21:40:28.0780087+05:30"
+2026-07-23 21:40:38.134 +05:30 [INF] Heartbeat running at "2026-07-23T21:40:38.1347188+05:30"
+2026-07-23 21:40:48.155 +05:30 [INF] Heartbeat running at "2026-07-23T21:40:48.1553209+05:30"
+2026-07-23 21:40:58.194 +05:30 [INF] Heartbeat running at "2026-07-23T21:40:58.1940099+05:30"
+2026-07-23 21:41:08.238 +05:30 [INF] Heartbeat running at "2026-07-23T21:41:08.2382453+05:30"
+2026-07-23 21:41:18.276 +05:30 [INF] Heartbeat running at "2026-07-23T21:41:18.2765759+05:30"
+2026-07-23 21:41:28.299 +05:30 [INF] Heartbeat running at "2026-07-23T21:41:28.2992827+05:30"
+2026-07-23 21:41:38.330 +05:30 [INF] Heartbeat running at "2026-07-23T21:41:38.3309547+05:30"
+2026-07-23 21:41:48.350 +05:30 [INF] Heartbeat running at "2026-07-23T21:41:48.3508585+05:30"
+2026-07-23 21:41:58.373 +05:30 [INF] Heartbeat running at "2026-07-23T21:41:58.3733627+05:30"
+2026-07-23 21:42:08.404 +05:30 [INF] Heartbeat running at "2026-07-23T21:42:08.4048473+05:30"
+2026-07-23 21:42:18.456 +05:30 [INF] Heartbeat running at "2026-07-23T21:42:18.4566057+05:30"
+2026-07-23 21:42:29.146 +05:30 [INF] Heartbeat running at "2026-07-23T21:42:29.1466736+05:30"
+2026-07-23 21:42:40.924 +05:30 [INF] Heartbeat running at "2026-07-23T21:42:40.9239682+05:30"
+2026-07-23 21:42:52.365 +05:30 [INF] Heartbeat running at "2026-07-23T21:42:52.3652055+05:30"
+2026-07-23 21:43:03.549 +05:30 [INF] Heartbeat running at "2026-07-23T21:43:03.5495456+05:30"
+2026-07-23 21:43:13.579 +05:30 [INF] Heartbeat running at "2026-07-23T21:43:13.5794612+05:30"
+2026-07-23 21:43:24.757 +05:30 [INF] Heartbeat running at "2026-07-23T21:43:24.7571704+05:30"
+2026-07-23 21:43:34.778 +05:30 [INF] Heartbeat running at "2026-07-23T21:43:34.7784627+05:30"
+2026-07-23 21:43:45.118 +05:30 [INF] Heartbeat running at "2026-07-23T21:43:45.1186741+05:30"
+2026-07-23 21:43:55.177 +05:30 [INF] Heartbeat running at "2026-07-23T21:43:55.1776922+05:30"
+2026-07-23 21:44:05.401 +05:30 [INF] Heartbeat running at "2026-07-23T21:44:05.4015665+05:30"
+2026-07-23 21:44:15.483 +05:30 [INF] Heartbeat running at "2026-07-23T21:44:15.4830393+05:30"
+2026-07-23 21:44:25.951 +05:30 [INF] Heartbeat running at "2026-07-23T21:44:25.9509977+05:30"
+2026-07-23 21:44:36.059 +05:30 [INF] Heartbeat running at "2026-07-23T21:44:36.0590628+05:30"
+2026-07-23 21:44:47.213 +05:30 [INF] Heartbeat running at "2026-07-23T21:44:47.2134358+05:30"
+2026-07-23 21:44:57.323 +05:30 [INF] Heartbeat running at "2026-07-23T21:44:57.3228784+05:30"
+2026-07-23 21:45:07.385 +05:30 [INF] Heartbeat running at "2026-07-23T21:45:07.3854055+05:30"
+2026-07-23 21:45:17.886 +05:30 [INF] Heartbeat running at "2026-07-23T21:45:17.8867057+05:30"
+2026-07-23 21:45:27.901 +05:30 [INF] Heartbeat running at "2026-07-23T21:45:27.9013848+05:30"
+2026-07-23 21:45:37.930 +05:30 [INF] Heartbeat running at "2026-07-23T21:45:37.9307301+05:30"
+2026-07-23 21:45:47.959 +05:30 [INF] Heartbeat running at "2026-07-23T21:45:47.9595574+05:30"
+2026-07-23 21:45:57.981 +05:30 [INF] Heartbeat running at "2026-07-23T21:45:57.9815787+05:30"
+2026-07-23 21:46:07.994 +05:30 [INF] Heartbeat running at "2026-07-23T21:46:07.9940510+05:30"
+2026-07-23 21:46:18.011 +05:30 [INF] Heartbeat running at "2026-07-23T21:46:18.0116178+05:30"
+2026-07-23 21:46:28.048 +05:30 [INF] Heartbeat running at "2026-07-23T21:46:28.0482415+05:30"
+2026-07-23 21:46:38.078 +05:30 [INF] Heartbeat running at "2026-07-23T21:46:38.0784878+05:30"
+2026-07-23 21:46:48.102 +05:30 [INF] Heartbeat running at "2026-07-23T21:46:48.1022816+05:30"
+2026-07-23 21:46:58.136 +05:30 [INF] Heartbeat running at "2026-07-23T21:46:58.1363654+05:30"
+2026-07-23 21:47:08.156 +05:30 [INF] Heartbeat running at "2026-07-23T21:47:08.1559323+05:30"
+2026-07-23 21:47:18.178 +05:30 [INF] Heartbeat running at "2026-07-23T21:47:18.1786749+05:30"
+2026-07-23 21:47:28.197 +05:30 [INF] Heartbeat running at "2026-07-23T21:47:28.1976392+05:30"
+2026-07-23 21:47:38.247 +05:30 [INF] Heartbeat running at "2026-07-23T21:47:38.2478852+05:30"
+2026-07-23 21:47:48.264 +05:30 [INF] Heartbeat running at "2026-07-23T21:47:48.2646823+05:30"
+2026-07-23 21:47:58.281 +05:30 [INF] Heartbeat running at "2026-07-23T21:47:58.2818825+05:30"
+2026-07-23 21:48:08.302 +05:30 [INF] Heartbeat running at "2026-07-23T21:48:08.3024930+05:30"
+2026-07-23 21:48:18.328 +05:30 [INF] Heartbeat running at "2026-07-23T21:48:18.3286066+05:30"
+2026-07-23 21:48:28.354 +05:30 [INF] Heartbeat running at "2026-07-23T21:48:28.3543443+05:30"

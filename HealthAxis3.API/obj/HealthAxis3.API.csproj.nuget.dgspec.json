@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj": {}
+    "C:\\Users\\310054\\source\\repos\\UST-Live-01\\HealthAxis3.API\\HealthAxis3.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj": {
+    "C:\\Users\\310054\\source\\repos\\UST-Live-01\\HealthAxis3.API\\HealthAxis3.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\HealthAxis3.API\\HealthAxis3.API.csproj",
         "projectName": "HealthAxis3.API",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\HealthAxis3.API.csproj",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\HealthAxis3.API\\HealthAxis3.API.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\HealthAxis3.API\\obj\\",
+        "outputPath": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\HealthAxis3.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -34,8 +34,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
-                "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj"
+              "C:\\Users\\310054\\source\\repos\\UST-Live-01\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
+                "projectPath": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj"
               }
             }
           }
@@ -65,6 +65,10 @@
               "target": "Package",
               "version": "[9.1.2, )"
             },
+            "MassTransit.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
             "MassTransit.RabbitMQ": {
               "target": "Package",
               "version": "[9.1.2, )"
@@ -73,21 +77,25 @@
               "target": "Package",
               "version": "[10.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.10, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.9, )"
+              "version": "[10.0.10, )"
             },
             "Microsoft.Extensions.caching.StackExchangeRedis": {
               "target": "Package",
@@ -161,7 +169,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",
@@ -579,14 +587,14 @@
         }
       }
     },
-    "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
+    "C:\\Users\\310054\\source\\repos\\UST-Live-01\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
         "projectName": "HealthAxis3.Shared",
-        "projectPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
+        "projectPath": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\Healthaxis3.Shared\\HealthAxis3.Shared.csproj",
         "packagesPath": "C:\\Users\\310054\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\310054\\source\\repos\\HealthAxis4\\Healthaxis3.Shared\\obj\\",
+        "outputPath": "C:\\Users\\310054\\source\\repos\\UST-Live-01\\Healthaxis3.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -643,7 +651,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

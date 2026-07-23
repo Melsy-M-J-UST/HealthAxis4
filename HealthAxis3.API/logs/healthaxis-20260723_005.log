@@ -1,0 +1,166 @@
+2026-07-23 15:24:43.505 +05:30 [INF] Configured endpoint HealthAxis3.API.events.queue, Consumer: HealthAxis3.API.Messaging.AppointmentBookedConsumer
+2026-07-23 15:24:45.285 +05:30 [INF] Heartbeat running at "2026-07-23T15:24:45.2834796+05:30"
+2026-07-23 15:24:46.226 +05:30 [INF] Now listening on: https://localhost:7120
+2026-07-23 15:24:46.428 +05:30 [INF] Now listening on: http://localhost:5042
+2026-07-23 15:24:46.774 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-23 15:24:46.832 +05:30 [INF] Hosting environment: Development
+2026-07-23 15:24:46.839 +05:30 [INF] Content root path: C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API
+2026-07-23 15:24:47.821 +05:30 [INF] Bus started: "rabbitmq://localhost/"
+2026-07-23 15:24:55.584 +05:30 [INF] Heartbeat running at "2026-07-23T15:24:55.5839155+05:30"
+2026-07-23 15:25:05.612 +05:30 [INF] Heartbeat running at "2026-07-23T15:25:05.6120161+05:30"
+2026-07-23 15:25:15.618 +05:30 [INF] Heartbeat running at "2026-07-23T15:25:15.6183947+05:30"
+2026-07-23 15:25:25.624 +05:30 [INF] Heartbeat running at "2026-07-23T15:25:25.6247415+05:30"
+2026-07-23 15:25:35.633 +05:30 [INF] Heartbeat running at "2026-07-23T15:25:35.6333853+05:30"
+2026-07-23 15:25:45.641 +05:30 [INF] Heartbeat running at "2026-07-23T15:25:45.6410122+05:30"
+2026-07-23 15:25:55.660 +05:30 [INF] Heartbeat running at "2026-07-23T15:25:55.6602367+05:30"
+2026-07-23 15:26:05.670 +05:30 [INF] Heartbeat running at "2026-07-23T15:26:05.6706735+05:30"
+2026-07-23 15:26:15.680 +05:30 [INF] Heartbeat running at "2026-07-23T15:26:15.6800197+05:30"
+2026-07-23 15:26:25.696 +05:30 [INF] Heartbeat running at "2026-07-23T15:26:25.6967618+05:30"
+2026-07-23 15:26:35.708 +05:30 [INF] Heartbeat running at "2026-07-23T15:26:35.7086401+05:30"
+2026-07-23 15:26:45.715 +05:30 [INF] Heartbeat running at "2026-07-23T15:26:45.7152169+05:30"
+2026-07-23 15:26:55.727 +05:30 [INF] Heartbeat running at "2026-07-23T15:26:55.7271054+05:30"
+2026-07-23 15:27:05.741 +05:30 [INF] Heartbeat running at "2026-07-23T15:27:05.7413504+05:30"
+2026-07-23 15:27:15.757 +05:30 [INF] Heartbeat running at "2026-07-23T15:27:15.7569156+05:30"
+2026-07-23 15:27:25.767 +05:30 [INF] Heartbeat running at "2026-07-23T15:27:25.7661206+05:30"
+2026-07-23 15:27:35.789 +05:30 [INF] Heartbeat running at "2026-07-23T15:27:35.7893928+05:30"
+2026-07-23 15:27:45.848 +05:30 [INF] Heartbeat running at "2026-07-23T15:27:45.8483896+05:30"
+2026-07-23 15:27:55.871 +05:30 [INF] Heartbeat running at "2026-07-23T15:27:55.8712566+05:30"
+2026-07-23 15:28:05.891 +05:30 [INF] Heartbeat running at "2026-07-23T15:28:05.8914131+05:30"
+2026-07-23 15:28:15.902 +05:30 [INF] Heartbeat running at "2026-07-23T15:28:15.9023930+05:30"
+2026-07-23 15:28:25.917 +05:30 [INF] Heartbeat running at "2026-07-23T15:28:25.9174917+05:30"
+2026-07-23 15:28:35.950 +05:30 [INF] Heartbeat running at "2026-07-23T15:28:35.9499824+05:30"
+2026-07-23 15:28:45.973 +05:30 [INF] Heartbeat running at "2026-07-23T15:28:45.9736595+05:30"
+2026-07-23 15:28:55.990 +05:30 [INF] Heartbeat running at "2026-07-23T15:28:55.9907115+05:30"
+2026-07-23 15:29:06.003 +05:30 [INF] Heartbeat running at "2026-07-23T15:29:06.0032824+05:30"
+2026-07-23 15:29:16.012 +05:30 [INF] Heartbeat running at "2026-07-23T15:29:16.0122857+05:30"
+2026-07-23 15:29:26.020 +05:30 [INF] Heartbeat running at "2026-07-23T15:29:26.0202085+05:30"
+2026-07-23 15:29:36.038 +05:30 [INF] Heartbeat running at "2026-07-23T15:29:36.0386278+05:30"
+2026-07-23 15:29:46.058 +05:30 [INF] Heartbeat running at "2026-07-23T15:29:46.0585512+05:30"
+2026-07-23 15:29:56.076 +05:30 [INF] Heartbeat running at "2026-07-23T15:29:56.0763192+05:30"
+2026-07-23 15:30:06.086 +05:30 [INF] Heartbeat running at "2026-07-23T15:30:06.0864160+05:30"
+2026-07-23 15:30:16.105 +05:30 [INF] Heartbeat running at "2026-07-23T15:30:16.1053744+05:30"
+2026-07-23 15:30:26.121 +05:30 [INF] Heartbeat running at "2026-07-23T15:30:26.1216001+05:30"
+2026-07-23 15:30:36.134 +05:30 [INF] Heartbeat running at "2026-07-23T15:30:36.1347260+05:30"
+2026-07-23 15:30:46.144 +05:30 [INF] Heartbeat running at "2026-07-23T15:30:46.1439661+05:30"
+2026-07-23 15:30:56.160 +05:30 [INF] Heartbeat running at "2026-07-23T15:30:56.1608798+05:30"
+2026-07-23 15:31:06.167 +05:30 [INF] Heartbeat running at "2026-07-23T15:31:06.1674321+05:30"
+2026-07-23 15:31:16.177 +05:30 [INF] Heartbeat running at "2026-07-23T15:31:16.1770800+05:30"
+2026-07-23 15:31:26.186 +05:30 [INF] Heartbeat running at "2026-07-23T15:31:26.1868014+05:30"
+2026-07-23 15:31:36.203 +05:30 [INF] Heartbeat running at "2026-07-23T15:31:36.2037257+05:30"
+2026-07-23 15:31:46.222 +05:30 [INF] Heartbeat running at "2026-07-23T15:31:46.2223958+05:30"
+2026-07-23 15:31:56.236 +05:30 [INF] Heartbeat running at "2026-07-23T15:31:56.2366765+05:30"
+2026-07-23 15:32:06.259 +05:30 [INF] Heartbeat running at "2026-07-23T15:32:06.2590668+05:30"
+2026-07-23 15:32:16.274 +05:30 [INF] Heartbeat running at "2026-07-23T15:32:16.2748425+05:30"
+2026-07-23 15:32:26.284 +05:30 [INF] Heartbeat running at "2026-07-23T15:32:26.2845356+05:30"
+2026-07-23 15:32:36.289 +05:30 [INF] Heartbeat running at "2026-07-23T15:32:36.2896154+05:30"
+2026-07-23 15:32:46.304 +05:30 [INF] Heartbeat running at "2026-07-23T15:32:46.3045174+05:30"
+2026-07-23 15:32:56.315 +05:30 [INF] Heartbeat running at "2026-07-23T15:32:56.3144759+05:30"
+2026-07-23 15:33:06.332 +05:30 [INF] Heartbeat running at "2026-07-23T15:33:06.3329161+05:30"
+2026-07-23 15:33:16.342 +05:30 [INF] Heartbeat running at "2026-07-23T15:33:16.3422828+05:30"
+2026-07-23 15:33:26.363 +05:30 [INF] Heartbeat running at "2026-07-23T15:33:26.3632718+05:30"
+2026-07-23 15:33:36.375 +05:30 [INF] Heartbeat running at "2026-07-23T15:33:36.3756809+05:30"
+2026-07-23 15:33:46.385 +05:30 [INF] Heartbeat running at "2026-07-23T15:33:46.3854463+05:30"
+2026-07-23 15:33:56.395 +05:30 [INF] Heartbeat running at "2026-07-23T15:33:56.3952585+05:30"
+2026-07-23 15:34:06.402 +05:30 [INF] Heartbeat running at "2026-07-23T15:34:06.4029132+05:30"
+2026-07-23 15:34:16.422 +05:30 [INF] Heartbeat running at "2026-07-23T15:34:16.4222579+05:30"
+2026-07-23 15:34:26.464 +05:30 [INF] Heartbeat running at "2026-07-23T15:34:26.4643734+05:30"
+2026-07-23 15:34:36.478 +05:30 [INF] Heartbeat running at "2026-07-23T15:34:36.4783370+05:30"
+2026-07-23 15:34:46.503 +05:30 [INF] Heartbeat running at "2026-07-23T15:34:46.5033415+05:30"
+2026-07-23 15:34:56.514 +05:30 [INF] Heartbeat running at "2026-07-23T15:34:56.5142947+05:30"
+2026-07-23 15:35:06.534 +05:30 [INF] Heartbeat running at "2026-07-23T15:35:06.5347509+05:30"
+2026-07-23 15:35:16.555 +05:30 [INF] Heartbeat running at "2026-07-23T15:35:16.5555510+05:30"
+2026-07-23 15:35:26.572 +05:30 [INF] Heartbeat running at "2026-07-23T15:35:26.5726872+05:30"
+2026-07-23 15:35:36.589 +05:30 [INF] Heartbeat running at "2026-07-23T15:35:36.5893161+05:30"
+2026-07-23 15:35:46.604 +05:30 [INF] Heartbeat running at "2026-07-23T15:35:46.6048514+05:30"
+2026-07-23 15:35:56.611 +05:30 [INF] Heartbeat running at "2026-07-23T15:35:56.6112603+05:30"
+2026-07-23 15:36:06.617 +05:30 [INF] Heartbeat running at "2026-07-23T15:36:06.6175964+05:30"
+2026-07-23 15:36:16.635 +05:30 [INF] Heartbeat running at "2026-07-23T15:36:16.6356833+05:30"
+2026-07-23 15:36:26.643 +05:30 [INF] Heartbeat running at "2026-07-23T15:36:26.6434601+05:30"
+2026-07-23 15:36:36.650 +05:30 [INF] Heartbeat running at "2026-07-23T15:36:36.6508681+05:30"
+2026-07-23 15:36:46.658 +05:30 [INF] Heartbeat running at "2026-07-23T15:36:46.6583196+05:30"
+2026-07-23 15:36:56.678 +05:30 [INF] Heartbeat running at "2026-07-23T15:36:56.6786569+05:30"
+2026-07-23 15:37:06.684 +05:30 [INF] Heartbeat running at "2026-07-23T15:37:06.6843564+05:30"
+2026-07-23 15:37:16.705 +05:30 [INF] Heartbeat running at "2026-07-23T15:37:16.7051775+05:30"
+2026-07-23 15:37:26.719 +05:30 [INF] Heartbeat running at "2026-07-23T15:37:26.7198370+05:30"
+2026-07-23 15:37:36.736 +05:30 [INF] Heartbeat running at "2026-07-23T15:37:36.7365932+05:30"
+2026-07-23 15:37:46.753 +05:30 [INF] Heartbeat running at "2026-07-23T15:37:46.7535068+05:30"
+2026-07-23 15:37:56.758 +05:30 [INF] Heartbeat running at "2026-07-23T15:37:56.7582188+05:30"
+2026-07-23 15:38:06.775 +05:30 [INF] Heartbeat running at "2026-07-23T15:38:06.7758849+05:30"
+2026-07-23 15:38:16.788 +05:30 [INF] Heartbeat running at "2026-07-23T15:38:16.7887789+05:30"
+2026-07-23 15:38:26.807 +05:30 [INF] Heartbeat running at "2026-07-23T15:38:26.8072329+05:30"
+2026-07-23 15:38:59.573 +05:30 [INF] Configured endpoint HealthAxis3.API.events.queue, Consumer: HealthAxis3.API.Messaging.AppointmentBookedConsumer
+2026-07-23 15:39:00.955 +05:30 [INF] Heartbeat running at "2026-07-23T15:39:00.9529165+05:30"
+2026-07-23 15:39:01.607 +05:30 [INF] Bus started: "rabbitmq://localhost/"
+2026-07-23 15:39:01.656 +05:30 [INF] Now listening on: https://localhost:7120
+2026-07-23 15:39:01.665 +05:30 [INF] Now listening on: http://localhost:5042
+2026-07-23 15:39:01.733 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2026-07-23 15:39:01.737 +05:30 [INF] Hosting environment: Development
+2026-07-23 15:39:01.741 +05:30 [INF] Content root path: C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.API
+2026-07-23 15:39:10.989 +05:30 [INF] Heartbeat running at "2026-07-23T15:39:10.9890802+05:30"
+2026-07-23 15:39:21.002 +05:30 [INF] Heartbeat running at "2026-07-23T15:39:21.0023272+05:30"
+2026-07-23 15:39:31.022 +05:30 [INF] Heartbeat running at "2026-07-23T15:39:31.0222257+05:30"
+2026-07-23 15:39:41.046 +05:30 [INF] Heartbeat running at "2026-07-23T15:39:41.0459811+05:30"
+2026-07-23 15:39:51.056 +05:30 [INF] Heartbeat running at "2026-07-23T15:39:51.0566405+05:30"
+2026-07-23 15:40:01.066 +05:30 [INF] Heartbeat running at "2026-07-23T15:40:01.0663732+05:30"
+2026-07-23 15:40:11.071 +05:30 [INF] Heartbeat running at "2026-07-23T15:40:11.0717655+05:30"
+2026-07-23 15:40:21.092 +05:30 [INF] Heartbeat running at "2026-07-23T15:40:21.0919311+05:30"
+2026-07-23 15:40:31.104 +05:30 [INF] Heartbeat running at "2026-07-23T15:40:31.1045189+05:30"
+2026-07-23 15:40:41.113 +05:30 [INF] Heartbeat running at "2026-07-23T15:40:41.1131015+05:30"
+2026-07-23 15:40:48.279 +05:30 [INF] HTTP OPTIONS /api/auth/register responded 204 in 23.0580 ms
+2026-07-23 15:40:49.736 +05:30 [ERR] Failed executing DbCommand (28ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (DbType = Boolean), @p5='?' (Size = 30), @p6='?' (Size = 4000), @p7='?' (DbType = DateTime2), @p8='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Patients] ([DateOfBirth], [Email], [Gender], [InsuranceId], [IsActive], [PatientName], [PhoneNumber], [RegisteredDate], [UserId])
+OUTPUT INSERTED.[PatientId]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);
+2026-07-23 15:40:49.775 +05:30 [ERR] An exception occurred in the database while saving changes for context type 'HealthAxis3.API.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cd9dc97d-24fd-42d0-bafd-095b8c3f1659
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Invalid column name 'UserId'.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__195_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:cd9dc97d-24fd-42d0-bafd-095b8c3f1659
+Error Number:207,State:1,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)

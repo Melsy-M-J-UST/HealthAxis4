@@ -452,6 +452,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "HealthAxis3.API.Controllers.HealthRecordController",
+    "Method": "GetByAppointmentId",
+    "RelativePath": "api/HealthRecord/appointment/{appointmentId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "appointmentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "HealthAxis3.API.Controllers.NotificationsController",
     "Method": "Get",
     "RelativePath": "api/notifications/{doctorId}",

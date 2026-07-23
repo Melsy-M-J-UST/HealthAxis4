@@ -7,19 +7,27 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20260615112140_SeedData.cs" />
+    <Compile Remove="Migrations\20260615112140_SeedData.Designer.cs" />
+  </ItemGroup>
+
+ 
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="16.1.1" />
     <PackageReference Include="elastic.serilog.sinks" Version="9.0.0" />
     <PackageReference Include="MassTransit" Version="9.1.2" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="7.3.1" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="9.1.2" />
     <PackageReference Include="Microsoft.aspnetcore.authentication.jwtbearer" Version="10.0.9" />
     <PackageReference Include="Microsoft.aspnetcore.identity.entityframeworkcore" Version="10.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.8" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.9">
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.10">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.9">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -39,9 +47,4 @@
   <ItemGroup>
     <ProjectReference Include="..\Healthaxis3.Shared\HealthAxis3.Shared.csproj" />
   </ItemGroup>
-	<ItemGroup>
-		<Compile Update="Migrations\**\*.cs">
-			<SonarQubeExclude>true</SonarQubeExclude>
-		</Compile>
-	</ItemGroup>
 </Project>

@@ -17,7 +17,7 @@ namespace HealthAxis3.API.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.9")
+                .HasAnnotation("ProductVersion", "10.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -163,80 +163,6 @@ namespace HealthAxis3.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Doctors");
-
-                    b.HasData(
-                        new
-                        {
-                            DoctorId = 1,
-                            DoctorName = "Dr. Priya Sharma",
-                            Experience = 12,
-                            Fees = 800,
-                            IsActive = true,
-                            Specialisation = "Cardiologist"
-                        },
-                        new
-                        {
-                            DoctorId = 2,
-                            DoctorName = "Dr. Suresh Mathew",
-                            Experience = 9,
-                            Fees = 600,
-                            IsActive = true,
-                            Specialisation = "Dermatologist"
-                        },
-                        new
-                        {
-                            DoctorId = 3,
-                            DoctorName = "Dr. Neha Iyer",
-                            Experience = 10,
-                            Fees = 700,
-                            IsActive = true,
-                            Specialisation = "Pediatrician"
-                        },
-                        new
-                        {
-                            DoctorId = 4,
-                            DoctorName = "Dr. Thomas George",
-                            Experience = 15,
-                            Fees = 900,
-                            IsActive = true,
-                            Specialisation = "OrthopedicSurgeon"
-                        },
-                        new
-                        {
-                            DoctorId = 5,
-                            DoctorName = "Dr. Kavitha Rao",
-                            Experience = 14,
-                            Fees = 1000,
-                            IsActive = true,
-                            Specialisation = "Neurologist"
-                        },
-                        new
-                        {
-                            DoctorId = 6,
-                            DoctorName = "Dr. Mohammed Ali",
-                            Experience = 11,
-                            Fees = 500,
-                            IsActive = true,
-                            Specialisation = "GeneralPractitioner"
-                        },
-                        new
-                        {
-                            DoctorId = 7,
-                            DoctorName = "Dr. Lakshmi Menon",
-                            Experience = 8,
-                            Fees = 550,
-                            IsActive = true,
-                            Specialisation = "Endocrinologist"
-                        },
-                        new
-                        {
-                            DoctorId = 8,
-                            DoctorName = "Dr. Rajesh Nambiar",
-                            Experience = 13,
-                            Fees = 650,
-                            IsActive = true,
-                            Specialisation = "Oncologist"
-                        });
                 });
 
             modelBuilder.Entity("HealthAxis3.API.Models.HealthRecord", b =>
@@ -352,68 +278,6 @@ namespace HealthAxis3.API.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Patients");
-
-                    b.HasData(
-                        new
-                        {
-                            PatientId = 1,
-                            DateOfBirth = new DateTime(1992, 5, 14, 12, 24, 33, 0, DateTimeKind.Unspecified),
-                            Email = "arun.kumar@example.com",
-                            Gender = "Male",
-                            InsuranceId = "INS1001",
-                            IsActive = true,
-                            PatientName = "Arun Kumar",
-                            PhoneNumber = "9876543210",
-                            RegisteredDate = new DateTime(2026, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            PatientId = 2,
-                            DateOfBirth = new DateTime(1988, 9, 22, 22, 15, 30, 0, DateTimeKind.Unspecified),
-                            Email = "meera.nair@example.com",
-                            Gender = "Female",
-                            InsuranceId = "INS1002",
-                            IsActive = true,
-                            PatientName = "Meera Nair",
-                            PhoneNumber = "9876543211",
-                            RegisteredDate = new DateTime(2026, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            PatientId = 3,
-                            DateOfBirth = new DateTime(2000, 1, 10, 16, 17, 18, 0, DateTimeKind.Unspecified),
-                            Email = "rahul.menon@example.com",
-                            Gender = "Male",
-                            InsuranceId = "INS1003",
-                            IsActive = true,
-                            PatientName = "Rahul Menon",
-                            PhoneNumber = "9876543212",
-                            RegisteredDate = new DateTime(2026, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            PatientId = 4,
-                            DateOfBirth = new DateTime(1995, 12, 3, 1, 2, 3, 0, DateTimeKind.Unspecified),
-                            Email = "anjali.thomas@example.com",
-                            Gender = "Female",
-                            InsuranceId = "INS1004",
-                            IsActive = true,
-                            PatientName = "Anjali Thomas",
-                            PhoneNumber = "9876543213",
-                            RegisteredDate = new DateTime(2026, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            PatientId = 5,
-                            DateOfBirth = new DateTime(1983, 7, 19, 5, 6, 7, 0, DateTimeKind.Unspecified),
-                            Email = "vivek.pillai@example.com",
-                            Gender = "Male",
-                            InsuranceId = "INS1005",
-                            IsActive = true,
-                            PatientName = "Vivek Pillai",
-                            PhoneNumber = "9876543214",
-                            RegisteredDate = new DateTime(2026, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

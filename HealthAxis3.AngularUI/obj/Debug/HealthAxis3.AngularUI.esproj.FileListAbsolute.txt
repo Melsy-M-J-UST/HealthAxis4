@@ -1,2 +1,3 @@
 C:\Users\310054\source\repos\HealthAxis3\HealthAxis3.AngularUI\obj\Debug\HealthAxis3.AngularUI.esproj.CoreCompileInputs.cache
 C:\Users\310054\source\repos\HealthAxis4\HealthAxis3.AngularUI\obj\Debug\HealthAxis3.AngularUI.esproj.CoreCompileInputs.cache
+C:\Users\310054\source\repos\UST-Live-01\HealthAxis3.AngularUI\obj\Debug\HealthAxis3.AngularUI.esproj.CoreCompileInputs.cache

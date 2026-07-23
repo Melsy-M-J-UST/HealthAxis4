@@ -3,10 +3,10 @@
   <PropertyGroup>
     <PackageJsonName Condition="$(PackageJsonName) == ''">health-axis3.angular-ui</PackageJsonName>
     <PackageJsonVersion Condition="$(PackageJsonVersion) == ''">0.0.0</PackageJsonVersion>
-    <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">C:\Users\310054\nodejs\node.exe ./node_modules/@angular/cli/bin/ng.js serve --host=127.0.0.1</PackageJsonScriptsStart>
-    <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">C:\Users\310054\nodejs\node.exe ./node_modules/@angular/cli/bin/ng.js build</PackageJsonScriptsBuild>
-    <PackageJsonScriptsWatch Condition="$(PackageJsonScriptsWatch) == ''">C:\Users\310054\nodejs\node.exe ./node_modules/@angular/cli/bin/ng.js build --watch --configuration development</PackageJsonScriptsWatch>
-    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">C:\Users\310054\nodejs\node.exe ./node_modules/@angular/cli/bin/ng.js test</PackageJsonScriptsTest>
+    <PackageJsonScriptsStart Condition="$(PackageJsonScriptsStart) == ''">ng serve --host=127.0.0.1</PackageJsonScriptsStart>
+    <PackageJsonScriptsBuild Condition="$(PackageJsonScriptsBuild) == ''">ng build</PackageJsonScriptsBuild>
+    <PackageJsonScriptsWatch Condition="$(PackageJsonScriptsWatch) == ''">ng build --watch --configuration development</PackageJsonScriptsWatch>
+    <PackageJsonScriptsTest Condition="$(PackageJsonScriptsTest) == ''">ng test</PackageJsonScriptsTest>
     <PackageJsonPrivate Condition="$(PackageJsonPrivate) == ''">true</PackageJsonPrivate>
     <PackageJsonPackagemanager Condition="$(PackageJsonPackagemanager) == ''">npm@11.13.0</PackageJsonPackagemanager>
     <PackageJsonDependenciesAngularCommon Condition="$(PackageJsonDependenciesAngularCommon) == ''">^22.0.6</PackageJsonDependenciesAngularCommon>

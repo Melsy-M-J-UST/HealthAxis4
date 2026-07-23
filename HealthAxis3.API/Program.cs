@@ -22,18 +22,8 @@ Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateBootstrapLogger()
 Log.Information("HealthAxis Api Starting ..... ");
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddSerilog((services,configuration)=>
-    configuration.ReadFrom.Configuration(builder.Configuration).ReadFrom.Services(services).Enrich.FromLogContext()
-);
 builder.Host.UseSerilog((context, services, configuration) => {
-    configuration.ReadFrom.Configuration(context.Configuration)
-    .ReadFrom.Services(services)
-    .Enrich.FromLogContext()
-    .WriteTo.Console()
-    .WriteTo.File(
-    "logs/healthaxis-.log",
-    rollingInterval: RollingInterval.Day,
-    retainedFileCountLimit: 7);
+    configuration.ReadFrom.Configuration(context.Configuration).ReadFrom.Services(services).Enrich.FromLogContext().WriteTo.Console().WriteTo.File("logs/healthaxis-.log", rollingInterval: RollingInterval.Day, retainedFileCountLimit: 7);
 });
 // Add services to the container.
 
@@ -136,13 +126,13 @@ builder.Services.AddMassTransit(x =>
         //cfg.ConfigureEndpoints(context);
     });
 });
-builder.Services.Configure<GarnetOptions>(builder.Configuration.GetSection("Garnet"));
-builder.Services.AddStackExchangeRedisCache(options =>
-{
-    var garnetOptions = builder.Configuration.GetSection("Garnet").Get<GarnetOptions>()?? new GarnetOptions();
-    options.Configuration = garnetOptions.ConnectionString;
-    options.InstanceName =garnetOptions.InstanceName;
-});
+//builder.Services.Configure<GarnetOptions>(builder.Configuration.GetSection("Garnet"));
+//builder.Services.AddStackExchangeRedisCache(options =>
+//{
+//    var garnetOptions = builder.Configuration.GetSection("Garnet").Get<GarnetOptions>()?? new GarnetOptions();
+//    options.Configuration = garnetOptions.ConnectionString;
+//    options.InstanceName =garnetOptions.InstanceName;
+//});
 builder.Services.AddCors(p =>
 {
     p.AddPolicy("CorsPolicy", cfg =>
