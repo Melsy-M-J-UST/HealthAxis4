@@ -17,6 +17,7 @@ using System.Text.Json;
 using Serilog;
 using HealthAxis3.API.Options;
 using HealthAxis3.API.Messaging;
+using Microsoft.AspNetCore.StaticFiles;
 
 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateBootstrapLogger();
 Log.Information("HealthAxis Api Starting ..... ");
@@ -167,12 +168,34 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+var contentTypeProvider = new FileExtensionContentTypeProvider();
+contentTypeProvider.Mappings[".data"] = "application/octet-stream";
+contentTypeProvider.Mappings[".wasm"] = "application/wasm";
+app.UseStaticFiles(new StaticFileOptions
+{
+    ContentTypeProvider = contentTypeProvider
+});
 app.UseCors("AllowBlazor");
 app.UseCors("CorsPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapGet("/angular/", async context =>
+{
+    await context.Response.SendFileAsync(Path.Combine(app.Environment.WebRootPath,"angular", "index.html"));
+});
+app.MapGet("/angular/{*path:nonfile}", async context =>
+{
+    await context.Response.SendFileAsync(Path.Combine(app.Environment.WebRootPath, "angular", "index.html"));
+});
+app.MapGet("/blazor/", async context =>
+{
+    await context.Response.SendFileAsync(Path.Combine(app.Environment.WebRootPath, "blazor", "index.html"));
+});
+app.MapGet("/blazor/{*path:nonfile}", async context =>
+{
+    await context.Response.SendFileAsync(Path.Combine(app.Environment.WebRootPath, "blazor", "index.html"));
+});
 app.UseSerilogRequestLogging();
 await app.RunAsync();
