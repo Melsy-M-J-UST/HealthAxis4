@@ -9,7 +9,7 @@ using System.Text.Json;
 
 namespace HealthAxis3.API.Service.Implementation
 {
-    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager, IDistributedCache cache, ILogger<DoctorService> logger) : IDoctorService
+    public class DoctorService(IDoctorRepository repository, IMapper mapper, UserManager<ApplicationUser> userManager, ILogger<DoctorService> logger) : IDoctorService  //IDistributedCache cache
     {
         private const string doctorsCacheKey = "doctors:all";
         private static readonly DistributedCacheEntryOptions cacheOptions = new DistributedCacheEntryOptions
@@ -35,22 +35,23 @@ namespace HealthAxis3.API.Service.Implementation
             await userManager.AddToRoleAsync(user, "Doctor");
 
             var doctorDto= mapper.Map<DoctorDto>(saved);
-            await cache.RemoveAsync(doctorsCacheKey);
+            //await cache.RemoveAsync(doctorsCacheKey);
             logger.LogInformation("Search doctors cache invalidated. CacheKey: {doctorsCacheKey}", doctorsCacheKey);
             return doctorDto;
         }
 
         public async Task<List<DoctorDto>> GetAllAsync()
         {
-            var cached = await cache.GetStringAsync(doctorsCacheKey);
-            if (!string.IsNullOrEmpty(cached))
-            {
-            var doctorList= JsonSerializer.Deserialize<List<DoctorDto>>(cached) ?? new List<DoctorDto>();
-                if (doctorList != null) return doctorList;
-            }
+            //var cached = await cache.GetStringAsync(doctorsCacheKey);
+            //if (!string.IsNullOrEmpty(cached))
+            //{
+            //    var doctorList= JsonSerializer.Deserialize<List<DoctorDto>>(cached) ?? new List<DoctorDto>();
+            //    if (doctorList != null) return doctorList;
+            //}
+
             var doctors = mapper.Map<List<DoctorDto>>(await repository.GetAllAsync());
             logger.LogInformation("Search doctors cache validated. CacheKey: {doctorsCacheKey}", doctorsCacheKey);
-            await cache.SetStringAsync(doctorsCacheKey, JsonSerializer.Serialize(doctors), cacheOptions);
+            //await cache.SetStringAsync(doctorsCacheKey, JsonSerializer.Serialize(doctors), cacheOptions);
             return doctors;
         }
 
@@ -73,7 +74,7 @@ namespace HealthAxis3.API.Service.Implementation
             doctor.DoctorId = id;
             var updated = await repository.UpdateAsync(id, doctor);
             var updatedDto = mapper.Map<DoctorUpdateDto>(updated);
-            await cache.RemoveAsync(doctorsCacheKey);
+            //await cache.RemoveAsync(doctorsCacheKey);
             return updatedDto;
         }
         public async Task<List<string>> GetAvailableSlots(int doctorId, DateTime date)
